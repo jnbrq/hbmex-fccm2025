@@ -1,0 +1,153 @@
+{
+  "name" : "WriteStreamTop1_1",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "sourceReadTask",
+      "role" : "source",
+      "kind" : "readyValid[ReadStreamTask]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "sinkReadData",
+      "role" : "sink",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    },
+    {
+      "name" : "sourceWriteTask",
+      "role" : "source",
+      "kind" : "readyValid[WriteStreamTask]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "sourceWriteData",
+      "role" : "source",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    },
+    {
+      "name" : "sinkWriteDone",
+      "role" : "sink",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 8
+        }
+      }
+    }
+  ],
+  "args" : {
+    "readStreamCfg" : {
+      "typeName" : "hbmex.components.stream.ReadStreamConfig",
+      "obj" : {
+        "axiMasterCfg" : {
+          "wId" : 0,
+          "wAddr" : 20,
+          "wData" : 32,
+          "read" : true,
+          "write" : true,
+          "lite" : false,
+          "hasLock" : true,
+          "hasCache" : true,
+          "hasProt" : true,
+          "hasQos" : true,
+          "hasRegion" : true,
+          "axi3Compat" : false,
+          "wUserAR" : 0,
+          "wUserR" : 0,
+          "wUserAW" : 0,
+          "wUserW" : 0,
+          "wUserB" : 0
+        },
+        "queueLength" : 8
+      }
+    },
+    "writeStreamCfg" : {
+      "typeName" : "hbmex.components.stream.WriteStreamConfig",
+      "obj" : {
+        "axiMasterCfg" : {
+          "wId" : 0,
+          "wAddr" : 20,
+          "wData" : 32,
+          "read" : true,
+          "write" : true,
+          "lite" : false,
+          "hasLock" : true,
+          "hasCache" : true,
+          "hasProt" : true,
+          "hasQos" : true,
+          "hasRegion" : true,
+          "axi3Compat" : false,
+          "wUserAR" : 0,
+          "wUserR" : 0,
+          "wUserAW" : 0,
+          "wUserW" : 0,
+          "wUserB" : 0
+        },
+        "queueLengthB" : 8,
+        "queueLengthW" : 8
+      }
+    }
+  }
+}

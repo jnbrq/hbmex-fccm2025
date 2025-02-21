@@ -1,0 +1,154 @@
+{
+    "name": "myModule",
+    "ports": [
+        {
+            "name": "clock",
+            "direction": "input",
+            "kind": "clock",
+            "sensitivity": "clockRising",
+            "isBus": false,
+            "busRange": [
+                0,
+                0
+            ],
+            "frequencyMHz": 100.0,
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {}
+        },
+        {
+            "name": "reset",
+            "direction": "input",
+            "kind": "reset",
+            "sensitivity": "resetActiveHigh",
+            "isBus": false,
+            "busRange": [
+                0,
+                0
+            ],
+            "frequencyMHz": 100.0,
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {}
+        },
+        {
+            "name": "irq",
+            "direction": "output",
+            "kind": "interrupt",
+            "sensitivity": "interruptRising",
+            "isBus": false,
+            "busRange": [
+                0,
+                0
+            ],
+            "frequencyMHz": 100.0,
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {}
+        }
+    ],
+    "interfaces": [
+        {
+            "name": "s_axil_management",
+            "role": "slave",
+            "kind": "axi4",
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {
+                "config": {
+                    "typeName": "hdlinfo.protocols.amba.axi4.Config",
+                    "obj": {
+                        "wId": 0,
+                        "wAddr": 20,
+                        "wData": 32,
+                        "read": true,
+                        "write": true,
+                        "lite": true,
+                        "wUserAR": 0,
+                        "wUserR": 0,
+                        "wUserAW": 0,
+                        "wUserW": 0,
+                        "wUserB": 0,
+                        "hasProt": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "m_axi",
+            "role": "master",
+            "kind": "axi4",
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {
+                "config": {
+                    "typeName": "hdlinfo.protocols.amba.axi4.Config",
+                    "obj": {
+                        "wId": 4,
+                        "wAddr": 32,
+                        "wData": 256,
+                        "read": true,
+                        "write": true,
+                        "lite": false,
+                        "wUserAR": 4,
+                        "wUserR": 4,
+                        "wUserAW": 0,
+                        "wUserW": 0,
+                        "wUserB": 0,
+                        "hasQos": false,
+                        "hasProt": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "source1",
+            "role": "source",
+            "kind": "readyValid[chext.elastic.Data]",
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {
+                "width": {
+                    "typeName": "int",
+                    "obj": 32
+                }
+            }
+        },
+        {
+            "name": "source2",
+            "role": "source",
+            "kind": "readyValid[chext.elastic.DataLast]",
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {
+                "width": {
+                    "typeName": "int",
+                    "obj": 64
+                }
+            }
+        },
+        {
+            "name": "source3",
+            "role": "source",
+            "kind": "readyValid[Packet]",
+            "associatedClock": "clock",
+            "associatedReset": "reset",
+            "args": {
+                "dataWidth": {
+                    "typeName": "int",
+                    "obj": 128
+                }
+            }
+        }
+    ],
+    "args": {
+        "config": {
+            "typeName": "MyModuleConfig",
+            "obj": {
+                "internalBufferSize": 1024,
+                "numOutstandingReadRequests": 16,
+                "numOutstandingWriteRequests": 16
+            }
+        }
+    }
+}

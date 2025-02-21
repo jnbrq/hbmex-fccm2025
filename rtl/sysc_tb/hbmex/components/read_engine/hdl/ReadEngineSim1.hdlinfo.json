@@ -1,0 +1,142 @@
+{
+  "name" : "ReadEngineSim1",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "S_AXI_CTRL",
+      "role" : "slave",
+      "kind" : "axi4_rtl",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "config" : {
+          "typeName" : "chext.amba.axi4.Config",
+          "obj" : {
+            "wId" : 0,
+            "wAddr" : 8,
+            "wData" : 32,
+            "read" : true,
+            "write" : true,
+            "lite" : true,
+            "hasLock" : true,
+            "hasCache" : true,
+            "hasProt" : true,
+            "hasQos" : true,
+            "hasRegion" : true,
+            "axi3Compat" : false,
+            "wUserAR" : 0,
+            "wUserR" : 0,
+            "wUserAW" : 0,
+            "wUserW" : 0,
+            "wUserB" : 0
+          }
+        }
+      }
+    },
+    {
+      "name" : "S_AXI_DESC",
+      "role" : "slave",
+      "kind" : "axi4_rtl",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "config" : {
+          "typeName" : "chext.amba.axi4.Config",
+          "obj" : {
+            "wId" : 0,
+            "wAddr" : 15,
+            "wData" : 64,
+            "read" : true,
+            "write" : true,
+            "lite" : false,
+            "hasLock" : true,
+            "hasCache" : true,
+            "hasProt" : true,
+            "hasQos" : true,
+            "hasRegion" : true,
+            "axi3Compat" : false,
+            "wUserAR" : 0,
+            "wUserR" : 0,
+            "wUserAW" : 0,
+            "wUserW" : 0,
+            "wUserB" : 0
+          }
+        }
+      }
+    },
+    {
+      "name" : "S_AXI_DATA",
+      "role" : "slave",
+      "kind" : "axi4_rtl",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "config" : {
+          "typeName" : "chext.amba.axi4.Config",
+          "obj" : {
+            "wId" : 10,
+            "wAddr" : 12,
+            "wData" : 32,
+            "read" : true,
+            "write" : true,
+            "lite" : false,
+            "hasLock" : true,
+            "hasCache" : true,
+            "hasProt" : true,
+            "hasQos" : true,
+            "hasRegion" : true,
+            "axi3Compat" : false,
+            "wUserAR" : 0,
+            "wUserR" : 0,
+            "wUserAW" : 0,
+            "wUserW" : 0,
+            "wUserB" : 0
+          }
+        }
+      }
+    }
+  ],
+  "args" : {
+    "config" : {
+      "typeName" : "hbmex.components.read_engine.ReadEngineSim1",
+      "obj" : {
+        "moduleName" : "ReadEngineSim1"
+      }
+    }
+  }
+}

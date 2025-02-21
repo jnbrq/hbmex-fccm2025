@@ -1,0 +1,106 @@
+{
+  "name" : "SpmvTop2_1",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "s_axi_control",
+      "role" : "slave",
+      "kind" : "axi4",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "config" : {
+          "typeName" : "chext.amba.axi4.Config",
+          "obj" : {
+            "wId" : 0,
+            "wAddr" : 10,
+            "wData" : 32,
+            "read" : true,
+            "write" : true,
+            "lite" : true,
+            "hasLock" : true,
+            "hasCache" : true,
+            "hasProt" : true,
+            "hasQos" : true,
+            "hasRegion" : true,
+            "axi3Compat" : false,
+            "wUserAR" : 0,
+            "wUserR" : 0,
+            "wUserAW" : 0,
+            "wUserW" : 0,
+            "wUserB" : 0
+          }
+        }
+      }
+    },
+    {
+      "name" : "s_axi",
+      "role" : "slave",
+      "kind" : "axi4",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "config" : {
+          "typeName" : "chext.amba.axi4.Config",
+          "obj" : {
+            "wId" : 0,
+            "wAddr" : 30,
+            "wData" : 256,
+            "read" : true,
+            "write" : true,
+            "lite" : false,
+            "hasLock" : false,
+            "hasCache" : false,
+            "hasProt" : false,
+            "hasQos" : false,
+            "hasRegion" : false,
+            "axi3Compat" : true,
+            "wUserAR" : 0,
+            "wUserR" : 0,
+            "wUserAW" : 0,
+            "wUserW" : 0,
+            "wUserB" : 0
+          }
+        }
+      }
+    }
+  ],
+  "args" : {
+    
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "name" : "ReadStreamTop2_1",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "sourceTask",
+      "role" : "source",
+      "kind" : "readyValid[ReadStreamTask]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "sinkData",
+      "role" : "sink",
+      "kind" : "readyValid[chext.elastic.DataLast]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    }
+  ],
+  "args" : {
+    "cfg" : {
+      "typeName" : "hbmex.components.stream.ReadStreamConfig",
+      "obj" : {
+        "axiMasterCfg" : {
+          "wId" : 0,
+          "wAddr" : 32,
+          "wData" : 128,
+          "read" : true,
+          "write" : true,
+          "lite" : false,
+          "hasLock" : true,
+          "hasCache" : true,
+          "hasProt" : true,
+          "hasQos" : true,
+          "hasRegion" : true,
+          "axi3Compat" : false,
+          "wUserAR" : 0,
+          "wUserR" : 0,
+          "wUserAW" : 0,
+          "wUserW" : 0,
+          "wUserB" : 0
+        },
+        "queueLength" : 16
+      }
+    }
+  }
+}

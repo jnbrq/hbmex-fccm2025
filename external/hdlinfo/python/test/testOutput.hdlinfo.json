@@ -1,0 +1,76 @@
+{
+    "name": "OtherModule",
+    "ports": [
+        {
+            "name": "clock",
+            "direction": "input",
+            "kind": "clock",
+            "sensitivity": "none",
+            "isBus": false,
+            "busRange": [
+                0,
+                0
+            ],
+            "frequencyMHz": 100.0,
+            "associatedClock": "",
+            "associatedReset": "",
+            "args": {}
+        },
+        {
+            "name": "reset",
+            "direction": "input",
+            "kind": "reset",
+            "sensitivity": "resetActiveHigh",
+            "isBus": false,
+            "busRange": [
+                0,
+                0
+            ],
+            "frequencyMHz": 100.0,
+            "associatedClock": "",
+            "associatedReset": "",
+            "args": {}
+        },
+        {
+            "name": "data",
+            "direction": "output",
+            "kind": "data",
+            "sensitivity": "none",
+            "isBus": true,
+            "busRange": [
+                31,
+                0
+            ],
+            "frequencyMHz": 100.0,
+            "associatedClock": "",
+            "associatedReset": "",
+            "args": {}
+        }
+    ],
+    "interfaces": [
+        {
+            "name": "S_AXIL",
+            "role": "slave",
+            "kind": "axi4",
+            "associatedClock": "",
+            "associatedReset": "",
+            "args": {
+                "config": {
+                    "wId": 0,
+                    "wAddr": 32,
+                    "wData": 64,
+                    "read": true,
+                    "write": true,
+                    "lite": true,
+                    "wUserAR": 0,
+                    "wUserR": 0,
+                    "wUserAW": 0,
+                    "wUserW": 0,
+                    "wUserB": 0,
+                    "skippedSignals": []
+                }
+            }
+        }
+    ],
+    "args": {}
+}

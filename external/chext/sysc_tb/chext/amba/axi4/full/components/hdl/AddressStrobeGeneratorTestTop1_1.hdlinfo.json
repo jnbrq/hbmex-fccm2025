@@ -1,0 +1,81 @@
+{
+  "name" : "AddressStrobeGeneratorTestTop1_1",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "source",
+      "role" : "source",
+      "kind" : "readyValid[chext.amba.axi4.full.components.addrgen.AddrLenSizeBurstBundle]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "wAddr" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    },
+    {
+      "name" : "sink",
+      "role" : "sink",
+      "kind" : "readyValid[chext.amba.axi4.full.components.addrgen.AddrSizeStrobeLastBundle]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "wAddr" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        },
+        "wData" : {
+          "typeName" : "scala.Int",
+          "obj" : 128
+        }
+      }
+    }
+  ],
+  "args" : {
+    "wAddr" : {
+      "typeName" : "scala.Int",
+      "obj" : 32
+    },
+    "wData" : {
+      "typeName" : "scala.Int",
+      "obj" : 128
+    }
+  }
+}

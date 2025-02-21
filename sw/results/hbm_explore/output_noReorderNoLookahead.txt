@@ -1,0 +1,140 @@
+#########################  Clock frequency is 300 MHz  #########################
+##################  Part 1: Distinct PCs, SID not considered  ##################
+*****************************  single PC (512 MB)  *****************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.5665283203125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.5459716796875)
+***********************  distribute among 2 PCs (1 GB)  ************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.7546630859375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.7607421875)
+***********************  distribute among 4 PCs (2 GB)  ************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.3474853515625)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.161474609375)
+***********************  distribute among 8 PCs (4 GB)  ************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.3102294921875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.0536376953125)
+***********************  distribute among 16 PCs (8 GB)  ***********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 32, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 17, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.4646240234375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 32, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 17, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.0310302734375)
+###  Part 2: Stacks are also considered now, distinct ID per PC and per SID  ###
+***************************  single stack (256 MB)  ****************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.53671875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.533642578125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.5343017578125)
+*********************  distribute among 2 stacks (512 MB)  *********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.3181884765625)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.314794921875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.3546142578125)
+**********************  distribute among 4 stacks (1 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.759375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.7496826171875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.7681640625)
+**********************  distribute among 8 stacks (2 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.3520751953125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.1583740234375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.1558837890625)
+*********************  distribute among 16 stacks (4 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.3239013671875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.0556640625)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.056982421875)
+*********************  distribute among 32 stacks (8 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 32, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 18, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.465869140625)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 32, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 18, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.0273681640625)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 32, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 18, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.0268798828125)
+#########################  Clock frequency is 450 MHz  #########################
+##################  Part 1: Distinct PCs, SID not considered  ##################
+*****************************  single PC (512 MB)  *****************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.859033203125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.8506591796875)
+***********************  distribute among 2 PCs (1 GB)  ************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.64189453125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.6296875)
+***********************  distribute among 4 PCs (2 GB)  ************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.8976318359375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.620849609375)
+***********************  distribute among 8 PCs (4 GB)  ************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.751953125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.259033203125)
+***********************  distribute among 16 PCs (8 GB)  ***********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 32, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 17, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.914501953125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 29, 30, 31, 32, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 14, 15, 16, 17, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.2147705078125)
+###  Part 2: Stacks are also considered now, distinct ID per PC and per SID  ###
+***************************  single stack (256 MB)  ****************************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.8000732421875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.827978515625)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 3.8025634765625)
+*********************  distribute among 2 stacks (512 MB)  *********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 4.9821533203125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 4.97646484375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 29, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 5.0106689453125)
+**********************  distribute among 4 stacks (1 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.679248046875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.6480712890625)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 30, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 2.617529296875)
+**********************  distribute among 8 stacks (2 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.8939453125)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.5867919921875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 31, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.5884033203125)
+*********************  distribute among 16 stacks (4 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.758349609375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.274609375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 32, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.2623779296875)
+*********************  distribute among 32 stacks (8 GB)  **********************
+DataPoint(idMode = ID_MASK_INDEX, idShift = 0, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 32, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 18, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.90966796875)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 29, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 32, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 18, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.2154052734375)
+DataPoint(idMode = ID_SHIFT_MASK_ADDR, idShift = 28, len = 0, rndAddrBits = 23, transformString = ComposedTransform(first = ShiftTransform(shiftCount = 5), second = GenericTransform(vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 32, 19, 20, 21, 22, 23, 24, 25, 26, 27, 14, 15, 16, 17, 18, 33])), extra = '')
+    DataPointResult(avgCyclesPerBeat = 1.2135498046875)

@@ -1,0 +1,240 @@
+cmake_minimum_required(VERSION 3.15)
+
+# https://cmake.org/cmake/help/book/mastering-cmake/chapter/Finding%20Packages.html
+get_filename_component(HDLSCW_CONFIG_CMAKE "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(HDLSCW_INSTALL_PREFIX "${HDLSCW_CONFIG_CMAKE}/../.." ABSOLUTE)
+
+function(generated_source)
+    cmake_parse_arguments(
+        GENSRC_ARG
+        ""
+        "TARGET;WORKING_DIRECTORY;PREFIX;FUNC_NAME"
+        "COMMAND;ARGS;DEPENDS"
+        ${ARGN}
+    )
+
+    if(NOT GENSRC_ARG_FUNC_NAME)
+        set(GENSRC_FUNC_NAME "generated_source")
+    else()
+        set(GENSRC_FUNC_NAME "${GENSRC_ARG_FUNC_NAME}")
+    endif()
+
+    if(NOT GENSRC_ARG_TARGET)
+        message(FATAL_ERROR "${GENSRC_FUNC_NAME}: a TARGET must be provided!")
+    endif()
+
+    set(GENSRC_TARGET "${GENSRC_ARG_TARGET}")
+
+    get_target_property(BINARY_DIR "${GENSRC_TARGET}" BINARY_DIR)
+    get_target_property(TARGET_NAME "${GENSRC_TARGET}" NAME)
+
+    if(NOT GENSRC_ARG_PREFIX)
+        message(FATAL_ERROR "${GENSRC_FUNC_NAME}: a PREFIX must be provided!")
+    endif()
+
+    set(GENSRC_PREFIX "${GENSRC_ARG_PREFIX}")
+    string(TOLOWER "${GENSRC_PREFIX}" GENSRC_PREFIX_LOWER)
+
+    if(NOT GENSRC_ARG_WORKING_DIRECTORY)
+        set(GENSRC_OUTDIR "${BINARY_DIR}/CMakeFiles/${TARGET_NAME}.dir/${GENSRC_PREFIX_LOWER}.dir")
+    else()
+        set(GENSRC_OUTDIR "${GENSRC_ARG_WORKING_DIRECTORY}")
+    endif()
+
+    file(MAKE_DIRECTORY "${GENSRC_OUTDIR}")
+
+    set(GENSRC_CMAKE "${GENSRC_OUTDIR}/${GENSRC_PREFIX_LOWER}.cmake")
+
+    # the target depends on ${GENSRC_CMAKE_COPY} rather than ${GENSRC_CMAKE}.
+    # reconfiguration happens only when ${GENSRC_CMAKE_COPY} changes
+    # which happens only when contents of ${HDLSCW_CMAKE} is modified (rather than
+    # the modification time).
+    #
+    # If we were to directly depend on ${GENSRC_CMAKE}, whenever the command executes
+    # we would need to reconfigure. Now, we don't do that, we reconfigure only
+    # when the file list described in ${GENSRC_CMAKE} truly changes.
+    set(GENSRC_CMAKE_COPY "${GENSRC_OUTDIR}/${GENSRC_PREFIX_LOWER}.cmake.copy")
+
+    if(NOT GENSRC_ARG_COMMAND)
+        message(FATAL_ERROR "${GENSRC_FUNC_NAME}: a COMMAND must be provided!")
+    endif()
+
+    set(
+        GENSRC_COMMAND
+        ${GENSRC_ARG_COMMAND}
+        --gensrc-outdir "${GENSRC_OUTDIR}"
+        --gensrc-prefix "${GENSRC_PREFIX}"
+        --gensrc-cmake "${GENSRC_PREFIX_LOWER}.cmake"
+        ${GENSRC_ARG_ARGS}
+    )
+
+    set(GENSRC_ARGS "${GENSRC_OUTDIR}/${GENSRC_PREFIX_LOWER}.args")
+    set(GENSRC_OUTDATED OFF)
+
+    if(NOT EXISTS "${GENSRC_ARGS}" OR NOT EXISTS "${GENSRC_CMAKE_COPY}")
+        message(STATUS "${GENSRC_FUNC_NAME}: '${GENSRC_CMAKE_COPY}' does not exist")
+        set(GENSRC_OUTDATED ON)
+    else()
+        file(READ "${GENSRC_ARGS}" GENSRC_COMMAND_OLD)
+
+        if(NOT GENSRC_COMMAND STREQUAL GENSRC_COMMAND_OLD)
+            message(STATUS "${GENSRC_FUNC_NAME}: COMMAND changed")
+            set(GENSRC_OUTDATED ON)
+        endif()
+    endif()
+
+    if(GENSRC_OUTDATED)
+        message(STATUS "${GENSRC_FUNC_NAME}: outdated, TARGET = ${GENSRC_TARGET}")
+        string(REPLACE ";" " " GENSRC_COMMAND_READABLE "${GENSRC_COMMAND}")
+        message(STATUS "Executing command: ${GENSRC_COMMAND_READABLE}")
+
+        execute_process(
+            COMMAND ${GENSRC_COMMAND}
+            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+            RESULT_VARIABLE EXEC_RC
+            OUTPUT_VARIABLE EXEC_OUT
+            ERROR_VARIABLE EXEC_ERR
+        )
+
+        if(EXEC_RC)
+            message(STATUS "${GENSRC_FUNC_NAME}: command failed with return code: ${EXEC_RC}!")
+            message(STATUS "Command output: ")
+            message(STATUS "${EXEC_OUT}")
+            message(STATUS "Command error: ")
+            message(STATUS "${EXEC_ERR}")
+            message(FATAL_ERROR "${GENSRC_FUNC_NAME}: failure")
+        endif()
+
+        execute_process(
+            COMMAND "${CMAKE_COMMAND}" -E copy
+            "${GENSRC_CMAKE}"
+            "${GENSRC_CMAKE_COPY}"
+        )
+    endif()
+
+    file(WRITE "${GENSRC_ARGS}" "${GENSRC_COMMAND}")
+    include("${GENSRC_CMAKE_COPY}")
+
+    # let's add some other dependencies provided by the user
+    if(GENSRC_ARG_DEPENDS)
+        foreach(DEP ${GENSRC_ARG_DEPENDS})
+            get_filename_component(DEP "${DEP}" ABSOLUTE BASE_DIR)
+            list(APPEND GENSRC_DEPENDS "${DEP}")
+        endforeach()
+    endif()
+
+    add_custom_command(
+        OUTPUT ${${GENSRC_PREFIX}_OUTPUT_FILES} "${GENSRC_CMAKE}"
+        COMMAND ${GENSRC_COMMAND}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+        DEPENDS ${${GENSRC_PREFIX}_INPUT_FILES} ${GENSRC_DEPENDS} VERBATIM
+    )
+
+    # Reconfigure if file list has changed
+    # (check contents rather than modified time to avoid unnecessary reconfiguration)
+    add_custom_command(
+        OUTPUT "${GENSRC_CMAKE_COPY}"
+        COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+        "${GENSRC_CMAKE}" "${GENSRC_CMAKE_COPY}"
+        DEPENDS "${GENSRC_CMAKE}" VERBATIM
+    )
+
+    target_include_directories(
+        "${GENSRC_TARGET}"
+        PUBLIC
+        "${GENSRC_OUTDIR}"
+    )
+
+    target_sources(
+        "${GENSRC_TARGET}"
+        PRIVATE
+        ${${GENSRC_PREFIX}_TARGET_SOURCES}
+        "${GENSRC_CMAKE_COPY}"
+    )
+
+    target_sources(
+        "${GENSRC_TARGET}"
+        PRIVATE
+        ${${GENSRC_PREFIX}_INPUT_FILES}
+    )
+endfunction()
+
+function(hdlscw)
+    cmake_parse_arguments(
+        HDLSCW
+        "SINGLE_FILE;MARK_FINAL;TEMPLATED" # options
+        "TARGET;HDLINFO;PREFIX;VERILATED_MODULE_NAME;OUTPUT_CLASS_NAME;" # single-value keywords
+        "ARGS" # multi-value keywords
+        ${ARGN}
+    )
+
+    if(NOT HDLSCW_TARGET)
+        message(FATAL_ERROR "hdlscw: TARGET is missing.")
+    endif()
+
+    if(NOT HDLSCW_HDLINFO)
+        message(FATAL_ERROR "hdlscw: HDLINFO is missing, an '*.hdlinfo.json' source is needed.")
+    else()
+        get_filename_component(HDLSCW_HDLINFO "${HDLSCW_HDLINFO}" ABSOLUTE BASE_DIR)
+        list(APPEND HDLSCW_ARGS "--input-hdlinfo" "${HDLSCW_HDLINFO}")
+    endif()
+
+    if(NOT EXISTS "${HDLSCW_HDLINFO}")
+        message(FATAL_ERROR "hdlscw: HDLINFO does not exist. Make sure that '${HDLSCW_HDLINFO}' exists.")
+    endif()
+
+    if(HDLSCW_SINGLE_FILE)
+        list(APPEND HDLSCW_ARGS "--single-file")
+    endif()
+
+    if(HDLSCW_MARK_FINAL)
+        list(APPEND HDLSCW_ARGS "--mark-final")
+    endif()
+
+    if(HDLSCW_TEMPLATED)
+        list(APPEND HDLSCW_ARGS "--templated")
+    endif()
+
+    if(NOT HDLSCW_PREFIX)
+        get_filename_component(
+            HDLSCW_PREFIX
+            "${HDLSCW_HDLINFO}"
+            NAME_WE
+        )
+    endif()
+
+    if(HDLSCW_VERILATED_MODULE_NAME)
+        list(APPEND HDLSCW_ARGS "--verilated-module-name" "${HDLSCW_VERILATED_MODULE_NAME}")
+    endif()
+
+    if(HDLSCW_OUTPUT_CLASS_NAME)
+        list(APPEND HDLSCW_ARGS "--output-class-name" "${HDLSCW_OUTPUT_CLASS_NAME}")
+        list(APPEND HDLSCW_ARGS "--output-hpp" "${HDLSCW_OUTPUT_CLASS_NAME}.hpp")
+
+        if(NOT HDLSCW_SINGLE_FILE)
+            list(APPEND HDLSCW_ARGS "--output-cpp" "${HDLSCW_OUTPUT_CLASS_NAME}.cpp")
+        endif()
+    else()
+        string(MAKE_C_IDENTIFIER "${HDLSCW_PREFIX}" _VALID_C_IDENTIFIER)
+        list(APPEND HDLSCW_ARGS "--output-class-name" "${_VALID_C_IDENTIFIER}")
+        list(APPEND HDLSCW_ARGS "--output-hpp" "${_VALID_C_IDENTIFIER}.hpp")
+
+        if(NOT HDLSCW_SINGLE_FILE)
+            list(APPEND HDLSCW_ARGS "--output-cpp" "${_VALID_C_IDENTIFIER}.cpp")
+        endif()
+    endif()
+
+    set(HDLSCW_COMMAND python3 -m hdlscw.cmake)
+
+    target_include_directories("${HDLSCW_TARGET}" PUBLIC "${HDLSCW_INSTALL_PREFIX}/include")
+    # message(STATUS "${HDLSCW_INSTALL_PREFIX}")
+    # message(STATUS "${HDLSCW_INSTALL_PREFIX}/include")
+
+    generated_source(
+        TARGET "${HDLSCW_TARGET}"
+        PREFIX "${HDLSCW_PREFIX}"
+        FUNC_NAME "hdlscw"
+        COMMAND "${HDLSCW_COMMAND}"
+        ARGS ${HDLSCW_ARGS}
+    )
+endfunction()

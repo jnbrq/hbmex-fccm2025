@@ -1,0 +1,148 @@
+{
+  "name" : "ElasticTop",
+  "ports" : [
+    {
+      "name" : "clock",
+      "direction" : "input",
+      "kind" : "clock",
+      "sensitivity" : "clockRising",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    },
+    {
+      "name" : "reset",
+      "direction" : "input",
+      "kind" : "reset",
+      "sensitivity" : "resetActiveHigh",
+      "isBus" : false,
+      "busRange" : [
+        0,
+        0
+      ],
+      "frequencyMHz" : 100.0,
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        
+      }
+    }
+  ],
+  "interfaces" : [
+    {
+      "name" : "fp32_inA",
+      "role" : "source",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    },
+    {
+      "name" : "fp32_inB",
+      "role" : "source",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    },
+    {
+      "name" : "fp32_addOut",
+      "role" : "sink",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    },
+    {
+      "name" : "fp32_multiplyOut",
+      "role" : "sink",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 32
+        }
+      }
+    },
+    {
+      "name" : "fp64_inA",
+      "role" : "source",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 64
+        }
+      }
+    },
+    {
+      "name" : "fp64_inB",
+      "role" : "source",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 64
+        }
+      }
+    },
+    {
+      "name" : "fp64_addOut",
+      "role" : "sink",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 64
+        }
+      }
+    },
+    {
+      "name" : "fp64_multiplyOut",
+      "role" : "sink",
+      "kind" : "readyValid[chext.elastic.Data]",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "width" : {
+          "typeName" : "scala.Int",
+          "obj" : 64
+        }
+      }
+    }
+  ],
+  "args" : {
+    
+  }
+}
