@@ -1,0 +1,3 @@
+[submodule "external/dma_ip_drivers"]
+	path = external/dma_ip_drivers
+	url = https://github.com/00light00/dma_ip_drivers
