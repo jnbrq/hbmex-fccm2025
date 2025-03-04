@@ -174,7 +174,7 @@ class TrueDualPortRawMem(
   xpm_mem.io.rstb := reset.asBool
   xpm_mem.io.sleep := false.B
   xpm_mem.io.wea := interface1.wstrb
-  xpm_mem.io.web := interface1.wstrb
+  xpm_mem.io.web := interface2.wstrb
 
   def getPorts: Seq[memory.RawInterface] = Seq(interface1, interface2)
 }
