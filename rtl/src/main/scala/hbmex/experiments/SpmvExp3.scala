@@ -60,7 +60,7 @@ case class SpmvExp3Config(val desiredName: String = "SpmvExp3") {
 
     stripe.StripeConfig(
       2,
-      spmvCfg.axiLsMasterCfg.copy(wAddr = 34),
+      spmvCfg.axiRandomCfg.copy(wAddr = 34),
       transformations
     )
   }
@@ -79,8 +79,8 @@ class SpmvExp3(cfg: SpmvExp3Config = SpmvExp3Config()) extends Module {
   val S_AXI_STRIPED = IO(axi4.Slave(stripeCfg.axiCfg))
   val M_AXI_STRIPED = IO(axi4.Master(stripeCfg.axiCfg))
 
-  val M_AXI_LS = IO(axi4.Master(ankaraCfg.axiMasterCfg))
-  val M_AXI_GP = IO(axi4.Master(spmvCfg.axiGpMasterCfg))
+  val M_AXI_RANDOM = IO(axi4.Master(ankaraCfg.axiMasterCfg))
+  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularCfg))
 
   private val controlDemux = Module(new axi4.lite.components.Demux(controlDemuxCfg))
 
@@ -107,11 +107,11 @@ class SpmvExp3(cfg: SpmvExp3Config = SpmvExp3Config()) extends Module {
   private val ankara = Module(
     new attachment.Ankara(ankaraCfg)
   )
-  spmv0.m_axi_ls :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_random :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
   stripe0.M_AXI(0).asFull :=> axi4.full.MasterBuffer(ankara.s_axi, axi4.BufferConfig.all(2))
-  ankara.m_axi :=> M_AXI_LS.asFull
+  ankara.m_axi :=> M_AXI_RANDOM.asFull
 
-  spmv0.m_axi_gp :=> axi4.full.MasterBuffer(M_AXI_GP.asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_REGULAR.asFull, axi4.BufferConfig.all(2))
 }
 
 object EmitSpmvExp3 extends App {

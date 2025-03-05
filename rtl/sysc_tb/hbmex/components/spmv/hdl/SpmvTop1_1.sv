@@ -377,25 +377,25 @@ module Queue2_ReadAddressChannel(	// src/main/scala/chisel3/util/Decoupled.scala
   assign io_deq_bits_burst = _ram_ext_R0_data[38:37];	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :256:91
 endmodule
 
-module ReadStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+module ReadStream(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
   input          clock,	// <stdin>:4969:11, :5640:11
                  reset,	// <stdin>:4970:11, :5641:11
-                 m_axi_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  output         m_axi_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  output [29:0]  m_axi_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  output [3:0]   m_axi_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  output [2:0]   m_axi_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  output [1:0]   m_axi_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  output         m_axi_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  input          m_axi_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  input  [255:0] m_axi_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
-  output         sourceTask_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
-  input          sourceTask_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
-  input  [63:0]  sourceTask_bits_address,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
-                 sourceTask_bits_length,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
-  input          sinkData_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:137:20
-  output         sinkData_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:137:20
-  output [255:0] sinkData_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:137:20
+                 m_axi_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  output         m_axi_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  output [29:0]  m_axi_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  output [3:0]   m_axi_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  output [2:0]   m_axi_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  output [1:0]   m_axi_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  output         m_axi_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  input          m_axi_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  input  [255:0] m_axi_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:134:17
+  output         sourceTask_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
+  input          sourceTask_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
+  input  [63:0]  sourceTask_bits_address,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
+                 sourceTask_bits_length,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:136:22
+  input          sinkData_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:137:20
+  output         sinkData_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:137:20
+  output [255:0] sinkData_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:137:20
 );
 
   wire        _addressPhase_sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
@@ -405,78 +405,78 @@ module ReadStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compone
   wire [63:0] _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire        sourceTask_ready_0 =
     _filtering_arrival_sinkBuffered__sinkBuffer_io_enq_ready & sourceTask_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  reg         addressPhase_rGenerating;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
-  reg  [63:0] addressPhase_rRemaining;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
-  reg  [63:0] addressPhase_rAddress;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29
+  reg         addressPhase_rGenerating;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
+  reg  [63:0] addressPhase_rRemaining;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
+  reg  [63:0] addressPhase_rAddress;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29
   wire        _addressPhase_T =
     _addressPhase_sinkBuffered__sinkBuffer_io_enq_ready
     & _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire        _addressPhase_T_1 = addressPhase_rRemaining < 64'h11;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :58:29
+  wire        _addressPhase_T_1 = addressPhase_rRemaining < 64'h11;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :58:29
   wire        _addressPhase_T_2 =
-    _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length < 64'h11;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29, :78:28, src/main/scala/chext/elastic/Buffer.scala:131:30
+    _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length < 64'h11;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29, :78:28, src/main/scala/chext/elastic/Buffer.scala:131:30
   always @(posedge clock) begin	// <stdin>:4969:11, :5640:11
     if (reset) begin	// <stdin>:4969:11, :5640:11
-      addressPhase_rGenerating <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, src/main/scala/chext/elastic/Arrival.scala:35:18
-      addressPhase_rRemaining <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
-      addressPhase_rAddress <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
+      addressPhase_rGenerating <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, src/main/scala/chext/elastic/Arrival.scala:35:18
+      addressPhase_rRemaining <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
+      addressPhase_rAddress <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
     end
     else if (_addressPhase_T) begin	// src/main/scala/chext/elastic/Arrival.scala:65:28
-      if (addressPhase_rGenerating) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
-        addressPhase_rGenerating <= ~_addressPhase_T_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :58:{29,50}, :59:27, :68:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
-        if (_addressPhase_T_1) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
-          addressPhase_rRemaining <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
-          addressPhase_rAddress <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
+      if (addressPhase_rGenerating) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
+        addressPhase_rGenerating <= ~_addressPhase_T_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :58:{29,50}, :59:27, :68:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
+        if (_addressPhase_T_1) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
+          addressPhase_rRemaining <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
+          addressPhase_rAddress <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
         end
-        else begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
-          addressPhase_rRemaining <= addressPhase_rRemaining - 64'h10;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :69:40
-          addressPhase_rAddress <= addressPhase_rAddress + 64'h200;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :70:36
+        else begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
+          addressPhase_rRemaining <= addressPhase_rRemaining - 64'h10;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :69:40
+          addressPhase_rAddress <= addressPhase_rAddress + 64'h200;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :70:36
         end
       end
-      else begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
-        addressPhase_rGenerating <= ~_addressPhase_T_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :78:{28,49}, :79:27, :88:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
+      else begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
+        addressPhase_rGenerating <= ~_addressPhase_T_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :78:{28,49}, :79:27, :88:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
         addressPhase_rRemaining <=
           _addressPhase_T_2
             ? 64'h0
-            : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length - 64'h10;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :78:{28,49}, :80:26, :89:{26,39}, src/main/scala/chext/elastic/Buffer.scala:131:30
+            : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length - 64'h10;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :78:{28,49}, :80:26, :89:{26,39}, src/main/scala/chext/elastic/Buffer.scala:131:30
         addressPhase_rAddress <=
           _addressPhase_T_2
             ? 64'h0
-            : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address + 64'h200;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :70:36, :78:{28,49}, :81:24, :90:{24,38}, src/main/scala/chext/elastic/Buffer.scala:131:30
+            : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address + 64'h200;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :70:36, :78:{28,49}, :81:24, :90:{24,38}, src/main/scala/chext/elastic/Buffer.scala:131:30
       end
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-      automatic logic [31:0] _RANDOM[0:4];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+      automatic logic [31:0] _RANDOM[0:4];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
         for (logic [2:0] i = 3'h0; i < 3'h5; i += 3'h1) begin
-          _RANDOM[i] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-        addressPhase_rGenerating = _RANDOM[3'h0][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :127:7
-        addressPhase_rRemaining = {_RANDOM[3'h0][31:1], _RANDOM[3'h1], _RANDOM[3'h2][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :127:7
-        addressPhase_rAddress = {_RANDOM[3'h2][31:1], _RANDOM[3'h3], _RANDOM[3'h4][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :127:7
+          _RANDOM[i] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+        addressPhase_rGenerating = _RANDOM[3'h0][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :127:7
+        addressPhase_rRemaining = {_RANDOM[3'h0][31:1], _RANDOM[3'h1], _RANDOM[3'h2][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :127:7
+        addressPhase_rAddress = {_RANDOM[3'h2][31:1], _RANDOM[3'h3], _RANDOM[3'h4][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :127:7
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
   Queue2_ReadStreamTask filtering_arrival_sinkBuffered__sinkBuffer (	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .clock               (clock),
     .reset               (reset),
     .io_enq_ready        (_filtering_arrival_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid        (sourceTask_ready_0 & (|sourceTask_bits_length)),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:30:{26,33}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
+    .io_enq_valid        (sourceTask_ready_0 & (|sourceTask_bits_length)),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:30:{26,33}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
     .io_enq_bits_address (sourceTask_bits_address),
     .io_enq_bits_length  (sourceTask_bits_length),
     .io_deq_ready
       (_addressPhase_T
-       & (addressPhase_rGenerating ? _addressPhase_T_1 : _addressPhase_T_2)),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :57:29, :58:{29,50}, :78:{28,49}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+       & (addressPhase_rGenerating ? _addressPhase_T_1 : _addressPhase_T_2)),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :57:29, :58:{29,50}, :78:{28,49}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
     .io_deq_valid        (_filtering_arrival_sinkBuffered__sinkBuffer_io_deq_valid),
     .io_deq_bits_address
       (_filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address),
@@ -490,15 +490,15 @@ module ReadStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compone
     .io_enq_bits_addr
       (addressPhase_rGenerating
          ? addressPhase_rAddress[29:0]
-         : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address[29:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :47:29, :57:29, :58:50, :63:24, :78:49, :83:24, src/main/scala/chext/elastic/Buffer.scala:131:30
+         : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address[29:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :47:29, :57:29, :58:50, :63:24, :78:49, :83:24, src/main/scala/chext/elastic/Buffer.scala:131:30
     .io_enq_bits_len
       (addressPhase_rGenerating
          ? (_addressPhase_T_1 ? addressPhase_rRemaining[3:0] - 4'h1 : 4'hF)
          : _addressPhase_T_2
              ? _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length[3:0] - 4'h1
-             : 4'hF),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :57:29, :58:{29,50}, :64:{23,37}, :73:23, :78:{28,49}, :84:{23,36}, :93:23, src/main/scala/chext/elastic/Buffer.scala:131:30
-    .io_enq_bits_size  (3'h5),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-    .io_enq_bits_burst (2'h1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:54:21
+             : 4'hF),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :57:29, :58:{29,50}, :64:{23,37}, :73:23, :78:{28,49}, :84:{23,36}, :93:23, src/main/scala/chext/elastic/Buffer.scala:131:30
+    .io_enq_bits_size  (3'h5),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+    .io_enq_bits_burst (2'h1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:54:21
     .io_deq_ready      (m_axi_ar_ready),
     .io_deq_valid      (m_axi_ar_valid),
     .io_deq_bits_addr  (m_axi_ar_bits_addr),
@@ -506,10 +506,10 @@ module ReadStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compone
     .io_deq_bits_size  (m_axi_ar_bits_size),
     .io_deq_bits_burst (m_axi_ar_bits_burst)
   );
-  assign m_axi_r_ready = sinkData_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-  assign sourceTask_ready = sourceTask_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7, src/main/scala/chext/elastic/Arrival.scala:65:28
-  assign sinkData_valid = m_axi_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
-  assign sinkData_bits = m_axi_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+  assign m_axi_r_ready = sinkData_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+  assign sourceTask_ready = sourceTask_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7, src/main/scala/chext/elastic/Arrival.scala:65:28
+  assign sinkData_valid = m_axi_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
+  assign sinkData_bits = m_axi_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:127:7
 endmodule
 
 // VCS coverage exclude_file
@@ -721,26 +721,26 @@ module Queue2_DataLast(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_bits_last = _ram_ext_R0_data[256];	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :256:91
 endmodule
 
-module ReadStreamWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+module ReadStreamWithLast(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
   input          clock,	// <stdin>:5320:11
                  reset,	// <stdin>:5321:11
-                 m_axi_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  output         m_axi_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  output [29:0]  m_axi_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  output [3:0]   m_axi_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  output [2:0]   m_axi_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  output [1:0]   m_axi_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  output         m_axi_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  input          m_axi_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  input  [255:0] m_axi_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
-  output         sourceTask_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
-  input          sourceTask_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
-  input  [63:0]  sourceTask_bits_address,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
-                 sourceTask_bits_length,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
-  input          sinkData_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
-  output         sinkData_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
-  output [255:0] sinkData_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
-  output         sinkData_bits_last	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
+                 m_axi_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  output         m_axi_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  output [29:0]  m_axi_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  output [3:0]   m_axi_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  output [2:0]   m_axi_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  output [1:0]   m_axi_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  output         m_axi_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  input          m_axi_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  input  [255:0] m_axi_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:168:17
+  output         sourceTask_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
+  input          sourceTask_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
+  input  [63:0]  sourceTask_bits_address,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
+                 sourceTask_bits_length,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:170:22
+  input          sinkData_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
+  output         sinkData_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
+  output [255:0] sinkData_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
+  output         sinkData_bits_last	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:171:20
 );
 
   wire        _fork0_eagerFork_result_valid_T_2;	// src/main/scala/chext/elastic/Fork.scala:79:41
@@ -750,69 +750,69 @@ module ReadStreamWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex
   wire        _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire [63:0] _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire [63:0] _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire        _qLength_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
-  wire        _qLength_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
-  wire [63:0] _qLength_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
+  wire        _qLength_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
+  wire        _qLength_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
+  wire [63:0] _qLength_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
   wire        sourceTask_ready_0 =
     _filtering_arrival_sinkBuffered__sinkBuffer_io_enq_ready & sourceTask_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  reg         addressPhase_rGenerating;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
-  reg  [63:0] addressPhase_rRemaining;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
-  reg  [63:0] addressPhase_rAddress;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29
+  reg         addressPhase_rGenerating;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
+  reg  [63:0] addressPhase_rRemaining;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
+  reg  [63:0] addressPhase_rAddress;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29
   wire        _addressPhase_T =
     _addressPhase_sinkBuffered__sinkBuffer_io_enq_ready
     & _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_valid
     & _fork0_eagerFork_result_valid_T_2;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:79:41
-  wire        _addressPhase_T_1 = addressPhase_rRemaining < 64'h11;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :58:29
+  wire        _addressPhase_T_1 = addressPhase_rRemaining < 64'h11;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :58:29
   wire        _addressPhase_T_2 =
-    _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length < 64'h11;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29, :78:28, src/main/scala/chext/elastic/Buffer.scala:131:30
+    _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length < 64'h11;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29, :78:28, src/main/scala/chext/elastic/Buffer.scala:131:30
   reg         fork0_eagerFork_regs_0;	// src/main/scala/chext/elastic/Fork.scala:75:25
   reg         fork0_eagerFork_regs_1;	// src/main/scala/chext/elastic/Fork.scala:75:25
   assign _fork0_eagerFork_result_valid_T_2 = ~fork0_eagerFork_regs_1;	// src/main/scala/chext/elastic/Fork.scala:75:25, :79:41
   wire        fork0_eagerFork_rvTask0_ready_qual1_0 =
-    _qLength_io_enq_ready | fork0_eagerFork_regs_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
+    _qLength_io_enq_ready | fork0_eagerFork_regs_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
   wire        fork0_eagerFork_rvTask0_ready_qual1_1 =
     _addressPhase_T & (addressPhase_rGenerating ? _addressPhase_T_1 : _addressPhase_T_2)
-    | fork0_eagerFork_regs_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :57:29, :58:{29,50}, :78:{28,49}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
+    | fork0_eagerFork_regs_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :57:29, :58:{29,50}, :78:{28,49}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
   wire        rvTask0_ready =
     fork0_eagerFork_rvTask0_ready_qual1_0 & fork0_eagerFork_rvTask0_ready_qual1_1;	// src/main/scala/chext/elastic/Fork.scala:85:22, :87:23
-  reg  [63:0] dataPhase_rReceived;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:192:28
+  reg  [63:0] dataPhase_rReceived;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:192:28
   wire        _dataPhase_T =
     _dataPhase_sinkBuffered__sinkBuffer_io_enq_ready & m_axi_r_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire        _dataPhase_T_3 = dataPhase_rReceived == _qLength_io_deq_bits - 64'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, :192:28, :199:{26,51}
-  wire        _GEN = _dataPhase_T & _qLength_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, :198:36, :199:59, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
-  wire        m_axi_r_ready_0 = _dataPhase_T & _qLength_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, :198:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  wire        _dataPhase_T_3 = dataPhase_rReceived == _qLength_io_deq_bits - 64'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, :192:28, :199:{26,51}
+  wire        _GEN = _dataPhase_T & _qLength_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, :198:36, :199:59, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
+  wire        m_axi_r_ready_0 = _dataPhase_T & _qLength_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31, :198:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
   always @(posedge clock) begin	// <stdin>:5320:11
     if (reset) begin	// <stdin>:5320:11
-      addressPhase_rGenerating <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, src/main/scala/chext/elastic/Arrival.scala:35:18
-      addressPhase_rRemaining <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
-      addressPhase_rAddress <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
+      addressPhase_rGenerating <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, src/main/scala/chext/elastic/Arrival.scala:35:18
+      addressPhase_rRemaining <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
+      addressPhase_rAddress <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
       fork0_eagerFork_regs_0 <= 1'h0;	// src/main/scala/chext/elastic/Arrival.scala:35:18, src/main/scala/chext/elastic/Fork.scala:75:25
       fork0_eagerFork_regs_1 <= 1'h0;	// src/main/scala/chext/elastic/Arrival.scala:35:18, src/main/scala/chext/elastic/Fork.scala:75:25
-      dataPhase_rReceived <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :192:28
+      dataPhase_rReceived <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :192:28
     end
     else begin	// <stdin>:5320:11
       if (_addressPhase_T) begin	// src/main/scala/chext/elastic/Arrival.scala:65:28
-        if (addressPhase_rGenerating) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
-          addressPhase_rGenerating <= ~_addressPhase_T_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :58:{29,50}, :59:27, :68:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
-          if (_addressPhase_T_1) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
-            addressPhase_rRemaining <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
-            addressPhase_rAddress <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
+        if (addressPhase_rGenerating) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
+          addressPhase_rGenerating <= ~_addressPhase_T_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :58:{29,50}, :59:27, :68:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
+          if (_addressPhase_T_1) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
+            addressPhase_rRemaining <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31
+            addressPhase_rAddress <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29
           end
-          else begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
-            addressPhase_rRemaining <= addressPhase_rRemaining - 64'h10;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :69:40
-            addressPhase_rAddress <= addressPhase_rAddress + 64'h200;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :70:36
+          else begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:58:29
+            addressPhase_rRemaining <= addressPhase_rRemaining - 64'h10;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :69:40
+            addressPhase_rAddress <= addressPhase_rAddress + 64'h200;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :70:36
           end
         end
-        else begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
-          addressPhase_rGenerating <= ~_addressPhase_T_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :78:{28,49}, :79:27, :88:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
+        else begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32
+          addressPhase_rGenerating <= ~_addressPhase_T_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :78:{28,49}, :79:27, :88:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
           addressPhase_rRemaining <=
             _addressPhase_T_2
               ? 64'h0
-              : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length - 64'h10;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :78:{28,49}, :80:26, :89:{26,39}, src/main/scala/chext/elastic/Buffer.scala:131:30
+              : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length - 64'h10;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :78:{28,49}, :80:26, :89:{26,39}, src/main/scala/chext/elastic/Buffer.scala:131:30
           addressPhase_rAddress <=
             _addressPhase_T_2
               ? 64'h0
-              : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address + 64'h200;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :70:36, :78:{28,49}, :81:24, :90:{24,38}, src/main/scala/chext/elastic/Buffer.scala:131:30
+              : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address + 64'h200;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :70:36, :78:{28,49}, :81:24, :90:{24,38}, src/main/scala/chext/elastic/Buffer.scala:131:30
         end
       end
       fork0_eagerFork_regs_0 <=
@@ -821,40 +821,40 @@ module ReadStreamWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex
       fork0_eagerFork_regs_1 <=
         fork0_eagerFork_rvTask0_ready_qual1_1
         & _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_valid & ~rvTask0_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22, :87:23, :92:{54,57}
-      if (_GEN) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:198:36, :199:59, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
-        if (_dataPhase_T_3)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:199:26
-          dataPhase_rReceived <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :192:28
-        else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:199:26
-          dataPhase_rReceived <= dataPhase_rReceived + 64'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:64:37, :192:28, :206:36
+      if (_GEN) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:198:36, :199:59, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+        if (_dataPhase_T_3)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:199:26
+          dataPhase_rReceived <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :192:28
+        else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:199:26
+          dataPhase_rReceived <= dataPhase_rReceived + 64'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:64:37, :192:28, :206:36
       end
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-      automatic logic [31:0] _RANDOM[0:6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+      automatic logic [31:0] _RANDOM[0:6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
         for (logic [2:0] i = 3'h0; i < 3'h7; i += 3'h1) begin
-          _RANDOM[i] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-        addressPhase_rGenerating = _RANDOM[3'h0][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :161:7
-        addressPhase_rRemaining = {_RANDOM[3'h0][31:1], _RANDOM[3'h1], _RANDOM[3'h2][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :161:7
-        addressPhase_rAddress = {_RANDOM[3'h2][31:1], _RANDOM[3'h3], _RANDOM[3'h4][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :161:7
-        fork0_eagerFork_regs_0 = _RANDOM[3'h4][1];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :161:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        fork0_eagerFork_regs_1 = _RANDOM[3'h4][2];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :161:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        dataPhase_rReceived = {_RANDOM[3'h4][31:3], _RANDOM[3'h5], _RANDOM[3'h6][2:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :161:7, :192:28
+          _RANDOM[i] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+        addressPhase_rGenerating = _RANDOM[3'h0][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :161:7
+        addressPhase_rRemaining = {_RANDOM[3'h0][31:1], _RANDOM[3'h1], _RANDOM[3'h2][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :161:7
+        addressPhase_rAddress = {_RANDOM[3'h2][31:1], _RANDOM[3'h3], _RANDOM[3'h4][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:46:31, :47:29, :161:7
+        fork0_eagerFork_regs_0 = _RANDOM[3'h4][1];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :161:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        fork0_eagerFork_regs_1 = _RANDOM[3'h4][2];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :161:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        dataPhase_rReceived = {_RANDOM[3'h4][31:3], _RANDOM[3'h5], _RANDOM[3'h6][2:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:47:29, :161:7, :192:28
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Queue8_UInt64 qLength (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
+  Queue8_UInt64 qLength (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:174:31
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_qLength_io_enq_ready),
@@ -862,7 +862,7 @@ module ReadStreamWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex
       (_filtering_arrival_sinkBuffered__sinkBuffer_io_deq_valid
        & ~fork0_eagerFork_regs_0),	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :79:{38,41}
     .io_enq_bits  (_filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length),	// src/main/scala/chext/elastic/Buffer.scala:131:30
-    .io_deq_ready (_GEN & _dataPhase_T_3),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:198:36, :199:{26,59}, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+    .io_deq_ready (_GEN & _dataPhase_T_3),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:198:36, :199:{26,59}, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
     .io_deq_valid (_qLength_io_deq_valid),
     .io_deq_bits  (_qLength_io_deq_bits)
   );
@@ -870,7 +870,7 @@ module ReadStreamWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex
     .clock               (clock),
     .reset               (reset),
     .io_enq_ready        (_filtering_arrival_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid        (sourceTask_ready_0 & (|sourceTask_bits_length)),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:30:{26,33}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
+    .io_enq_valid        (sourceTask_ready_0 & (|sourceTask_bits_length)),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:30:{26,33}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
     .io_enq_bits_address (sourceTask_bits_address),
     .io_enq_bits_length  (sourceTask_bits_length),
     .io_deq_ready        (rvTask0_ready),	// src/main/scala/chext/elastic/Fork.scala:87:23
@@ -887,15 +887,15 @@ module ReadStreamWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex
     .io_enq_bits_addr
       (addressPhase_rGenerating
          ? addressPhase_rAddress[29:0]
-         : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address[29:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :47:29, :57:29, :58:50, :63:24, :78:49, :83:24, src/main/scala/chext/elastic/Buffer.scala:131:30
+         : _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_address[29:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :47:29, :57:29, :58:50, :63:24, :78:49, :83:24, src/main/scala/chext/elastic/Buffer.scala:131:30
     .io_enq_bits_len
       (addressPhase_rGenerating
          ? (_addressPhase_T_1 ? addressPhase_rRemaining[3:0] - 4'h1 : 4'hF)
          : _addressPhase_T_2
              ? _filtering_arrival_sinkBuffered__sinkBuffer_io_deq_bits_length[3:0] - 4'h1
-             : 4'hF),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :57:29, :58:{29,50}, :64:{23,37}, :73:23, :78:{28,49}, :84:{23,36}, :93:23, src/main/scala/chext/elastic/Buffer.scala:131:30
-    .io_enq_bits_size  (3'h5),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
-    .io_enq_bits_burst (2'h1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:54:21
+             : 4'hF),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:45:32, :46:31, :57:29, :58:{29,50}, :64:{23,37}, :73:23, :78:{28,49}, :84:{23,36}, :93:23, src/main/scala/chext/elastic/Buffer.scala:131:30
+    .io_enq_bits_size  (3'h5),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7
+    .io_enq_bits_burst (2'h1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:54:21
     .io_deq_ready      (m_axi_ar_ready),
     .io_deq_valid      (m_axi_ar_valid),
     .io_deq_bits_addr  (m_axi_ar_bits_addr),
@@ -907,16 +907,16 @@ module ReadStreamWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (_dataPhase_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid     (m_axi_r_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:198:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+    .io_enq_valid     (m_axi_r_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:198:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
     .io_enq_bits_data (m_axi_r_bits_data),
-    .io_enq_bits_last (_dataPhase_T_3),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:199:26
+    .io_enq_bits_last (_dataPhase_T_3),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:199:26
     .io_deq_ready     (sinkData_ready),
     .io_deq_valid     (sinkData_valid),
     .io_deq_bits_data (sinkData_bits_data),
     .io_deq_bits_last (sinkData_bits_last)
   );
-  assign m_axi_r_ready = m_axi_r_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7, :198:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
-  assign sourceTask_ready = sourceTask_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7, src/main/scala/chext/elastic/Arrival.scala:65:28
+  assign m_axi_r_ready = m_axi_r_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7, :198:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+  assign sourceTask_ready = sourceTask_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/ReadStream.scala:161:7, src/main/scala/chext/elastic/Arrival.scala:65:28
 endmodule
 
 // VCS coverage exclude_file
@@ -1336,32 +1336,32 @@ module Queue2_UInt0(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_valid = ~empty;	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :261:25, :285:19
 endmodule
 
-module WriteStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+module WriteStream(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
   input          clock,	// <stdin>:6093:11
                  reset,	// <stdin>:6094:11
-                 m_axi_aw_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output         m_axi_aw_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output [29:0]  m_axi_aw_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output [3:0]   m_axi_aw_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output [2:0]   m_axi_aw_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output [1:0]   m_axi_aw_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  input          m_axi_w_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output         m_axi_w_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output [255:0] m_axi_w_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output [31:0]  m_axi_w_bits_strb,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output         m_axi_w_bits_last,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-                 m_axi_b_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  input          m_axi_b_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  input  [1:0]   m_axi_b_bits_resp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
-  output         sourceTask_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
-  input          sourceTask_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
-  input  [63:0]  sourceTask_bits_address,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
-                 sourceTask_bits_length,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
-  input          sinkDone_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:55:20
-  output         sinkDone_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:55:20
-                 sourceData_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:57:22
-  input          sourceData_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:57:22
-  input  [255:0] sourceData_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:57:22
+                 m_axi_aw_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output         m_axi_aw_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output [29:0]  m_axi_aw_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output [3:0]   m_axi_aw_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output [2:0]   m_axi_aw_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output [1:0]   m_axi_aw_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  input          m_axi_w_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output         m_axi_w_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output [255:0] m_axi_w_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output [31:0]  m_axi_w_bits_strb,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output         m_axi_w_bits_last,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+                 m_axi_b_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  input          m_axi_b_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  input  [1:0]   m_axi_b_bits_resp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:52:17
+  output         sourceTask_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
+  input          sourceTask_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
+  input  [63:0]  sourceTask_bits_address,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
+                 sourceTask_bits_length,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:54:22
+  input          sinkDone_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:55:20
+  output         sinkDone_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:55:20
+                 sourceData_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:57:22
+  input          sourceData_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:57:22
+  input  [255:0] sourceData_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:57:22
 );
 
   wire        _responsePhase_arrival0_sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
@@ -1371,26 +1371,26 @@ module WriteStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compon
   wire        _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire [63:0] _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_address;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire [63:0] _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire        _qLengthW_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
-  wire        _qLengthW_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
-  wire [3:0]  _qLengthW_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
-  wire        _qLengthB_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
-  wire        _qLengthB_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
-  wire [63:0] _qLengthB_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
+  wire        _qLengthW_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
+  wire        _qLengthW_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
+  wire [3:0]  _qLengthW_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
+  wire        _qLengthB_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
+  wire        _qLengthB_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
+  wire [63:0] _qLengthB_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
   wire        sourceTask_ready_0 =
     _filtering_arrival0_sinkBuffered__sinkBuffer_io_enq_ready & sourceTask_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  reg         addressPhase_rGenerating;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30
-  reg  [63:0] addressPhase_rRemaining;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29
-  reg  [63:0] addressPhase_rAddress;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:86:27
+  reg         addressPhase_rGenerating;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30
+  reg  [63:0] addressPhase_rRemaining;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29
+  reg  [63:0] addressPhase_rAddress;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:86:27
   wire        _addressPhase_arrival0_T =
     _addressPhase_arrival0_sinkBuffered__sinkBuffer_io_enq_ready
     & _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
   wire        _addressPhase_arrival0_T_1 =
-    _qLengthB_io_enq_ready & _qLengthW_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32, :63:32, :99:36
-  wire        _addressPhase_arrival0_T_2 = addressPhase_rRemaining < 64'h11;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :101:29
+    _qLengthB_io_enq_ready & _qLengthW_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32, :63:32, :99:36
+  wire        _addressPhase_arrival0_T_2 = addressPhase_rRemaining < 64'h11;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :101:29
   wire        _addressPhase_arrival0_T_3 =
-    _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length < 64'h11;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:101:29, :121:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire        _GEN = _addressPhase_arrival0_T & _addressPhase_arrival0_T_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:{36,62}, :100:29, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
+    _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length < 64'h11;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:101:29, :121:28, src/main/scala/chext/elastic/Buffer.scala:131:30
+  wire        _GEN = _addressPhase_arrival0_T & _addressPhase_arrival0_T_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:{36,62}, :100:29, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
   wire [3:0]  _GEN_0 =
     _addressPhase_arrival0_T_1
       ? (addressPhase_rGenerating
@@ -1399,113 +1399,113 @@ module WriteStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compon
                ? _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length[3:0]
                  - 4'h1
                : 4'hF)
-      : 4'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :85:29, :93:{13,28}, :99:{36,62}, :100:29, :101:{29,50}, :107:{23,37}, :116:23, :121:{28,49}, :126:{23,36}, :135:23, src/main/scala/chext/elastic/Buffer.scala:131:30
+      : 4'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :85:29, :93:{13,28}, :99:{36,62}, :100:29, :101:{29,50}, :107:{23,37}, :116:23, :121:{28,49}, :126:{23,36}, :135:23, src/main/scala/chext/elastic/Buffer.scala:131:30
   wire [63:0] _addressPhase_arrival0_T_4 =
-    _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length + 64'hF;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:143:44, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire        _GEN_1 = _addressPhase_arrival0_T & _addressPhase_arrival0_T_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:99:{36,62}, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:67:20
-  reg  [3:0]  dataPhase_rReceived;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:157:28
+    _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length + 64'hF;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:143:44, src/main/scala/chext/elastic/Buffer.scala:131:30
+  wire        _GEN_1 = _addressPhase_arrival0_T & _addressPhase_arrival0_T_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:99:{36,62}, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:67:20
+  reg  [3:0]  dataPhase_rReceived;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:157:28
   wire        _dataPhase_arrival0_T =
     _dataPhase_arrival0_sinkBuffered__sinkBuffer_io_enq_ready & sourceData_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
   wire        _dataPhase_arrival0_sinkBuffer_io_enq_bits_last_T =
-    dataPhase_rReceived == _qLengthW_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32, :157:28, :164:33
-  wire        _GEN_2 = _dataPhase_arrival0_T & _qLengthW_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32, :161:37, :167:26, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
-  wire        sourceData_ready_0 = _dataPhase_arrival0_T & _qLengthW_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32, :161:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
-  reg  [63:0] responsePhase_rReceived;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:185:28
+    dataPhase_rReceived == _qLengthW_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32, :157:28, :164:33
+  wire        _GEN_2 = _dataPhase_arrival0_T & _qLengthW_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32, :161:37, :167:26, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
+  wire        sourceData_ready_0 = _dataPhase_arrival0_T & _qLengthW_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32, :161:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  reg  [63:0] responsePhase_rReceived;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:185:28
   wire        _responsePhase_arrival0_T =
     _responsePhase_arrival0_sinkBuffered__sinkBuffer_io_enq_ready & m_axi_b_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
   wire        _responsePhase_arrival0_T_1 =
-    responsePhase_rReceived == _qLengthB_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32, :185:28, :192:26
-  wire        _GEN_3 = _responsePhase_arrival0_T & _qLengthB_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32, :191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
-  wire        _GEN_4 = _GEN_3 & _responsePhase_arrival0_T_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:{26,52}, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+    responsePhase_rReceived == _qLengthB_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32, :185:28, :192:26
+  wire        _GEN_3 = _responsePhase_arrival0_T & _qLengthB_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32, :191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
+  wire        _GEN_4 = _GEN_3 & _responsePhase_arrival0_T_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:{26,52}, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
   always @(posedge clock) begin	// <stdin>:6093:11
     if (reset) begin	// <stdin>:6093:11
-      addressPhase_rGenerating <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, src/main/scala/chext/elastic/Arrival.scala:35:18
-      addressPhase_rRemaining <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29
-      addressPhase_rAddress <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :86:27
-      dataPhase_rReceived <= 4'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:28, :157:28
-      responsePhase_rReceived <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :185:28
+      addressPhase_rGenerating <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, src/main/scala/chext/elastic/Arrival.scala:35:18
+      addressPhase_rRemaining <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29
+      addressPhase_rAddress <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :86:27
+      dataPhase_rReceived <= 4'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:28, :157:28
+      responsePhase_rReceived <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :185:28
     end
     else begin	// <stdin>:6093:11
-      if (_GEN) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:62, :100:29, src/main/scala/chext/elastic/Arrival.scala:65:45
-        if (addressPhase_rGenerating) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30
-          addressPhase_rGenerating <= ~_addressPhase_arrival0_T_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :101:{29,50}, :102:27, :111:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
-          if (_addressPhase_arrival0_T_2) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:101:29
-            addressPhase_rRemaining <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29
-            addressPhase_rAddress <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :86:27
+      if (_GEN) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:62, :100:29, src/main/scala/chext/elastic/Arrival.scala:65:45
+        if (addressPhase_rGenerating) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30
+          addressPhase_rGenerating <= ~_addressPhase_arrival0_T_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :101:{29,50}, :102:27, :111:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
+          if (_addressPhase_arrival0_T_2) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:101:29
+            addressPhase_rRemaining <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29
+            addressPhase_rAddress <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :86:27
           end
-          else begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:101:29
-            addressPhase_rRemaining <= addressPhase_rRemaining - 64'h10;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :112:40
-            addressPhase_rAddress <= addressPhase_rAddress + 64'h200;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:86:27, :113:36
+          else begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:101:29
+            addressPhase_rRemaining <= addressPhase_rRemaining - 64'h10;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :112:40
+            addressPhase_rAddress <= addressPhase_rAddress + 64'h200;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:86:27, :113:36
           end
         end
-        else begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30
-          addressPhase_rGenerating <= ~_addressPhase_arrival0_T_3;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :121:{28,49}, :122:27, :130:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
-          if (~_addressPhase_arrival0_T_3)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:121:28
+        else begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30
+          addressPhase_rGenerating <= ~_addressPhase_arrival0_T_3;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :121:{28,49}, :122:27, :130:27, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18
+          if (~_addressPhase_arrival0_T_3)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:121:28
             addressPhase_rRemaining <=
-              _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length - 64'h10;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :131:39, src/main/scala/chext/elastic/Buffer.scala:131:30
+              _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_length - 64'h10;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :131:39, src/main/scala/chext/elastic/Buffer.scala:131:30
           addressPhase_rAddress <=
             _addressPhase_arrival0_T_3
               ? 64'h0
               : _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_address
-                + 64'h200;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :86:27, :113:36, :121:{28,49}, :123:24, :132:{24,38}, src/main/scala/chext/elastic/Buffer.scala:131:30
+                + 64'h200;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :86:27, :113:36, :121:{28,49}, :123:24, :132:{24,38}, src/main/scala/chext/elastic/Buffer.scala:131:30
         end
       end
-      if (_GEN_2) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:161:37, :167:26, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
-        if (_dataPhase_arrival0_sinkBuffer_io_enq_bits_last_T)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:164:33
-          dataPhase_rReceived <= 4'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:28, :157:28
-        else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:164:33
-          dataPhase_rReceived <= dataPhase_rReceived + 4'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:157:28, :171:36
+      if (_GEN_2) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:161:37, :167:26, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+        if (_dataPhase_arrival0_sinkBuffer_io_enq_bits_last_T)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:164:33
+          dataPhase_rReceived <= 4'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:28, :157:28
+        else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:164:33
+          dataPhase_rReceived <= dataPhase_rReceived + 4'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:157:28, :171:36
       end
-      if (_GEN_3) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
-        if (_responsePhase_arrival0_T_1)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:192:26
-          responsePhase_rReceived <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :185:28
-        else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:192:26
-          responsePhase_rReceived <= responsePhase_rReceived + 64'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:107:37, :185:28, :198:36
+      if (_GEN_3) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+        if (_responsePhase_arrival0_T_1)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:192:26
+          responsePhase_rReceived <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:85:29, :185:28
+        else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:192:26
+          responsePhase_rReceived <= responsePhase_rReceived + 64'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:107:37, :185:28, :198:36
       end
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-      automatic logic [31:0] _RANDOM[0:6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+      automatic logic [31:0] _RANDOM[0:6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
         for (logic [2:0] i = 3'h0; i < 3'h7; i += 3'h1) begin
-          _RANDOM[i] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-        addressPhase_rGenerating = _RANDOM[3'h0][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :84:30
-        addressPhase_rRemaining = {_RANDOM[3'h0][31:1], _RANDOM[3'h1], _RANDOM[3'h2][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :84:30, :85:29
-        addressPhase_rAddress = {_RANDOM[3'h2][31:1], _RANDOM[3'h3], _RANDOM[3'h4][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :85:29, :86:27
-        dataPhase_rReceived = _RANDOM[3'h4][4:1];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :86:27, :157:28
+          _RANDOM[i] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+        addressPhase_rGenerating = _RANDOM[3'h0][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :84:30
+        addressPhase_rRemaining = {_RANDOM[3'h0][31:1], _RANDOM[3'h1], _RANDOM[3'h2][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :84:30, :85:29
+        addressPhase_rAddress = {_RANDOM[3'h2][31:1], _RANDOM[3'h3], _RANDOM[3'h4][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :85:29, :86:27
+        dataPhase_rReceived = _RANDOM[3'h4][4:1];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :86:27, :157:28
         responsePhase_rReceived =
-          {_RANDOM[3'h4][31:5], _RANDOM[3'h5], _RANDOM[3'h6][4:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :86:27, :185:28
+          {_RANDOM[3'h4][31:5], _RANDOM[3'h5], _RANDOM[3'h6][4:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :86:27, :185:28
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Queue16_UInt64 qLengthB (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
+  Queue16_UInt64 qLengthB (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:60:32
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_qLengthB_io_enq_ready),
-    .io_enq_valid (_GEN & ~addressPhase_rGenerating),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:62, :100:29, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18, :65:45, src/main/scala/chisel3/util/Decoupled.scala:58:20, :67:20
-    .io_enq_bits  ({4'h0, _addressPhase_arrival0_T_4[63:4] - 60'h1}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:28, :143:{44,105}, src/main/scala/chext/util/BitOps.scala:82:10, src/main/scala/chisel3/util/Decoupled.scala:59:19
-    .io_deq_ready (_GEN_4),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+    .io_enq_valid (_GEN & ~addressPhase_rGenerating),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:62, :100:29, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18, :65:45, src/main/scala/chisel3/util/Decoupled.scala:58:20, :67:20
+    .io_enq_bits  ({4'h0, _addressPhase_arrival0_T_4[63:4] - 60'h1}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:28, :143:{44,105}, src/main/scala/chext/util/BitOps.scala:82:10, src/main/scala/chisel3/util/Decoupled.scala:59:19
+    .io_deq_ready (_GEN_4),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
     .io_deq_valid (_qLengthB_io_deq_valid),
     .io_deq_bits  (_qLengthB_io_deq_bits)
   );
-  Queue16_UInt4 qLengthW (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
+  Queue16_UInt4 qLengthW (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:63:32
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_qLengthW_io_enq_ready),
-    .io_enq_valid (_GEN_1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:99:62, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
-    .io_enq_bits  (_GEN_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:13, :99:62, :100:29
-    .io_deq_ready (_GEN_2 & _dataPhase_arrival0_sinkBuffer_io_enq_bits_last_T),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:161:37, :164:33, :167:26, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+    .io_enq_valid (_GEN_1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:99:62, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
+    .io_enq_bits  (_GEN_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:13, :99:62, :100:29
+    .io_deq_ready (_GEN_2 & _dataPhase_arrival0_sinkBuffer_io_enq_bits_last_T),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:161:37, :164:33, :167:26, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
     .io_deq_valid (_qLengthW_io_deq_valid),
     .io_deq_bits  (_qLengthW_io_deq_bits)
   );
@@ -1513,14 +1513,14 @@ module WriteStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compon
     .clock               (clock),
     .reset               (reset),
     .io_enq_ready        (_filtering_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid        (sourceTask_ready_0 & (|sourceTask_bits_length)),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:72:{24,31}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
+    .io_enq_valid        (sourceTask_ready_0 & (|sourceTask_bits_length)),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:72:{24,31}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
     .io_enq_bits_address (sourceTask_bits_address),
     .io_enq_bits_length  (sourceTask_bits_length),
     .io_deq_ready
       (_GEN
        & (addressPhase_rGenerating
             ? _addressPhase_arrival0_T_2
-            : _addressPhase_arrival0_T_3)),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:62, :100:29, :101:{29,50}, :121:{28,49}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+            : _addressPhase_arrival0_T_3)),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :99:62, :100:29, :101:{29,50}, :121:{28,49}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
     .io_deq_valid        (_filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_valid),
     .io_deq_bits_address
       (_filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_address),
@@ -1530,14 +1530,14 @@ module WriteStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compon
     .clock             (clock),
     .reset             (reset),
     .io_enq_ready      (_addressPhase_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid      (_GEN_1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:99:62, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
+    .io_enq_valid      (_GEN_1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:99:62, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
     .io_enq_bits_addr
       (_addressPhase_arrival0_T_1
          ? (addressPhase_rGenerating
               ? addressPhase_rAddress[29:0]
               : _filtering_arrival0_sinkBuffered__sinkBuffer_io_deq_bits_address[29:0])
-         : 30'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :86:27, :93:{13,28}, :99:{36,62}, :100:29, :101:50, :106:24, :121:49, :125:24, src/main/scala/chext/elastic/Buffer.scala:131:30
-    .io_enq_bits_len   (_GEN_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:13, :99:62, :100:29
+         : 30'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:84:30, :86:27, :93:{13,28}, :99:{36,62}, :100:29, :101:50, :106:24, :121:49, :125:24, src/main/scala/chext/elastic/Buffer.scala:131:30
+    .io_enq_bits_len   (_GEN_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:93:13, :99:62, :100:29
     .io_deq_ready      (m_axi_aw_ready),
     .io_deq_valid      (m_axi_aw_valid),
     .io_deq_bits_addr  (m_axi_aw_bits_addr),
@@ -1549,10 +1549,10 @@ module WriteStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compon
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (_dataPhase_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid     (sourceData_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:161:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+    .io_enq_valid     (sourceData_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:161:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
     .io_enq_bits_data (sourceData_bits),
-    .io_enq_bits_strb (32'hFFFFFFFF),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:163:51
-    .io_enq_bits_last (_dataPhase_arrival0_sinkBuffer_io_enq_bits_last_T),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:164:33
+    .io_enq_bits_strb (32'hFFFFFFFF),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:163:51
+    .io_enq_bits_last (_dataPhase_arrival0_sinkBuffer_io_enq_bits_last_T),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:164:33
     .io_deq_ready     (m_axi_w_ready),
     .io_deq_valid     (m_axi_w_valid),
     .io_deq_bits_data (m_axi_w_bits_data),
@@ -1563,51 +1563,51 @@ module WriteStream(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/compon
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_responsePhase_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid (_GEN_4),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
+    .io_enq_valid (_GEN_4),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:191:37, :192:52, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:83:20
     .io_deq_ready (sinkDone_ready),
     .io_deq_valid (sinkDone_valid)
   );
-  assign m_axi_b_ready = _responsePhase_arrival0_T & _qLengthB_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :60:32, :191:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
-  assign sourceTask_ready = sourceTask_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, src/main/scala/chext/elastic/Arrival.scala:65:28
-  assign sourceData_ready = sourceData_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :161:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+  assign m_axi_b_ready = _responsePhase_arrival0_T & _qLengthB_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :60:32, :191:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  assign sourceTask_ready = sourceTask_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, src/main/scala/chext/elastic/Arrival.scala:65:28
+  assign sourceData_ready = sourceData_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/WriteStream.scala:45:7, :161:37, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
 endmodule
 
-module CounterEx(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+module CounterEx(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
   input        clock,	// <stdin>:6319:11, :6604:11, :6889:11
                reset,	// <stdin>:6320:11, :6605:11, :6890:11
-  input  [5:0] io_up,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
-               io_down,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
-  output [5:0] io_left	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
+  input  [5:0] io_up,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
+               io_down,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
+  output [5:0] io_left	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
 );
 
-  reg [5:0] rLeft;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
+  reg [5:0] rLeft;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
   always @(posedge clock) begin	// <stdin>:6319:11, :6604:11, :6889:11
     if (reset)	// <stdin>:6319:11, :6604:11, :6889:11
-      rLeft <= 6'h20;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
-    else if (io_up > io_down)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
-      rLeft <= rLeft - (io_up - io_down);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :28:29, :29:20
-    else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
-      rLeft <= rLeft + io_down - io_up;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :31:31, :32:20
+      rLeft <= 6'h20;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
+    else if (io_up > io_down)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
+      rLeft <= rLeft - (io_up - io_down);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :28:29, :29:20
+    else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
+      rLeft <= rLeft + io_down - io_up;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :31:31, :32:20
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-        rLeft = _RANDOM[/*Zero width*/ 1'b0][11:6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+        rLeft = _RANDOM[/*Zero width*/ 1'b0][11:6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign io_left = rLeft;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
+  assign io_left = rLeft;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
 endmodule
 
 // VCS coverage exclude_file
@@ -1824,29 +1824,29 @@ module Queue2_ReadDataChannel(	// src/main/scala/chisel3/util/Decoupled.scala:24
   assign io_deq_valid = ~empty;	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :261:25, :285:19
 endmodule
 
-module ResponseBuffer(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7
+module ResponseBuffer(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7
   input          clock,	// <stdin>:6505:11, :6790:11, :7075:11
                  reset,	// <stdin>:6506:11, :6791:11, :7076:11
-  output         s_axi_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input          s_axi_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [29:0]  s_axi_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [3:0]   s_axi_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [2:0]   s_axi_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [1:0]   s_axi_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input          s_axi_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  output         s_axi_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  output [255:0] s_axi_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input          m_axi_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output         m_axi_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [29:0]  m_axi_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [3:0]   m_axi_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [2:0]   m_axi_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [1:0]   m_axi_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output         m_axi_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input          m_axi_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input  [255:0] m_axi_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input  [1:0]   m_axi_r_bits_resp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input          m_axi_r_bits_last	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output         s_axi_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input          s_axi_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [29:0]  s_axi_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [3:0]   s_axi_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [2:0]   s_axi_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [1:0]   s_axi_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input          s_axi_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  output         s_axi_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  output [255:0] s_axi_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input          m_axi_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output         m_axi_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [29:0]  m_axi_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [3:0]   m_axi_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [2:0]   m_axi_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [1:0]   m_axi_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output         m_axi_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input          m_axi_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input  [255:0] m_axi_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input  [1:0]   m_axi_r_bits_resp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input          m_axi_r_bits_last	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
 );
 
   wire         _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
@@ -1855,27 +1855,27 @@ module ResponseBuffer(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amb
   wire [1:0]   _read_arrival1_sourceBuffer_io_deq_bits_resp;	// src/main/scala/chext/elastic/Buffer.scala:93:32
   wire         _read_arrival1_sourceBuffer_io_deq_bits_last;	// src/main/scala/chext/elastic/Buffer.scala:93:32
   wire         _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire [5:0]   _read_ctrR_io_left;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
+  wire [5:0]   _read_ctrR_io_left;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
   wire         _read_arrival0_T =
     _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready & s_axi_ar_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire [5:0]   _GEN = {1'h0, {1'h0, s_axi_ar_bits_len} + 5'h1};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :74:26
-  wire         _read_arrival0_T_1 = _read_ctrR_io_left >= _GEN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :66:22
-  wire         s_axi_ar_ready_0 = _read_arrival0_T & _read_arrival0_T_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  wire [5:0]   _GEN = {1'h0, {1'h0, s_axi_ar_bits_len} + 5'h1};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :74:26
+  wire         _read_arrival0_T_1 = _read_ctrR_io_left >= _GEN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :66:22
+  wire         s_axi_ar_ready_0 = _read_arrival0_T & _read_arrival0_T_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
   wire         read_arrival1_result_ready =
     _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready
     & _read_arrival1_sourceBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:93:32, :131:30
-  CounterEx read_ctrR (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
+  CounterEx read_ctrR (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
     .clock   (clock),
     .reset   (reset),
-    .io_up   (_read_arrival0_T & _read_arrival0_T_1 ? _GEN : 6'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :76:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
-    .io_down ({5'h0, read_arrival1_result_ready}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:42:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
+    .io_up   (_read_arrival0_T & _read_arrival0_T_1 ? _GEN : 6'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :76:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
+    .io_down ({5'h0, read_arrival1_result_ready}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:42:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
     .io_left (_read_ctrR_io_left)
   );
   Queue2_ReadAddressChannel read_arrival0_sinkBuffered__sinkBuffer (	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .clock             (clock),
     .reset             (reset),
     .io_enq_ready      (_read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid      (s_axi_ar_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+    .io_enq_valid      (s_axi_ar_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
     .io_enq_bits_addr  (s_axi_ar_bits_addr),
     .io_enq_bits_len   (s_axi_ar_bits_len),
     .io_enq_bits_size  (s_axi_ar_bits_size),
@@ -1913,7 +1913,7 @@ module ResponseBuffer(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amb
     .io_deq_valid     (s_axi_r_valid),
     .io_deq_bits_data (s_axi_r_bits_data)
   );
-  assign s_axi_ar_ready = s_axi_ar_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+  assign s_axi_ar_ready = s_axi_ar_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
 endmodule
 
 // VCS coverage exclude_file
@@ -4100,49 +4100,49 @@ module Queue2_UInt32(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_valid = ~empty;	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :261:25, :285:19
 endmodule
 
-module Downsize(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+module Downsize(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
   input          clock,	// <stdin>:9675:11, :9897:11
                  reset,	// <stdin>:9676:11, :9898:11
-  output         source_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:26:18
-  input          source_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:26:18
-  input  [255:0] source_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:26:18
-  input          sink_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:27:16
-  output         sink_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:27:16
-  output [31:0]  sink_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:27:16
+  output         source_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:26:18
+  input          source_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:26:18
+  input  [255:0] source_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:26:18
+  input          sink_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:27:16
+  output         sink_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:27:16
+  output [31:0]  sink_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:27:16
 );
 
   wire        _sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire [31:0] _steerRight_dataOut;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:29:34
-  reg  [2:0]  offset;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31
-  wire [2:0]  _nextOffset_T = offset + 3'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31, :31:35
+  wire [31:0] _steerRight_dataOut;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:29:34
+  reg  [2:0]  offset;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31
+  wire [2:0]  _nextOffset_T = offset + 3'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31, :31:35
   wire        _GEN = _sinkBuffered__sinkBuffer_io_enq_ready & source_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
   always @(posedge clock) begin	// <stdin>:9675:11, :9897:11
     if (reset)	// <stdin>:9675:11, :9897:11
-      offset <= 3'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31
+      offset <= 3'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31
     else if (_GEN)	// src/main/scala/chext/elastic/Arrival.scala:65:28
-      offset <= _nextOffset_T;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31, :31:35
+      offset <= _nextOffset_T;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31, :31:35
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-        offset = _RANDOM[/*Zero width*/ 1'b0][2:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7, :30:31
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+        offset = _RANDOM[/*Zero width*/ 1'b0][2:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7, :30:31
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  SteerRight steerRight (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:29:34
+  SteerRight steerRight (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:29:34
     .dataIn   (source_bits),
-    .offsetIn (offset),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31
+    .offsetIn (offset),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:30:31
     .dataOut  (_steerRight_dataOut)
   );
   Queue2_UInt32 sinkBuffered__sinkBuffer (	// src/main/scala/chext/elastic/Buffer.scala:131:30
@@ -4150,12 +4150,12 @@ module Downsize(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/component
     .reset        (reset),
     .io_enq_ready (_sinkBuffered__sinkBuffer_io_enq_ready),
     .io_enq_valid (_GEN),	// src/main/scala/chext/elastic/Arrival.scala:65:28
-    .io_enq_bits  (_steerRight_dataOut),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:29:34
+    .io_enq_bits  (_steerRight_dataOut),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:29:34
     .io_deq_ready (sink_ready),
     .io_deq_valid (sink_valid),
     .io_deq_bits  (sink_bits)
   );
-  assign source_ready = _GEN & _nextOffset_T == 3'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7, :30:31, :31:35, :44:{23,32}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  assign source_ready = _GEN & _nextOffset_T == 3'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:20:7, :30:31, :31:35, :44:{23,32}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
 endmodule
 
 // VCS coverage exclude_file
@@ -4265,51 +4265,51 @@ module Queue2_DataLast_1(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_bits_last = _ram_ext_R0_data[32];	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :256:91
 endmodule
 
-module DownsizeWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+module DownsizeWithLast(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
   input          clock,	// <stdin>:9784:11
                  reset,	// <stdin>:9785:11
-  output         source_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
-  input          source_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
-  input  [255:0] source_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
-  input          source_bits_last,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
-                 sink_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
-  output         sink_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
-  output [31:0]  sink_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
-  output         sink_bits_last	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
+  output         source_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
+  input          source_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
+  input  [255:0] source_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
+  input          source_bits_last,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:57:18
+                 sink_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
+  output         sink_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
+  output [31:0]  sink_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
+  output         sink_bits_last	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:58:16
 );
 
   wire        _sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire [31:0] _steerRight_dataOut;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:60:34
-  reg  [2:0]  offset;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31
-  wire [2:0]  _nextOffset_T = offset + 3'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31, :62:35
+  wire [31:0] _steerRight_dataOut;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:60:34
+  reg  [2:0]  offset;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31
+  wire [2:0]  _nextOffset_T = offset + 3'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31, :62:35
   wire        _GEN = _sinkBuffered__sinkBuffer_io_enq_ready & source_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
   always @(posedge clock) begin	// <stdin>:9784:11
     if (reset)	// <stdin>:9784:11
-      offset <= 3'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31
+      offset <= 3'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31
     else if (_GEN)	// src/main/scala/chext/elastic/Arrival.scala:65:28
-      offset <= _nextOffset_T;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31, :62:35
+      offset <= _nextOffset_T;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31, :62:35
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-        offset = _RANDOM[/*Zero width*/ 1'b0][2:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7, :61:31
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+        offset = _RANDOM[/*Zero width*/ 1'b0][2:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7, :61:31
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  SteerRight steerRight (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:60:34
+  SteerRight steerRight (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:60:34
     .dataIn   (source_bits_data),
-    .offsetIn (offset),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31
+    .offsetIn (offset),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:61:31
     .dataOut  (_steerRight_dataOut)
   );
   Queue2_DataLast_1 sinkBuffered__sinkBuffer (	// src/main/scala/chext/elastic/Buffer.scala:131:30
@@ -4317,14 +4317,14 @@ module DownsizeWithLast(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/c
     .reset            (reset),
     .io_enq_ready     (_sinkBuffered__sinkBuffer_io_enq_ready),
     .io_enq_valid     (_GEN),	// src/main/scala/chext/elastic/Arrival.scala:65:28
-    .io_enq_bits_data (_steerRight_dataOut),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:60:34
-    .io_enq_bits_last (source_bits_last & ~(|_nextOffset_T)),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:62:35, :68:{25,40}, :76:23
+    .io_enq_bits_data (_steerRight_dataOut),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:60:34
+    .io_enq_bits_last (source_bits_last & ~(|_nextOffset_T)),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:62:35, :68:{25,40}, :76:23
     .io_deq_ready     (sink_ready),
     .io_deq_valid     (sink_valid),
     .io_deq_bits_data (sink_bits_data),
     .io_deq_bits_last (sink_bits_last)
   );
-  assign source_ready = _GEN & ~(|_nextOffset_T);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7, :62:35, :76:{23,32}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  assign source_ready = _GEN & ~(|_nextOffset_T);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/stream/Downscale.scala:51:7, :62:35, :76:{23,32}, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
 endmodule
 
 // VCS coverage exclude_file
@@ -4456,63 +4456,63 @@ module Queue2_SpmvTask(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_bits_numRows = _ram_ext_R0_data[447:384];	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :256:91
 endmodule
 
-module MulFullRawFN(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7
-  input         io_a_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_a_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_a_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_a_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  input  [9:0]  io_a_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  input  [24:0] io_a_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  input         io_b_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_b_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_b_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_b_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  input  [9:0]  io_b_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  input  [24:0] io_b_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  output        io_invalidExc,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_rawOut_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_rawOut_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_rawOut_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-                io_rawOut_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  output [9:0]  io_rawOut_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
-  output [47:0] io_rawOut_sig	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+module MulFullRawFN(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7
+  input         io_a_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_a_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_a_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_a_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  input  [9:0]  io_a_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  input  [24:0] io_a_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  input         io_b_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_b_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_b_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_b_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  input  [9:0]  io_b_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  input  [24:0] io_b_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  output        io_invalidExc,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_rawOut_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_rawOut_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_rawOut_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+                io_rawOut_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  output [9:0]  io_rawOut_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
+  output [47:0] io_rawOut_sig	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:49:16
 );
 
   assign io_invalidExc =
     io_a_isNaN & ~(io_a_sig[22]) | io_b_isNaN & ~(io_b_sig[22]) | io_a_isInf & io_b_isZero
-    | io_a_isZero & io_b_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :58:{44,76}, :66:71, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/common.scala:82:{46,49,56}
-  assign io_rawOut_isNaN = io_a_isNaN | io_b_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :70:35
-  assign io_rawOut_isInf = io_a_isInf | io_b_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :59:38
-  assign io_rawOut_isZero = io_a_isZero | io_b_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :60:40
-  assign io_rawOut_sign = io_a_sign ^ io_b_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :61:36
-  assign io_rawOut_sExp = io_a_sExp + io_b_sExp - 10'h100;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :62:48
-  assign io_rawOut_sig = {23'h0, io_a_sig} * {23'h0, io_b_sig};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :63:35
+    | io_a_isZero & io_b_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :58:{44,76}, :66:71, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/common.scala:82:{46,49,56}
+  assign io_rawOut_isNaN = io_a_isNaN | io_b_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :70:35
+  assign io_rawOut_isInf = io_a_isInf | io_b_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :59:38
+  assign io_rawOut_isZero = io_a_isZero | io_b_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :60:40
+  assign io_rawOut_sign = io_a_sign ^ io_b_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :61:36
+  assign io_rawOut_sExp = io_a_sExp + io_b_sExp - 10'h100;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :62:48
+  assign io_rawOut_sig = {23'h0, io_a_sig} * {23'h0, io_b_sig};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:47:7, :63:35
 endmodule
 
-module MulRawFN(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:75:7
-  input         io_a_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_a_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_a_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_a_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  input  [9:0]  io_a_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  input  [24:0] io_a_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  input         io_b_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_b_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_b_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_b_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  input  [9:0]  io_b_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  input  [24:0] io_b_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  output        io_invalidExc,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_rawOut_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_rawOut_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_rawOut_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-                io_rawOut_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  output [9:0]  io_rawOut_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
-  output [26:0] io_rawOut_sig	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+module MulRawFN(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:75:7
+  input         io_a_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_a_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_a_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_a_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  input  [9:0]  io_a_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  input  [24:0] io_a_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  input         io_b_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_b_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_b_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_b_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  input  [9:0]  io_b_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  input  [24:0] io_b_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  output        io_invalidExc,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_rawOut_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_rawOut_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_rawOut_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+                io_rawOut_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  output [9:0]  io_rawOut_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
+  output [26:0] io_rawOut_sig	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:77:16
 );
 
-  wire [47:0] _mulFullRaw_io_rawOut_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:84:28
-  MulFullRawFN mulFullRaw (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:84:28
+  wire [47:0] _mulFullRaw_io_rawOut_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:84:28
+  MulFullRawFN mulFullRaw (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:84:28
     .io_a_isNaN       (io_a_isNaN),
     .io_a_isInf       (io_a_isInf),
     .io_a_isZero      (io_a_isZero),
@@ -4534,24 +4534,24 @@ module MulRawFN(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRe
     .io_rawOut_sig    (_mulFullRaw_io_rawOut_sig)
   );
   assign io_rawOut_sig =
-    {_mulFullRaw_io_rawOut_sig[47:22], |(_mulFullRaw_io_rawOut_sig[21:0])};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/MulRecFN.scala:75:7, :84:28, :93:{10,15,37,55}
+    {_mulFullRaw_io_rawOut_sig[47:22], |(_mulFullRaw_io_rawOut_sig[21:0])};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/MulRecFN.scala:75:7, :84:28, :93:{10,15,37,55}
 endmodule
 
-module RoundAnyRawFNToRecFN_ie8_is26_oe8_os24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:48:5
-  input         io_invalidExc,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
-                io_in_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
-                io_in_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
-                io_in_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
-                io_in_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
-  input  [9:0]  io_in_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
-  input  [26:0] io_in_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
-  output [32:0] io_out	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+module RoundAnyRawFNToRecFN_ie8_is26_oe8_os24(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:48:5
+  input         io_invalidExc,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+                io_in_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+                io_in_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+                io_in_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+                io_in_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+  input  [9:0]  io_in_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+  input  [26:0] io_in_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
+  output [32:0] io_out	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16
 );
 
-  wire [8:0]  _roundMask_T_1 = ~(io_in_sExp[8:0]);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:156:37, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:52:21
-  wire [64:0] _GEN = {59'h0, _roundMask_T_1[5:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:52:21, :59:26, :76:56
-  wire [64:0] roundMask_shift = $signed(65'sh10000000000000000 >>> _GEN);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:76:56
-  wire [64:0] roundMask_shift_1 = $signed(65'sh10000000000000000 >>> _GEN);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:76:56
+  wire [8:0]  _roundMask_T_1 = ~(io_in_sExp[8:0]);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:156:37, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:52:21
+  wire [64:0] _GEN = {59'h0, _roundMask_T_1[5:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:52:21, :59:26, :76:56
+  wire [64:0] roundMask_shift = $signed(65'sh10000000000000000 >>> _GEN);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:76:56
+  wire [64:0] roundMask_shift_1 = $signed(65'sh10000000000000000 >>> _GEN);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:76:56
   wire [24:0] _roundMask_T_73 =
     _roundMask_T_1[8]
       ? (_roundMask_T_1[7]
@@ -4582,24 +4582,24 @@ module RoundAnyRawFNToRecFN_ie8_is26_oe8_os24(	// janberq/repos/jnbrq/hbmex/rtl/
               _roundMask_T_1[6]
                 ? {roundMask_shift_1[0], roundMask_shift_1[1], roundMask_shift_1[2]}
                 : 3'h0})
-      : 25'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:171:29, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:52:21, :58:25, :59:26, :62:24, :67:24, :68:58, :73:{17,21,32}, :76:56, :77:20, :78:22
-  wire        _GEN_0 = _roundMask_T_73[0] | io_in_sig[26];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:120:57, :159:23, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:62:24
-  wire [25:0] _GEN_1 = {_roundMask_T_73[24:1], _GEN_0, 1'h1};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:90:53, :159:{23,42}, :169:38, :243:60, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:62:24
+      : 25'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:171:29, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:52:21, :58:25, :59:26, :62:24, :67:24, :68:58, :73:{17,21,32}, :76:56, :77:20, :78:22
+  wire        _GEN_0 = _roundMask_T_73[0] | io_in_sig[26];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:120:57, :159:23, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:62:24
+  wire [25:0] _GEN_1 = {_roundMask_T_73[24:1], _GEN_0, 1'h1};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:90:53, :159:{23,42}, :169:38, :243:60, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:62:24
   wire [25:0] _roundPosBit_T =
-    io_in_sig[26:1] & {1'h1, ~(_roundMask_T_73[24:1]), ~_GEN_0} & _GEN_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16, :90:53, :159:{23,42}, :162:53, :163:28, :164:40, :169:38, :243:60, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:62:24
+    io_in_sig[26:1] & {1'h1, ~(_roundMask_T_73[24:1]), ~_GEN_0} & _GEN_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16, :90:53, :159:{23,42}, :162:53, :163:28, :164:40, :169:38, :243:60, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:62:24
   wire [25:0] roundedSig =
     (|_roundPosBit_T)
       ? {1'h0, io_in_sig[26:2] | {_roundMask_T_73[24:1], _GEN_0}} + 26'h1
         & ~((|_roundPosBit_T) & (io_in_sig[25:0] & _GEN_1) == 26'h0
               ? {_roundMask_T_73[24:1], _GEN_0, 1'h1}
               : 26'h0)
-      : {1'h0, io_in_sig[26:2] & {~(_roundMask_T_73[24:1]), ~_GEN_0}};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16, :90:53, :159:{23,42}, :163:28, :164:{40,56}, :165:{42,62}, :169:38, :171:29, :173:16, :174:{32,49,57}, :175:{21,25,64}, :177:35, :180:{30,43,47}, :181:24, :243:60, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:62:24
-  wire [10:0] sRoundedExp = {io_in_sExp[9], io_in_sExp} + {9'h0, roundedSig[25:24]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:173:16, :185:{40,54}, :269:16, :273:16
-  wire        common_totalUnderflow = $signed(sRoundedExp) < 11'sh6B;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:185:40, :200:31
-  wire        isNaNOut = io_invalidExc | io_in_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:235:34
+      : {1'h0, io_in_sig[26:2] & {~(_roundMask_T_73[24:1]), ~_GEN_0}};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:58:16, :90:53, :159:{23,42}, :163:28, :164:{40,56}, :165:{42,62}, :169:38, :171:29, :173:16, :174:{32,49,57}, :175:{21,25,64}, :177:35, :180:{30,43,47}, :181:24, :243:60, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:62:24
+  wire [10:0] sRoundedExp = {io_in_sExp[9], io_in_sExp} + {9'h0, roundedSig[25:24]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:173:16, :185:{40,54}, :269:16, :273:16
+  wire        common_totalUnderflow = $signed(sRoundedExp) < 11'sh6B;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:185:40, :200:31
+  wire        isNaNOut = io_invalidExc | io_in_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:235:34
   wire        notNaN_isInfOut =
     io_in_isInf | ~isNaNOut & ~io_in_isInf & ~io_in_isZero
-    & $signed(sRoundedExp[10:7]) > 4'sh2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:185:40, :196:{30,50}, :235:34, :237:{22,36,64}, :238:32, :248:32
+    & $signed(sRoundedExp[10:7]) > 4'sh2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:185:40, :196:{30,50}, :235:34, :237:{22,36,64}, :238:32, :248:32
   assign io_out =
     {~isNaNOut & io_in_sign,
      sRoundedExp[8:0] & ~(io_in_isZero | common_totalUnderflow ? 9'h1C0 : 9'h0)
@@ -4607,21 +4607,21 @@ module RoundAnyRawFNToRecFN_ie8_is26_oe8_os24(	// janberq/repos/jnbrq/hbmex/rtl/
        | (isNaNOut ? 9'h1C0 : 9'h0),
      isNaNOut | io_in_isZero | common_totalUnderflow
        ? {isNaNOut, 22'h0}
-       : io_in_sig[26] ? roundedSig[23:1] : roundedSig[22:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:48:5, :120:57, :159:42, :173:16, :185:40, :187:37, :189:16, :190:27, :191:27, :200:31, :235:34, :248:32, :250:22, :253:{14,18,32}, :264:17, :265:{14,18}, :269:16, :273:16, :277:{16,73}, :278:16, :280:{12,38}, :281:16, :286:33, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:73:21
+       : io_in_sig[26] ? roundedSig[23:1] : roundedSig[22:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:48:5, :120:57, :159:42, :173:16, :185:40, :187:37, :189:16, :190:27, :191:27, :200:31, :235:34, :248:32, :250:22, :253:{14,18,32}, :264:17, :265:{14,18}, :269:16, :273:16, :277:{16,73}, :278:16, :280:{12,38}, :281:16, :286:33, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:73:21
 endmodule
 
-module RoundRawFNToRecFN_e8_s24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:295:5
-  input         io_invalidExc,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
-                io_in_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
-                io_in_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
-                io_in_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
-                io_in_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
-  input  [9:0]  io_in_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
-  input  [26:0] io_in_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
-  output [32:0] io_out	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+module RoundRawFNToRecFN_e8_s24(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:295:5
+  input         io_invalidExc,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+                io_in_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+                io_in_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+                io_in_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+                io_in_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+  input  [9:0]  io_in_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+  input  [26:0] io_in_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
+  output [32:0] io_out	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:299:16
 );
 
-  RoundAnyRawFNToRecFN_ie8_is26_oe8_os24 roundAnyRawFNToRecFN (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:310:15
+  RoundAnyRawFNToRecFN_ie8_is26_oe8_os24 roundAnyRawFNToRecFN (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/RoundAnyRawFNToRecFN.scala:310:15
     .io_invalidExc (io_invalidExc),
     .io_in_isNaN   (io_in_isNaN),
     .io_in_isInf   (io_in_isInf),
@@ -4633,90 +4633,90 @@ module RoundRawFNToRecFN_e8_s24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala
   );
 endmodule
 
-module MulRecFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+module MulRecFN_Pipelined_8_24(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
   input         clock,	// <stdin>:10404:11, :11089:11, :11774:11, :12459:11, :13144:11, :13829:11, :14514:11, :15199:11
-  input  [32:0] io_a,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:333:14
-                io_b,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:333:14
-  output [32:0] io_out	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:333:14
+  input  [32:0] io_a,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:333:14
+                io_b,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:333:14
+  output [32:0] io_out	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:333:14
 );
 
-  wire [32:0] _roundRawFNToRecFN_io_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:360:41
-  wire        _mulRawFN_io_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-  wire        _mulRawFN_io_rawOut_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-  wire        _mulRawFN_io_rawOut_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-  wire        _mulRawFN_io_rawOut_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-  wire        _mulRawFN_io_rawOut_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-  wire [9:0]  _mulRawFN_io_rawOut_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-  wire [26:0] _mulRawFN_io_rawOut_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-  reg  [32:0] mulRawFN_io_a_stage1_a;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [32:0] mulRawFN_io_b_stage1_b;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [9:0]  roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [26:0] roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [32:0] io_out_stage3_roundRawFNToRecFN_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  wire [32:0] _roundRawFNToRecFN_io_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:360:41
+  wire        _mulRawFN_io_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+  wire        _mulRawFN_io_rawOut_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+  wire        _mulRawFN_io_rawOut_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+  wire        _mulRawFN_io_rawOut_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+  wire        _mulRawFN_io_rawOut_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+  wire [9:0]  _mulRawFN_io_rawOut_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+  wire [26:0] _mulRawFN_io_rawOut_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+  reg  [32:0] mulRawFN_io_a_stage1_a;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [32:0] mulRawFN_io_b_stage1_b;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [9:0]  roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [26:0] roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [32:0] io_out_stage3_roundRawFNToRecFN_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   always @(posedge clock) begin	// <stdin>:10404:11, :11089:11, :11774:11, :12459:11, :13144:11, :13829:11, :14514:11, :15199:11
-    mulRawFN_io_a_stage1_a <= io_a;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    mulRawFN_io_b_stage1_b <= io_b;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc <= _mulRawFN_io_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
-    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN <= _mulRawFN_io_rawOut_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
-    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf <= _mulRawFN_io_rawOut_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
-    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero <= _mulRawFN_io_rawOut_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
-    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign <= _mulRawFN_io_rawOut_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
-    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp <= _mulRawFN_io_rawOut_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
-    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sig <= _mulRawFN_io_rawOut_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
-    io_out_stage3_roundRawFNToRecFN_out <= _roundRawFNToRecFN_io_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :360:41
+    mulRawFN_io_a_stage1_a <= io_a;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    mulRawFN_io_b_stage1_b <= io_b;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc <= _mulRawFN_io_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
+    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN <= _mulRawFN_io_rawOut_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
+    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf <= _mulRawFN_io_rawOut_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
+    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero <= _mulRawFN_io_rawOut_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
+    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign <= _mulRawFN_io_rawOut_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
+    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp <= _mulRawFN_io_rawOut_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
+    roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sig <= _mulRawFN_io_rawOut_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :350:32
+    io_out_stage3_roundRawFNToRecFN_out <= _roundRawFNToRecFN_io_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :360:41
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-      automatic logic [31:0] _RANDOM[0:4];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+      automatic logic [31:0] _RANDOM[0:4];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
         for (logic [2:0] i = 3'h0; i < 3'h5; i += 3'h1) begin
-          _RANDOM[i] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-        mulRawFN_io_a_stage1_a = {_RANDOM[3'h0], _RANDOM[3'h1][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        mulRawFN_io_b_stage1_b = {_RANDOM[3'h1][31:1], _RANDOM[3'h2][1:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc = _RANDOM[3'h2][2];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN = _RANDOM[3'h2][3];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf = _RANDOM[3'h2][4];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero = _RANDOM[3'h2][5];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign = _RANDOM[3'h2][6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp = _RANDOM[3'h2][16:7];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+          _RANDOM[i] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+        mulRawFN_io_a_stage1_a = {_RANDOM[3'h0], _RANDOM[3'h1][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        mulRawFN_io_b_stage1_b = {_RANDOM[3'h1][31:1], _RANDOM[3'h2][1:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc = _RANDOM[3'h2][2];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN = _RANDOM[3'h2][3];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf = _RANDOM[3'h2][4];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero = _RANDOM[3'h2][5];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign = _RANDOM[3'h2][6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp = _RANDOM[3'h2][16:7];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
         roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sig =
-          {_RANDOM[3'h2][31:17], _RANDOM[3'h3][11:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
-        io_out_stage3_roundRawFNToRecFN_out = {_RANDOM[3'h3][31:20], _RANDOM[3'h4][20:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+          {_RANDOM[3'h2][31:17], _RANDOM[3'h3][11:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+        io_out_stage3_roundRawFNToRecFN_out = {_RANDOM[3'h3][31:20], _RANDOM[3'h4][20:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:330:15
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  MulRawFN mulRawFN (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
-    .io_a_isNaN       ((&(mulRawFN_io_a_stage1_a[31:30])) & mulRawFN_io_a_stage1_a[29]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
+  MulRawFN mulRawFN (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:350:32
+    .io_a_isNaN       ((&(mulRawFN_io_a_stage1_a[31:30])) & mulRawFN_io_a_stage1_a[29]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
     .io_a_isInf
-      ((&(mulRawFN_io_a_stage1_a[31:30])) & ~(mulRawFN_io_a_stage1_a[29])),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
-    .io_a_isZero      (~(|(mulRawFN_io_a_stage1_a[31:29]))),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
-    .io_a_sign        (mulRawFN_io_a_stage1_a[32]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
-    .io_a_sExp        ({1'h0, mulRawFN_io_a_stage1_a[31:23]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:53, :60:27
+      ((&(mulRawFN_io_a_stage1_a[31:30])) & ~(mulRawFN_io_a_stage1_a[29])),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
+    .io_a_isZero      (~(|(mulRawFN_io_a_stage1_a[31:29]))),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
+    .io_a_sign        (mulRawFN_io_a_stage1_a[32]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
+    .io_a_sExp        ({1'h0, mulRawFN_io_a_stage1_a[31:23]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:53, :60:27
     .io_a_sig
-      ({1'h0, |(mulRawFN_io_a_stage1_a[31:29]), mulRawFN_io_a_stage1_a[22:0]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
-    .io_b_isNaN       ((&(mulRawFN_io_b_stage1_b[31:30])) & mulRawFN_io_b_stage1_b[29]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
+      ({1'h0, |(mulRawFN_io_a_stage1_a[31:29]), mulRawFN_io_a_stage1_a[22:0]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
+    .io_b_isNaN       ((&(mulRawFN_io_b_stage1_b[31:30])) & mulRawFN_io_b_stage1_b[29]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
     .io_b_isInf
-      ((&(mulRawFN_io_b_stage1_b[31:30])) & ~(mulRawFN_io_b_stage1_b[29])),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
-    .io_b_isZero      (~(|(mulRawFN_io_b_stage1_b[31:29]))),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
-    .io_b_sign        (mulRawFN_io_b_stage1_b[32]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
-    .io_b_sExp        ({1'h0, mulRawFN_io_b_stage1_b[31:23]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:53, :60:27
+      ((&(mulRawFN_io_b_stage1_b[31:30])) & ~(mulRawFN_io_b_stage1_b[29])),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
+    .io_b_isZero      (~(|(mulRawFN_io_b_stage1_b[31:29]))),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
+    .io_b_sign        (mulRawFN_io_b_stage1_b[32]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
+    .io_b_sExp        ({1'h0, mulRawFN_io_b_stage1_b[31:23]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:53, :60:27
     .io_b_sig
-      ({1'h0, |(mulRawFN_io_b_stage1_b[31:29]), mulRawFN_io_b_stage1_b[22:0]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
+      ({1'h0, |(mulRawFN_io_b_stage1_b[31:29]), mulRawFN_io_b_stage1_b[22:0]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
     .io_invalidExc    (_mulRawFN_io_invalidExc),
     .io_rawOut_isNaN  (_mulRawFN_io_rawOut_isNaN),
     .io_rawOut_isInf  (_mulRawFN_io_rawOut_isInf),
@@ -4725,34 +4725,34 @@ module MulRecFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/
     .io_rawOut_sExp   (_mulRawFN_io_rawOut_sExp),
     .io_rawOut_sig    (_mulRawFN_io_rawOut_sig)
   );
-  RoundRawFNToRecFN_e8_s24 roundRawFNToRecFN (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:360:41
-    .io_invalidExc (roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_isNaN   (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_isInf   (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_isZero  (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_sign    (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_sExp    (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_sig     (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sig),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  RoundRawFNToRecFN_e8_s24 roundRawFNToRecFN (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:360:41
+    .io_invalidExc (roundRawFNToRecFN_io_invalidExc_stage2_mulRawFn_invalidExc),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_isNaN   (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isNaN),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_isInf   (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isInf),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_isZero  (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_isZero),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_sign    (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sign),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_sExp    (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sExp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_sig     (roundRawFNToRecFN_io_in_stage2_mulRawFn_rawOut_sig),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
     .io_out        (_roundRawFNToRecFN_io_out)
   );
-  assign io_out = io_out_stage3_roundRawFNToRecFN_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
+  assign io_out = io_out_stage3_roundRawFNToRecFN_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :330:15
 endmodule
 
-module MulFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15
+module MulFp_Pipelined_8_23(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15
   input         clock,	// <stdin>:10502:11, :11187:11, :11872:11, :12557:11, :13242:11, :13927:11, :14612:11, :15297:11
-                io_in_a_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  input  [7:0]  io_in_a_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  input  [22:0] io_in_a_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  input         io_in_b_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  input  [7:0]  io_in_b_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  input  [22:0] io_in_b_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  output        io_out_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  output [7:0]  io_out_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
-  output [22:0] io_out_mantissa	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+                io_in_a_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  input  [7:0]  io_in_a_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  input  [22:0] io_in_a_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  input         io_in_b_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  input  [7:0]  io_in_b_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  input  [22:0] io_in_b_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  output        io_out_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  output [7:0]  io_out_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
+  output [22:0] io_out_mantissa	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:381:14
 );
 
-  wire [32:0] _mulRecFn_io_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32
-  wire        mulRecFn_io_a_rawIn_isZeroExpIn = io_in_a_exponent == 8'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
+  wire [32:0] _mulRecFn_io_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32
+  wire        mulRecFn_io_a_rawIn_isZeroExpIn = io_in_a_exponent == 8'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
   wire [4:0]  mulRecFn_io_a_rawIn_normDist =
     io_in_a_mantissa[22]
       ? 5'h0
@@ -4798,19 +4798,19 @@ module MulFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
                                                                                       ? 5'h14
                                                                                       : io_in_a_mantissa[1]
                                                                                           ? 5'h15
-                                                                                          : 5'h16;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:91:52, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
+                                                                                          : 5'h16;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:91:52, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [53:0] _mulRecFn_io_a_rawIn_subnormFract_T =
-    {31'h0, io_in_a_mantissa} << mulRecFn_io_a_rawIn_normDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
+    {31'h0, io_in_a_mantissa} << mulRecFn_io_a_rawIn_normDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [8:0]  _mulRecFn_io_a_rawIn_adjustedExp_T_4 =
     (mulRecFn_io_a_rawIn_isZeroExpIn
        ? {4'hF, ~mulRecFn_io_a_rawIn_normDist}
        : {1'h0, io_in_a_exponent})
-    + {7'h20, mulRecFn_io_a_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
+    + {7'h20, mulRecFn_io_a_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [2:0]  _mulRecFn_io_a_T_2 =
     mulRecFn_io_a_rawIn_isZeroExpIn & ~(|io_in_a_mantissa)
       ? 3'h0
-      : _mulRecFn_io_a_rawIn_adjustedExp_T_4[8:6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
-  wire        mulRecFn_io_b_rawIn_isZeroExpIn = io_in_b_exponent == 8'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
+      : _mulRecFn_io_a_rawIn_adjustedExp_T_4[8:6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
+  wire        mulRecFn_io_b_rawIn_isZeroExpIn = io_in_b_exponent == 8'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
   wire [4:0]  mulRecFn_io_b_rawIn_normDist =
     io_in_b_mantissa[22]
       ? 5'h0
@@ -4856,24 +4856,24 @@ module MulFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
                                                                                       ? 5'h14
                                                                                       : io_in_b_mantissa[1]
                                                                                           ? 5'h15
-                                                                                          : 5'h16;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:91:52, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
+                                                                                          : 5'h16;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:91:52, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [53:0] _mulRecFn_io_b_rawIn_subnormFract_T =
-    {31'h0, io_in_b_mantissa} << mulRecFn_io_b_rawIn_normDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
+    {31'h0, io_in_b_mantissa} << mulRecFn_io_b_rawIn_normDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [8:0]  _mulRecFn_io_b_rawIn_adjustedExp_T_4 =
     (mulRecFn_io_b_rawIn_isZeroExpIn
        ? {4'hF, ~mulRecFn_io_b_rawIn_normDist}
        : {1'h0, io_in_b_exponent})
-    + {7'h20, mulRecFn_io_b_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
+    + {7'h20, mulRecFn_io_b_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [2:0]  _mulRecFn_io_b_T_2 =
     mulRecFn_io_b_rawIn_isZeroExpIn & ~(|io_in_b_mantissa)
       ? 3'h0
-      : _mulRecFn_io_b_rawIn_adjustedExp_T_4[8:6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
-  wire        io_out_rawIn_isInf = (&(_mulRecFn_io_out[31:30])) & ~(_mulRecFn_io_out[29]);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
-  wire        io_out_isSubnormal = $signed({1'h0, _mulRecFn_io_out[31:23]}) < 10'sh82;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
+      : _mulRecFn_io_b_rawIn_adjustedExp_T_4[8:6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
+  wire        io_out_rawIn_isInf = (&(_mulRecFn_io_out[31:30])) & ~(_mulRecFn_io_out[29]);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
+  wire        io_out_isSubnormal = $signed({1'h0, _mulRecFn_io_out[31:23]}) < 10'sh82;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
   wire [23:0] _io_out_denormFract_T_1 =
     {1'h0, |(_mulRecFn_io_out[31:29]), _mulRecFn_io_out[22:1]} >> 5'h1
-    - _mulRecFn_io_out[27:23];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:52:{35,47}, :53:{38,42}, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, src/main/scala/chisel3/util/Mux.scala:50:70
-  MulRecFN_Pipelined_8_24 mulRecFn (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32
+    - _mulRecFn_io_out[27:23];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:52:{35,47}, :53:{38,42}, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, src/main/scala/chisel3/util/Mux.scala:50:70
+  MulRecFN_Pipelined_8_24 mulRecFn (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:394:32
     .clock  (clock),
     .io_a
       ({io_in_a_sign,
@@ -4883,7 +4883,7 @@ module MulFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
         _mulRecFn_io_a_rawIn_adjustedExp_T_4[5:0],
         mulRecFn_io_a_rawIn_isZeroExpIn
           ? {_mulRecFn_io_a_rawIn_subnormFract_T[21:0], 1'h0}
-          : io_in_a_mantissa}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
+          : io_in_a_mantissa}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
     .io_b
       ({io_in_b_sign,
         _mulRecFn_io_b_T_2[2:1],
@@ -4892,40 +4892,40 @@ module MulFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
         _mulRecFn_io_b_rawIn_adjustedExp_T_4[5:0],
         mulRecFn_io_b_rawIn_isZeroExpIn
           ? {_mulRecFn_io_b_rawIn_subnormFract_T[21:0], 1'h0}
-          : io_in_b_mantissa}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
+          : io_in_b_mantissa}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
     .io_out (_mulRecFn_io_out)
   );
-  assign io_out_sign = _mulRecFn_io_out[32];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15, :394:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
+  assign io_out_sign = _mulRecFn_io_out[32];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15, :394:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
   assign io_out_exponent =
     (io_out_isSubnormal ? 8'h0 : _mulRecFn_io_out[30:23] + 8'h7F)
-    | {8{(&(_mulRecFn_io_out[31:30])) & _mulRecFn_io_out[29] | io_out_rawIn_isInf}};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15, :394:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :56:16, :58:{27,45}, :60:{15,21,44}, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}, :57:33
+    | {8{(&(_mulRecFn_io_out[31:30])) & _mulRecFn_io_out[29] | io_out_rawIn_isInf}};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15, :394:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :56:16, :58:{27,45}, :60:{15,21,44}, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}, :57:33
   assign io_out_mantissa =
     io_out_isSubnormal
       ? _io_out_denormFract_T_1[22:0]
-      : io_out_rawIn_isInf ? 23'h0 : _mulRecFn_io_out[22:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15, :394:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :53:{42,60}, :62:16, :64:20, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:57:33, :61:49
+      : io_out_rawIn_isInf ? 23'h0 : _mulRecFn_io_out[22:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:378:15, :394:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :53:{42,60}, :62:16, :64:20, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:57:33, :61:49
 endmodule
 
-module OpMultiply(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7
+module OpMultiply(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7
   input         clock,	// <stdin>:10745:11, :11430:11, :12115:11, :12800:11, :13485:11, :14170:11, :14855:11, :15540:11
-                io_in_a_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  input  [7:0]  io_in_a_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  input  [22:0] io_in_a_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  input         io_in_b_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  input  [7:0]  io_in_b_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  input  [22:0] io_in_b_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  output        io_out_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  output [7:0]  io_out_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
-  output [22:0] io_out_mantissa	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+                io_in_a_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  input  [7:0]  io_in_a_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  input  [22:0] io_in_a_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  input         io_in_b_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  input  [7:0]  io_in_b_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  input  [22:0] io_in_b_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  output        io_out_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  output [7:0]  io_out_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
+  output [22:0] io_out_mantissa	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:13:14
 );
 
-  wire        _module_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
-  wire [7:0]  _module_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
-  wire [22:0] _module_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
-  wire [31:0] in_a__ = {io_in_a_sign, io_in_a_exponent, io_in_a_mantissa};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:24:21
-  wire [31:0] in_b__ = {io_in_b_sign, io_in_b_exponent, io_in_b_mantissa};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:25:21
+  wire        _module_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
+  wire [7:0]  _module_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
+  wire [22:0] _module_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
+  wire [31:0] in_a__ = {io_in_a_sign, io_in_a_exponent, io_in_a_mantissa};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:24:21
+  wire [31:0] in_b__ = {io_in_b_sign, io_in_b_exponent, io_in_b_mantissa};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:25:21
   wire [31:0] out__ =
-    {_module_io_out_sign, _module_io_out_exponent, _module_io_out_mantissa};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:26:19, :39:24
-  MulFp_Pipelined_8_23 module_0 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
+    {_module_io_out_sign, _module_io_out_exponent, _module_io_out_mantissa};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:26:19, :39:24
+  MulFp_Pipelined_8_23 module_0 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:39:24
     .clock            (clock),
     .io_in_a_sign     (io_in_a_sign),
     .io_in_a_exponent (io_in_a_exponent),
@@ -4937,9 +4937,9 @@ module OpMultiply(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/floa
     .io_out_exponent  (_module_io_out_exponent),
     .io_out_mantissa  (_module_io_out_mantissa)
   );
-  assign io_out_sign = _module_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7, :39:24
-  assign io_out_exponent = _module_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7, :39:24
-  assign io_out_mantissa = _module_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7, :39:24
+  assign io_out_sign = _module_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7, :39:24
+  assign io_out_exponent = _module_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7, :39:24
+  assign io_out_mantissa = _module_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpMultiply.scala:7:7, :39:24
 endmodule
 
 module Counter(	// src/main/scala/chext/util/Counter.scala:6:7
@@ -5086,217 +5086,217 @@ module Queue4_UInt256(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_valid = ~empty;	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :261:25, :285:19
 endmodule
 
-module Wrapper(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+module Wrapper(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
   input          clock,	// <stdin>:15637:11
                  reset,	// <stdin>:15638:11
-  output         source_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-  input          source_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-  input  [31:0]  source_bits__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-  input  [255:0] source_bits__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-  input          sink_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
-  output         sink_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
-  output [255:0] sink_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
-  output [31:0]  moduleIn__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
-  output [255:0] moduleIn__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
-  input  [255:0] moduleOut	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:27:21
+  output         source_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+  input          source_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+  input  [31:0]  source_bits__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+  input  [255:0] source_bits__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+  input          sink_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
+  output         sink_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
+  output [255:0] sink_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
+  output [31:0]  moduleIn__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
+  output [255:0] moduleIn__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
+  input  [255:0] moduleOut	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:27:21
 );
 
-  wire _qOutput_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
-  wire _ctr_io_full;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
-  wire source_ready_0 = ~_ctr_io_full & source_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21, :56:33, src/main/scala/chext/util/Counter.scala:33:17
-  wire _qOutput_io_enq_valid_T = source_ready_0 & source_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:56:33, src/main/scala/chisel3/util/Decoupled.scala:51:35
-  reg  qOutput_io_enq_valid_r;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-  reg  qOutput_io_enq_valid_r_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-  reg  qOutput_io_enq_valid_r_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+  wire _qOutput_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
+  wire _ctr_io_full;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
+  wire source_ready_0 = ~_ctr_io_full & source_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21, :56:33, src/main/scala/chext/util/Counter.scala:33:17
+  wire _qOutput_io_enq_valid_T = source_ready_0 & source_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:56:33, src/main/scala/chisel3/util/Decoupled.scala:51:35
+  reg  qOutput_io_enq_valid_r;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+  reg  qOutput_io_enq_valid_r_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+  reg  qOutput_io_enq_valid_r_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
   always @(posedge clock) begin	// <stdin>:15637:11
-    qOutput_io_enq_valid_r <= _qOutput_io_enq_valid_T;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37, src/main/scala/chisel3/util/Decoupled.scala:51:35
-    qOutput_io_enq_valid_r_1 <= qOutput_io_enq_valid_r;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-    qOutput_io_enq_valid_r_2 <= qOutput_io_enq_valid_r_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+    qOutput_io_enq_valid_r <= _qOutput_io_enq_valid_T;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37, src/main/scala/chisel3/util/Decoupled.scala:51:35
+    qOutput_io_enq_valid_r_1 <= qOutput_io_enq_valid_r;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+    qOutput_io_enq_valid_r_2 <= qOutput_io_enq_valid_r_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-        qOutput_io_enq_valid_r = _RANDOM[/*Zero width*/ 1'b0][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
-        qOutput_io_enq_valid_r_1 = _RANDOM[/*Zero width*/ 1'b0][1];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
-        qOutput_io_enq_valid_r_2 = _RANDOM[/*Zero width*/ 1'b0][2];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+        qOutput_io_enq_valid_r = _RANDOM[/*Zero width*/ 1'b0][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
+        qOutput_io_enq_valid_r_1 = _RANDOM[/*Zero width*/ 1'b0][1];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
+        qOutput_io_enq_valid_r_2 = _RANDOM[/*Zero width*/ 1'b0][2];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Counter ctr (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
+  Counter ctr (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
     .clock    (clock),
     .reset    (reset),
     .io_incEn (_qOutput_io_enq_valid_T),	// src/main/scala/chisel3/util/Decoupled.scala:51:35
-    .io_decEn (sink_ready & _qOutput_io_deq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25, src/main/scala/chisel3/util/Decoupled.scala:51:35
+    .io_decEn (sink_ready & _qOutput_io_deq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25, src/main/scala/chisel3/util/Decoupled.scala:51:35
     .io_empty (/* unused */),
     .io_full  (_ctr_io_full)
   );
-  Queue4_UInt256 qOutput (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
+  Queue4_UInt256 qOutput (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (/* unused */),
-    .io_enq_valid (qOutput_io_enq_valid_r_2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+    .io_enq_valid (qOutput_io_enq_valid_r_2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
     .io_enq_bits  (moduleOut),
     .io_deq_ready (sink_ready),
     .io_deq_valid (_qOutput_io_deq_valid),
     .io_deq_bits  (sink_bits)
   );
-  assign source_ready = source_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :56:33
-  assign sink_valid = _qOutput_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :42:25
-  assign moduleIn__1 = source_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-  assign moduleIn__2 = source_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+  assign source_ready = source_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :56:33
+  assign sink_valid = _qOutput_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :42:25
+  assign moduleIn__1 = source_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+  assign moduleIn__2 = source_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
 endmodule
 
-module BatchMultiply(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:13:7
+module BatchMultiply(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:13:7
   input          clock,	// <stdin>:15686:11
                  reset,	// <stdin>:15687:11
-  output         sourceInA_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:16:21
-  input          sourceInA_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:16:21
-  input  [31:0]  sourceInA_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:16:21
-  output         sourceInB_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:17:21
-  input          sourceInB_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:17:21
-  input  [255:0] sourceInB_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:17:21
-  input          sinkOut_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:18:19
-  output         sinkOut_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:18:19
-  output [255:0] sinkOut_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:18:19
+  output         sourceInA_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:16:21
+  input          sourceInA_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:16:21
+  input  [31:0]  sourceInA_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:16:21
+  output         sourceInB_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:17:21
+  input          sourceInB_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:17:21
+  input  [255:0] sourceInB_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:17:21
+  input          sinkOut_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:18:19
+  output         sinkOut_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:18:19
+  output [255:0] sinkOut_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:18:19
 );
 
-  wire         _wrapper_source_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
-  wire [31:0]  _wrapper_moduleIn__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
-  wire [255:0] _wrapper_moduleIn__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
-  wire         _multiply7_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply7_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply7_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire         _multiply6_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply6_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply6_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire         _multiply5_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply5_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply5_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire         _multiply4_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply4_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply4_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire         _multiply3_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply3_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply3_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire         _multiply2_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply2_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply2_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire         _multiply1_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply1_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply1_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire         _multiply0_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [7:0]   _multiply0_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
-  wire [22:0]  _multiply0_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _wrapper_source_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
+  wire [31:0]  _wrapper_moduleIn__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
+  wire [255:0] _wrapper_moduleIn__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
+  wire         _multiply7_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply7_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply7_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _multiply6_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply6_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply6_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _multiply5_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply5_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply5_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _multiply4_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply4_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply4_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _multiply3_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply3_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply3_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _multiply2_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply2_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply2_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _multiply1_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply1_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply1_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         _multiply0_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [7:0]   _multiply0_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire [22:0]  _multiply0_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
   wire         join0_mkJoin_allValid = sourceInA_valid & sourceInB_valid;	// src/main/scala/chext/elastic/Join.scala:41:55
-  wire         sourceInB_ready_0 = _wrapper_source_ready & join0_mkJoin_allValid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, src/main/scala/chext/elastic/Join.scala:41:55, :42:29
-  OpMultiply multiply0 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  wire         sourceInB_ready_0 = _wrapper_source_ready & join0_mkJoin_allValid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, src/main/scala/chext/elastic/Join.scala:41:55, :42:29
+  OpMultiply multiply0 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply0_io_out_sign),
     .io_out_exponent  (_multiply0_io_out_exponent),
     .io_out_mantissa  (_multiply0_io_out_mantissa)
   );
-  OpMultiply multiply1 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  OpMultiply multiply1 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[63]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[62:55]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[54:32]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[63]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[62:55]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[54:32]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply1_io_out_sign),
     .io_out_exponent  (_multiply1_io_out_exponent),
     .io_out_mantissa  (_multiply1_io_out_mantissa)
   );
-  OpMultiply multiply2 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  OpMultiply multiply2 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[95]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[94:87]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[86:64]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[95]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[94:87]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[86:64]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply2_io_out_sign),
     .io_out_exponent  (_multiply2_io_out_exponent),
     .io_out_mantissa  (_multiply2_io_out_mantissa)
   );
-  OpMultiply multiply3 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  OpMultiply multiply3 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[127]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[126:119]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[118:96]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[127]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[126:119]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[118:96]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply3_io_out_sign),
     .io_out_exponent  (_multiply3_io_out_exponent),
     .io_out_mantissa  (_multiply3_io_out_mantissa)
   );
-  OpMultiply multiply4 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  OpMultiply multiply4 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[159]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[158:151]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[150:128]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[159]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[158:151]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[150:128]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply4_io_out_sign),
     .io_out_exponent  (_multiply4_io_out_exponent),
     .io_out_mantissa  (_multiply4_io_out_mantissa)
   );
-  OpMultiply multiply5 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  OpMultiply multiply5 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[191]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[190:183]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[182:160]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[191]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[190:183]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[182:160]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply5_io_out_sign),
     .io_out_exponent  (_multiply5_io_out_exponent),
     .io_out_mantissa  (_multiply5_io_out_mantissa)
   );
-  OpMultiply multiply6 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  OpMultiply multiply6 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[223]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[222:215]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[214:192]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[223]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[222:215]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[214:192]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply6_io_out_sign),
     .io_out_exponent  (_multiply6_io_out_exponent),
     .io_out_mantissa  (_multiply6_io_out_mantissa)
   );
-  OpMultiply multiply7 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
+  OpMultiply multiply7 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
-    .io_in_b_sign     (_wrapper_moduleIn__2[255]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_exponent (_wrapper_moduleIn__2[254:247]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
-    .io_in_b_mantissa (_wrapper_moduleIn__2[246:224]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :38:52
+    .io_in_b_sign     (_wrapper_moduleIn__2[255]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_exponent (_wrapper_moduleIn__2[254:247]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
+    .io_in_b_mantissa (_wrapper_moduleIn__2[246:224]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31, :43:45
     .io_out_sign      (_multiply7_io_out_sign),
     .io_out_exponent  (_multiply7_io_out_exponent),
     .io_out_mantissa  (_multiply7_io_out_mantissa)
   );
-  Wrapper wrapper (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
+  Wrapper wrapper (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:25:31
     .clock          (clock),
     .reset          (reset),
     .source_ready   (_wrapper_source_ready),
@@ -5332,10 +5332,10 @@ module BatchMultiply(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/comp
         _multiply1_io_out_mantissa,
         _multiply0_io_out_sign,
         _multiply0_io_out_exponent,
-        _multiply0_io_out_mantissa})	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20, :49:57
+        _multiply0_io_out_mantissa})	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:21:20, :49:57
   );
-  assign sourceInA_ready = sourceInB_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:13:7, src/main/scala/chext/elastic/Join.scala:42:29
-  assign sourceInB_ready = sourceInB_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:13:7, src/main/scala/chext/elastic/Join.scala:42:29
+  assign sourceInA_ready = sourceInB_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:13:7, src/main/scala/chext/elastic/Join.scala:42:29
+  assign sourceInB_ready = sourceInB_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:13:7, src/main/scala/chext/elastic/Join.scala:42:29
 endmodule
 
 module Queue2_UInt256(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
@@ -5513,42 +5513,42 @@ module Queue2_Bundle2(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_bits__2 = _ram_ext_R0_data[511:256];	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :256:91
 endmodule
 
-module RequestResponseGuard(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:15:7
+module RequestResponseGuard(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:15:7
   input          clock,	// <stdin>:16217:11, :16822:11, :17427:11, :18032:11, :18637:11, :19242:11, :19847:11, :20452:11, :21057:11, :21662:11, :22267:11, :22872:11, :23477:11, :24082:11, :24687:11, :25292:11, :25897:11, :26502:11, :27107:11, :27712:11, :28317:11, :28922:11, :29527:11, :30132:11, :30737:11, :31342:11, :31947:11, :32552:11, :33157:11, :33762:11, :34367:11, :34972:11
                  reset,	// <stdin>:16218:11, :16823:11, :17428:11, :18033:11, :18638:11, :19243:11, :19848:11, :20453:11, :21058:11, :21663:11, :22268:11, :22873:11, :23478:11, :24083:11, :24688:11, :25293:11, :25898:11, :26503:11, :27108:11, :27713:11, :28318:11, :28923:11, :29528:11, :30133:11, :30738:11, :31343:11, :31948:11, :32553:11, :33158:11, :33763:11, :34368:11, :34973:11
-  output         sourceReq_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
-  input          sourceReq_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
-  input  [255:0] sourceReq_bits__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
-                 sourceReq_bits__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
-  input          sinkResp_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:17:20
-  output         sinkResp_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:17:20
-  output [255:0] sinkResp_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:17:20
-  input          sinkReq_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
-  output         sinkReq_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
-  output [255:0] sinkReq_bits__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
-                 sinkReq_bits__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
-  output         sourceResp_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:20:22
-  input          sourceResp_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:20:22
-  input  [255:0] sourceResp_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:20:22
+  output         sourceReq_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
+  input          sourceReq_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
+  input  [255:0] sourceReq_bits__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
+                 sourceReq_bits__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:16:21
+  input          sinkResp_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:17:20
+  output         sinkResp_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:17:20
+  output [255:0] sinkResp_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:17:20
+  input          sinkReq_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
+  output         sinkReq_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
+  output [255:0] sinkReq_bits__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
+                 sinkReq_bits__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:19:19
+  output         sourceResp_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:20:22
+  input          sourceResp_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:20:22
+  input  [255:0] sourceResp_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:20:22
 );
 
   wire         _sinkBuffered__sinkBuffer_1_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire         _sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire         _respQueue_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
-  wire [255:0] _respQueue_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
-  wire         _ctr_io_full;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:22:27
+  wire         _respQueue_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
+  wire [255:0] _respQueue_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
+  wire         _ctr_io_full;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:22:27
   wire         sourceReq_ready_0 =
-    _sinkBuffered__sinkBuffer_io_enq_ready & sourceReq_valid & ~_ctr_io_full;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:22:27, :32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/util/Counter.scala:35:26, :36:24
-  wire         _GEN = _sinkBuffered__sinkBuffer_1_io_enq_ready & _respQueue_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33, src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  Counter ctr (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:22:27
+    _sinkBuffered__sinkBuffer_io_enq_ready & sourceReq_valid & ~_ctr_io_full;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:22:27, :32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/util/Counter.scala:35:26, :36:24
+  wire         _GEN = _sinkBuffered__sinkBuffer_1_io_enq_ready & _respQueue_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33, src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
+  Counter ctr (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:22:27
     .clock    (clock),
     .reset    (reset),
-    .io_incEn (sourceReq_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/util/Counter.scala:35:26
+    .io_incEn (sourceReq_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/util/Counter.scala:35:26
     .io_decEn (_GEN),	// src/main/scala/chext/elastic/Arrival.scala:65:28
     .io_empty (/* unused */),
     .io_full  (_ctr_io_full)
   );
-  Queue4_UInt256 respQueue (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
+  Queue4_UInt256 respQueue (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (sourceResp_ready),
@@ -5562,7 +5562,7 @@ module RequestResponseGuard(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
     .clock          (clock),
     .reset          (reset),
     .io_enq_ready   (_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid   (sourceReq_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/util/Counter.scala:35:26
+    .io_enq_valid   (sourceReq_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/util/Counter.scala:35:26
     .io_enq_bits__1 (sourceReq_bits__1),
     .io_enq_bits__2 (sourceReq_bits__2),
     .io_deq_ready   (sinkReq_ready),
@@ -5575,12 +5575,12 @@ module RequestResponseGuard(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
     .reset        (reset),
     .io_enq_ready (_sinkBuffered__sinkBuffer_1_io_enq_ready),
     .io_enq_valid (_GEN),	// src/main/scala/chext/elastic/Arrival.scala:65:28
-    .io_enq_bits  (_respQueue_io_deq_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
+    .io_enq_bits  (_respQueue_io_deq_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:26:33
     .io_deq_ready (sinkResp_ready),
     .io_deq_valid (sinkResp_valid),
     .io_deq_bits  (sinkResp_bits)
   );
-  assign sourceReq_ready = sourceReq_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:15:7, :32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/util/Counter.scala:35:26
+  assign sourceReq_ready = sourceReq_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/RequestResponseGuard.scala:15:7, :32:22, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/util/Counter.scala:35:26
 endmodule
 
 // VCS coverage exclude_file
@@ -5728,23 +5728,23 @@ module elasticDemux_2(	// src/main/scala/chext/elastic/Demux.scala:10:7
   assign io_select_ready = fire;	// src/main/scala/chext/elastic/Demux.scala:10:7, :27:28
 endmodule
 
-module RowReduceSingle(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+module RowReduceSingle(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
   input          clock,	// <stdin>:16464:11, :17069:11, :17674:11, :18279:11, :18884:11, :19489:11, :20094:11, :20699:11, :21304:11, :21909:11, :22514:11, :23119:11, :23724:11, :24329:11, :24934:11, :25539:11, :26144:11, :26749:11, :27354:11, :27959:11, :28564:11, :29169:11, :29774:11, :30379:11, :30984:11, :31589:11, :32194:11, :32799:11, :33404:11, :34009:11, :34614:11, :35219:11
                  reset,	// <stdin>:16465:11, :17070:11, :17675:11, :18280:11, :18885:11, :19490:11, :20095:11, :20700:11, :21305:11, :21910:11, :22515:11, :23120:11, :23725:11, :24330:11, :24935:11, :25540:11, :26145:11, :26750:11, :27355:11, :27960:11, :28565:11, :29170:11, :29775:11, :30380:11, :30985:11, :31590:11, :32195:11, :32800:11, :33405:11, :34010:11, :34615:11, :35220:11
-  output         sourceElem_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
-  input          sourceElem_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
-  input  [255:0] sourceElem_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
-  input          sourceElem_bits_last,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
-                 sinkResult_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:14:22
-  output         sinkResult_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:14:22
-  output [255:0] sinkResult_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:14:22
-  input          batchAddReq_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
-  output         batchAddReq_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
-  output [255:0] batchAddReq_bits__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
-                 batchAddReq_bits__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
-  output         batchAddResp_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:17:24
-  input          batchAddResp_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:17:24
-  input  [255:0] batchAddResp_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:17:24
+  output         sourceElem_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
+  input          sourceElem_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
+  input  [255:0] sourceElem_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
+  input          sourceElem_bits_last,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:13:22
+                 sinkResult_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:14:22
+  output         sinkResult_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:14:22
+  output [255:0] sinkResult_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:14:22
+  input          batchAddReq_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
+  output         batchAddReq_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
+  output [255:0] batchAddReq_bits__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
+                 batchAddReq_bits__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:16:23
+  output         batchAddResp_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:17:24
+  input          batchAddResp_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:17:24
+  input  [255:0] batchAddResp_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:17:24
 );
 
   wire         rvLast0_ready;	// src/main/scala/chext/elastic/Arrival.scala:65:28
@@ -5765,11 +5765,11 @@ module RowReduceSingle(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/co
   wire         _sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire         _sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire [255:0] _sinkBuffer_io_deq_bits;	// src/main/scala/chext/elastic/Buffer.scala:148:30
-  wire         _requestResponseGuard_sourceReq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
-  wire         _requestResponseGuard_sinkResp_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
-  wire [255:0] _requestResponseGuard_sinkResp_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
+  wire         _requestResponseGuard_sourceReq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
+  wire         _requestResponseGuard_sinkResp_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
+  wire [255:0] _requestResponseGuard_sinkResp_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
   wire         mkJoin_allValid = _mux_io_sink_valid & _sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:148:30, src/main/scala/chext/elastic/Join.scala:41:55, src/main/scala/chext/elastic/Mux.scala:50:21
-  wire         mkJoin_fire = _requestResponseGuard_sourceReq_ready & mkJoin_allValid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44, src/main/scala/chext/elastic/Join.scala:41:55, :42:29
+  wire         mkJoin_fire = _requestResponseGuard_sourceReq_ready & mkJoin_allValid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44, src/main/scala/chext/elastic/Join.scala:41:55, :42:29
   reg          eagerFork_regs_0;	// src/main/scala/chext/elastic/Fork.scala:75:25
   reg          eagerFork_regs_1;	// src/main/scala/chext/elastic/Fork.scala:75:25
   reg          eagerFork_regs_2;	// src/main/scala/chext/elastic/Fork.scala:75:25
@@ -5781,15 +5781,15 @@ module RowReduceSingle(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/co
   wire         sourceElem_ready_0 =
     eagerFork_sourceElem_ready_qual1_0 & eagerFork_sourceElem_ready_qual1_1
     & eagerFork_sourceElem_ready_qual1_2;	// src/main/scala/chext/elastic/Fork.scala:85:22, :87:23
-  reg          rIsNextFirst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:62:37
+  reg          rIsNextFirst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:62:37
   assign rvLast0_ready =
     _sinkBuffered__sinkBuffer_io_enq_ready & sourceElem_valid & ~eagerFork_regs_1;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :79:41
   always @(posedge clock) begin	// <stdin>:16464:11, :17069:11, :17674:11, :18279:11, :18884:11, :19489:11, :20094:11, :20699:11, :21304:11, :21909:11, :22514:11, :23119:11, :23724:11, :24329:11, :24934:11, :25539:11, :26144:11, :26749:11, :27354:11, :27959:11, :28564:11, :29169:11, :29774:11, :30379:11, :30984:11, :31589:11, :32194:11, :32799:11, :33404:11, :34009:11, :34614:11, :35219:11
     if (reset) begin	// <stdin>:16464:11, :17069:11, :17674:11, :18279:11, :18884:11, :19489:11, :20094:11, :20699:11, :21304:11, :21909:11, :22514:11, :23119:11, :23724:11, :24329:11, :24934:11, :25539:11, :26144:11, :26749:11, :27354:11, :27959:11, :28564:11, :29169:11, :29774:11, :30379:11, :30984:11, :31589:11, :32194:11, :32799:11, :33404:11, :34009:11, :34614:11, :35219:11
-      eagerFork_regs_0 <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
-      eagerFork_regs_1 <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
-      eagerFork_regs_2 <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
-      rIsNextFirst <= 1'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, :62:37
+      eagerFork_regs_0 <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
+      eagerFork_regs_1 <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
+      eagerFork_regs_2 <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
+      rIsNextFirst <= 1'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, :62:37
     end
     else begin	// <stdin>:16464:11, :17069:11, :17674:11, :18279:11, :18884:11, :19489:11, :20094:11, :20699:11, :21304:11, :21909:11, :22514:11, :23119:11, :23724:11, :24329:11, :24934:11, :25539:11, :26144:11, :26749:11, :27354:11, :27959:11, :28564:11, :29169:11, :29774:11, :30379:11, :30984:11, :31589:11, :32194:11, :32799:11, :33404:11, :34009:11, :34614:11, :35219:11
       eagerFork_regs_0 <=
@@ -5799,31 +5799,31 @@ module RowReduceSingle(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/co
       eagerFork_regs_2 <=
         eagerFork_sourceElem_ready_qual1_2 & sourceElem_valid & ~sourceElem_ready_0;	// src/main/scala/chext/elastic/Fork.scala:75:25, :85:22, :87:23, :92:{54,57}
       if (rvLast0_ready)	// src/main/scala/chext/elastic/Arrival.scala:65:28
-        rIsNextFirst <= sourceElem_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:62:37
+        rIsNextFirst <= sourceElem_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:62:37
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-        eagerFork_regs_0 = _RANDOM[/*Zero width*/ 1'b0][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        eagerFork_regs_1 = _RANDOM[/*Zero width*/ 1'b0][1];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        eagerFork_regs_2 = _RANDOM[/*Zero width*/ 1'b0][2];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        rIsNextFirst = _RANDOM[/*Zero width*/ 1'b0][3];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, :62:37, src/main/scala/chext/elastic/Fork.scala:75:25
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+        eagerFork_regs_0 = _RANDOM[/*Zero width*/ 1'b0][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        eagerFork_regs_1 = _RANDOM[/*Zero width*/ 1'b0][1];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        eagerFork_regs_2 = _RANDOM[/*Zero width*/ 1'b0][2];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        rIsNextFirst = _RANDOM[/*Zero width*/ 1'b0][3];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, :62:37, src/main/scala/chext/elastic/Fork.scala:75:25
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  RequestResponseGuard requestResponseGuard (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
+  RequestResponseGuard requestResponseGuard (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
     .clock             (clock),
     .reset             (reset),
     .sourceReq_ready   (_requestResponseGuard_sourceReq_ready),
@@ -5866,7 +5866,7 @@ module RowReduceSingle(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/co
     .reset        (reset),
     .io_enq_ready (_sinkBuffered__sinkBuffer_io_enq_ready),
     .io_enq_valid (rvLast0_ready),	// src/main/scala/chext/elastic/Arrival.scala:65:28
-    .io_enq_bits  (rIsNextFirst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:62:37
+    .io_enq_bits  (rIsNextFirst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:62:37
     .io_deq_ready (_mux_io_select_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sinkBuffered__sinkBuffer_io_deq_valid),
     .io_deq_bits  (_sinkBuffered__sinkBuffer_io_deq_bits)
@@ -5880,12 +5880,12 @@ module RowReduceSingle(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/co
     .io_sink_bits       (_mux_io_sink_bits),
     .io_select_ready    (_mux_io_select_ready),
     .io_select_valid    (_sinkBuffered__sinkBuffer_io_deq_valid),	// src/main/scala/chext/elastic/Buffer.scala:131:30
-    .io_select_bits     (~_sinkBuffered__sinkBuffer_io_deq_bits)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:80:15, src/main/scala/chext/elastic/Buffer.scala:131:30
+    .io_select_bits     (~_sinkBuffered__sinkBuffer_io_deq_bits)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:80:15, src/main/scala/chext/elastic/Buffer.scala:131:30
   );
   elasticDemux_2 demux (	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_source_ready  (_demux_io_source_ready),
-    .io_source_valid  (_requestResponseGuard_sinkResp_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
-    .io_source_bits   (_requestResponseGuard_sinkResp_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
+    .io_source_valid  (_requestResponseGuard_sinkResp_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
+    .io_source_bits   (_requestResponseGuard_sinkResp_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:19:44
     .io_sinks_0_ready (_mux_io_sources_1_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_sinks_0_valid (_demux_io_sinks_0_valid),
     .io_sinks_0_bits  (_demux_io_sinks_0_bits),
@@ -5896,33 +5896,33 @@ module RowReduceSingle(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/co
     .io_select_valid  (_sinkBuffer_1_io_deq_valid),	// src/main/scala/chext/elastic/Buffer.scala:148:30
     .io_select_bits   (_sinkBuffer_1_io_deq_bits)	// src/main/scala/chext/elastic/Buffer.scala:148:30
   );
-  assign sourceElem_ready = sourceElem_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:87:23
+  assign sourceElem_ready = sourceElem_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:10:7, src/main/scala/chext/elastic/Fork.scala:87:23
 endmodule
 
-module AddRawFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+module AddRawFN_Pipelined_8_24(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
   input         clock,	// <stdin>:35400:11, :36369:11, :37338:11, :38307:11, :39276:11, :40245:11, :41214:11, :42183:11, :43800:11, :44769:11, :45738:11, :46707:11, :47676:11, :48645:11, :49614:11, :50583:11, :52200:11, :53169:11, :54138:11, :55107:11, :56076:11, :57045:11, :58014:11, :58983:11, :60600:11, :61569:11, :62538:11, :63507:11, :64476:11, :65445:11, :66414:11, :67383:11
-                io_a_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_a_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_a_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_a_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  input  [9:0]  io_a_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  input  [24:0] io_a_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  input         io_b_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_b_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_b_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_b_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  input  [9:0]  io_b_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  input  [24:0] io_b_sig,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  output        io_invalidExc,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_rawOut_isNaN,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_rawOut_isInf,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_rawOut_isZero,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-                io_rawOut_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  output [9:0]  io_rawOut_sExp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
-  output [26:0] io_rawOut_sig	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_a_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_a_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_a_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_a_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  input  [9:0]  io_a_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  input  [24:0] io_a_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  input         io_b_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_b_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_b_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_b_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  input  [9:0]  io_b_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  input  [24:0] io_b_sig,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  output        io_invalidExc,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_rawOut_isNaN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_rawOut_isInf,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_rawOut_isZero,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+                io_rawOut_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  output [9:0]  io_rawOut_sExp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
+  output [26:0] io_rawOut_sig	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14
 );
 
-  reg  [12:0] stage1_close_reduced2SigSum;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [12:0] stage1_close_reduced2SigSum;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   wire [3:0]  stage1_close_normDistReduced2 =
     stage1_close_reduced2SigSum[12]
       ? 4'h0
@@ -5948,70 +5948,70 @@ module AddRawFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/
                                               ? 4'hA
                                               : stage1_close_reduced2SigSum[1]
                                                   ? 4'hB
-                                                  : 4'hC;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:91:52, src/main/scala/chisel3/util/Mux.scala:50:70
-  reg  [25:0] stage1_close_sigSum;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+                                                  : 4'hC;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:91:52, src/main/scala/chisel3/util/Mux.scala:50:70
+  reg  [25:0] stage1_close_sigSum;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   wire [56:0] _GEN =
-    {31'h0, stage1_close_sigSum} << {52'h0, stage1_close_normDistReduced2, 1'h0};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :123:14, :141:59, :178:54, src/main/scala/chisel3/util/Mux.scala:50:70
-  reg         stage1_a_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_a_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_a_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [9:0]  stage1_a_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [24:0] stage1_a_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [26:0] stage1_close_sSigSum;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [4:0]  stage1_alignDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  wire [8:0]  shift = $signed(9'sh100 >>> stage1_alignDist[4:2]);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :182:62, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:76:56
-  reg  [28:0] stage1_far_mainAlignedSigSmaller;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [6:0]  stage1_far_reduced4SigSmaller;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    {31'h0, stage1_close_sigSum} << {52'h0, stage1_close_normDistReduced2, 1'h0};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :123:14, :141:59, :178:54, src/main/scala/chisel3/util/Mux.scala:50:70
+  reg         stage1_a_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_a_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_a_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [9:0]  stage1_a_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [24:0] stage1_a_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [26:0] stage1_close_sSigSum;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [4:0]  stage1_alignDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  wire [8:0]  shift = $signed(9'sh100 >>> stage1_alignDist[4:2]);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :182:62, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:76:56
+  reg  [28:0] stage1_far_mainAlignedSigSmaller;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [6:0]  stage1_far_reduced4SigSmaller;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   wire        _GEN_0 =
     (|(stage1_far_mainAlignedSigSmaller[2:0]))
     | (|(stage1_far_reduced4SigSmaller
-         & {shift[1], shift[2], shift[3], shift[4], shift[5], shift[6], shift[7]}));	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :185:{76,83,87,118,144}, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:76:56, :77:20, :78:22
-  reg         stage1_eqSigns;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [23:0] stage1_far_sigLarger;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+         & {shift[1], shift[2], shift[3], shift[4], shift[5], shift[6], shift[7]}));	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :185:{76,83,87,118,144}, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:76:56, :77:20, :78:22
+  reg         stage1_eqSigns;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [23:0] stage1_far_sigLarger;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   wire [27:0] stage1_far_sigSum =
     {1'h0, stage1_far_sigLarger, 3'h0}
     + (stage1_eqSigns
          ? {1'h0, stage1_far_mainAlignedSigSmaller[28:3], _GEN_0}
          : {1'h1, ~{stage1_far_mainAlignedSigSmaller[28:3], _GEN_0}})
-    + {27'h0, ~stage1_eqSigns};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :123:14, :141:59, :147:44, :158:8, :185:{10,41,87}, :188:34, :190:{13,34,40}, :191:{58,89}
-  reg         stage1_addZeros;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_notNaN_isInfOut;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_closeSubMags;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    + {27'h0, ~stage1_eqSigns};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :123:14, :141:59, :147:44, :158:8, :185:{10,41,87}, :188:34, :190:{13,34,40}, :191:{58,89}
+  reg         stage1_addZeros;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_notNaN_isInfOut;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_closeSubMags;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   wire        io_rawOut_isZero_0 =
-    stage1_addZeros | ~stage1_notNaN_isInfOut & stage1_closeSubMags & ~(|(_GEN[25:24]));	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :178:{54,86}, :179:{46,64,97}, :194:{52,56,97}
-  reg         stage1_b_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_b_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [9:0]  stage1_b_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [24:0] stage1_b_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_effSignB;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_notEqSigns_signZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_notNaN_specialCase;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         stage1_far_signOut;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [9:0]  stage1_sDiffExps;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         io_invalidExc_stage1_notSigNaN_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_addZeros | ~stage1_notNaN_isInfOut & stage1_closeSubMags & ~(|(_GEN[25:24]));	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :178:{54,86}, :179:{46,64,97}, :194:{52,56,97}
+  reg         stage1_b_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_b_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [9:0]  stage1_b_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [24:0] stage1_b_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_effSignB;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_notEqSigns_signZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_notNaN_specialCase;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         stage1_far_signOut;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [9:0]  stage1_sDiffExps;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         io_invalidExc_stage1_notSigNaN_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   always @(posedge clock) begin	// <stdin>:35400:11, :36369:11, :37338:11, :38307:11, :39276:11, :40245:11, :41214:11, :42183:11, :43800:11, :44769:11, :45738:11, :46707:11, :47676:11, :48645:11, :49614:11, :50583:11, :52200:11, :53169:11, :54138:11, :55107:11, :56076:11, :57045:11, :58014:11, :58983:11, :60600:11, :61569:11, :62538:11, :63507:11, :64476:11, :65445:11, :66414:11, :67383:11
-    automatic logic        stage0_eqSigns = io_a_sign == io_b_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:140:41
-    automatic logic [9:0]  _GEN_1 = io_a_sExp - io_b_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43
-    automatic logic        _GEN_2 = $signed(_GEN_1) < 10'sh0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :143:56
+    automatic logic        stage0_eqSigns = io_a_sign == io_b_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:140:41
+    automatic logic [9:0]  _GEN_1 = io_a_sExp - io_b_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43
+    automatic logic        _GEN_2 = $signed(_GEN_1) < 10'sh0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :143:56
     automatic logic [4:0]  stage0_modNatAlignDist =
-      _GEN_2 ? io_b_sExp[4:0] - io_a_sExp[4:0] : _GEN_1[4:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :142:43, :143:{41,56,74}
+      _GEN_2 ? io_b_sExp[4:0] - io_a_sExp[4:0] : _GEN_1[4:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :142:43, :143:{41,56,74}
     automatic logic        stage0_isMaxAlign =
-      (|(_GEN_1[9:5])) & (_GEN_1[9:5] != 5'h1F | _GEN_1[4:0] == 5'h0);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :146:{22,41,49}, :147:{44,53,93}, :150:35
+      (|(_GEN_1[9:5])) & (_GEN_1[9:5] != 5'h1F | _GEN_1[4:0] == 5'h0);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :146:{22,41,49}, :147:{44,53,93}, :150:35
     automatic logic [4:0]  stage0_alignDist =
-      stage0_isMaxAlign ? 5'h1F : stage0_modNatAlignDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:143:41, :146:49, :150:35
-    automatic logic        stage0_notNaN_isInfOut = io_a_isInf | io_b_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:153:50
-    automatic logic        stage0_addZeros = io_a_isZero & io_b_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:154:44
-    automatic logic        _GEN_3 = $signed(_GEN_1) > -10'sh1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :158:14
-    automatic logic [26:0] _GEN_4 = _GEN_3 & _GEN_1[0] ? {io_a_sig, 2'h0} : 27'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :158:{8,14,32,48,63}
+      stage0_isMaxAlign ? 5'h1F : stage0_modNatAlignDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:143:41, :146:49, :150:35
+    automatic logic        stage0_notNaN_isInfOut = io_a_isInf | io_b_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:153:50
+    automatic logic        stage0_addZeros = io_a_isZero & io_b_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:154:44
+    automatic logic        _GEN_3 = $signed(_GEN_1) > -10'sh1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :158:14
+    automatic logic [26:0] _GEN_4 = _GEN_3 & _GEN_1[0] ? {io_a_sig, 2'h0} : 27'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:142:43, :158:{8,14,32,48,63}
     automatic logic [25:0] _GEN_5 =
-      _GEN_4[25:0] | (_GEN_3 & ~(_GEN_1[0]) ? {io_a_sig, 1'h0} : 26'h0);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :141:59, :142:43, :158:{8,14,48,74}, :159:{10,34,37,66}
+      _GEN_4[25:0] | (_GEN_3 & ~(_GEN_1[0]) ? {io_a_sig, 1'h0} : 26'h0);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :141:59, :142:43, :158:{8,14,48,74}, :159:{10,34,37,66}
     automatic logic [26:0] _GEN_6 =
       {_GEN_4[26], _GEN_5[25], _GEN_5[24:0] | (_GEN_2 ? io_a_sig : 25'h0)}
-      - {io_b_sig[24], io_b_sig, 1'h0};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :141:59, :143:56, :158:{8,74}, :159:77, :160:10, :163:65
+      - {io_b_sig[24], io_b_sig, 1'h0};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :141:59, :143:56, :158:{8,74}, :159:77, :160:10, :163:65
     automatic logic [25:0] stage0_close_sigSum =
-      $signed(_GEN_6) < 27'sh0 ? 26'h0 - _GEN_6[25:0] : _GEN_6[25:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:143:56, :158:8, :159:10, :163:65, :164:{38,57,64}
+      $signed(_GEN_6) < 27'sh0 ? 26'h0 - _GEN_6[25:0] : _GEN_6[25:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:143:56, :158:8, :159:10, :163:65, :164:{38,57,64}
     automatic logic [23:0] stage0_far_sigSmaller =
-      _GEN_2 ? io_a_sig[23:0] : io_b_sig[23:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :143:56, :170:40
+      _GEN_2 ? io_a_sig[23:0] : io_b_sig[23:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:123:14, :143:56, :170:40
     stage1_close_reduced2SigSum <=
       {|(stage0_close_sigSum[25:24]),
        |(stage0_close_sigSum[23:22]),
@@ -6025,16 +6025,16 @@ module AddRawFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/
        |(stage0_close_sigSum[7:6]),
        |(stage0_close_sigSum[5:4]),
        |(stage0_close_sigSum[3:2]),
-       |(stage0_close_sigSum[1:0])};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :164:{38,102}, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:103:{33,54}, :106:{15,57}, :107:20
-    stage1_close_sigSum <= stage0_close_sigSum;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :164:38
-    stage1_a_isNaN <= io_a_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_a_isInf <= io_a_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_a_sign <= io_a_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_a_sExp <= io_a_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_a_sig <= io_a_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_close_sSigSum <= _GEN_6;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :163:65
-    stage1_alignDist <= stage0_alignDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :150:35
-    stage1_far_mainAlignedSigSmaller <= {stage0_far_sigSmaller, 5'h0} >> stage0_alignDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :146:{22,41}, :150:35, :170:40, :171:{68,74}
+       |(stage0_close_sigSum[1:0])};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :164:{38,102}, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:103:{33,54}, :106:{15,57}, :107:20
+    stage1_close_sigSum <= stage0_close_sigSum;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :164:38
+    stage1_a_isNaN <= io_a_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_a_isInf <= io_a_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_a_sign <= io_a_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_a_sExp <= io_a_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_a_sig <= io_a_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_close_sSigSum <= _GEN_6;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :163:65
+    stage1_alignDist <= stage0_alignDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :150:35
+    stage1_far_mainAlignedSigSmaller <= {stage0_far_sigSmaller, 5'h0} >> stage0_alignDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :146:{22,41}, :150:35, :170:40, :171:{68,74}
     stage1_far_reduced4SigSmaller <=
       {|(stage0_far_sigSmaller[23:22]),
        |(stage0_far_sigSmaller[21:18]),
@@ -6042,82 +6042,82 @@ module AddRawFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/
        |(stage0_far_sigSmaller[13:10]),
        |(stage0_far_sigSmaller[9:6]),
        |(stage0_far_sigSmaller[5:2]),
-       |(stage0_far_sigSmaller[1:0])};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :170:40, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:120:{33,54}, :123:{15,57}, :124:20
-    stage1_eqSigns <= stage0_eqSigns;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :140:41
-    stage1_far_sigLarger <= _GEN_2 ? io_b_sig[23:0] : io_a_sig[23:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :123:14, :143:56, :169:39
-    stage1_addZeros <= stage0_addZeros;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :154:44
-    stage1_notNaN_isInfOut <= stage0_notNaN_isInfOut;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :153:50
+       |(stage0_far_sigSmaller[1:0])};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :170:40, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:120:{33,54}, :123:{15,57}, :124:20
+    stage1_eqSigns <= stage0_eqSigns;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :140:41
+    stage1_far_sigLarger <= _GEN_2 ? io_b_sig[23:0] : io_a_sig[23:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :123:14, :143:56, :169:39
+    stage1_addZeros <= stage0_addZeros;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :154:44
+    stage1_notNaN_isInfOut <= stage0_notNaN_isInfOut;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :153:50
     stage1_closeSubMags <=
-      ~stage0_eqSigns & ~stage0_isMaxAlign & stage0_modNatAlignDist < 5'h2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :140:41, :143:41, :146:49, :151:{35,51,67,91}
-    stage1_b_isNaN <= io_b_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_b_isInf <= io_b_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_b_sExp <= io_b_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_b_sig <= io_b_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_effSignB <= io_b_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    stage1_notEqSigns_signZero <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :123:14, :141:59
-    stage1_notNaN_specialCase <= stage0_notNaN_isInfOut | stage0_addZeros;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :153:50, :154:44, :155:61
-    stage1_far_signOut <= _GEN_2 ? io_b_sign : io_a_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :143:56, :168:37
-    stage1_sDiffExps <= _GEN_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :142:43
+      ~stage0_eqSigns & ~stage0_isMaxAlign & stage0_modNatAlignDist < 5'h2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :140:41, :143:41, :146:49, :151:{35,51,67,91}
+    stage1_b_isNaN <= io_b_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_b_isInf <= io_b_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_b_sExp <= io_b_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_b_sig <= io_b_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_effSignB <= io_b_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    stage1_notEqSigns_signZero <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :123:14, :141:59
+    stage1_notNaN_specialCase <= stage0_notNaN_isInfOut | stage0_addZeros;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :153:50, :154:44, :155:61
+    stage1_far_signOut <= _GEN_2 ? io_b_sign : io_a_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :143:56, :168:37
+    stage1_sDiffExps <= _GEN_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :142:43
     io_invalidExc_stage1_notSigNaN_invalidExc <=
-      io_a_isInf & io_b_isInf & ~stage0_eqSigns;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :140:41, :151:35, :152:70
+      io_a_isInf & io_b_isInf & ~stage0_eqSigns;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :140:41, :151:35, :152:70
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-      automatic logic [31:0] _RANDOM[0:7];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+      automatic logic [31:0] _RANDOM[0:7];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
         for (logic [3:0] i = 4'h0; i < 4'h8; i += 4'h1) begin
-          _RANDOM[i[2:0]] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-        stage1_close_reduced2SigSum = _RANDOM[3'h0][12:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_close_sigSum = {_RANDOM[3'h0][31:13], _RANDOM[3'h1][6:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_a_isNaN = _RANDOM[3'h1][7];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_a_isInf = _RANDOM[3'h1][8];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_a_sign = _RANDOM[3'h1][10];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_a_sExp = _RANDOM[3'h1][20:11];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_a_sig = {_RANDOM[3'h1][31:21], _RANDOM[3'h2][13:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_close_sSigSum = {_RANDOM[3'h2][31:14], _RANDOM[3'h3][8:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_alignDist = _RANDOM[3'h3][13:9];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_far_mainAlignedSigSmaller = {_RANDOM[3'h3][31:14], _RANDOM[3'h4][10:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_far_reduced4SigSmaller = _RANDOM[3'h4][17:11];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_eqSigns = _RANDOM[3'h4][18];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_far_sigLarger = {_RANDOM[3'h4][31:19], _RANDOM[3'h5][10:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_addZeros = _RANDOM[3'h5][11];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_notNaN_isInfOut = _RANDOM[3'h5][12];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_closeSubMags = _RANDOM[3'h5][13];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_b_isNaN = _RANDOM[3'h5][14];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_b_isInf = _RANDOM[3'h5][15];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_b_sExp = _RANDOM[3'h5][27:18];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_b_sig = {_RANDOM[3'h5][31:28], _RANDOM[3'h6][20:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_effSignB = _RANDOM[3'h6][21];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_notEqSigns_signZero = _RANDOM[3'h6][22];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_notNaN_specialCase = _RANDOM[3'h6][23];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_far_signOut = _RANDOM[3'h6][24];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        stage1_sDiffExps = {_RANDOM[3'h6][31:25], _RANDOM[3'h7][2:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-        io_invalidExc_stage1_notSigNaN_invalidExc = _RANDOM[3'h7][3];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+          _RANDOM[i[2:0]] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+        stage1_close_reduced2SigSum = _RANDOM[3'h0][12:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_close_sigSum = {_RANDOM[3'h0][31:13], _RANDOM[3'h1][6:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_a_isNaN = _RANDOM[3'h1][7];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_a_isInf = _RANDOM[3'h1][8];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_a_sign = _RANDOM[3'h1][10];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_a_sExp = _RANDOM[3'h1][20:11];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_a_sig = {_RANDOM[3'h1][31:21], _RANDOM[3'h2][13:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_close_sSigSum = {_RANDOM[3'h2][31:14], _RANDOM[3'h3][8:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_alignDist = _RANDOM[3'h3][13:9];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_far_mainAlignedSigSmaller = {_RANDOM[3'h3][31:14], _RANDOM[3'h4][10:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_far_reduced4SigSmaller = _RANDOM[3'h4][17:11];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_eqSigns = _RANDOM[3'h4][18];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_far_sigLarger = {_RANDOM[3'h4][31:19], _RANDOM[3'h5][10:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_addZeros = _RANDOM[3'h5][11];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_notNaN_isInfOut = _RANDOM[3'h5][12];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_closeSubMags = _RANDOM[3'h5][13];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_b_isNaN = _RANDOM[3'h5][14];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_b_isInf = _RANDOM[3'h5][15];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_b_sExp = _RANDOM[3'h5][27:18];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_b_sig = {_RANDOM[3'h5][31:28], _RANDOM[3'h6][20:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_effSignB = _RANDOM[3'h6][21];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_notEqSigns_signZero = _RANDOM[3'h6][22];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_notNaN_specialCase = _RANDOM[3'h6][23];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_far_signOut = _RANDOM[3'h6][24];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        stage1_sDiffExps = {_RANDOM[3'h6][31:25], _RANDOM[3'h7][2:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+        io_invalidExc_stage1_notSigNaN_invalidExc = _RANDOM[3'h7][3];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
   assign io_invalidExc =
     stage1_a_isNaN & ~(stage1_a_sig[22]) | stage1_b_isNaN & ~(stage1_b_sig[22])
-    | io_invalidExc_stage1_notSigNaN_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :214:71, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/common.scala:82:{46,49,56}
-  assign io_rawOut_isNaN = stage1_a_isNaN | stage1_b_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :218:34
-  assign io_rawOut_isInf = stage1_notNaN_isInfOut;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
-  assign io_rawOut_isZero = io_rawOut_isZero_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15, :194:52
+    | io_invalidExc_stage1_notSigNaN_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :214:71, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/common.scala:82:{46,49,56}
+  assign io_rawOut_isNaN = stage1_a_isNaN | stage1_b_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :218:34
+  assign io_rawOut_isInf = stage1_notNaN_isInfOut;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15
+  assign io_rawOut_isZero = io_rawOut_isZero_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:120:15, :194:52
   assign io_rawOut_sign =
     stage1_eqSigns & stage1_a_sign | stage1_a_isInf & stage1_a_sign | stage1_b_isInf
     & stage1_effSignB | io_rawOut_isZero_0 & ~stage1_eqSigns & stage1_notEqSigns_signZero
     | ~stage1_notNaN_specialCase & stage1_closeSubMags & (|(_GEN[25:24]))
     & (stage1_a_sign ^ $signed(stage1_close_sSigSum) < 27'sh0)
-    | ~stage1_notNaN_specialCase & ~stage1_closeSubMags & stage1_far_signOut;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :158:8, :178:{54,86}, :179:{64,97}, :180:{68,89}, :188:34, :194:52, :197:20, :198:22, :199:22, :200:47, :201:10, :202:{11,54}, :203:{37,55}
+    | ~stage1_notNaN_specialCase & ~stage1_closeSubMags & stage1_far_signOut;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :158:8, :178:{54,86}, :179:{64,97}, :180:{68,89}, :188:34, :194:52, :197:20, :198:22, :199:22, :200:47, :201:10, :202:{11,54}, :203:{37,55}
   assign io_rawOut_sExp =
     (stage1_closeSubMags | $signed(stage1_sDiffExps) < 10'sh0
        ? stage1_b_sExp
@@ -6125,100 +6125,100 @@ module AddRawFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/
     - {5'h0,
        stage1_closeSubMags
          ? {stage1_close_normDistReduced2, 1'h0}
-         : {4'h0, ~stage1_eqSigns}};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :123:14, :141:59, :143:56, :146:{22,41}, :177:69, :188:34, :208:{10,28,46}, :209:{9,14}, src/main/scala/chisel3/util/Mux.scala:50:70
+         : {4'h0, ~stage1_eqSigns}};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :123:14, :141:59, :143:56, :146:{22,41}, :177:69, :188:34, :208:{10,28,46}, :209:{9,14}, src/main/scala/chisel3/util/Mux.scala:50:70
   assign io_rawOut_sig =
     stage1_closeSubMags
       ? {_GEN[25:0], 1'h0}
       : stage1_eqSigns
           ? {stage1_far_sigSum[27:2], stage1_far_sigSum[1] | stage1_far_sigSum[0]}
-          : stage1_far_sigSum[26:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :123:14, :141:59, :178:{54,86}, :191:89, :192:{36,86,92,108}, :212:39
+          : stage1_far_sigSum[26:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :120:15, :123:14, :141:59, :178:{54,86}, :191:89, :192:{36,86,92,108}, :212:39
 endmodule
 
-module AddRecFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+module AddRecFN_Pipelined_8_24(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
   input         clock,	// <stdin>:35995:11, :36964:11, :37933:11, :38902:11, :39871:11, :40840:11, :41809:11, :42778:11, :44395:11, :45364:11, :46333:11, :47302:11, :48271:11, :49240:11, :50209:11, :51178:11, :52795:11, :53764:11, :54733:11, :55702:11, :56671:11, :57640:11, :58609:11, :59578:11, :61195:11, :62164:11, :63133:11, :64102:11, :65071:11, :66040:11, :67009:11, :67978:11
-  input  [32:0] io_a,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:226:14
-                io_b,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:226:14
-  output [32:0] io_out	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:226:14
+  input  [32:0] io_a,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:226:14
+                io_b,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:226:14
+  output [32:0] io_out	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:226:14
 );
 
-  wire [32:0] _roundRawFNToRecFN_io_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:256:41
-  wire        _addRawFN_io_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
-  wire        _addRawFN_io_rawOut_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
-  wire        _addRawFN_io_rawOut_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
-  wire        _addRawFN_io_rawOut_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
-  wire        _addRawFN_io_rawOut_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
-  wire [9:0]  _addRawFN_io_rawOut_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
-  wire [26:0] _addRawFN_io_rawOut_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
-  reg  [32:0] addRawFN_io_a_stage1_a;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [32:0] addRawFN_io_b_stage1_b;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [9:0]  roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [26:0] roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-  reg  [32:0] io_out_stage4_roundRawFNToRecFN_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  wire [32:0] _roundRawFNToRecFN_io_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:258:41
+  wire        _addRawFN_io_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  wire        _addRawFN_io_rawOut_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  wire        _addRawFN_io_rawOut_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  wire        _addRawFN_io_rawOut_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  wire        _addRawFN_io_rawOut_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  wire [9:0]  _addRawFN_io_rawOut_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  wire [26:0] _addRawFN_io_rawOut_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  reg  [32:0] addRawFN_io_a_stage1_a;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [32:0] addRawFN_io_b_stage1_b;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [9:0]  roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [26:0] roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  reg  [32:0] io_out_stage4_roundRawFNToRecFN_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
   always @(posedge clock) begin	// <stdin>:35995:11, :36964:11, :37933:11, :38902:11, :39871:11, :40840:11, :41809:11, :42778:11, :44395:11, :45364:11, :46333:11, :47302:11, :48271:11, :49240:11, :50209:11, :51178:11, :52795:11, :53764:11, :54733:11, :55702:11, :56671:11, :57640:11, :58609:11, :59578:11, :61195:11, :62164:11, :63133:11, :64102:11, :65071:11, :66040:11, :67009:11, :67978:11
-    addRawFN_io_a_stage1_a <= io_a;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    addRawFN_io_b_stage1_b <= io_b;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc <= _addRawFN_io_invalidExc;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
-    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN <= _addRawFN_io_rawOut_isNaN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
-    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf <= _addRawFN_io_rawOut_isInf;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
-    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero <= _addRawFN_io_rawOut_isZero;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
-    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign <= _addRawFN_io_rawOut_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
-    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp <= _addRawFN_io_rawOut_sExp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
-    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sig <= _addRawFN_io_rawOut_sig;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
-    io_out_stage4_roundRawFNToRecFN_out <= _roundRawFNToRecFN_io_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :256:41
+    addRawFN_io_a_stage1_a <= io_a;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    addRawFN_io_b_stage1_b <= io_b;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc <= _addRawFN_io_invalidExc;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
+    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN <= _addRawFN_io_rawOut_isNaN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
+    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf <= _addRawFN_io_rawOut_isInf;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
+    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero <= _addRawFN_io_rawOut_isZero;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
+    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign <= _addRawFN_io_rawOut_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
+    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp <= _addRawFN_io_rawOut_sExp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
+    roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sig <= _addRawFN_io_rawOut_sig;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :244:32
+    io_out_stage4_roundRawFNToRecFN_out <= _roundRawFNToRecFN_io_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :258:41
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-      automatic logic [31:0] _RANDOM[0:4];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+      automatic logic [31:0] _RANDOM[0:4];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
         for (logic [2:0] i = 3'h0; i < 3'h5; i += 3'h1) begin
-          _RANDOM[i] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-        addRawFN_io_a_stage1_a = {_RANDOM[3'h0][31:1], _RANDOM[3'h1][1:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        addRawFN_io_b_stage1_b = {_RANDOM[3'h1][31:2], _RANDOM[3'h2][2:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc = _RANDOM[3'h2][6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN = _RANDOM[3'h2][7];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf = _RANDOM[3'h2][8];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero = _RANDOM[3'h2][9];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign = _RANDOM[3'h2][10];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp = _RANDOM[3'h2][20:11];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+          _RANDOM[i] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+        addRawFN_io_a_stage1_a = {_RANDOM[3'h0][31:1], _RANDOM[3'h1][1:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        addRawFN_io_b_stage1_b = {_RANDOM[3'h1][31:2], _RANDOM[3'h2][2:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc = _RANDOM[3'h2][6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN = _RANDOM[3'h2][7];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf = _RANDOM[3'h2][8];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero = _RANDOM[3'h2][9];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign = _RANDOM[3'h2][10];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp = _RANDOM[3'h2][20:11];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
         roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sig =
-          {_RANDOM[3'h2][31:21], _RANDOM[3'h3][15:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
-        io_out_stage4_roundRawFNToRecFN_out = {_RANDOM[3'h3][31:25], _RANDOM[3'h4][25:0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+          {_RANDOM[3'h2][31:21], _RANDOM[3'h3][15:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+        io_out_stage4_roundRawFNToRecFN_out = {_RANDOM[3'h3][31:25], _RANDOM[3'h4][25:0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:223:15
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  AddRawFN_Pipelined_8_24 addRawFN (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
+  AddRawFN_Pipelined_8_24 addRawFN (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:244:32
     .clock            (clock),
-    .io_a_isNaN       ((&(addRawFN_io_a_stage1_a[31:30])) & addRawFN_io_a_stage1_a[29]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
+    .io_a_isNaN       ((&(addRawFN_io_a_stage1_a[31:30])) & addRawFN_io_a_stage1_a[29]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
     .io_a_isInf
-      ((&(addRawFN_io_a_stage1_a[31:30])) & ~(addRawFN_io_a_stage1_a[29])),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
-    .io_a_isZero      (~(|(addRawFN_io_a_stage1_a[31:29]))),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
-    .io_a_sign        (addRawFN_io_a_stage1_a[32]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
-    .io_a_sExp        ({1'h0, addRawFN_io_a_stage1_a[31:23]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :256:41, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
+      ((&(addRawFN_io_a_stage1_a[31:30])) & ~(addRawFN_io_a_stage1_a[29])),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
+    .io_a_isZero      (~(|(addRawFN_io_a_stage1_a[31:29]))),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
+    .io_a_sign        (addRawFN_io_a_stage1_a[32]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
+    .io_a_sExp        ({1'h0, addRawFN_io_a_stage1_a[31:23]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :258:41, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
     .io_a_sig
-      ({1'h0, |(addRawFN_io_a_stage1_a[31:29]), addRawFN_io_a_stage1_a[22:0]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :256:41, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
-    .io_b_isNaN       ((&(addRawFN_io_b_stage1_b[31:30])) & addRawFN_io_b_stage1_b[29]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
+      ({1'h0, |(addRawFN_io_a_stage1_a[31:29]), addRawFN_io_a_stage1_a[22:0]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :258:41, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
+    .io_b_isNaN       ((&(addRawFN_io_b_stage1_b[31:30])) & addRawFN_io_b_stage1_b[29]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}
     .io_b_isInf
-      ((&(addRawFN_io_b_stage1_b[31:30])) & ~(addRawFN_io_b_stage1_b[29])),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
-    .io_b_isZero      (~(|(addRawFN_io_b_stage1_b[31:29]))),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
-    .io_b_sign        (addRawFN_io_b_stage1_b[32]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
-    .io_b_sExp        ({1'h0, addRawFN_io_b_stage1_b[31:23]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :256:41, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
+      ((&(addRawFN_io_b_stage1_b[31:30])) & ~(addRawFN_io_b_stage1_b[29])),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
+    .io_b_isZero      (~(|(addRawFN_io_b_stage1_b[31:29]))),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}
+    .io_b_sign        (addRawFN_io_b_stage1_b[32]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
+    .io_b_sExp        ({1'h0, addRawFN_io_b_stage1_b[31:23]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :258:41, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
     .io_b_sig
-      ({1'h0, |(addRawFN_io_b_stage1_b[31:29]), addRawFN_io_b_stage1_b[22:0]}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :256:41, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
+      ({1'h0, |(addRawFN_io_b_stage1_b[31:29]), addRawFN_io_b_stage1_b[22:0]}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :226:14, :258:41, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, :61:{44,49}
     .io_invalidExc    (_addRawFN_io_invalidExc),
     .io_rawOut_isNaN  (_addRawFN_io_rawOut_isNaN),
     .io_rawOut_isInf  (_addRawFN_io_rawOut_isInf),
@@ -6227,34 +6227,34 @@ module AddRecFN_Pipelined_8_24(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/
     .io_rawOut_sExp   (_addRawFN_io_rawOut_sExp),
     .io_rawOut_sig    (_addRawFN_io_rawOut_sig)
   );
-  RoundRawFNToRecFN_e8_s24 roundRawFNToRecFN (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:256:41
-    .io_invalidExc (roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_isNaN   (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_isInf   (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_isZero  (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_sign    (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_sExp    (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
-    .io_in_sig     (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sig),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+  RoundRawFNToRecFN_e8_s24 roundRawFNToRecFN (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:258:41
+    .io_invalidExc (roundRawFNToRecFN_io_invalidExc_stage3_addRawFN_invalidExc),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_isNaN   (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isNaN),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_isInf   (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isInf),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_isZero  (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_isZero),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_sign    (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sign),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_sExp    (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sExp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
+    .io_in_sig     (roundRawFNToRecFN_io_in_stage3_addRawFN_rawOut_sig),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32
     .io_out        (_roundRawFNToRecFN_io_out)
   );
-  assign io_out = io_out_stage4_roundRawFNToRecFN_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
+  assign io_out = io_out_stage4_roundRawFNToRecFN_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:46:32, :223:15
 endmodule
 
-module AddFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15
+module AddFp_Pipelined_8_23(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15
   input         clock,	// <stdin>:36103:11, :37072:11, :38041:11, :39010:11, :39979:11, :40948:11, :41917:11, :42886:11, :44503:11, :45472:11, :46441:11, :47410:11, :48379:11, :49348:11, :50317:11, :51286:11, :52903:11, :53872:11, :54841:11, :55810:11, :56779:11, :57748:11, :58717:11, :59686:11, :61303:11, :62272:11, :63241:11, :64210:11, :65179:11, :66148:11, :67117:11, :68086:11
-                io_in_a_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  input  [7:0]  io_in_a_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  input  [22:0] io_in_a_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  input         io_in_b_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  input  [7:0]  io_in_b_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  input  [22:0] io_in_b_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  output        io_out_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  output [7:0]  io_out_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
-  output [22:0] io_out_mantissa	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+                io_in_a_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  input  [7:0]  io_in_a_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  input  [22:0] io_in_a_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  input         io_in_b_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  input  [7:0]  io_in_b_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  input  [22:0] io_in_b_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  output        io_out_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  output [7:0]  io_out_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
+  output [22:0] io_out_mantissa	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:279:14
 );
 
-  wire [32:0] _addRecFN_io_out;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32
-  wire        addRecFN_io_a_rawIn_isZeroExpIn = io_in_a_exponent == 8'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
+  wire [32:0] _addRecFN_io_out;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32
+  wire        addRecFN_io_a_rawIn_isZeroExpIn = io_in_a_exponent == 8'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
   wire [4:0]  addRecFN_io_a_rawIn_normDist =
     io_in_a_mantissa[22]
       ? 5'h0
@@ -6300,19 +6300,19 @@ module AddFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
                                                                                       ? 5'h14
                                                                                       : io_in_a_mantissa[1]
                                                                                           ? 5'h15
-                                                                                          : 5'h16;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:91:52, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
+                                                                                          : 5'h16;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:91:52, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [53:0] _addRecFN_io_a_rawIn_subnormFract_T =
-    {31'h0, io_in_a_mantissa} << addRecFN_io_a_rawIn_normDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
+    {31'h0, io_in_a_mantissa} << addRecFN_io_a_rawIn_normDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [8:0]  _addRecFN_io_a_rawIn_adjustedExp_T_4 =
     (addRecFN_io_a_rawIn_isZeroExpIn
        ? {4'hF, ~addRecFN_io_a_rawIn_normDist}
        : {1'h0, io_in_a_exponent})
-    + {7'h20, addRecFN_io_a_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
+    + {7'h20, addRecFN_io_a_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [2:0]  _addRecFN_io_a_T_2 =
     addRecFN_io_a_rawIn_isZeroExpIn & ~(|io_in_a_mantissa)
       ? 3'h0
-      : _addRecFN_io_a_rawIn_adjustedExp_T_4[8:6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
-  wire        addRecFN_io_b_rawIn_isZeroExpIn = io_in_b_exponent == 8'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
+      : _addRecFN_io_a_rawIn_adjustedExp_T_4[8:6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
+  wire        addRecFN_io_b_rawIn_isZeroExpIn = io_in_b_exponent == 8'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:60:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30
   wire [4:0]  addRecFN_io_b_rawIn_normDist =
     io_in_b_mantissa[22]
       ? 5'h0
@@ -6358,24 +6358,24 @@ module AddFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
                                                                                       ? 5'h14
                                                                                       : io_in_b_mantissa[1]
                                                                                           ? 5'h15
-                                                                                          : 5'h16;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/primitives.scala:91:52, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
+                                                                                          : 5'h16;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/primitives.scala:91:52, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:46:21, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [53:0] _addRecFN_io_b_rawIn_subnormFract_T =
-    {31'h0, io_in_b_mantissa} << addRecFN_io_b_rawIn_normDist;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
+    {31'h0, io_in_b_mantissa} << addRecFN_io_b_rawIn_normDist;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:52:33, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [8:0]  _addRecFN_io_b_rawIn_adjustedExp_T_4 =
     (addRecFN_io_b_rawIn_isZeroExpIn
        ? {4'hF, ~addRecFN_io_b_rawIn_normDist}
        : {1'h0, io_in_b_exponent})
-    + {7'h20, addRecFN_io_b_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
+    + {7'h20, addRecFN_io_b_rawIn_isZeroExpIn ? 2'h2 : 2'h1};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :54:10, :55:18, :57:9, :58:14, src/main/scala/chisel3/util/Mux.scala:50:70
   wire [2:0]  _addRecFN_io_b_T_2 =
     addRecFN_io_b_rawIn_isZeroExpIn & ~(|io_in_b_mantissa)
       ? 3'h0
-      : _addRecFN_io_b_rawIn_adjustedExp_T_4[8:6];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
-  wire        io_out_rawIn_isInf = (&(_addRecFN_io_out[31:30])) & ~(_addRecFN_io_out[29]);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
-  wire        io_out_isSubnormal = $signed({1'h0, _addRecFN_io_out[31:23]}) < 10'sh82;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32, :294:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
+      : _addRecFN_io_b_rawIn_adjustedExp_T_4[8:6];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :57:9, :60:30, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,50}
+  wire        io_out_rawIn_isInf = (&(_addRecFN_io_out[31:30])) & ~(_addRecFN_io_out[29]);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:41, :57:{33,36}
+  wire        io_out_isSubnormal = $signed({1'h0, _addRecFN_io_out[31:23]}) < 10'sh82;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32, :294:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :60:27
   wire [23:0] _io_out_denormFract_T_1 =
     {1'h0, |(_addRecFN_io_out[31:29]), _addRecFN_io_out[22:1]} >> 5'h1
-    - _addRecFN_io_out[27:23];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32, :294:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:52:{35,47}, :53:{38,42}, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, src/main/scala/chisel3/util/Mux.scala:50:70
-  AddRecFN_Pipelined_8_24 addRecFN (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32
+    - _addRecFN_io_out[27:23];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32, :294:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:52:{35,47}, :53:{38,42}, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :52:{28,53}, src/main/scala/chisel3/util/Mux.scala:50:70
+  AddRecFN_Pipelined_8_24 addRecFN (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:292:32
     .clock  (clock),
     .io_a
       ({io_in_a_sign,
@@ -6385,7 +6385,7 @@ module AddFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
         _addRecFN_io_a_rawIn_adjustedExp_T_4[5:0],
         addRecFN_io_a_rawIn_isZeroExpIn
           ? {_addRecFN_io_a_rawIn_subnormFract_T[21:0], 1'h0}
-          : io_in_a_mantissa}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
+          : io_in_a_mantissa}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
     .io_b
       ({io_in_b_sign,
         _addRecFN_io_b_T_2[2:1],
@@ -6394,40 +6394,40 @@ module AddFp_Pipelined_8_23(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/che
         _addRecFN_io_b_rawIn_adjustedExp_T_4[5:0],
         addRecFN_io_b_rawIn_isZeroExpIn
           ? {_addRecFN_io_b_rawIn_subnormFract_T[21:0], 1'h0}
-          : io_in_b_mantissa}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
+          : io_in_b_mantissa}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:294:21, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromFN.scala:48:30, :49:34, :52:{33,46,64}, :57:9, :61:{32,57}, :64:28, :70:33, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/recFNFromFN.scala:48:{15,76}, :50:{23,41}
     .io_out (_addRecFN_io_out)
   );
-  assign io_out_sign = _addRecFN_io_out[32];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15, :292:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
+  assign io_out_sign = _addRecFN_io_out[32];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15, :292:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:59:25
   assign io_out_exponent =
     (io_out_isSubnormal ? 8'h0 : _addRecFN_io_out[30:23] + 8'h7F)
-    | {8{(&(_addRecFN_io_out[31:30])) & _addRecFN_io_out[29] | io_out_rawIn_isInf}};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15, :292:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :56:16, :58:{27,45}, :60:{15,21,44}, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}, :57:33
+    | {8{(&(_addRecFN_io_out[31:30])) & _addRecFN_io_out[29] | io_out_rawIn_isInf}};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15, :292:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :56:16, :58:{27,45}, :60:{15,21,44}, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:51:21, :53:{28,53}, :56:{33,41}, :57:33
   assign io_out_mantissa =
     io_out_isSubnormal
       ? _io_out_denormFract_T_1[22:0]
-      : io_out_rawIn_isInf ? 23'h0 : _addRecFN_io_out[22:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15, :292:32, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :53:{42,60}, :62:16, :64:20, janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:57:33, :61:49
+      : io_out_rawIn_isInf ? 23'h0 : _addRecFN_io_out[22:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/Berkeley.scala:276:15, :292:32, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/fNFromRecFN.scala:51:38, :53:{42,60}, :62:16, :64:20, home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hardfloat/rawFloatFromRecFN.scala:57:33, :61:49
 endmodule
 
-module OpAdd(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7
+module OpAdd(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7
   input         clock,	// <stdin>:36347:11, :37316:11, :38285:11, :39254:11, :40223:11, :41192:11, :42161:11, :43130:11, :44747:11, :45716:11, :46685:11, :47654:11, :48623:11, :49592:11, :50561:11, :51530:11, :53147:11, :54116:11, :55085:11, :56054:11, :57023:11, :57992:11, :58961:11, :59930:11, :61547:11, :62516:11, :63485:11, :64454:11, :65423:11, :66392:11, :67361:11, :68330:11
-                io_in_a_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  input  [7:0]  io_in_a_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  input  [22:0] io_in_a_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  input         io_in_b_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  input  [7:0]  io_in_b_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  input  [22:0] io_in_b_mantissa,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  output        io_out_sign,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  output [7:0]  io_out_exponent,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
-  output [22:0] io_out_mantissa	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+                io_in_a_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  input  [7:0]  io_in_a_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  input  [22:0] io_in_a_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  input         io_in_b_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  input  [7:0]  io_in_b_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  input  [22:0] io_in_b_mantissa,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  output        io_out_sign,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  output [7:0]  io_out_exponent,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
+  output [22:0] io_out_mantissa	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:12:14
 );
 
-  wire        _module_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
-  wire [7:0]  _module_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
-  wire [22:0] _module_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
-  wire [31:0] in_a__ = {io_in_a_sign, io_in_a_exponent, io_in_a_mantissa};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:23:21
-  wire [31:0] in_b__ = {io_in_b_sign, io_in_b_exponent, io_in_b_mantissa};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:24:21
+  wire        _module_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
+  wire [7:0]  _module_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
+  wire [22:0] _module_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
+  wire [31:0] in_a__ = {io_in_a_sign, io_in_a_exponent, io_in_a_mantissa};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:23:21
+  wire [31:0] in_b__ = {io_in_b_sign, io_in_b_exponent, io_in_b_mantissa};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:24:21
   wire [31:0] out__ =
-    {_module_io_out_sign, _module_io_out_exponent, _module_io_out_mantissa};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:25:19, :38:24
-  AddFp_Pipelined_8_23 module_0 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
+    {_module_io_out_sign, _module_io_out_exponent, _module_io_out_mantissa};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:25:19, :38:24
+  AddFp_Pipelined_8_23 module_0 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:38:24
     .clock            (clock),
     .io_in_a_sign     (io_in_a_sign),
     .io_in_a_exponent (io_in_a_exponent),
@@ -6439,9 +6439,9 @@ module OpAdd(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpA
     .io_out_exponent  (_module_io_out_exponent),
     .io_out_mantissa  (_module_io_out_mantissa)
   );
-  assign io_out_sign = _module_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7, :38:24
-  assign io_out_exponent = _module_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7, :38:24
-  assign io_out_mantissa = _module_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7, :38:24
+  assign io_out_sign = _module_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7, :38:24
+  assign io_out_exponent = _module_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7, :38:24
+  assign io_out_mantissa = _module_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/ip/float/OpAdd.scala:6:7, :38:24
 endmodule
 
 module Counter_33(	// src/main/scala/chext/util/Counter.scala:6:7
@@ -6585,213 +6585,213 @@ module Queue8_UInt256(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_valid = ~empty;	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :261:25, :285:19
 endmodule
 
-module Wrapper_1(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+module Wrapper_1(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
   input          clock,	// <stdin>:43227:11, :51627:11, :60027:11, :68427:11
                  reset,	// <stdin>:43228:11, :51628:11, :60028:11, :68428:11
-  output         source_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-  input          source_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-  input  [255:0] source_bits__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-                 source_bits__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
-  input          sink_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
-  output         sink_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
-  output [255:0] sink_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
-                 moduleIn__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
-                 moduleIn__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
-  input  [255:0] moduleOut	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:27:21
+  output         source_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+  input          source_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+  input  [255:0] source_bits__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+                 source_bits__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:23:18
+  input          sink_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
+  output         sink_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
+  output [255:0] sink_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:24:16
+                 moduleIn__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
+                 moduleIn__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:26:20
+  input  [255:0] moduleOut	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:27:21
 );
 
-  wire _qOutput_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
-  wire _ctr_io_full;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
-  wire source_ready_0 = ~_ctr_io_full & source_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21, :56:33, src/main/scala/chext/util/Counter.scala:33:17
-  wire _qOutput_io_enq_valid_T = source_ready_0 & source_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:56:33, src/main/scala/chisel3/util/Decoupled.scala:51:35
-  reg  qOutput_io_enq_valid_r;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-  reg  qOutput_io_enq_valid_r_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-  reg  qOutput_io_enq_valid_r_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-  reg  qOutput_io_enq_valid_r_3;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+  wire _qOutput_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
+  wire _ctr_io_full;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
+  wire source_ready_0 = ~_ctr_io_full & source_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21, :56:33, src/main/scala/chext/util/Counter.scala:33:17
+  wire _qOutput_io_enq_valid_T = source_ready_0 & source_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:56:33, src/main/scala/chisel3/util/Decoupled.scala:51:35
+  reg  qOutput_io_enq_valid_r;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+  reg  qOutput_io_enq_valid_r_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+  reg  qOutput_io_enq_valid_r_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+  reg  qOutput_io_enq_valid_r_3;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
   always @(posedge clock) begin	// <stdin>:43227:11, :51627:11, :60027:11, :68427:11
-    qOutput_io_enq_valid_r <= _qOutput_io_enq_valid_T;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37, src/main/scala/chisel3/util/Decoupled.scala:51:35
-    qOutput_io_enq_valid_r_1 <= qOutput_io_enq_valid_r;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-    qOutput_io_enq_valid_r_2 <= qOutput_io_enq_valid_r_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
-    qOutput_io_enq_valid_r_3 <= qOutput_io_enq_valid_r_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+    qOutput_io_enq_valid_r <= _qOutput_io_enq_valid_T;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37, src/main/scala/chisel3/util/Decoupled.scala:51:35
+    qOutput_io_enq_valid_r_1 <= qOutput_io_enq_valid_r;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+    qOutput_io_enq_valid_r_2 <= qOutput_io_enq_valid_r_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+    qOutput_io_enq_valid_r_3 <= qOutput_io_enq_valid_r_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-        qOutput_io_enq_valid_r = _RANDOM[/*Zero width*/ 1'b0][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
-        qOutput_io_enq_valid_r_1 = _RANDOM[/*Zero width*/ 1'b0][1];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
-        qOutput_io_enq_valid_r_2 = _RANDOM[/*Zero width*/ 1'b0][2];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
-        qOutput_io_enq_valid_r_3 = _RANDOM[/*Zero width*/ 1'b0][3];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+        qOutput_io_enq_valid_r = _RANDOM[/*Zero width*/ 1'b0][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
+        qOutput_io_enq_valid_r_1 = _RANDOM[/*Zero width*/ 1'b0][1];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
+        qOutput_io_enq_valid_r_2 = _RANDOM[/*Zero width*/ 1'b0][2];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
+        qOutput_io_enq_valid_r_3 = _RANDOM[/*Zero width*/ 1'b0][3];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :62:37
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Counter_33 ctr (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
+  Counter_33 ctr (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:38:21
     .clock    (clock),
     .reset    (reset),
     .io_incEn (_qOutput_io_enq_valid_T),	// src/main/scala/chisel3/util/Decoupled.scala:51:35
-    .io_decEn (sink_ready & _qOutput_io_deq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25, src/main/scala/chisel3/util/Decoupled.scala:51:35
+    .io_decEn (sink_ready & _qOutput_io_deq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25, src/main/scala/chisel3/util/Decoupled.scala:51:35
     .io_full  (_ctr_io_full)
   );
-  Queue8_UInt256 qOutput (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
+  Queue8_UInt256 qOutput (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:42:25
     .clock        (clock),
     .reset        (reset),
-    .io_enq_valid (qOutput_io_enq_valid_r_3),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
+    .io_enq_valid (qOutput_io_enq_valid_r_3),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:62:37
     .io_enq_bits  (moduleOut),
     .io_deq_ready (sink_ready),
     .io_deq_valid (_qOutput_io_deq_valid),
     .io_deq_bits  (sink_bits)
   );
-  assign source_ready = source_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :56:33
-  assign sink_valid = _qOutput_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :42:25
-  assign moduleIn__1 = source_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
-  assign moduleIn__2 = source_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+  assign source_ready = source_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :56:33
+  assign sink_valid = _qOutput_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7, :42:25
+  assign moduleIn__1 = source_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
+  assign moduleIn__2 = source_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Wrapper.scala:10:7
 endmodule
 
-module BatchAdd(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:62:7
+module BatchAdd(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:62:7
   input          clock,	// <stdin>:43279:11, :51679:11, :60079:11, :68479:11
                  reset,	// <stdin>:43280:11, :51680:11, :60080:11, :68480:11
-  output         req_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
-  input          req_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
-  input  [255:0] req_bits__1,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
-                 req_bits__2,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
-  input          resp_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:64:16
-  output         resp_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:64:16
-  output [255:0] resp_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:64:16
+  output         req_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
+  input          req_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
+  input  [255:0] req_bits__1,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
+                 req_bits__2,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:63:15
+  input          resp_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:64:16
+  output         resp_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:64:16
+  output [255:0] resp_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:64:16
 );
 
-  wire [255:0] _wrapper_moduleIn__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31
-  wire [255:0] _wrapper_moduleIn__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31
-  wire         _add7_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add7_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add7_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire         _add6_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add6_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add6_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire         _add5_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add5_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add5_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire         _add4_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add4_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add4_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire         _add3_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add3_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add3_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire         _add2_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add2_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add2_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire         _add1_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add1_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add1_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire         _add0_io_out_sign;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [7:0]   _add0_io_out_exponent;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  wire [22:0]  _add0_io_out_mantissa;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
-  OpAdd add0 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [255:0] _wrapper_moduleIn__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31
+  wire [255:0] _wrapper_moduleIn__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31
+  wire         _add7_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add7_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add7_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire         _add6_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add6_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add6_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire         _add5_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add5_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add5_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire         _add4_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add4_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add4_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire         _add3_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add3_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add3_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire         _add2_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add2_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add2_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire         _add1_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add1_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add1_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire         _add0_io_out_sign;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [7:0]   _add0_io_out_exponent;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  wire [22:0]  _add0_io_out_mantissa;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add0 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[31]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[30:23]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[22:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[31]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[30:23]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[22:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add0_io_out_sign),
     .io_out_exponent  (_add0_io_out_exponent),
     .io_out_mantissa  (_add0_io_out_mantissa)
   );
-  OpAdd add1 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add1 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[63]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[62:55]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[54:32]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[63]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[62:55]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[54:32]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[63]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[62:55]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[54:32]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[63]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[62:55]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[54:32]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add1_io_out_sign),
     .io_out_exponent  (_add1_io_out_exponent),
     .io_out_mantissa  (_add1_io_out_mantissa)
   );
-  OpAdd add2 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add2 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[95]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[94:87]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[86:64]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[95]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[94:87]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[86:64]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[95]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[94:87]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[86:64]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[95]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[94:87]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[86:64]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add2_io_out_sign),
     .io_out_exponent  (_add2_io_out_exponent),
     .io_out_mantissa  (_add2_io_out_mantissa)
   );
-  OpAdd add3 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add3 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[127]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[126:119]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[118:96]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[127]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[126:119]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[118:96]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[127]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[126:119]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[118:96]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[127]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[126:119]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[118:96]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add3_io_out_sign),
     .io_out_exponent  (_add3_io_out_exponent),
     .io_out_mantissa  (_add3_io_out_mantissa)
   );
-  OpAdd add4 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add4 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[159]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[158:151]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[150:128]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[159]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[158:151]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[150:128]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[159]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[158:151]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[150:128]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[159]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[158:151]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[150:128]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add4_io_out_sign),
     .io_out_exponent  (_add4_io_out_exponent),
     .io_out_mantissa  (_add4_io_out_mantissa)
   );
-  OpAdd add5 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add5 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[191]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[190:183]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[182:160]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[191]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[190:183]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[182:160]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[191]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[190:183]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[182:160]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[191]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[190:183]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[182:160]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add5_io_out_sign),
     .io_out_exponent  (_add5_io_out_exponent),
     .io_out_mantissa  (_add5_io_out_mantissa)
   );
-  OpAdd add6 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add6 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[223]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[222:215]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[214:192]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[223]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[222:215]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[214:192]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[223]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[222:215]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[214:192]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[223]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[222:215]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[214:192]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add6_io_out_sign),
     .io_out_exponent  (_add6_io_out_exponent),
     .io_out_mantissa  (_add6_io_out_mantissa)
   );
-  OpAdd add7 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
+  OpAdd add7 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20
     .clock            (clock),
-    .io_in_a_sign     (_wrapper_moduleIn__1[255]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_exponent (_wrapper_moduleIn__1[254:247]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_a_mantissa (_wrapper_moduleIn__1[246:224]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
-    .io_in_b_sign     (_wrapper_moduleIn__2[255]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_exponent (_wrapper_moduleIn__2[254:247]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
-    .io_in_b_mantissa (_wrapper_moduleIn__2[246:224]),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_a_sign     (_wrapper_moduleIn__1[255]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_exponent (_wrapper_moduleIn__1[254:247]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_a_mantissa (_wrapper_moduleIn__1[246:224]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :77:40
+    .io_in_b_sign     (_wrapper_moduleIn__2[255]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_exponent (_wrapper_moduleIn__2[254:247]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
+    .io_in_b_mantissa (_wrapper_moduleIn__2[246:224]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31, :84:40
     .io_out_sign      (_add7_io_out_sign),
     .io_out_exponent  (_add7_io_out_exponent),
     .io_out_mantissa  (_add7_io_out_mantissa)
   );
-  Wrapper_1 wrapper (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31
+  Wrapper_1 wrapper (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:71:31
     .clock          (clock),
     .reset          (reset),
     .source_ready   (req_ready),
@@ -6827,7 +6827,7 @@ module BatchAdd(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/component
         _add1_io_out_mantissa,
         _add0_io_out_sign,
         _add0_io_out_exponent,
-        _add0_io_out_mantissa})	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20, :90:52
+        _add0_io_out_mantissa})	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Batch.scala:67:20, :90:52
   );
 endmodule
 
@@ -7390,43 +7390,43 @@ module Queue32_DataLast(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   assign io_deq_bits_last = _ram_ext_R0_data[256];	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :256:91
 endmodule
 
-module Counter_37(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+module Counter_37(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
   input        clock,	// <stdin>:70683:11, :72473:11
                reset,	// <stdin>:70684:11, :72474:11
-               sink_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:11:16
-  output [4:0] sink_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:11:16
+               sink_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:11:16
+  output [4:0] sink_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:11:16
 );
 
-  reg [4:0] counter;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:12:32
+  reg [4:0] counter;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:12:32
   always @(posedge clock) begin	// <stdin>:70683:11, :72473:11
     if (reset)	// <stdin>:70683:11, :72473:11
-      counter <= 5'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:12:32
-    else if (sink_ready) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:11:16
-      if (&counter)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:12:32, :17:18
-        counter <= 5'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:12:32
-      else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:17:18
-        counter <= counter + 5'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:12:32, :20:26
+      counter <= 5'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:12:32
+    else if (sink_ready) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:11:16
+      if (&counter)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:12:32, :17:18
+        counter <= 5'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:12:32
+      else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:17:18
+        counter <= counter + 5'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:12:32, :20:26
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-        counter = _RANDOM[/*Zero width*/ 1'b0][4:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7, :12:32
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+        counter = _RANDOM[/*Zero width*/ 1'b0][4:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7, :12:32
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign sink_bits = counter;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:6:7, :12:32
+  assign sink_bits = counter;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:6:7, :12:32
 endmodule
 
 module elasticDemux_38(	// src/main/scala/chext/elastic/Demux.scala:10:7
@@ -7908,18 +7908,18 @@ module elasticMux_33(	// src/main/scala/chext/elastic/Mux.scala:10:7
   assign io_select_ready = fire;	// src/main/scala/chext/elastic/Mux.scala:10:7, :27:28
 endmodule
 
-module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+module RowReduce(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
   input          clock,	// <stdin>:72600:11
                  reset,	// <stdin>:72601:11
-  output         sourceElem_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
-  input          sourceElem_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
-  input  [255:0] sourceElem_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
-  output         sourceCount_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:109:23
-  input          sourceCount_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:109:23
-  input  [31:0]  sourceCount_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:109:23
-  input          sinkResult_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:110:22
-  output         sinkResult_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:110:22
-  output [255:0] sinkResult_bits	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:110:22
+  output         sourceElem_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
+  input          sourceElem_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
+  input  [255:0] sourceElem_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
+  output         sourceCount_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:109:23
+  input          sourceCount_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:109:23
+  input  [31:0]  sourceCount_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:109:23
+  input          sinkResult_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:110:22
+  output         sinkResult_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:110:22
+  output [255:0] sinkResult_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:110:22
 );
 
   wire         _mux_io_sources_0_ready;	// src/main/scala/chext/elastic/Mux.scala:50:21
@@ -7955,7 +7955,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
   wire         _mux_io_sources_30_ready;	// src/main/scala/chext/elastic/Mux.scala:50:21
   wire         _mux_io_sources_31_ready;	// src/main/scala/chext/elastic/Mux.scala:50:21
   wire         _mux_io_select_ready;	// src/main/scala/chext/elastic/Mux.scala:50:21
-  wire [4:0]   _elasticCounter_1_sink_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
+  wire [4:0]   _elasticCounter_1_sink_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
   wire         _sourceBuffer_31_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:93:32
   wire         _sourceBuffer_31_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:93:32
   wire [255:0] _sourceBuffer_31_io_deq_bits;	// src/main/scala/chext/elastic/Buffer.scala:93:32
@@ -8150,7 +8150,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
   wire [255:0] _demux_io_sinks_31_bits_data;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire         _demux_io_sinks_31_bits_last;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire         _demux_io_select_ready;	// src/main/scala/chext/elastic/Demux.scala:48:23
-  wire [4:0]   _elasticCounter_sink_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
+  wire [4:0]   _elasticCounter_sink_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
   wire         _sinkBuffer_31_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire         _sinkBuffer_31_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire [255:0] _sinkBuffer_31_io_deq_bits_data;	// src/main/scala/chext/elastic/Buffer.scala:148:30
@@ -8314,12 +8314,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
   wire [255:0] _batchAddCluster3_arbiter_io_sink_bits__2;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire         _batchAddCluster3_arbiter_io_select_valid;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire [2:0]   _batchAddCluster3_arbiter_io_select_bits;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-  wire         _batchAddCluster3_batchAddQueue_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster3_batchAddQueue_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire [4:0]   _batchAddCluster3_batchAddQueue_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster3_batchAdd_req_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire         _batchAddCluster3_batchAdd_resp_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire [255:0] _batchAddCluster3_batchAdd_resp_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _batchAddCluster3_batchAddQueue_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster3_batchAddQueue_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire [4:0]   _batchAddCluster3_batchAddQueue_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster3_batchAdd_req_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _batchAddCluster3_batchAdd_resp_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire [255:0] _batchAddCluster3_batchAdd_resp_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
   wire         _batchAddCluster2_demux_io_source_ready;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire         _batchAddCluster2_demux_io_sinks_0_valid;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire [255:0] _batchAddCluster2_demux_io_sinks_0_bits;	// src/main/scala/chext/elastic/Demux.scala:48:23
@@ -8351,12 +8351,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
   wire [255:0] _batchAddCluster2_arbiter_io_sink_bits__2;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire         _batchAddCluster2_arbiter_io_select_valid;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire [2:0]   _batchAddCluster2_arbiter_io_select_bits;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-  wire         _batchAddCluster2_batchAddQueue_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster2_batchAddQueue_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire [4:0]   _batchAddCluster2_batchAddQueue_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster2_batchAdd_req_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire         _batchAddCluster2_batchAdd_resp_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire [255:0] _batchAddCluster2_batchAdd_resp_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _batchAddCluster2_batchAddQueue_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster2_batchAddQueue_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire [4:0]   _batchAddCluster2_batchAddQueue_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster2_batchAdd_req_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _batchAddCluster2_batchAdd_resp_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire [255:0] _batchAddCluster2_batchAdd_resp_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
   wire         _batchAddCluster1_demux_io_source_ready;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire         _batchAddCluster1_demux_io_sinks_0_valid;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire [255:0] _batchAddCluster1_demux_io_sinks_0_bits;	// src/main/scala/chext/elastic/Demux.scala:48:23
@@ -8388,12 +8388,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
   wire [255:0] _batchAddCluster1_arbiter_io_sink_bits__2;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire         _batchAddCluster1_arbiter_io_select_valid;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire [2:0]   _batchAddCluster1_arbiter_io_select_bits;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-  wire         _batchAddCluster1_batchAddQueue_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster1_batchAddQueue_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire [4:0]   _batchAddCluster1_batchAddQueue_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster1_batchAdd_req_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire         _batchAddCluster1_batchAdd_resp_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire [255:0] _batchAddCluster1_batchAdd_resp_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _batchAddCluster1_batchAddQueue_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster1_batchAddQueue_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire [4:0]   _batchAddCluster1_batchAddQueue_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster1_batchAdd_req_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _batchAddCluster1_batchAdd_resp_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire [255:0] _batchAddCluster1_batchAdd_resp_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
   wire         _batchAddCluster0_demux_io_source_ready;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire         _batchAddCluster0_demux_io_sinks_0_valid;	// src/main/scala/chext/elastic/Demux.scala:48:23
   wire [255:0] _batchAddCluster0_demux_io_sinks_0_bits;	// src/main/scala/chext/elastic/Demux.scala:48:23
@@ -8425,290 +8425,290 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
   wire [255:0] _batchAddCluster0_arbiter_io_sink_bits__2;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire         _batchAddCluster0_arbiter_io_select_valid;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
   wire [2:0]   _batchAddCluster0_arbiter_io_select_bits;	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-  wire         _batchAddCluster0_batchAddQueue_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster0_batchAddQueue_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire [4:0]   _batchAddCluster0_batchAddQueue_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-  wire         _batchAddCluster0_batchAdd_req_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire         _batchAddCluster0_batchAdd_resp_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire [255:0] _batchAddCluster0_batchAdd_resp_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-  wire         _rowReduceSingleN_31_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_31_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_31_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_31_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_31_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_31_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_31_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_30_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_30_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_30_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_30_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_30_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_30_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_30_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_29_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_29_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_29_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_29_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_29_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_29_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_29_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_28_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_28_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_28_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_28_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_28_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_28_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_28_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_27_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_27_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_27_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_27_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_27_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_27_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_27_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_26_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_26_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_26_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_26_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_26_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_26_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_26_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_25_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_25_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_25_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_25_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_25_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_25_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_25_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_24_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_24_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_24_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_24_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_24_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_24_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_24_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_23_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_23_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_23_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_23_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_23_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_23_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_23_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_22_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_22_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_22_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_22_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_22_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_22_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_22_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_21_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_21_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_21_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_21_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_21_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_21_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_21_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_20_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_20_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_20_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_20_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_20_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_20_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_20_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_19_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_19_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_19_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_19_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_19_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_19_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_19_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_18_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_18_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_18_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_18_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_18_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_18_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_18_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_17_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_17_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_17_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_17_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_17_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_17_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_17_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_16_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_16_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_16_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_16_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_16_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_16_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_16_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_15_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_15_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_15_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_15_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_15_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_15_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_15_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_14_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_14_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_14_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_14_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_14_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_14_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_14_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_13_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_13_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_13_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_13_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_13_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_13_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_13_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_12_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_12_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_12_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_12_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_12_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_12_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_12_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_11_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_11_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_11_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_11_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_11_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_11_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_11_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_10_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_10_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_10_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_10_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_10_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_10_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_10_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_9_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_9_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_9_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_9_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_9_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_9_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_9_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_8_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_8_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_8_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_8_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_8_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_8_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_8_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_7_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_7_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_7_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_7_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_7_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_7_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_7_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_6_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_6_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_6_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_6_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_6_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_6_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_6_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_5_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_5_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_5_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_5_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_5_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_5_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_5_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_4_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_4_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_4_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_4_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_4_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_4_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_4_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_3_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_3_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_3_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_3_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_3_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_3_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_3_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_2_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_2_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_2_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_2_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_2_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_2_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_2_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_1_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_1_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_1_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_1_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_1_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_1_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_1_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_0_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_0_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_0_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_0_batchAddReq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_0_batchAddReq_bits__1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire [255:0] _rowReduceSingleN_0_batchAddReq_bits__2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  wire         _rowReduceSingleN_0_batchAddResp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-  reg          rIsGenerating;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38
-  reg  [31:0]  rRemaining;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35
+  wire         _batchAddCluster0_batchAddQueue_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster0_batchAddQueue_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire [4:0]   _batchAddCluster0_batchAddQueue_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  wire         _batchAddCluster0_batchAdd_req_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _batchAddCluster0_batchAdd_resp_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire [255:0] _batchAddCluster0_batchAdd_resp_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  wire         _rowReduceSingleN_31_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_31_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_31_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_31_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_31_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_31_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_31_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_30_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_30_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_30_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_30_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_30_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_30_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_30_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_29_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_29_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_29_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_29_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_29_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_29_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_29_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_28_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_28_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_28_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_28_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_28_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_28_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_28_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_27_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_27_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_27_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_27_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_27_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_27_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_27_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_26_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_26_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_26_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_26_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_26_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_26_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_26_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_25_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_25_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_25_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_25_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_25_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_25_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_25_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_24_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_24_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_24_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_24_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_24_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_24_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_24_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_23_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_23_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_23_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_23_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_23_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_23_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_23_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_22_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_22_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_22_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_22_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_22_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_22_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_22_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_21_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_21_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_21_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_21_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_21_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_21_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_21_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_20_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_20_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_20_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_20_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_20_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_20_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_20_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_19_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_19_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_19_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_19_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_19_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_19_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_19_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_18_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_18_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_18_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_18_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_18_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_18_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_18_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_17_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_17_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_17_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_17_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_17_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_17_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_17_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_16_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_16_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_16_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_16_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_16_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_16_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_16_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_15_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_15_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_15_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_15_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_15_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_15_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_15_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_14_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_14_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_14_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_14_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_14_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_14_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_14_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_13_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_13_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_13_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_13_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_13_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_13_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_13_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_12_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_12_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_12_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_12_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_12_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_12_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_12_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_11_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_11_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_11_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_11_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_11_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_11_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_11_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_10_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_10_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_10_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_10_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_10_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_10_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_10_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_9_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_9_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_9_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_9_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_9_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_9_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_9_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_8_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_8_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_8_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_8_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_8_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_8_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_8_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_7_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_7_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_7_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_7_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_7_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_7_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_7_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_6_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_6_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_6_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_6_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_6_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_6_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_6_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_5_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_5_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_5_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_5_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_5_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_5_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_5_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_4_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_4_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_4_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_4_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_4_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_4_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_4_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_3_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_3_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_3_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_3_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_3_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_3_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_3_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_2_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_2_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_2_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_2_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_2_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_2_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_2_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_1_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_1_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_1_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_1_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_1_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_1_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_1_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_0_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_0_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_0_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_0_batchAddReq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_0_batchAddReq_bits__1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire [255:0] _rowReduceSingleN_0_batchAddReq_bits__2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  wire         _rowReduceSingleN_0_batchAddResp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  reg          rIsGenerating;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38
+  reg  [31:0]  rRemaining;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35
   wire         _GEN = _sinkBuffered__sinkBuffer_io_enq_ready & sourceCount_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire         _GEN_0 = rRemaining == 32'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :161:27
-  wire         _GEN_1 = sourceCount_bits == 32'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :181:17
-  wire         _GEN_2 = sourceCount_bits == 32'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:161:27, :187:23
-  wire         _GEN_3 = rIsGenerating | ~_GEN_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :157:27, :158:32, :181:{17,26}, :187:32, src/main/scala/chisel3/util/Decoupled.scala:83:20
+  wire         _GEN_0 = rRemaining == 32'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :161:27
+  wire         _GEN_1 = sourceCount_bits == 32'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :181:17
+  wire         _GEN_2 = sourceCount_bits == 32'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:161:27, :187:23
+  wire         _GEN_3 = rIsGenerating | ~_GEN_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :157:27, :158:32, :181:{17,26}, :187:32, src/main/scala/chisel3/util/Decoupled.scala:83:20
   always @(posedge clock) begin	// <stdin>:72600:11
     if (reset) begin	// <stdin>:72600:11
-      rIsGenerating <= 1'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38
-      rRemaining <= 32'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35
+      rIsGenerating <= 1'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38
+      rRemaining <= 32'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35
     end
     else if (_GEN) begin	// src/main/scala/chext/elastic/Arrival.scala:65:28
-      if (rIsGenerating) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38
-        rIsGenerating <= ~(sourceElem_valid & _GEN_0) & rIsGenerating;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :158:32, :161:{27,36}, :165:27
-        if (sourceElem_valid) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
-          if (_GEN_0)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:161:27
-            rRemaining <= 32'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35
-          else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:161:27
-            rRemaining <= rRemaining - 32'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :173:38
+      if (rIsGenerating) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38
+        rIsGenerating <= ~(sourceElem_valid & _GEN_0) & rIsGenerating;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :158:32, :161:{27,36}, :165:27
+        if (sourceElem_valid) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:108:22
+          if (_GEN_0)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:161:27
+            rRemaining <= 32'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35
+          else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:161:27
+            rRemaining <= rRemaining - 32'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :173:38
         end
       end
-      else begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38
-        automatic logic _GEN_4 = _GEN_1 | _GEN_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :181:{17,26}, :187:{23,32}, :199:34
-        rIsGenerating <= ~_GEN_4 & sourceElem_valid | rIsGenerating;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :181:26, :187:32, :199:34
-        if (_GEN_4 | ~sourceElem_valid) begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :149:35, :181:26, :187:32, :199:34
+      else begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38
+        automatic logic _GEN_4 = _GEN_1 | _GEN_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :181:{17,26}, :187:{23,32}, :199:34
+        rIsGenerating <= ~_GEN_4 & sourceElem_valid | rIsGenerating;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :181:26, :187:32, :199:34
+        if (_GEN_4 | ~sourceElem_valid) begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :149:35, :181:26, :187:32, :199:34
         end
-        else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :181:26, :187:32, :199:34
-          rRemaining <= sourceCount_bits - 32'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :206:30
+        else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :181:26, :187:32, :199:34
+          rRemaining <= sourceCount_bits - 32'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:149:35, :206:30
       end
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-      automatic logic [31:0] _RANDOM[0:1];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+      automatic logic [31:0] _RANDOM[0:1];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
         for (logic [1:0] i = 2'h0; i < 2'h2; i += 2'h1) begin
-          _RANDOM[i[0]] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-        rIsGenerating = _RANDOM[1'h0][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38
-        rRemaining = {_RANDOM[1'h0][31:1], _RANDOM[1'h1][0]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38, :149:35
+          _RANDOM[i[0]] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+        rIsGenerating = _RANDOM[1'h0][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38
+        rRemaining = {_RANDOM[1'h0][31:1], _RANDOM[1'h1][0]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38, :149:35
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  RowReduceSingle rowReduceSingleN_0 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_0 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_0_sourceElem_ready),
@@ -8726,7 +8726,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_0_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_0_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_1 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_1 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_1_sourceElem_ready),
@@ -8744,7 +8744,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_1_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_1_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_2 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_2 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_2_sourceElem_ready),
@@ -8762,7 +8762,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_2_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_2_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_3 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_3 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_3_sourceElem_ready),
@@ -8780,7 +8780,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_3_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_3_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_4 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_4 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_4_sourceElem_ready),
@@ -8798,7 +8798,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_4_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_4_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_5 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_5 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_5_sourceElem_ready),
@@ -8816,7 +8816,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_5_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_5_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_6 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_6 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_6_sourceElem_ready),
@@ -8834,7 +8834,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_6_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_6_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_7 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_7 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_7_sourceElem_ready),
@@ -8852,7 +8852,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster0_demux_io_sinks_7_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster0_demux_io_sinks_7_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_8 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_8 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_8_sourceElem_ready),
@@ -8870,7 +8870,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_0_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_0_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_9 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_9 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_9_sourceElem_ready),
@@ -8888,7 +8888,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_1_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_1_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_10 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_10 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_10_sourceElem_ready),
@@ -8906,7 +8906,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_2_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_2_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_11 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_11 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_11_sourceElem_ready),
@@ -8924,7 +8924,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_3_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_3_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_12 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_12 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_12_sourceElem_ready),
@@ -8942,7 +8942,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_4_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_4_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_13 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_13 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_13_sourceElem_ready),
@@ -8960,7 +8960,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_5_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_5_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_14 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_14 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_14_sourceElem_ready),
@@ -8978,7 +8978,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_6_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_6_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_15 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_15 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_15_sourceElem_ready),
@@ -8996,7 +8996,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster1_demux_io_sinks_7_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster1_demux_io_sinks_7_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_16 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_16 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_16_sourceElem_ready),
@@ -9014,7 +9014,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_0_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_0_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_17 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_17 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_17_sourceElem_ready),
@@ -9032,7 +9032,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_1_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_1_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_18 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_18 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_18_sourceElem_ready),
@@ -9050,7 +9050,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_2_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_2_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_19 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_19 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_19_sourceElem_ready),
@@ -9068,7 +9068,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_3_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_3_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_20 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_20 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_20_sourceElem_ready),
@@ -9086,7 +9086,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_4_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_4_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_21 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_21 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_21_sourceElem_ready),
@@ -9104,7 +9104,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_5_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_5_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_22 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_22 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_22_sourceElem_ready),
@@ -9122,7 +9122,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_6_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_6_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_23 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_23 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_23_sourceElem_ready),
@@ -9140,7 +9140,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster2_demux_io_sinks_7_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster2_demux_io_sinks_7_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_24 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_24 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_24_sourceElem_ready),
@@ -9158,7 +9158,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_0_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_0_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_25 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_25 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_25_sourceElem_ready),
@@ -9176,7 +9176,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_1_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_1_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_26 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_26 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_26_sourceElem_ready),
@@ -9194,7 +9194,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_2_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_2_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_27 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_27 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_27_sourceElem_ready),
@@ -9212,7 +9212,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_3_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_3_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_28 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_28 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_28_sourceElem_ready),
@@ -9230,7 +9230,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_4_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_4_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_29 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_29 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_29_sourceElem_ready),
@@ -9248,7 +9248,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_5_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_5_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_30 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_30 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_30_sourceElem_ready),
@@ -9266,7 +9266,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_6_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_6_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  RowReduceSingle rowReduceSingleN_31 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+  RowReduceSingle rowReduceSingleN_31 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .clock                (clock),
     .reset                (reset),
     .sourceElem_ready     (_rowReduceSingleN_31_sourceElem_ready),
@@ -9284,7 +9284,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .batchAddResp_valid   (_batchAddCluster3_demux_io_sinks_7_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .batchAddResp_bits    (_batchAddCluster3_demux_io_sinks_7_bits)	// src/main/scala/chext/elastic/Demux.scala:48:23
   );
-  BatchAdd batchAddCluster0_batchAdd (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  BatchAdd batchAddCluster0_batchAdd (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .clock       (clock),
     .reset       (reset),
     .req_ready   (_batchAddCluster0_batchAdd_req_ready),
@@ -9295,12 +9295,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .resp_valid  (_batchAddCluster0_batchAdd_resp_valid),
     .resp_bits   (_batchAddCluster0_batchAdd_resp_bits)
   );
-  Queue16_UInt5 batchAddCluster0_batchAddQueue (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  Queue16_UInt5 batchAddCluster0_batchAddQueue (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_batchAddCluster0_batchAddQueue_io_enq_ready),
     .io_enq_valid (_batchAddCluster0_arbiter_io_select_valid),	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-    .io_enq_bits  ({2'h0, _batchAddCluster0_arbiter_io_select_bits}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_enq_bits  ({2'h0, _batchAddCluster0_arbiter_io_select_bits}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
     .io_deq_ready (_batchAddCluster0_demux_io_select_ready),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_deq_valid (_batchAddCluster0_batchAddQueue_io_deq_valid),
     .io_deq_bits  (_batchAddCluster0_batchAddQueue_io_deq_bits)
@@ -9309,78 +9309,78 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock                (clock),
     .reset                (reset),
     .io_sources_0_ready   (_batchAddCluster0_arbiter_io_sources_0_ready),
-    .io_sources_0_valid   (_rowReduceSingleN_0_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__1 (_rowReduceSingleN_0_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__2 (_rowReduceSingleN_0_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_valid   (_rowReduceSingleN_0_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__1 (_rowReduceSingleN_0_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__2 (_rowReduceSingleN_0_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_1_ready   (_batchAddCluster0_arbiter_io_sources_1_ready),
-    .io_sources_1_valid   (_rowReduceSingleN_1_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__1 (_rowReduceSingleN_1_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__2 (_rowReduceSingleN_1_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_valid   (_rowReduceSingleN_1_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__1 (_rowReduceSingleN_1_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__2 (_rowReduceSingleN_1_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_2_ready   (_batchAddCluster0_arbiter_io_sources_2_ready),
-    .io_sources_2_valid   (_rowReduceSingleN_2_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__1 (_rowReduceSingleN_2_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__2 (_rowReduceSingleN_2_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_valid   (_rowReduceSingleN_2_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__1 (_rowReduceSingleN_2_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__2 (_rowReduceSingleN_2_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_3_ready   (_batchAddCluster0_arbiter_io_sources_3_ready),
-    .io_sources_3_valid   (_rowReduceSingleN_3_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__1 (_rowReduceSingleN_3_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__2 (_rowReduceSingleN_3_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_valid   (_rowReduceSingleN_3_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__1 (_rowReduceSingleN_3_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__2 (_rowReduceSingleN_3_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_4_ready   (_batchAddCluster0_arbiter_io_sources_4_ready),
-    .io_sources_4_valid   (_rowReduceSingleN_4_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__1 (_rowReduceSingleN_4_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__2 (_rowReduceSingleN_4_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_valid   (_rowReduceSingleN_4_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__1 (_rowReduceSingleN_4_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__2 (_rowReduceSingleN_4_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_5_ready   (_batchAddCluster0_arbiter_io_sources_5_ready),
-    .io_sources_5_valid   (_rowReduceSingleN_5_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__1 (_rowReduceSingleN_5_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__2 (_rowReduceSingleN_5_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_valid   (_rowReduceSingleN_5_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__1 (_rowReduceSingleN_5_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__2 (_rowReduceSingleN_5_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_6_ready   (_batchAddCluster0_arbiter_io_sources_6_ready),
-    .io_sources_6_valid   (_rowReduceSingleN_6_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__1 (_rowReduceSingleN_6_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__2 (_rowReduceSingleN_6_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_valid   (_rowReduceSingleN_6_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__1 (_rowReduceSingleN_6_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__2 (_rowReduceSingleN_6_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_7_ready   (_batchAddCluster0_arbiter_io_sources_7_ready),
-    .io_sources_7_valid   (_rowReduceSingleN_7_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__1 (_rowReduceSingleN_7_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__2 (_rowReduceSingleN_7_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sink_ready        (_batchAddCluster0_batchAdd_req_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sources_7_valid   (_rowReduceSingleN_7_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__1 (_rowReduceSingleN_7_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__2 (_rowReduceSingleN_7_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sink_ready        (_batchAddCluster0_batchAdd_req_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .io_sink_valid        (_batchAddCluster0_arbiter_io_sink_valid),
     .io_sink_bits__1      (_batchAddCluster0_arbiter_io_sink_bits__1),
     .io_sink_bits__2      (_batchAddCluster0_arbiter_io_sink_bits__2),
-    .io_select_ready      (_batchAddCluster0_batchAddQueue_io_enq_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_ready      (_batchAddCluster0_batchAddQueue_io_enq_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .io_select_valid      (_batchAddCluster0_arbiter_io_select_valid),
     .io_select_bits       (_batchAddCluster0_arbiter_io_select_bits)
   );
   elasticDemux_34 batchAddCluster0_demux (	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_source_ready  (_batchAddCluster0_demux_io_source_ready),
-    .io_source_valid  (_batchAddCluster0_batchAdd_resp_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_source_bits   (_batchAddCluster0_batchAdd_resp_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_sinks_0_ready (_rowReduceSingleN_0_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_source_valid  (_batchAddCluster0_batchAdd_resp_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_source_bits   (_batchAddCluster0_batchAdd_resp_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sinks_0_ready (_rowReduceSingleN_0_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_0_valid (_batchAddCluster0_demux_io_sinks_0_valid),
     .io_sinks_0_bits  (_batchAddCluster0_demux_io_sinks_0_bits),
-    .io_sinks_1_ready (_rowReduceSingleN_1_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_1_ready (_rowReduceSingleN_1_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_1_valid (_batchAddCluster0_demux_io_sinks_1_valid),
     .io_sinks_1_bits  (_batchAddCluster0_demux_io_sinks_1_bits),
-    .io_sinks_2_ready (_rowReduceSingleN_2_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_2_ready (_rowReduceSingleN_2_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_2_valid (_batchAddCluster0_demux_io_sinks_2_valid),
     .io_sinks_2_bits  (_batchAddCluster0_demux_io_sinks_2_bits),
-    .io_sinks_3_ready (_rowReduceSingleN_3_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_3_ready (_rowReduceSingleN_3_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_3_valid (_batchAddCluster0_demux_io_sinks_3_valid),
     .io_sinks_3_bits  (_batchAddCluster0_demux_io_sinks_3_bits),
-    .io_sinks_4_ready (_rowReduceSingleN_4_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_4_ready (_rowReduceSingleN_4_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_4_valid (_batchAddCluster0_demux_io_sinks_4_valid),
     .io_sinks_4_bits  (_batchAddCluster0_demux_io_sinks_4_bits),
-    .io_sinks_5_ready (_rowReduceSingleN_5_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_5_ready (_rowReduceSingleN_5_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_5_valid (_batchAddCluster0_demux_io_sinks_5_valid),
     .io_sinks_5_bits  (_batchAddCluster0_demux_io_sinks_5_bits),
-    .io_sinks_6_ready (_rowReduceSingleN_6_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_6_ready (_rowReduceSingleN_6_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_6_valid (_batchAddCluster0_demux_io_sinks_6_valid),
     .io_sinks_6_bits  (_batchAddCluster0_demux_io_sinks_6_bits),
-    .io_sinks_7_ready (_rowReduceSingleN_7_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_7_ready (_rowReduceSingleN_7_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_7_valid (_batchAddCluster0_demux_io_sinks_7_valid),
     .io_sinks_7_bits  (_batchAddCluster0_demux_io_sinks_7_bits),
     .io_select_ready  (_batchAddCluster0_demux_io_select_ready),
-    .io_select_valid  (_batchAddCluster0_batchAddQueue_io_deq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-    .io_select_bits   (_batchAddCluster0_batchAddQueue_io_deq_bits[2:0])	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_select_valid  (_batchAddCluster0_batchAddQueue_io_deq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_bits   (_batchAddCluster0_batchAddQueue_io_deq_bits[2:0])	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
   );
-  BatchAdd batchAddCluster1_batchAdd (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  BatchAdd batchAddCluster1_batchAdd (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .clock       (clock),
     .reset       (reset),
     .req_ready   (_batchAddCluster1_batchAdd_req_ready),
@@ -9391,12 +9391,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .resp_valid  (_batchAddCluster1_batchAdd_resp_valid),
     .resp_bits   (_batchAddCluster1_batchAdd_resp_bits)
   );
-  Queue16_UInt5 batchAddCluster1_batchAddQueue (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  Queue16_UInt5 batchAddCluster1_batchAddQueue (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_batchAddCluster1_batchAddQueue_io_enq_ready),
     .io_enq_valid (_batchAddCluster1_arbiter_io_select_valid),	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-    .io_enq_bits  ({2'h0, _batchAddCluster1_arbiter_io_select_bits}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_enq_bits  ({2'h0, _batchAddCluster1_arbiter_io_select_bits}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
     .io_deq_ready (_batchAddCluster1_demux_io_select_ready),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_deq_valid (_batchAddCluster1_batchAddQueue_io_deq_valid),
     .io_deq_bits  (_batchAddCluster1_batchAddQueue_io_deq_bits)
@@ -9405,78 +9405,78 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock                (clock),
     .reset                (reset),
     .io_sources_0_ready   (_batchAddCluster1_arbiter_io_sources_0_ready),
-    .io_sources_0_valid   (_rowReduceSingleN_8_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__1 (_rowReduceSingleN_8_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__2 (_rowReduceSingleN_8_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_valid   (_rowReduceSingleN_8_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__1 (_rowReduceSingleN_8_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__2 (_rowReduceSingleN_8_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_1_ready   (_batchAddCluster1_arbiter_io_sources_1_ready),
-    .io_sources_1_valid   (_rowReduceSingleN_9_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__1 (_rowReduceSingleN_9_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__2 (_rowReduceSingleN_9_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_valid   (_rowReduceSingleN_9_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__1 (_rowReduceSingleN_9_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__2 (_rowReduceSingleN_9_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_2_ready   (_batchAddCluster1_arbiter_io_sources_2_ready),
-    .io_sources_2_valid   (_rowReduceSingleN_10_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__1 (_rowReduceSingleN_10_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__2 (_rowReduceSingleN_10_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_valid   (_rowReduceSingleN_10_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__1 (_rowReduceSingleN_10_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__2 (_rowReduceSingleN_10_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_3_ready   (_batchAddCluster1_arbiter_io_sources_3_ready),
-    .io_sources_3_valid   (_rowReduceSingleN_11_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__1 (_rowReduceSingleN_11_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__2 (_rowReduceSingleN_11_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_valid   (_rowReduceSingleN_11_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__1 (_rowReduceSingleN_11_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__2 (_rowReduceSingleN_11_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_4_ready   (_batchAddCluster1_arbiter_io_sources_4_ready),
-    .io_sources_4_valid   (_rowReduceSingleN_12_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__1 (_rowReduceSingleN_12_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__2 (_rowReduceSingleN_12_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_valid   (_rowReduceSingleN_12_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__1 (_rowReduceSingleN_12_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__2 (_rowReduceSingleN_12_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_5_ready   (_batchAddCluster1_arbiter_io_sources_5_ready),
-    .io_sources_5_valid   (_rowReduceSingleN_13_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__1 (_rowReduceSingleN_13_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__2 (_rowReduceSingleN_13_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_valid   (_rowReduceSingleN_13_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__1 (_rowReduceSingleN_13_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__2 (_rowReduceSingleN_13_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_6_ready   (_batchAddCluster1_arbiter_io_sources_6_ready),
-    .io_sources_6_valid   (_rowReduceSingleN_14_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__1 (_rowReduceSingleN_14_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__2 (_rowReduceSingleN_14_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_valid   (_rowReduceSingleN_14_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__1 (_rowReduceSingleN_14_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__2 (_rowReduceSingleN_14_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_7_ready   (_batchAddCluster1_arbiter_io_sources_7_ready),
-    .io_sources_7_valid   (_rowReduceSingleN_15_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__1 (_rowReduceSingleN_15_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__2 (_rowReduceSingleN_15_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sink_ready        (_batchAddCluster1_batchAdd_req_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sources_7_valid   (_rowReduceSingleN_15_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__1 (_rowReduceSingleN_15_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__2 (_rowReduceSingleN_15_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sink_ready        (_batchAddCluster1_batchAdd_req_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .io_sink_valid        (_batchAddCluster1_arbiter_io_sink_valid),
     .io_sink_bits__1      (_batchAddCluster1_arbiter_io_sink_bits__1),
     .io_sink_bits__2      (_batchAddCluster1_arbiter_io_sink_bits__2),
-    .io_select_ready      (_batchAddCluster1_batchAddQueue_io_enq_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_ready      (_batchAddCluster1_batchAddQueue_io_enq_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .io_select_valid      (_batchAddCluster1_arbiter_io_select_valid),
     .io_select_bits       (_batchAddCluster1_arbiter_io_select_bits)
   );
   elasticDemux_34 batchAddCluster1_demux (	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_source_ready  (_batchAddCluster1_demux_io_source_ready),
-    .io_source_valid  (_batchAddCluster1_batchAdd_resp_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_source_bits   (_batchAddCluster1_batchAdd_resp_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_sinks_0_ready (_rowReduceSingleN_8_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_source_valid  (_batchAddCluster1_batchAdd_resp_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_source_bits   (_batchAddCluster1_batchAdd_resp_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sinks_0_ready (_rowReduceSingleN_8_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_0_valid (_batchAddCluster1_demux_io_sinks_0_valid),
     .io_sinks_0_bits  (_batchAddCluster1_demux_io_sinks_0_bits),
-    .io_sinks_1_ready (_rowReduceSingleN_9_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_1_ready (_rowReduceSingleN_9_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_1_valid (_batchAddCluster1_demux_io_sinks_1_valid),
     .io_sinks_1_bits  (_batchAddCluster1_demux_io_sinks_1_bits),
-    .io_sinks_2_ready (_rowReduceSingleN_10_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_2_ready (_rowReduceSingleN_10_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_2_valid (_batchAddCluster1_demux_io_sinks_2_valid),
     .io_sinks_2_bits  (_batchAddCluster1_demux_io_sinks_2_bits),
-    .io_sinks_3_ready (_rowReduceSingleN_11_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_3_ready (_rowReduceSingleN_11_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_3_valid (_batchAddCluster1_demux_io_sinks_3_valid),
     .io_sinks_3_bits  (_batchAddCluster1_demux_io_sinks_3_bits),
-    .io_sinks_4_ready (_rowReduceSingleN_12_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_4_ready (_rowReduceSingleN_12_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_4_valid (_batchAddCluster1_demux_io_sinks_4_valid),
     .io_sinks_4_bits  (_batchAddCluster1_demux_io_sinks_4_bits),
-    .io_sinks_5_ready (_rowReduceSingleN_13_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_5_ready (_rowReduceSingleN_13_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_5_valid (_batchAddCluster1_demux_io_sinks_5_valid),
     .io_sinks_5_bits  (_batchAddCluster1_demux_io_sinks_5_bits),
-    .io_sinks_6_ready (_rowReduceSingleN_14_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_6_ready (_rowReduceSingleN_14_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_6_valid (_batchAddCluster1_demux_io_sinks_6_valid),
     .io_sinks_6_bits  (_batchAddCluster1_demux_io_sinks_6_bits),
-    .io_sinks_7_ready (_rowReduceSingleN_15_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_7_ready (_rowReduceSingleN_15_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_7_valid (_batchAddCluster1_demux_io_sinks_7_valid),
     .io_sinks_7_bits  (_batchAddCluster1_demux_io_sinks_7_bits),
     .io_select_ready  (_batchAddCluster1_demux_io_select_ready),
-    .io_select_valid  (_batchAddCluster1_batchAddQueue_io_deq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-    .io_select_bits   (_batchAddCluster1_batchAddQueue_io_deq_bits[2:0])	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_select_valid  (_batchAddCluster1_batchAddQueue_io_deq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_bits   (_batchAddCluster1_batchAddQueue_io_deq_bits[2:0])	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
   );
-  BatchAdd batchAddCluster2_batchAdd (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  BatchAdd batchAddCluster2_batchAdd (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .clock       (clock),
     .reset       (reset),
     .req_ready   (_batchAddCluster2_batchAdd_req_ready),
@@ -9487,12 +9487,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .resp_valid  (_batchAddCluster2_batchAdd_resp_valid),
     .resp_bits   (_batchAddCluster2_batchAdd_resp_bits)
   );
-  Queue16_UInt5 batchAddCluster2_batchAddQueue (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  Queue16_UInt5 batchAddCluster2_batchAddQueue (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_batchAddCluster2_batchAddQueue_io_enq_ready),
     .io_enq_valid (_batchAddCluster2_arbiter_io_select_valid),	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-    .io_enq_bits  ({2'h0, _batchAddCluster2_arbiter_io_select_bits}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_enq_bits  ({2'h0, _batchAddCluster2_arbiter_io_select_bits}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
     .io_deq_ready (_batchAddCluster2_demux_io_select_ready),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_deq_valid (_batchAddCluster2_batchAddQueue_io_deq_valid),
     .io_deq_bits  (_batchAddCluster2_batchAddQueue_io_deq_bits)
@@ -9501,78 +9501,78 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock                (clock),
     .reset                (reset),
     .io_sources_0_ready   (_batchAddCluster2_arbiter_io_sources_0_ready),
-    .io_sources_0_valid   (_rowReduceSingleN_16_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__1 (_rowReduceSingleN_16_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__2 (_rowReduceSingleN_16_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_valid   (_rowReduceSingleN_16_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__1 (_rowReduceSingleN_16_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__2 (_rowReduceSingleN_16_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_1_ready   (_batchAddCluster2_arbiter_io_sources_1_ready),
-    .io_sources_1_valid   (_rowReduceSingleN_17_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__1 (_rowReduceSingleN_17_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__2 (_rowReduceSingleN_17_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_valid   (_rowReduceSingleN_17_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__1 (_rowReduceSingleN_17_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__2 (_rowReduceSingleN_17_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_2_ready   (_batchAddCluster2_arbiter_io_sources_2_ready),
-    .io_sources_2_valid   (_rowReduceSingleN_18_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__1 (_rowReduceSingleN_18_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__2 (_rowReduceSingleN_18_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_valid   (_rowReduceSingleN_18_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__1 (_rowReduceSingleN_18_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__2 (_rowReduceSingleN_18_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_3_ready   (_batchAddCluster2_arbiter_io_sources_3_ready),
-    .io_sources_3_valid   (_rowReduceSingleN_19_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__1 (_rowReduceSingleN_19_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__2 (_rowReduceSingleN_19_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_valid   (_rowReduceSingleN_19_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__1 (_rowReduceSingleN_19_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__2 (_rowReduceSingleN_19_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_4_ready   (_batchAddCluster2_arbiter_io_sources_4_ready),
-    .io_sources_4_valid   (_rowReduceSingleN_20_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__1 (_rowReduceSingleN_20_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__2 (_rowReduceSingleN_20_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_valid   (_rowReduceSingleN_20_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__1 (_rowReduceSingleN_20_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__2 (_rowReduceSingleN_20_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_5_ready   (_batchAddCluster2_arbiter_io_sources_5_ready),
-    .io_sources_5_valid   (_rowReduceSingleN_21_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__1 (_rowReduceSingleN_21_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__2 (_rowReduceSingleN_21_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_valid   (_rowReduceSingleN_21_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__1 (_rowReduceSingleN_21_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__2 (_rowReduceSingleN_21_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_6_ready   (_batchAddCluster2_arbiter_io_sources_6_ready),
-    .io_sources_6_valid   (_rowReduceSingleN_22_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__1 (_rowReduceSingleN_22_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__2 (_rowReduceSingleN_22_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_valid   (_rowReduceSingleN_22_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__1 (_rowReduceSingleN_22_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__2 (_rowReduceSingleN_22_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_7_ready   (_batchAddCluster2_arbiter_io_sources_7_ready),
-    .io_sources_7_valid   (_rowReduceSingleN_23_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__1 (_rowReduceSingleN_23_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__2 (_rowReduceSingleN_23_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sink_ready        (_batchAddCluster2_batchAdd_req_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sources_7_valid   (_rowReduceSingleN_23_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__1 (_rowReduceSingleN_23_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__2 (_rowReduceSingleN_23_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sink_ready        (_batchAddCluster2_batchAdd_req_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .io_sink_valid        (_batchAddCluster2_arbiter_io_sink_valid),
     .io_sink_bits__1      (_batchAddCluster2_arbiter_io_sink_bits__1),
     .io_sink_bits__2      (_batchAddCluster2_arbiter_io_sink_bits__2),
-    .io_select_ready      (_batchAddCluster2_batchAddQueue_io_enq_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_ready      (_batchAddCluster2_batchAddQueue_io_enq_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .io_select_valid      (_batchAddCluster2_arbiter_io_select_valid),
     .io_select_bits       (_batchAddCluster2_arbiter_io_select_bits)
   );
   elasticDemux_34 batchAddCluster2_demux (	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_source_ready  (_batchAddCluster2_demux_io_source_ready),
-    .io_source_valid  (_batchAddCluster2_batchAdd_resp_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_source_bits   (_batchAddCluster2_batchAdd_resp_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_sinks_0_ready (_rowReduceSingleN_16_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_source_valid  (_batchAddCluster2_batchAdd_resp_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_source_bits   (_batchAddCluster2_batchAdd_resp_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sinks_0_ready (_rowReduceSingleN_16_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_0_valid (_batchAddCluster2_demux_io_sinks_0_valid),
     .io_sinks_0_bits  (_batchAddCluster2_demux_io_sinks_0_bits),
-    .io_sinks_1_ready (_rowReduceSingleN_17_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_1_ready (_rowReduceSingleN_17_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_1_valid (_batchAddCluster2_demux_io_sinks_1_valid),
     .io_sinks_1_bits  (_batchAddCluster2_demux_io_sinks_1_bits),
-    .io_sinks_2_ready (_rowReduceSingleN_18_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_2_ready (_rowReduceSingleN_18_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_2_valid (_batchAddCluster2_demux_io_sinks_2_valid),
     .io_sinks_2_bits  (_batchAddCluster2_demux_io_sinks_2_bits),
-    .io_sinks_3_ready (_rowReduceSingleN_19_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_3_ready (_rowReduceSingleN_19_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_3_valid (_batchAddCluster2_demux_io_sinks_3_valid),
     .io_sinks_3_bits  (_batchAddCluster2_demux_io_sinks_3_bits),
-    .io_sinks_4_ready (_rowReduceSingleN_20_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_4_ready (_rowReduceSingleN_20_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_4_valid (_batchAddCluster2_demux_io_sinks_4_valid),
     .io_sinks_4_bits  (_batchAddCluster2_demux_io_sinks_4_bits),
-    .io_sinks_5_ready (_rowReduceSingleN_21_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_5_ready (_rowReduceSingleN_21_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_5_valid (_batchAddCluster2_demux_io_sinks_5_valid),
     .io_sinks_5_bits  (_batchAddCluster2_demux_io_sinks_5_bits),
-    .io_sinks_6_ready (_rowReduceSingleN_22_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_6_ready (_rowReduceSingleN_22_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_6_valid (_batchAddCluster2_demux_io_sinks_6_valid),
     .io_sinks_6_bits  (_batchAddCluster2_demux_io_sinks_6_bits),
-    .io_sinks_7_ready (_rowReduceSingleN_23_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_7_ready (_rowReduceSingleN_23_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_7_valid (_batchAddCluster2_demux_io_sinks_7_valid),
     .io_sinks_7_bits  (_batchAddCluster2_demux_io_sinks_7_bits),
     .io_select_ready  (_batchAddCluster2_demux_io_select_ready),
-    .io_select_valid  (_batchAddCluster2_batchAddQueue_io_deq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-    .io_select_bits   (_batchAddCluster2_batchAddQueue_io_deq_bits[2:0])	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_select_valid  (_batchAddCluster2_batchAddQueue_io_deq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_bits   (_batchAddCluster2_batchAddQueue_io_deq_bits[2:0])	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
   );
-  BatchAdd batchAddCluster3_batchAdd (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+  BatchAdd batchAddCluster3_batchAdd (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .clock       (clock),
     .reset       (reset),
     .req_ready   (_batchAddCluster3_batchAdd_req_ready),
@@ -9583,12 +9583,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .resp_valid  (_batchAddCluster3_batchAdd_resp_valid),
     .resp_bits   (_batchAddCluster3_batchAdd_resp_bits)
   );
-  Queue16_UInt5 batchAddCluster3_batchAddQueue (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+  Queue16_UInt5 batchAddCluster3_batchAddQueue (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_batchAddCluster3_batchAddQueue_io_enq_ready),
     .io_enq_valid (_batchAddCluster3_arbiter_io_select_valid),	// src/main/scala/chext/elastic/Arbiter.scala:60:25
-    .io_enq_bits  ({2'h0, _batchAddCluster3_arbiter_io_select_bits}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_enq_bits  ({2'h0, _batchAddCluster3_arbiter_io_select_bits}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, src/main/scala/chext/elastic/Arbiter.scala:60:25, src/main/scala/chext/elastic/Connect.scala:12:15
     .io_deq_ready (_batchAddCluster3_demux_io_select_ready),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_deq_valid (_batchAddCluster3_batchAddQueue_io_deq_valid),
     .io_deq_bits  (_batchAddCluster3_batchAddQueue_io_deq_bits)
@@ -9597,84 +9597,84 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock                (clock),
     .reset                (reset),
     .io_sources_0_ready   (_batchAddCluster3_arbiter_io_sources_0_ready),
-    .io_sources_0_valid   (_rowReduceSingleN_24_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__1 (_rowReduceSingleN_24_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_0_bits__2 (_rowReduceSingleN_24_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_valid   (_rowReduceSingleN_24_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__1 (_rowReduceSingleN_24_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_0_bits__2 (_rowReduceSingleN_24_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_1_ready   (_batchAddCluster3_arbiter_io_sources_1_ready),
-    .io_sources_1_valid   (_rowReduceSingleN_25_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__1 (_rowReduceSingleN_25_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_1_bits__2 (_rowReduceSingleN_25_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_valid   (_rowReduceSingleN_25_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__1 (_rowReduceSingleN_25_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_1_bits__2 (_rowReduceSingleN_25_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_2_ready   (_batchAddCluster3_arbiter_io_sources_2_ready),
-    .io_sources_2_valid   (_rowReduceSingleN_26_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__1 (_rowReduceSingleN_26_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_2_bits__2 (_rowReduceSingleN_26_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_valid   (_rowReduceSingleN_26_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__1 (_rowReduceSingleN_26_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_2_bits__2 (_rowReduceSingleN_26_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_3_ready   (_batchAddCluster3_arbiter_io_sources_3_ready),
-    .io_sources_3_valid   (_rowReduceSingleN_27_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__1 (_rowReduceSingleN_27_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_3_bits__2 (_rowReduceSingleN_27_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_valid   (_rowReduceSingleN_27_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__1 (_rowReduceSingleN_27_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_3_bits__2 (_rowReduceSingleN_27_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_4_ready   (_batchAddCluster3_arbiter_io_sources_4_ready),
-    .io_sources_4_valid   (_rowReduceSingleN_28_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__1 (_rowReduceSingleN_28_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_4_bits__2 (_rowReduceSingleN_28_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_valid   (_rowReduceSingleN_28_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__1 (_rowReduceSingleN_28_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_4_bits__2 (_rowReduceSingleN_28_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_5_ready   (_batchAddCluster3_arbiter_io_sources_5_ready),
-    .io_sources_5_valid   (_rowReduceSingleN_29_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__1 (_rowReduceSingleN_29_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_5_bits__2 (_rowReduceSingleN_29_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_valid   (_rowReduceSingleN_29_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__1 (_rowReduceSingleN_29_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_5_bits__2 (_rowReduceSingleN_29_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_6_ready   (_batchAddCluster3_arbiter_io_sources_6_ready),
-    .io_sources_6_valid   (_rowReduceSingleN_30_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__1 (_rowReduceSingleN_30_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_6_bits__2 (_rowReduceSingleN_30_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_valid   (_rowReduceSingleN_30_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__1 (_rowReduceSingleN_30_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_6_bits__2 (_rowReduceSingleN_30_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sources_7_ready   (_batchAddCluster3_arbiter_io_sources_7_ready),
-    .io_sources_7_valid   (_rowReduceSingleN_31_batchAddReq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__1 (_rowReduceSingleN_31_batchAddReq_bits__1),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sources_7_bits__2 (_rowReduceSingleN_31_batchAddReq_bits__2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_sink_ready        (_batchAddCluster3_batchAdd_req_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sources_7_valid   (_rowReduceSingleN_31_batchAddReq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__1 (_rowReduceSingleN_31_batchAddReq_bits__1),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sources_7_bits__2 (_rowReduceSingleN_31_batchAddReq_bits__2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sink_ready        (_batchAddCluster3_batchAdd_req_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
     .io_sink_valid        (_batchAddCluster3_arbiter_io_sink_valid),
     .io_sink_bits__1      (_batchAddCluster3_arbiter_io_sink_bits__1),
     .io_sink_bits__2      (_batchAddCluster3_arbiter_io_sink_bits__2),
-    .io_select_ready      (_batchAddCluster3_batchAddQueue_io_enq_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_ready      (_batchAddCluster3_batchAddQueue_io_enq_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
     .io_select_valid      (_batchAddCluster3_arbiter_io_select_valid),
     .io_select_bits       (_batchAddCluster3_arbiter_io_select_bits)
   );
   elasticDemux_34 batchAddCluster3_demux (	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_source_ready  (_batchAddCluster3_demux_io_source_ready),
-    .io_source_valid  (_batchAddCluster3_batchAdd_resp_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_source_bits   (_batchAddCluster3_batchAdd_resp_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
-    .io_sinks_0_ready (_rowReduceSingleN_24_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_source_valid  (_batchAddCluster3_batchAdd_resp_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_source_bits   (_batchAddCluster3_batchAdd_resp_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:125:28
+    .io_sinks_0_ready (_rowReduceSingleN_24_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_0_valid (_batchAddCluster3_demux_io_sinks_0_valid),
     .io_sinks_0_bits  (_batchAddCluster3_demux_io_sinks_0_bits),
-    .io_sinks_1_ready (_rowReduceSingleN_25_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_1_ready (_rowReduceSingleN_25_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_1_valid (_batchAddCluster3_demux_io_sinks_1_valid),
     .io_sinks_1_bits  (_batchAddCluster3_demux_io_sinks_1_bits),
-    .io_sinks_2_ready (_rowReduceSingleN_26_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_2_ready (_rowReduceSingleN_26_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_2_valid (_batchAddCluster3_demux_io_sinks_2_valid),
     .io_sinks_2_bits  (_batchAddCluster3_demux_io_sinks_2_bits),
-    .io_sinks_3_ready (_rowReduceSingleN_27_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_3_ready (_rowReduceSingleN_27_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_3_valid (_batchAddCluster3_demux_io_sinks_3_valid),
     .io_sinks_3_bits  (_batchAddCluster3_demux_io_sinks_3_bits),
-    .io_sinks_4_ready (_rowReduceSingleN_28_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_4_ready (_rowReduceSingleN_28_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_4_valid (_batchAddCluster3_demux_io_sinks_4_valid),
     .io_sinks_4_bits  (_batchAddCluster3_demux_io_sinks_4_bits),
-    .io_sinks_5_ready (_rowReduceSingleN_29_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_5_ready (_rowReduceSingleN_29_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_5_valid (_batchAddCluster3_demux_io_sinks_5_valid),
     .io_sinks_5_bits  (_batchAddCluster3_demux_io_sinks_5_bits),
-    .io_sinks_6_ready (_rowReduceSingleN_30_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_6_ready (_rowReduceSingleN_30_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_6_valid (_batchAddCluster3_demux_io_sinks_6_valid),
     .io_sinks_6_bits  (_batchAddCluster3_demux_io_sinks_6_bits),
-    .io_sinks_7_ready (_rowReduceSingleN_31_batchAddResp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_sinks_7_ready (_rowReduceSingleN_31_batchAddResp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_sinks_7_valid (_batchAddCluster3_demux_io_sinks_7_valid),
     .io_sinks_7_bits  (_batchAddCluster3_demux_io_sinks_7_bits),
     .io_select_ready  (_batchAddCluster3_demux_io_select_ready),
-    .io_select_valid  (_batchAddCluster3_batchAddQueue_io_deq_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
-    .io_select_bits   (_batchAddCluster3_batchAddQueue_io_deq_bits[2:0])	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
+    .io_select_valid  (_batchAddCluster3_batchAddQueue_io_deq_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33
+    .io_select_bits   (_batchAddCluster3_batchAddQueue_io_deq_bits[2:0])	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:126:33, src/main/scala/chext/elastic/Connect.scala:12:15
   );
   Queue2_DataLast sinkBuffered__sinkBuffer (	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid     (_GEN & (~rIsGenerating & _GEN_1 | sourceElem_valid)),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :157:27, :158:32, :181:{17,26}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
-    .io_enq_bits_data (_GEN_3 ? sourceElem_bits : 256'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:157:27, :158:32, :181:26, :183:20
-    .io_enq_bits_last (rIsGenerating ? _GEN_0 : _GEN_1 | _GEN_2),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :157:27, :158:32, :161:27, :181:{17,26}, :184:20, :187:{23,32}
+    .io_enq_valid     (_GEN & (~rIsGenerating & _GEN_1 | sourceElem_valid)),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :157:27, :158:32, :181:{17,26}, src/main/scala/chext/elastic/Arrival.scala:36:25, :65:{28,45}
+    .io_enq_bits_data (_GEN_3 ? sourceElem_bits : 256'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:157:27, :158:32, :181:26, :183:20
+    .io_enq_bits_last (rIsGenerating ? _GEN_0 : _GEN_1 | _GEN_2),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:146:38, :157:27, :158:32, :161:27, :181:{17,26}, :184:20, :187:{23,32}
     .io_deq_ready     (_demux_io_source_ready),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_deq_valid     (_sinkBuffered__sinkBuffer_io_deq_valid),
     .io_deq_bits_data (_sinkBuffered__sinkBuffer_io_deq_bits_data),
@@ -9687,7 +9687,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_0_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_0_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_0_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_0_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_0_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_io_deq_bits_last)
@@ -9699,7 +9699,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_1_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_1_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_1_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_1_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_1_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_1_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_1_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_1_io_deq_bits_last)
@@ -9711,7 +9711,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_2_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_2_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_2_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_2_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_2_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_2_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_2_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_2_io_deq_bits_last)
@@ -9723,7 +9723,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_3_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_3_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_3_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_3_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_3_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_3_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_3_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_3_io_deq_bits_last)
@@ -9735,7 +9735,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_4_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_4_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_4_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_4_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_4_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_4_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_4_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_4_io_deq_bits_last)
@@ -9747,7 +9747,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_5_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_5_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_5_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_5_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_5_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_5_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_5_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_5_io_deq_bits_last)
@@ -9759,7 +9759,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_6_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_6_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_6_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_6_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_6_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_6_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_6_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_6_io_deq_bits_last)
@@ -9771,7 +9771,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_7_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_7_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_7_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_7_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_7_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_7_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_7_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_7_io_deq_bits_last)
@@ -9783,7 +9783,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_8_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_8_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_8_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_8_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_8_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_8_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_8_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_8_io_deq_bits_last)
@@ -9795,7 +9795,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_9_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_9_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_9_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_9_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_9_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_9_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_9_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_9_io_deq_bits_last)
@@ -9807,7 +9807,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_10_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_10_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_10_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_10_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_10_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_10_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_10_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_10_io_deq_bits_last)
@@ -9819,7 +9819,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_11_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_11_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_11_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_11_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_11_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_11_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_11_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_11_io_deq_bits_last)
@@ -9831,7 +9831,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_12_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_12_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_12_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_12_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_12_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_12_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_12_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_12_io_deq_bits_last)
@@ -9843,7 +9843,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_13_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_13_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_13_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_13_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_13_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_13_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_13_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_13_io_deq_bits_last)
@@ -9855,7 +9855,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_14_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_14_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_14_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_14_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_14_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_14_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_14_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_14_io_deq_bits_last)
@@ -9867,7 +9867,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_15_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_15_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_15_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_15_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_15_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_15_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_15_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_15_io_deq_bits_last)
@@ -9879,7 +9879,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_16_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_16_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_16_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_16_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_16_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_16_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_16_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_16_io_deq_bits_last)
@@ -9891,7 +9891,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_17_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_17_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_17_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_17_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_17_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_17_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_17_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_17_io_deq_bits_last)
@@ -9903,7 +9903,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_18_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_18_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_18_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_18_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_18_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_18_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_18_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_18_io_deq_bits_last)
@@ -9915,7 +9915,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_19_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_19_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_19_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_19_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_19_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_19_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_19_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_19_io_deq_bits_last)
@@ -9927,7 +9927,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_20_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_20_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_20_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_20_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_20_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_20_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_20_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_20_io_deq_bits_last)
@@ -9939,7 +9939,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_21_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_21_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_21_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_21_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_21_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_21_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_21_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_21_io_deq_bits_last)
@@ -9951,7 +9951,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_22_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_22_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_22_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_22_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_22_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_22_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_22_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_22_io_deq_bits_last)
@@ -9963,7 +9963,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_23_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_23_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_23_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_23_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_23_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_23_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_23_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_23_io_deq_bits_last)
@@ -9975,7 +9975,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_24_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_24_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_24_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_24_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_24_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_24_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_24_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_24_io_deq_bits_last)
@@ -9987,7 +9987,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_25_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_25_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_25_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_25_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_25_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_25_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_25_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_25_io_deq_bits_last)
@@ -9999,7 +9999,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_26_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_26_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_26_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_26_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_26_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_26_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_26_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_26_io_deq_bits_last)
@@ -10011,7 +10011,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_27_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_27_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_27_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_27_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_27_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_27_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_27_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_27_io_deq_bits_last)
@@ -10023,7 +10023,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_28_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_28_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_28_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_28_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_28_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_28_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_28_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_28_io_deq_bits_last)
@@ -10035,7 +10035,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_29_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_29_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_29_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_29_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_29_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_29_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_29_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_29_io_deq_bits_last)
@@ -10047,7 +10047,7 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_30_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_30_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_30_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_30_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_30_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_30_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_30_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_30_io_deq_bits_last)
@@ -10059,12 +10059,12 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_enq_valid     (_demux_io_sinks_31_valid),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_data (_demux_io_sinks_31_bits_data),	// src/main/scala/chext/elastic/Demux.scala:48:23
     .io_enq_bits_last (_demux_io_sinks_31_bits_last),	// src/main/scala/chext/elastic/Demux.scala:48:23
-    .io_deq_ready     (_rowReduceSingleN_31_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_deq_ready     (_rowReduceSingleN_31_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_valid     (_sinkBuffer_31_io_deq_valid),
     .io_deq_bits_data (_sinkBuffer_31_io_deq_bits_data),
     .io_deq_bits_last (_sinkBuffer_31_io_deq_bits_last)
   );
-  Counter_37 elasticCounter (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
+  Counter_37 elasticCounter (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
     .clock      (clock),
     .reset      (reset),
     .sink_ready (_demux_io_select_ready),	// src/main/scala/chext/elastic/Demux.scala:48:23
@@ -10204,14 +10204,14 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_sinks_31_bits_data (_demux_io_sinks_31_bits_data),
     .io_sinks_31_bits_last (_demux_io_sinks_31_bits_last),
     .io_select_ready       (_demux_io_select_ready),
-    .io_select_bits        (_elasticCounter_sink_bits)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
+    .io_select_bits        (_elasticCounter_sink_bits)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
   );
   Queue2_UInt256 sourceBuffer (	// src/main/scala/chext/elastic/Buffer.scala:93:32
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_0_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_0_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_0_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_0_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_0_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_io_deq_bits)
@@ -10220,8 +10220,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_1_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_1_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_1_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_1_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_1_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_1_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_1_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_1_io_deq_bits)
@@ -10230,8 +10230,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_2_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_2_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_2_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_2_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_2_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_2_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_2_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_2_io_deq_bits)
@@ -10240,8 +10240,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_3_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_3_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_3_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_3_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_3_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_3_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_3_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_3_io_deq_bits)
@@ -10250,8 +10250,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_4_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_4_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_4_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_4_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_4_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_4_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_4_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_4_io_deq_bits)
@@ -10260,8 +10260,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_5_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_5_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_5_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_5_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_5_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_5_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_5_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_5_io_deq_bits)
@@ -10270,8 +10270,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_6_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_6_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_6_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_6_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_6_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_6_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_6_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_6_io_deq_bits)
@@ -10280,8 +10280,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_7_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_7_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_7_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_7_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_7_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_7_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_7_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_7_io_deq_bits)
@@ -10290,8 +10290,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_8_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_8_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_8_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_8_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_8_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_8_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_8_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_8_io_deq_bits)
@@ -10300,8 +10300,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_9_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_9_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_9_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_9_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_9_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_9_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_9_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_9_io_deq_bits)
@@ -10310,8 +10310,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_10_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_10_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_10_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_10_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_10_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_10_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_10_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_10_io_deq_bits)
@@ -10320,8 +10320,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_11_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_11_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_11_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_11_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_11_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_11_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_11_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_11_io_deq_bits)
@@ -10330,8 +10330,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_12_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_12_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_12_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_12_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_12_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_12_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_12_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_12_io_deq_bits)
@@ -10340,8 +10340,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_13_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_13_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_13_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_13_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_13_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_13_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_13_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_13_io_deq_bits)
@@ -10350,8 +10350,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_14_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_14_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_14_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_14_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_14_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_14_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_14_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_14_io_deq_bits)
@@ -10360,8 +10360,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_15_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_15_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_15_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_15_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_15_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_15_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_15_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_15_io_deq_bits)
@@ -10370,8 +10370,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_16_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_16_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_16_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_16_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_16_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_16_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_16_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_16_io_deq_bits)
@@ -10380,8 +10380,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_17_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_17_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_17_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_17_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_17_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_17_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_17_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_17_io_deq_bits)
@@ -10390,8 +10390,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_18_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_18_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_18_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_18_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_18_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_18_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_18_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_18_io_deq_bits)
@@ -10400,8 +10400,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_19_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_19_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_19_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_19_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_19_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_19_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_19_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_19_io_deq_bits)
@@ -10410,8 +10410,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_20_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_20_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_20_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_20_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_20_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_20_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_20_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_20_io_deq_bits)
@@ -10420,8 +10420,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_21_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_21_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_21_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_21_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_21_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_21_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_21_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_21_io_deq_bits)
@@ -10430,8 +10430,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_22_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_22_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_22_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_22_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_22_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_22_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_22_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_22_io_deq_bits)
@@ -10440,8 +10440,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_23_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_23_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_23_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_23_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_23_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_23_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_23_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_23_io_deq_bits)
@@ -10450,8 +10450,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_24_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_24_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_24_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_24_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_24_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_24_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_24_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_24_io_deq_bits)
@@ -10460,8 +10460,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_25_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_25_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_25_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_25_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_25_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_25_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_25_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_25_io_deq_bits)
@@ -10470,8 +10470,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_26_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_26_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_26_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_26_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_26_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_26_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_26_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_26_io_deq_bits)
@@ -10480,8 +10480,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_27_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_27_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_27_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_27_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_27_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_27_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_27_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_27_io_deq_bits)
@@ -10490,8 +10490,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_28_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_28_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_28_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_28_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_28_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_28_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_28_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_28_io_deq_bits)
@@ -10500,8 +10500,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_29_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_29_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_29_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_29_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_29_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_29_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_29_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_29_io_deq_bits)
@@ -10510,8 +10510,8 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_30_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_30_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_30_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_30_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_30_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_30_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_30_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_30_io_deq_bits)
@@ -10520,13 +10520,13 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sourceBuffer_31_io_enq_ready),
-    .io_enq_valid (_rowReduceSingleN_31_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
-    .io_enq_bits  (_rowReduceSingleN_31_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_valid (_rowReduceSingleN_31_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
+    .io_enq_bits  (_rowReduceSingleN_31_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:120:27
     .io_deq_ready (_mux_io_sources_31_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
     .io_deq_valid (_sourceBuffer_31_io_deq_valid),
     .io_deq_bits  (_sourceBuffer_31_io_deq_bits)
   );
-  Counter_37 elasticCounter_1 (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
+  Counter_37 elasticCounter_1 (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
     .clock      (clock),
     .reset      (reset),
     .sink_ready (_mux_io_select_ready),	// src/main/scala/chext/elastic/Mux.scala:50:21
@@ -10633,67 +10633,67 @@ module RowReduce(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/componen
     .io_sink_valid       (sinkResult_valid),
     .io_sink_bits        (sinkResult_bits),
     .io_select_ready     (_mux_io_select_ready),
-    .io_select_bits      (_elasticCounter_1_sink_bits)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
+    .io_select_bits      (_elasticCounter_1_sink_bits)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/elastic/Counter.scala:27:32
   );
-  assign sourceElem_ready = _GEN & _GEN_3 & sourceElem_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :157:27, :158:32, :181:26, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
+  assign sourceElem_ready = _GEN & _GEN_3 & sourceElem_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :157:27, :158:32, :181:26, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
   assign sourceCount_ready =
     _GEN
-    & (rIsGenerating ? sourceElem_valid & _GEN_0 : _GEN_1 | _GEN_2 & sourceElem_valid);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38, :157:27, :158:32, :161:{27,36}, :181:{17,26}, :187:{23,32}, :188:34, :199:34, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18, :65:{28,45}
+    & (rIsGenerating ? sourceElem_valid & _GEN_0 : _GEN_1 | _GEN_2 & sourceElem_valid);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/RowReduce.scala:107:7, :146:38, :157:27, :158:32, :161:{27,36}, :181:{17,26}, :187:{23,32}, :188:34, :199:34, src/main/scala/chext/elastic/Arrival.scala:28:18, :35:18, :65:{28,45}
 endmodule
 
-module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
+module Spmv(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
   input          clock,	// <stdin>:74171:11
                  reset,	// <stdin>:74172:11
-  output         sourceTask_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-  input          sourceTask_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-  input  [63:0]  sourceTask_bits_ptrValues,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-                 sourceTask_bits_ptrColumnIndices,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-                 sourceTask_bits_ptrRowLengths,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-                 sourceTask_bits_ptrInputVector,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-                 sourceTask_bits_ptrOutputVector,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-                 sourceTask_bits_numValues,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-                 sourceTask_bits_numRows,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:128:22
-  input          sinkDone_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:131:20
-  output         sinkDone_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:131:20
-  output [63:0]  sinkDone_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:131:20
-  input          m_axi_ls_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  output         m_axi_ls_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  output [29:0]  m_axi_ls_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  output [3:0]   m_axi_ls_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  output [2:0]   m_axi_ls_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  output [1:0]   m_axi_ls_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  output         m_axi_ls_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  input          m_axi_ls_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  input  [255:0] m_axi_ls_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:134:20
-  input          m_axi_gp_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output         m_axi_gp_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [1:0]   m_axi_gp_ar_bits_id,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [29:0]  m_axi_gp_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [3:0]   m_axi_gp_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [2:0]   m_axi_gp_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [1:0]   m_axi_gp_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output         m_axi_gp_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input          m_axi_gp_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input  [1:0]   m_axi_gp_r_bits_id,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input  [255:0] m_axi_gp_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input  [1:0]   m_axi_gp_r_bits_resp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input          m_axi_gp_r_bits_last,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-                 m_axi_gp_aw_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output         m_axi_gp_aw_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [1:0]   m_axi_gp_aw_bits_id,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [29:0]  m_axi_gp_aw_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [3:0]   m_axi_gp_aw_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [2:0]   m_axi_gp_aw_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [1:0]   m_axi_gp_aw_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input          m_axi_gp_w_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output         m_axi_gp_w_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [255:0] m_axi_gp_w_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output [31:0]  m_axi_gp_w_bits_strb,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  output         m_axi_gp_w_bits_last,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-                 m_axi_gp_b_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input          m_axi_gp_b_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-  input  [1:0]   m_axi_gp_b_bits_id,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
-                 m_axi_gp_b_bits_resp	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:137:20
+  output         sourceTask_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+  input          sourceTask_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+  input  [63:0]  sourceTask_bits_ptrValues,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+                 sourceTask_bits_ptrColumnIndices,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+                 sourceTask_bits_ptrRowLengths,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+                 sourceTask_bits_ptrInputVector,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+                 sourceTask_bits_ptrOutputVector,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+                 sourceTask_bits_numValues,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+                 sourceTask_bits_numRows,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:22
+  input          sinkDone_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:126:20
+  output         sinkDone_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:126:20
+  output [63:0]  sinkDone_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:126:20
+  input          m_axi_random_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  output         m_axi_random_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  output [29:0]  m_axi_random_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  output [3:0]   m_axi_random_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  output [2:0]   m_axi_random_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  output [1:0]   m_axi_random_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  output         m_axi_random_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  input          m_axi_random_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  input  [255:0] m_axi_random_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:129:24
+  input          m_axi_regular_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output         m_axi_regular_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [1:0]   m_axi_regular_ar_bits_id,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [29:0]  m_axi_regular_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [3:0]   m_axi_regular_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [2:0]   m_axi_regular_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [1:0]   m_axi_regular_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output         m_axi_regular_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input          m_axi_regular_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input  [1:0]   m_axi_regular_r_bits_id,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input  [255:0] m_axi_regular_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input  [1:0]   m_axi_regular_r_bits_resp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input          m_axi_regular_r_bits_last,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+                 m_axi_regular_aw_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output         m_axi_regular_aw_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [1:0]   m_axi_regular_aw_bits_id,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [29:0]  m_axi_regular_aw_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [3:0]   m_axi_regular_aw_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [2:0]   m_axi_regular_aw_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [1:0]   m_axi_regular_aw_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input          m_axi_regular_w_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output         m_axi_regular_w_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [255:0] m_axi_regular_w_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output [31:0]  m_axi_regular_w_bits_strb,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  output         m_axi_regular_w_bits_last,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+                 m_axi_regular_b_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input          m_axi_regular_b_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+  input  [1:0]   m_axi_regular_b_bits_id,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
+                 m_axi_regular_b_bits_resp	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:132:25
 );
 
   wire         _sinkBuffer_4_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:148:30
@@ -10705,19 +10705,19 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
   wire         _sinkBuffer_2_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire         _sinkBuffer_2_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire [31:0]  _sinkBuffer_2_io_deq_bits;	// src/main/scala/chext/elastic/Buffer.scala:148:30
-  wire         _rowReduce_sourceElem_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
-  wire         _rowReduce_sourceCount_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
-  wire         _rowReduce_sinkResult_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
-  wire [255:0] _rowReduce_sinkResult_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
+  wire         _rowReduce_sourceElem_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
+  wire         _rowReduce_sourceCount_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
+  wire         _rowReduce_sinkResult_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
+  wire [255:0] _rowReduce_sinkResult_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
   wire         _sinkBuffer_1_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire [255:0] _sinkBuffer_1_io_deq_bits;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire         _sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire         _sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:148:30
   wire [31:0]  _sinkBuffer_io_deq_bits;	// src/main/scala/chext/elastic/Buffer.scala:148:30
-  wire         _batchMultiply_sourceInA_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
-  wire         _batchMultiply_sourceInB_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
-  wire         _batchMultiply_sinkOut_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
-  wire [255:0] _batchMultiply_sinkOut_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
+  wire         _batchMultiply_sourceInA_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
+  wire         _batchMultiply_sourceInB_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
+  wire         _batchMultiply_sinkOut_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
+  wire [255:0] _batchMultiply_sinkOut_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
   wire         _sinkBuffered__sinkBuffer_1_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire         _sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire         _sinkBuffered__sinkBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Buffer.scala:131:30
@@ -10728,139 +10728,139 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
   wire [63:0]  _sinkBuffered__sinkBuffer_io_deq_bits_ptrOutputVector;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire [63:0]  _sinkBuffered__sinkBuffer_io_deq_bits_numValues;	// src/main/scala/chext/elastic/Buffer.scala:131:30
   wire [63:0]  _sinkBuffered__sinkBuffer_io_deq_bits_numRows;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire         _qPtrInputVector_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:186:31
-  wire         _qPtrInputVector_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:186:31
-  wire [63:0]  _qPtrInputVector_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:186:31
-  wire         _downsizerRowLengths_source_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:174:43
-  wire         _downsizerRowLengths_sink_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:174:43
-  wire [31:0]  _downsizerRowLengths_sink_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:174:43
-  wire         _downsizerColumnIndices_source_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46
-  wire         _downsizerColumnIndices_sink_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46
-  wire [31:0]  _downsizerColumnIndices_sink_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46
-  wire         _downsizerColumnIndices_sink_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46
-  wire         _downsizerValues_source_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:172:39
-  wire         _downsizerValues_sink_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:172:39
-  wire [31:0]  _downsizerValues_sink_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:172:39
-  wire         _mux_s_axi_0_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_0_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire [255:0] _mux_s_axi_0_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire [1:0]   _mux_s_axi_0_r_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_0_r_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_1_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_1_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire [255:0] _mux_s_axi_1_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire [1:0]   _mux_s_axi_1_r_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_1_r_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_2_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_2_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire [255:0] _mux_s_axi_2_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire [1:0]   _mux_s_axi_2_r_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_2_r_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_3_aw_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_3_w_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _mux_s_axi_3_b_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire [1:0]   _mux_s_axi_3_b_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-  wire         _responseBufferReadStreamRowLengths_s_axi_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire         _responseBufferReadStreamRowLengths_s_axi_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire [255:0] _responseBufferReadStreamRowLengths_s_axi_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire         _responseBufferReadStreamRowLengths_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire [29:0]  _responseBufferReadStreamRowLengths_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire [3:0]   _responseBufferReadStreamRowLengths_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire [2:0]   _responseBufferReadStreamRowLengths_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire [1:0]   _responseBufferReadStreamRowLengths_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire         _responseBufferReadStreamRowLengths_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-  wire         _responseBufferReadStreamColumnIndices_s_axi_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire         _responseBufferReadStreamColumnIndices_s_axi_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire [255:0] _responseBufferReadStreamColumnIndices_s_axi_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire         _responseBufferReadStreamColumnIndices_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire [29:0]  _responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire [3:0]   _responseBufferReadStreamColumnIndices_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire [2:0]   _responseBufferReadStreamColumnIndices_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire [1:0]   _responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire         _responseBufferReadStreamColumnIndices_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-  wire         _responseBufferReadStreamValue_s_axi_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire         _responseBufferReadStreamValue_s_axi_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire [255:0] _responseBufferReadStreamValue_s_axi_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire         _responseBufferReadStreamValue_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire [29:0]  _responseBufferReadStreamValue_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire [3:0]   _responseBufferReadStreamValue_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire [2:0]   _responseBufferReadStreamValue_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire [1:0]   _responseBufferReadStreamValue_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire         _responseBufferReadStreamValue_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-  wire         _writeStreamResult_m_axi_aw_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire [29:0]  _writeStreamResult_m_axi_aw_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire [3:0]   _writeStreamResult_m_axi_aw_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire [2:0]   _writeStreamResult_m_axi_aw_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire [1:0]   _writeStreamResult_m_axi_aw_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire         _writeStreamResult_m_axi_w_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire [255:0] _writeStreamResult_m_axi_w_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire [31:0]  _writeStreamResult_m_axi_w_bits_strb;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire         _writeStreamResult_m_axi_w_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire         _writeStreamResult_m_axi_b_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire         _writeStreamResult_sourceTask_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire         _writeStreamResult_sinkDone_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire         _writeStreamResult_sourceData_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-  wire         _readStreamRowLengths_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire [29:0]  _readStreamRowLengths_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire [3:0]   _readStreamRowLengths_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire [2:0]   _readStreamRowLengths_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire [1:0]   _readStreamRowLengths_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire         _readStreamRowLengths_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire         _readStreamRowLengths_sourceTask_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire         _readStreamRowLengths_sinkData_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire [255:0] _readStreamRowLengths_sinkData_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-  wire         _readStreamColumnIndices_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire [29:0]  _readStreamColumnIndices_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire [3:0]   _readStreamColumnIndices_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire [2:0]   _readStreamColumnIndices_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire [1:0]   _readStreamColumnIndices_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire         _readStreamColumnIndices_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire         _readStreamColumnIndices_sourceTask_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire         _readStreamColumnIndices_sinkData_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire [255:0] _readStreamColumnIndices_sinkData_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire         _readStreamColumnIndices_sinkData_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-  wire         _readStreamValues_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire [29:0]  _readStreamValues_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire [3:0]   _readStreamValues_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire [2:0]   _readStreamValues_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire [1:0]   _readStreamValues_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire         _readStreamValues_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire         _readStreamValues_sourceTask_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire         _readStreamValues_sinkData_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire [255:0] _readStreamValues_sinkData_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-  wire         _qTime_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:29
-  wire         _qTime_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:29
-  wire [63:0]  _qTime_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:29
-  reg  [63:0]  rTime;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:30
+  wire         _qPtrInputVector_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:183:31
+  wire         _qPtrInputVector_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:183:31
+  wire [63:0]  _qPtrInputVector_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:183:31
+  wire         _downsizerRowLengths_source_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:171:43
+  wire         _downsizerRowLengths_sink_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:171:43
+  wire [31:0]  _downsizerRowLengths_sink_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:171:43
+  wire         _downsizerColumnIndices_source_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46
+  wire         _downsizerColumnIndices_sink_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46
+  wire [31:0]  _downsizerColumnIndices_sink_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46
+  wire         _downsizerColumnIndices_sink_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46
+  wire         _downsizerValues_source_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:169:39
+  wire         _downsizerValues_sink_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:169:39
+  wire [31:0]  _downsizerValues_sink_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:169:39
+  wire         _mux_s_axi_0_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_0_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire [255:0] _mux_s_axi_0_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire [1:0]   _mux_s_axi_0_r_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_0_r_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_1_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_1_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire [255:0] _mux_s_axi_1_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire [1:0]   _mux_s_axi_1_r_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_1_r_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_2_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_2_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire [255:0] _mux_s_axi_2_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire [1:0]   _mux_s_axi_2_r_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_2_r_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_3_aw_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_3_w_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _mux_s_axi_3_b_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire [1:0]   _mux_s_axi_3_b_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+  wire         _responseBufferReadStreamRowLengths_s_axi_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire         _responseBufferReadStreamRowLengths_s_axi_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire [255:0] _responseBufferReadStreamRowLengths_s_axi_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire         _responseBufferReadStreamRowLengths_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire [29:0]  _responseBufferReadStreamRowLengths_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire [3:0]   _responseBufferReadStreamRowLengths_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire [2:0]   _responseBufferReadStreamRowLengths_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire [1:0]   _responseBufferReadStreamRowLengths_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire         _responseBufferReadStreamRowLengths_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+  wire         _responseBufferReadStreamColumnIndices_s_axi_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire         _responseBufferReadStreamColumnIndices_s_axi_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire [255:0] _responseBufferReadStreamColumnIndices_s_axi_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire         _responseBufferReadStreamColumnIndices_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire [29:0]  _responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire [3:0]   _responseBufferReadStreamColumnIndices_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire [2:0]   _responseBufferReadStreamColumnIndices_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire [1:0]   _responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire         _responseBufferReadStreamColumnIndices_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+  wire         _responseBufferReadStreamValue_s_axi_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire         _responseBufferReadStreamValue_s_axi_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire [255:0] _responseBufferReadStreamValue_s_axi_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire         _responseBufferReadStreamValue_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire [29:0]  _responseBufferReadStreamValue_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire [3:0]   _responseBufferReadStreamValue_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire [2:0]   _responseBufferReadStreamValue_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire [1:0]   _responseBufferReadStreamValue_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire         _responseBufferReadStreamValue_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+  wire         _writeStreamResult_m_axi_aw_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire [29:0]  _writeStreamResult_m_axi_aw_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire [3:0]   _writeStreamResult_m_axi_aw_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire [2:0]   _writeStreamResult_m_axi_aw_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire [1:0]   _writeStreamResult_m_axi_aw_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire         _writeStreamResult_m_axi_w_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire [255:0] _writeStreamResult_m_axi_w_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire [31:0]  _writeStreamResult_m_axi_w_bits_strb;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire         _writeStreamResult_m_axi_w_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire         _writeStreamResult_m_axi_b_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire         _writeStreamResult_sourceTask_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire         _writeStreamResult_sinkDone_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire         _writeStreamResult_sourceData_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+  wire         _readStreamRowLengths_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire [29:0]  _readStreamRowLengths_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire [3:0]   _readStreamRowLengths_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire [2:0]   _readStreamRowLengths_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire [1:0]   _readStreamRowLengths_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire         _readStreamRowLengths_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire         _readStreamRowLengths_sourceTask_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire         _readStreamRowLengths_sinkData_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire [255:0] _readStreamRowLengths_sinkData_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+  wire         _readStreamColumnIndices_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire [29:0]  _readStreamColumnIndices_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire [3:0]   _readStreamColumnIndices_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire [2:0]   _readStreamColumnIndices_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire [1:0]   _readStreamColumnIndices_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire         _readStreamColumnIndices_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire         _readStreamColumnIndices_sourceTask_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire         _readStreamColumnIndices_sinkData_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire [255:0] _readStreamColumnIndices_sinkData_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire         _readStreamColumnIndices_sinkData_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+  wire         _readStreamValues_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire [29:0]  _readStreamValues_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire [3:0]   _readStreamValues_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire [2:0]   _readStreamValues_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire [1:0]   _readStreamValues_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire         _readStreamValues_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire         _readStreamValues_sourceTask_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire         _readStreamValues_sinkData_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire [255:0] _readStreamValues_sinkData_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+  wire         _qTime_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:138:29
+  wire         _qTime_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:138:29
+  wire [63:0]  _qTime_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:138:29
+  reg  [63:0]  rTime;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:135:30
   wire         sourceTask_ready_0 =
-    _sinkBuffered__sinkBuffer_io_enq_ready & sourceTask_valid & _qTime_io_enq_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:29, :191:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chisel3/util/Decoupled.scala:67:20
+    _sinkBuffered__sinkBuffer_io_enq_ready & sourceTask_valid & _qTime_io_enq_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:138:29, :188:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chisel3/util/Decoupled.scala:67:20
   reg          eagerFork_regs_0;	// src/main/scala/chext/elastic/Fork.scala:75:25
   reg          eagerFork_regs_1;	// src/main/scala/chext/elastic/Fork.scala:75:25
   reg          eagerFork_regs_2;	// src/main/scala/chext/elastic/Fork.scala:75:25
   reg          eagerFork_regs_3;	// src/main/scala/chext/elastic/Fork.scala:75:25
   reg          eagerFork_regs_4;	// src/main/scala/chext/elastic/Fork.scala:75:25
   wire         eagerFork_rvTask_ready_qual1_0 =
-    _readStreamValues_sourceTask_ready | eagerFork_regs_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
+    _readStreamValues_sourceTask_ready | eagerFork_regs_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
   wire         eagerFork_rvTask_ready_qual1_1 =
-    _readStreamColumnIndices_sourceTask_ready | eagerFork_regs_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
+    _readStreamColumnIndices_sourceTask_ready | eagerFork_regs_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
   wire         eagerFork_rvTask_ready_qual1_2 =
-    _readStreamRowLengths_sourceTask_ready | eagerFork_regs_2;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
+    _readStreamRowLengths_sourceTask_ready | eagerFork_regs_2;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
   wire         eagerFork_rvTask_ready_qual1_3 =
-    _writeStreamResult_sourceTask_ready | eagerFork_regs_3;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
+    _writeStreamResult_sourceTask_ready | eagerFork_regs_3;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
   wire         eagerFork_rvTask_ready_qual1_4 =
-    _qPtrInputVector_io_enq_ready | eagerFork_regs_4;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:186:31, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
+    _qPtrInputVector_io_enq_ready | eagerFork_regs_4;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:183:31, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22
   wire         rvTask_ready =
     eagerFork_rvTask_ready_qual1_0 & eagerFork_rvTask_ready_qual1_1
     & eagerFork_rvTask_ready_qual1_2 & eagerFork_rvTask_ready_qual1_3
     & eagerFork_rvTask_ready_qual1_4;	// src/main/scala/chext/elastic/Fork.scala:85:22, :87:23
   wire         _GEN =
-    _sinkBuffered__sinkBuffer_1_io_enq_ready & _downsizerColumnIndices_sink_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46, src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire         _GEN_0 = _GEN & _qPtrInputVector_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:186:31, :246:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
-  wire         sinkDone_valid_0 = _writeStreamResult_sinkDone_valid & _qTime_io_deq_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:29, :148:41, src/main/scala/chext/elastic/Join.scala:41:55
+    _sinkBuffered__sinkBuffer_1_io_enq_ready & _downsizerColumnIndices_sink_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46, src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
+  wire         _GEN_0 = _GEN & _qPtrInputVector_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:183:31, :243:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  wire         sinkDone_valid_0 = _writeStreamResult_sinkDone_valid & _qTime_io_deq_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:138:29, :143:41, src/main/scala/chext/elastic/Join.scala:41:55
   wire         mkJoin_fire = sinkDone_ready & sinkDone_valid_0;	// src/main/scala/chext/elastic/Join.scala:41:55, :42:29
   always @(posedge clock) begin	// <stdin>:74171:11
     if (reset) begin	// <stdin>:74171:11
-      rTime <= 64'h0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:30
+      rTime <= 64'h0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:135:30
       eagerFork_regs_0 <= 1'h0;	// src/main/scala/chext/elastic/Fork.scala:75:25, src/main/scala/chisel3/util/Decoupled.scala:67:20
       eagerFork_regs_1 <= 1'h0;	// src/main/scala/chext/elastic/Fork.scala:75:25, src/main/scala/chisel3/util/Decoupled.scala:67:20
       eagerFork_regs_2 <= 1'h0;	// src/main/scala/chext/elastic/Fork.scala:75:25, src/main/scala/chisel3/util/Decoupled.scala:67:20
@@ -10868,7 +10868,7 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
       eagerFork_regs_4 <= 1'h0;	// src/main/scala/chext/elastic/Fork.scala:75:25, src/main/scala/chisel3/util/Decoupled.scala:67:20
     end
     else begin	// <stdin>:74171:11
-      rTime <= rTime + 64'h1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:30, :141:18
+      rTime <= rTime + 64'h1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:135:30, :136:18
       eagerFork_regs_0 <=
         eagerFork_rvTask_ready_qual1_0 & _sinkBuffered__sinkBuffer_io_deq_valid
         & ~rvTask_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22, :87:23, :92:{54,57}
@@ -10886,322 +10886,322 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
         & ~rvTask_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :85:22, :87:23, :92:{54,57}
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-      automatic logic [31:0] _RANDOM[0:2];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+      automatic logic [31:0] _RANDOM[0:2];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
         for (logic [1:0] i = 2'h0; i < 2'h3; i += 2'h1) begin
-          _RANDOM[i] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-        end	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-        rTime = {_RANDOM[2'h0], _RANDOM[2'h1]};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, :140:30
-        eagerFork_regs_0 = _RANDOM[2'h2][0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        eagerFork_regs_1 = _RANDOM[2'h2][1];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        eagerFork_regs_2 = _RANDOM[2'h2][2];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        eagerFork_regs_3 = _RANDOM[2'h2][3];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, src/main/scala/chext/elastic/Fork.scala:75:25
-        eagerFork_regs_4 = _RANDOM[2'h2][4];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, src/main/scala/chext/elastic/Fork.scala:75:25
+          _RANDOM[i] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+        end	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+        rTime = {_RANDOM[2'h0], _RANDOM[2'h1]};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, :135:30
+        eagerFork_regs_0 = _RANDOM[2'h2][0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        eagerFork_regs_1 = _RANDOM[2'h2][1];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        eagerFork_regs_2 = _RANDOM[2'h2][2];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        eagerFork_regs_3 = _RANDOM[2'h2][3];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, src/main/scala/chext/elastic/Fork.scala:75:25
+        eagerFork_regs_4 = _RANDOM[2'h2][4];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, src/main/scala/chext/elastic/Fork.scala:75:25
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Queue16_UInt64 qTime (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:29
+  Queue16_UInt64 qTime (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:138:29
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_qTime_io_enq_ready),
-    .io_enq_valid (sourceTask_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:191:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
-    .io_enq_bits  (rTime),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:30
+    .io_enq_valid (sourceTask_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:188:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
+    .io_enq_bits  (rTime),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:135:30
     .io_deq_ready (mkJoin_fire),	// src/main/scala/chext/elastic/Join.scala:42:29
     .io_deq_valid (_qTime_io_deq_valid),
     .io_deq_bits  (_qTime_io_deq_bits)
   );
-  ReadStream readStreamValues (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
+  ReadStream readStreamValues (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
     .clock                   (clock),
     .reset                   (reset),
-    .m_axi_ar_ready          (_responseBufferReadStreamValue_s_axi_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
+    .m_axi_ar_ready          (_responseBufferReadStreamValue_s_axi_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
     .m_axi_ar_valid          (_readStreamValues_m_axi_ar_valid),
     .m_axi_ar_bits_addr      (_readStreamValues_m_axi_ar_bits_addr),
     .m_axi_ar_bits_len       (_readStreamValues_m_axi_ar_bits_len),
     .m_axi_ar_bits_size      (_readStreamValues_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst     (_readStreamValues_m_axi_ar_bits_burst),
     .m_axi_r_ready           (_readStreamValues_m_axi_r_ready),
-    .m_axi_r_valid           (_responseBufferReadStreamValue_s_axi_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-    .m_axi_r_bits_data       (_responseBufferReadStreamValue_s_axi_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
+    .m_axi_r_valid           (_responseBufferReadStreamValue_s_axi_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+    .m_axi_r_bits_data       (_responseBufferReadStreamValue_s_axi_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
     .sourceTask_ready        (_readStreamValues_sourceTask_ready),
     .sourceTask_valid        (_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_0),	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :79:{38,41}
     .sourceTask_bits_address (_sinkBuffered__sinkBuffer_io_deq_bits_ptrValues),	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .sourceTask_bits_length  (_sinkBuffered__sinkBuffer_io_deq_bits_numValues),	// src/main/scala/chext/elastic/Buffer.scala:131:30
-    .sinkData_ready          (_downsizerValues_source_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:172:39
+    .sinkData_ready          (_downsizerValues_source_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:169:39
     .sinkData_valid          (_readStreamValues_sinkData_valid),
     .sinkData_bits           (_readStreamValues_sinkData_bits)
   );
-  ReadStreamWithLast readStreamColumnIndices (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
+  ReadStreamWithLast readStreamColumnIndices (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
     .clock                   (clock),
     .reset                   (reset),
-    .m_axi_ar_ready          (_responseBufferReadStreamColumnIndices_s_axi_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
+    .m_axi_ar_ready          (_responseBufferReadStreamColumnIndices_s_axi_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
     .m_axi_ar_valid          (_readStreamColumnIndices_m_axi_ar_valid),
     .m_axi_ar_bits_addr      (_readStreamColumnIndices_m_axi_ar_bits_addr),
     .m_axi_ar_bits_len       (_readStreamColumnIndices_m_axi_ar_bits_len),
     .m_axi_ar_bits_size      (_readStreamColumnIndices_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst     (_readStreamColumnIndices_m_axi_ar_bits_burst),
     .m_axi_r_ready           (_readStreamColumnIndices_m_axi_r_ready),
-    .m_axi_r_valid           (_responseBufferReadStreamColumnIndices_s_axi_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-    .m_axi_r_bits_data       (_responseBufferReadStreamColumnIndices_s_axi_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
+    .m_axi_r_valid           (_responseBufferReadStreamColumnIndices_s_axi_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+    .m_axi_r_bits_data       (_responseBufferReadStreamColumnIndices_s_axi_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
     .sourceTask_ready        (_readStreamColumnIndices_sourceTask_ready),
     .sourceTask_valid        (_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_1),	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :79:{38,41}
     .sourceTask_bits_address (_sinkBuffered__sinkBuffer_io_deq_bits_ptrColumnIndices),	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .sourceTask_bits_length  (_sinkBuffered__sinkBuffer_io_deq_bits_numValues),	// src/main/scala/chext/elastic/Buffer.scala:131:30
-    .sinkData_ready          (_downsizerColumnIndices_source_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46
+    .sinkData_ready          (_downsizerColumnIndices_source_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46
     .sinkData_valid          (_readStreamColumnIndices_sinkData_valid),
     .sinkData_bits_data      (_readStreamColumnIndices_sinkData_bits_data),
     .sinkData_bits_last      (_readStreamColumnIndices_sinkData_bits_last)
   );
-  ReadStream readStreamRowLengths (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
+  ReadStream readStreamRowLengths (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
     .clock                   (clock),
     .reset                   (reset),
-    .m_axi_ar_ready          (_responseBufferReadStreamRowLengths_s_axi_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
+    .m_axi_ar_ready          (_responseBufferReadStreamRowLengths_s_axi_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
     .m_axi_ar_valid          (_readStreamRowLengths_m_axi_ar_valid),
     .m_axi_ar_bits_addr      (_readStreamRowLengths_m_axi_ar_bits_addr),
     .m_axi_ar_bits_len       (_readStreamRowLengths_m_axi_ar_bits_len),
     .m_axi_ar_bits_size      (_readStreamRowLengths_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst     (_readStreamRowLengths_m_axi_ar_bits_burst),
     .m_axi_r_ready           (_readStreamRowLengths_m_axi_r_ready),
-    .m_axi_r_valid           (_responseBufferReadStreamRowLengths_s_axi_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-    .m_axi_r_bits_data       (_responseBufferReadStreamRowLengths_s_axi_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
+    .m_axi_r_valid           (_responseBufferReadStreamRowLengths_s_axi_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+    .m_axi_r_bits_data       (_responseBufferReadStreamRowLengths_s_axi_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
     .sourceTask_ready        (_readStreamRowLengths_sourceTask_ready),
     .sourceTask_valid        (_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_2),	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :79:{38,41}
     .sourceTask_bits_address (_sinkBuffered__sinkBuffer_io_deq_bits_ptrRowLengths),	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .sourceTask_bits_length  (_sinkBuffered__sinkBuffer_io_deq_bits_numRows),	// src/main/scala/chext/elastic/Buffer.scala:131:30
-    .sinkData_ready          (_downsizerRowLengths_source_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:174:43
+    .sinkData_ready          (_downsizerRowLengths_source_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:171:43
     .sinkData_valid          (_readStreamRowLengths_sinkData_valid),
     .sinkData_bits           (_readStreamRowLengths_sinkData_bits)
   );
-  WriteStream writeStreamResult (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
+  WriteStream writeStreamResult (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
     .clock                   (clock),
     .reset                   (reset),
-    .m_axi_aw_ready          (_mux_s_axi_3_aw_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_aw_ready          (_mux_s_axi_3_aw_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
     .m_axi_aw_valid          (_writeStreamResult_m_axi_aw_valid),
     .m_axi_aw_bits_addr      (_writeStreamResult_m_axi_aw_bits_addr),
     .m_axi_aw_bits_len       (_writeStreamResult_m_axi_aw_bits_len),
     .m_axi_aw_bits_size      (_writeStreamResult_m_axi_aw_bits_size),
     .m_axi_aw_bits_burst     (_writeStreamResult_m_axi_aw_bits_burst),
-    .m_axi_w_ready           (_mux_s_axi_3_w_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_w_ready           (_mux_s_axi_3_w_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
     .m_axi_w_valid           (_writeStreamResult_m_axi_w_valid),
     .m_axi_w_bits_data       (_writeStreamResult_m_axi_w_bits_data),
     .m_axi_w_bits_strb       (_writeStreamResult_m_axi_w_bits_strb),
     .m_axi_w_bits_last       (_writeStreamResult_m_axi_w_bits_last),
     .m_axi_b_ready           (_writeStreamResult_m_axi_b_ready),
-    .m_axi_b_valid           (_mux_s_axi_3_b_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_b_bits_resp       (_mux_s_axi_3_b_bits_resp),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_b_valid           (_mux_s_axi_3_b_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_b_bits_resp       (_mux_s_axi_3_b_bits_resp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
     .sourceTask_ready        (_writeStreamResult_sourceTask_ready),
     .sourceTask_valid        (_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_3),	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :79:{38,41}
     .sourceTask_bits_address (_sinkBuffered__sinkBuffer_io_deq_bits_ptrOutputVector),	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .sourceTask_bits_length
-      ({_sinkBuffered__sinkBuffer_io_deq_bits_numRows[60:0], 3'h0}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:231:22, :244:26, src/main/scala/chext/elastic/Buffer.scala:131:30
+      ({_sinkBuffered__sinkBuffer_io_deq_bits_numRows[60:0], 3'h0}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:228:22, :241:26, src/main/scala/chext/elastic/Buffer.scala:131:30
     .sinkDone_ready          (mkJoin_fire),	// src/main/scala/chext/elastic/Join.scala:42:29
     .sinkDone_valid          (_writeStreamResult_sinkDone_valid),
     .sourceData_ready        (_writeStreamResult_sourceData_ready),
     .sourceData_valid        (_sinkBuffer_4_io_deq_valid),	// src/main/scala/chext/elastic/Buffer.scala:148:30
     .sourceData_bits         (_sinkBuffer_4_io_deq_bits)	// src/main/scala/chext/elastic/Buffer.scala:148:30
   );
-  ResponseBuffer responseBufferReadStreamValue (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
+  ResponseBuffer responseBufferReadStreamValue (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
     .clock               (clock),
     .reset               (reset),
     .s_axi_ar_ready      (_responseBufferReadStreamValue_s_axi_ar_ready),
-    .s_axi_ar_valid      (_readStreamValues_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-    .s_axi_ar_bits_addr  (_readStreamValues_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-    .s_axi_ar_bits_len   (_readStreamValues_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-    .s_axi_ar_bits_size  (_readStreamValues_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-    .s_axi_ar_bits_burst (_readStreamValues_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-    .s_axi_r_ready       (_readStreamValues_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
+    .s_axi_ar_valid      (_readStreamValues_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+    .s_axi_ar_bits_addr  (_readStreamValues_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+    .s_axi_ar_bits_len   (_readStreamValues_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+    .s_axi_ar_bits_size  (_readStreamValues_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+    .s_axi_ar_bits_burst (_readStreamValues_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+    .s_axi_r_ready       (_readStreamValues_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
     .s_axi_r_valid       (_responseBufferReadStreamValue_s_axi_r_valid),
     .s_axi_r_bits_data   (_responseBufferReadStreamValue_s_axi_r_bits_data),
-    .m_axi_ar_ready      (_mux_s_axi_0_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_ar_ready      (_mux_s_axi_0_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
     .m_axi_ar_valid      (_responseBufferReadStreamValue_m_axi_ar_valid),
     .m_axi_ar_bits_addr  (_responseBufferReadStreamValue_m_axi_ar_bits_addr),
     .m_axi_ar_bits_len   (_responseBufferReadStreamValue_m_axi_ar_bits_len),
     .m_axi_ar_bits_size  (_responseBufferReadStreamValue_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst (_responseBufferReadStreamValue_m_axi_ar_bits_burst),
     .m_axi_r_ready       (_responseBufferReadStreamValue_m_axi_r_ready),
-    .m_axi_r_valid       (_mux_s_axi_0_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_data   (_mux_s_axi_0_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_resp   (_mux_s_axi_0_r_bits_resp),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_last   (_mux_s_axi_0_r_bits_last)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_r_valid       (_mux_s_axi_0_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_data   (_mux_s_axi_0_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_resp   (_mux_s_axi_0_r_bits_resp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_last   (_mux_s_axi_0_r_bits_last)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
   );
-  ResponseBuffer responseBufferReadStreamColumnIndices (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
+  ResponseBuffer responseBufferReadStreamColumnIndices (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
     .clock               (clock),
     .reset               (reset),
     .s_axi_ar_ready      (_responseBufferReadStreamColumnIndices_s_axi_ar_ready),
-    .s_axi_ar_valid      (_readStreamColumnIndices_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .s_axi_ar_bits_addr  (_readStreamColumnIndices_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .s_axi_ar_bits_len   (_readStreamColumnIndices_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .s_axi_ar_bits_size  (_readStreamColumnIndices_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .s_axi_ar_bits_burst (_readStreamColumnIndices_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .s_axi_r_ready       (_readStreamColumnIndices_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
+    .s_axi_ar_valid      (_readStreamColumnIndices_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .s_axi_ar_bits_addr  (_readStreamColumnIndices_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .s_axi_ar_bits_len   (_readStreamColumnIndices_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .s_axi_ar_bits_size  (_readStreamColumnIndices_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .s_axi_ar_bits_burst (_readStreamColumnIndices_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .s_axi_r_ready       (_readStreamColumnIndices_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
     .s_axi_r_valid       (_responseBufferReadStreamColumnIndices_s_axi_r_valid),
     .s_axi_r_bits_data   (_responseBufferReadStreamColumnIndices_s_axi_r_bits_data),
-    .m_axi_ar_ready      (_mux_s_axi_1_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_ar_ready      (_mux_s_axi_1_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
     .m_axi_ar_valid      (_responseBufferReadStreamColumnIndices_m_axi_ar_valid),
     .m_axi_ar_bits_addr  (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr),
     .m_axi_ar_bits_len   (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_len),
     .m_axi_ar_bits_size  (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst),
     .m_axi_r_ready       (_responseBufferReadStreamColumnIndices_m_axi_r_ready),
-    .m_axi_r_valid       (_mux_s_axi_1_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_data   (_mux_s_axi_1_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_resp   (_mux_s_axi_1_r_bits_resp),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_last   (_mux_s_axi_1_r_bits_last)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_r_valid       (_mux_s_axi_1_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_data   (_mux_s_axi_1_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_resp   (_mux_s_axi_1_r_bits_resp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_last   (_mux_s_axi_1_r_bits_last)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
   );
-  ResponseBuffer responseBufferReadStreamRowLengths (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
+  ResponseBuffer responseBufferReadStreamRowLengths (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
     .clock               (clock),
     .reset               (reset),
     .s_axi_ar_ready      (_responseBufferReadStreamRowLengths_s_axi_ar_ready),
-    .s_axi_ar_valid      (_readStreamRowLengths_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-    .s_axi_ar_bits_addr  (_readStreamRowLengths_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-    .s_axi_ar_bits_len   (_readStreamRowLengths_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-    .s_axi_ar_bits_size  (_readStreamRowLengths_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-    .s_axi_ar_bits_burst (_readStreamRowLengths_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-    .s_axi_r_ready       (_readStreamRowLengths_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
+    .s_axi_ar_valid      (_readStreamRowLengths_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+    .s_axi_ar_bits_addr  (_readStreamRowLengths_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+    .s_axi_ar_bits_len   (_readStreamRowLengths_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+    .s_axi_ar_bits_size  (_readStreamRowLengths_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+    .s_axi_ar_bits_burst (_readStreamRowLengths_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+    .s_axi_r_ready       (_readStreamRowLengths_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
     .s_axi_r_valid       (_responseBufferReadStreamRowLengths_s_axi_r_valid),
     .s_axi_r_bits_data   (_responseBufferReadStreamRowLengths_s_axi_r_bits_data),
-    .m_axi_ar_ready      (_mux_s_axi_2_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_ar_ready      (_mux_s_axi_2_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
     .m_axi_ar_valid      (_responseBufferReadStreamRowLengths_m_axi_ar_valid),
     .m_axi_ar_bits_addr  (_responseBufferReadStreamRowLengths_m_axi_ar_bits_addr),
     .m_axi_ar_bits_len   (_responseBufferReadStreamRowLengths_m_axi_ar_bits_len),
     .m_axi_ar_bits_size  (_responseBufferReadStreamRowLengths_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst (_responseBufferReadStreamRowLengths_m_axi_ar_bits_burst),
     .m_axi_r_ready       (_responseBufferReadStreamRowLengths_m_axi_r_ready),
-    .m_axi_r_valid       (_mux_s_axi_2_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_data   (_mux_s_axi_2_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_resp   (_mux_s_axi_2_r_bits_resp),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
-    .m_axi_r_bits_last   (_mux_s_axi_2_r_bits_last)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+    .m_axi_r_valid       (_mux_s_axi_2_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_data   (_mux_s_axi_2_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_resp   (_mux_s_axi_2_r_bits_resp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
+    .m_axi_r_bits_last   (_mux_s_axi_2_r_bits_last)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
   );
-  Mux mux (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:154:27
+  Mux mux (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:27
     .clock                 (clock),
     .reset                 (reset),
     .s_axi_0_ar_ready      (_mux_s_axi_0_ar_ready),
-    .s_axi_0_ar_valid      (_responseBufferReadStreamValue_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-    .s_axi_0_ar_bits_addr  (_responseBufferReadStreamValue_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-    .s_axi_0_ar_bits_len   (_responseBufferReadStreamValue_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-    .s_axi_0_ar_bits_size  (_responseBufferReadStreamValue_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-    .s_axi_0_ar_bits_burst (_responseBufferReadStreamValue_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
-    .s_axi_0_r_ready       (_responseBufferReadStreamValue_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:150:53
+    .s_axi_0_ar_valid      (_responseBufferReadStreamValue_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+    .s_axi_0_ar_bits_addr  (_responseBufferReadStreamValue_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+    .s_axi_0_ar_bits_len   (_responseBufferReadStreamValue_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+    .s_axi_0_ar_bits_size  (_responseBufferReadStreamValue_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+    .s_axi_0_ar_bits_burst (_responseBufferReadStreamValue_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
+    .s_axi_0_r_ready       (_responseBufferReadStreamValue_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:53
     .s_axi_0_r_valid       (_mux_s_axi_0_r_valid),
     .s_axi_0_r_bits_data   (_mux_s_axi_0_r_bits_data),
     .s_axi_0_r_bits_resp   (_mux_s_axi_0_r_bits_resp),
     .s_axi_0_r_bits_last   (_mux_s_axi_0_r_bits_last),
     .s_axi_1_ar_ready      (_mux_s_axi_1_ar_ready),
-    .s_axi_1_ar_valid      (_responseBufferReadStreamColumnIndices_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-    .s_axi_1_ar_bits_addr  (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-    .s_axi_1_ar_bits_len   (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-    .s_axi_1_ar_bits_size  (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-    .s_axi_1_ar_bits_burst (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
-    .s_axi_1_r_ready       (_responseBufferReadStreamColumnIndices_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:151:61
+    .s_axi_1_ar_valid      (_responseBufferReadStreamColumnIndices_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+    .s_axi_1_ar_bits_addr  (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+    .s_axi_1_ar_bits_len   (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+    .s_axi_1_ar_bits_size  (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+    .s_axi_1_ar_bits_burst (_responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
+    .s_axi_1_r_ready       (_responseBufferReadStreamColumnIndices_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:61
     .s_axi_1_r_valid       (_mux_s_axi_1_r_valid),
     .s_axi_1_r_bits_data   (_mux_s_axi_1_r_bits_data),
     .s_axi_1_r_bits_resp   (_mux_s_axi_1_r_bits_resp),
     .s_axi_1_r_bits_last   (_mux_s_axi_1_r_bits_last),
     .s_axi_2_ar_ready      (_mux_s_axi_2_ar_ready),
-    .s_axi_2_ar_valid      (_responseBufferReadStreamRowLengths_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-    .s_axi_2_ar_bits_addr  (_responseBufferReadStreamRowLengths_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-    .s_axi_2_ar_bits_len   (_responseBufferReadStreamRowLengths_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-    .s_axi_2_ar_bits_size  (_responseBufferReadStreamRowLengths_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-    .s_axi_2_ar_bits_burst (_responseBufferReadStreamRowLengths_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
-    .s_axi_2_r_ready       (_responseBufferReadStreamRowLengths_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:152:58
+    .s_axi_2_ar_valid      (_responseBufferReadStreamRowLengths_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+    .s_axi_2_ar_bits_addr  (_responseBufferReadStreamRowLengths_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+    .s_axi_2_ar_bits_len   (_responseBufferReadStreamRowLengths_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+    .s_axi_2_ar_bits_size  (_responseBufferReadStreamRowLengths_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+    .s_axi_2_ar_bits_burst (_responseBufferReadStreamRowLengths_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
+    .s_axi_2_r_ready       (_responseBufferReadStreamRowLengths_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:149:58
     .s_axi_2_r_valid       (_mux_s_axi_2_r_valid),
     .s_axi_2_r_bits_data   (_mux_s_axi_2_r_bits_data),
     .s_axi_2_r_bits_resp   (_mux_s_axi_2_r_bits_resp),
     .s_axi_2_r_bits_last   (_mux_s_axi_2_r_bits_last),
     .s_axi_3_aw_ready      (_mux_s_axi_3_aw_ready),
-    .s_axi_3_aw_valid      (_writeStreamResult_m_axi_aw_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_aw_bits_addr  (_writeStreamResult_m_axi_aw_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_aw_bits_len   (_writeStreamResult_m_axi_aw_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_aw_bits_size  (_writeStreamResult_m_axi_aw_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_aw_bits_burst (_writeStreamResult_m_axi_aw_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
+    .s_axi_3_aw_valid      (_writeStreamResult_m_axi_aw_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_aw_bits_addr  (_writeStreamResult_m_axi_aw_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_aw_bits_len   (_writeStreamResult_m_axi_aw_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_aw_bits_size  (_writeStreamResult_m_axi_aw_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_aw_bits_burst (_writeStreamResult_m_axi_aw_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
     .s_axi_3_w_ready       (_mux_s_axi_3_w_ready),
-    .s_axi_3_w_valid       (_writeStreamResult_m_axi_w_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_w_bits_data   (_writeStreamResult_m_axi_w_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_w_bits_strb   (_writeStreamResult_m_axi_w_bits_strb),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_w_bits_last   (_writeStreamResult_m_axi_w_bits_last),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
-    .s_axi_3_b_ready       (_writeStreamResult_m_axi_b_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
+    .s_axi_3_w_valid       (_writeStreamResult_m_axi_w_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_w_bits_data   (_writeStreamResult_m_axi_w_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_w_bits_strb   (_writeStreamResult_m_axi_w_bits_strb),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_w_bits_last   (_writeStreamResult_m_axi_w_bits_last),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
+    .s_axi_3_b_ready       (_writeStreamResult_m_axi_b_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
     .s_axi_3_b_valid       (_mux_s_axi_3_b_valid),
     .s_axi_3_b_bits_resp   (_mux_s_axi_3_b_bits_resp),
-    .m_axi_ar_ready        (m_axi_gp_ar_ready),
-    .m_axi_ar_valid        (m_axi_gp_ar_valid),
-    .m_axi_ar_bits_id      (m_axi_gp_ar_bits_id),
-    .m_axi_ar_bits_addr    (m_axi_gp_ar_bits_addr),
-    .m_axi_ar_bits_len     (m_axi_gp_ar_bits_len),
-    .m_axi_ar_bits_size    (m_axi_gp_ar_bits_size),
-    .m_axi_ar_bits_burst   (m_axi_gp_ar_bits_burst),
-    .m_axi_r_ready         (m_axi_gp_r_ready),
-    .m_axi_r_valid         (m_axi_gp_r_valid),
-    .m_axi_r_bits_id       (m_axi_gp_r_bits_id),
-    .m_axi_r_bits_data     (m_axi_gp_r_bits_data),
-    .m_axi_r_bits_resp     (m_axi_gp_r_bits_resp),
-    .m_axi_r_bits_last     (m_axi_gp_r_bits_last),
-    .m_axi_aw_ready        (m_axi_gp_aw_ready),
-    .m_axi_aw_valid        (m_axi_gp_aw_valid),
-    .m_axi_aw_bits_id      (m_axi_gp_aw_bits_id),
-    .m_axi_aw_bits_addr    (m_axi_gp_aw_bits_addr),
-    .m_axi_aw_bits_len     (m_axi_gp_aw_bits_len),
-    .m_axi_aw_bits_size    (m_axi_gp_aw_bits_size),
-    .m_axi_aw_bits_burst   (m_axi_gp_aw_bits_burst),
-    .m_axi_w_ready         (m_axi_gp_w_ready),
-    .m_axi_w_valid         (m_axi_gp_w_valid),
-    .m_axi_w_bits_data     (m_axi_gp_w_bits_data),
-    .m_axi_w_bits_strb     (m_axi_gp_w_bits_strb),
-    .m_axi_w_bits_last     (m_axi_gp_w_bits_last),
-    .m_axi_b_ready         (m_axi_gp_b_ready),
-    .m_axi_b_valid         (m_axi_gp_b_valid),
-    .m_axi_b_bits_id       (m_axi_gp_b_bits_id),
-    .m_axi_b_bits_resp     (m_axi_gp_b_bits_resp)
+    .m_axi_ar_ready        (m_axi_regular_ar_ready),
+    .m_axi_ar_valid        (m_axi_regular_ar_valid),
+    .m_axi_ar_bits_id      (m_axi_regular_ar_bits_id),
+    .m_axi_ar_bits_addr    (m_axi_regular_ar_bits_addr),
+    .m_axi_ar_bits_len     (m_axi_regular_ar_bits_len),
+    .m_axi_ar_bits_size    (m_axi_regular_ar_bits_size),
+    .m_axi_ar_bits_burst   (m_axi_regular_ar_bits_burst),
+    .m_axi_r_ready         (m_axi_regular_r_ready),
+    .m_axi_r_valid         (m_axi_regular_r_valid),
+    .m_axi_r_bits_id       (m_axi_regular_r_bits_id),
+    .m_axi_r_bits_data     (m_axi_regular_r_bits_data),
+    .m_axi_r_bits_resp     (m_axi_regular_r_bits_resp),
+    .m_axi_r_bits_last     (m_axi_regular_r_bits_last),
+    .m_axi_aw_ready        (m_axi_regular_aw_ready),
+    .m_axi_aw_valid        (m_axi_regular_aw_valid),
+    .m_axi_aw_bits_id      (m_axi_regular_aw_bits_id),
+    .m_axi_aw_bits_addr    (m_axi_regular_aw_bits_addr),
+    .m_axi_aw_bits_len     (m_axi_regular_aw_bits_len),
+    .m_axi_aw_bits_size    (m_axi_regular_aw_bits_size),
+    .m_axi_aw_bits_burst   (m_axi_regular_aw_bits_burst),
+    .m_axi_w_ready         (m_axi_regular_w_ready),
+    .m_axi_w_valid         (m_axi_regular_w_valid),
+    .m_axi_w_bits_data     (m_axi_regular_w_bits_data),
+    .m_axi_w_bits_strb     (m_axi_regular_w_bits_strb),
+    .m_axi_w_bits_last     (m_axi_regular_w_bits_last),
+    .m_axi_b_ready         (m_axi_regular_b_ready),
+    .m_axi_b_valid         (m_axi_regular_b_valid),
+    .m_axi_b_bits_id       (m_axi_regular_b_bits_id),
+    .m_axi_b_bits_resp     (m_axi_regular_b_bits_resp)
   );
-  Downsize downsizerValues (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:172:39
+  Downsize downsizerValues (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:169:39
     .clock        (clock),
     .reset        (reset),
     .source_ready (_downsizerValues_source_ready),
-    .source_valid (_readStreamValues_sinkData_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
-    .source_bits  (_readStreamValues_sinkData_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:145:40
+    .source_valid (_readStreamValues_sinkData_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
+    .source_bits  (_readStreamValues_sinkData_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:140:40
     .sink_ready   (_sinkBuffer_io_enq_ready),	// src/main/scala/chext/elastic/Buffer.scala:148:30
     .sink_valid   (_downsizerValues_sink_valid),
     .sink_bits    (_downsizerValues_sink_bits)
   );
-  DownsizeWithLast downsizerColumnIndices (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46
+  DownsizeWithLast downsizerColumnIndices (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46
     .clock            (clock),
     .reset            (reset),
     .source_ready     (_downsizerColumnIndices_source_ready),
-    .source_valid     (_readStreamColumnIndices_sinkData_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .source_bits_data (_readStreamColumnIndices_sinkData_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .source_bits_last (_readStreamColumnIndices_sinkData_bits_last),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:146:47
-    .sink_ready       (_GEN_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:246:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+    .source_valid     (_readStreamColumnIndices_sinkData_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .source_bits_data (_readStreamColumnIndices_sinkData_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .source_bits_last (_readStreamColumnIndices_sinkData_bits_last),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:141:47
+    .sink_ready       (_GEN_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:243:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
     .sink_valid       (_downsizerColumnIndices_sink_valid),
     .sink_bits_data   (_downsizerColumnIndices_sink_bits_data),
     .sink_bits_last   (_downsizerColumnIndices_sink_bits_last)
   );
-  Downsize downsizerRowLengths (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:174:43
+  Downsize downsizerRowLengths (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:171:43
     .clock        (clock),
     .reset        (reset),
     .source_ready (_downsizerRowLengths_source_ready),
-    .source_valid (_readStreamRowLengths_sinkData_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
-    .source_bits  (_readStreamRowLengths_sinkData_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:147:44
+    .source_valid (_readStreamRowLengths_sinkData_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
+    .source_bits  (_readStreamRowLengths_sinkData_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:142:44
     .sink_ready   (_sinkBuffer_2_io_enq_ready),	// src/main/scala/chext/elastic/Buffer.scala:148:30
     .sink_valid   (_downsizerRowLengths_sink_valid),
     .sink_bits    (_downsizerRowLengths_sink_bits)
   );
-  Queue16_UInt64 qPtrInputVector (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:186:31
+  Queue16_UInt64 qPtrInputVector (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:183:31
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_qPtrInputVector_io_enq_ready),
     .io_enq_valid (_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_4),	// src/main/scala/chext/elastic/Buffer.scala:131:30, src/main/scala/chext/elastic/Fork.scala:75:25, :79:{38,41}
     .io_enq_bits  (_sinkBuffered__sinkBuffer_io_deq_bits_ptrInputVector),	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .io_deq_ready
-      (_GEN & _qPtrInputVector_io_deq_valid & _downsizerColumnIndices_sink_bits_last),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46, :186:31, :246:36, :254:23, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
+      (_GEN & _qPtrInputVector_io_deq_valid & _downsizerColumnIndices_sink_bits_last),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46, :183:31, :243:36, :251:23, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}, src/main/scala/chisel3/util/Decoupled.scala:83:20
     .io_deq_valid (_qPtrInputVector_io_deq_valid),
     .io_deq_bits  (_qPtrInputVector_io_deq_bits)
   );
@@ -11209,7 +11209,7 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
     .clock                        (clock),
     .reset                        (reset),
     .io_enq_ready                 (_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid                 (sourceTask_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:191:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
+    .io_enq_valid                 (sourceTask_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:188:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
     .io_enq_bits_ptrValues        (sourceTask_bits_ptrValues),
     .io_enq_bits_ptrColumnIndices (sourceTask_bits_ptrColumnIndices),
     .io_enq_bits_ptrRowLengths    (sourceTask_bits_ptrRowLengths),
@@ -11232,23 +11232,23 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
     .clock             (clock),
     .reset             (reset),
     .io_enq_ready      (_sinkBuffered__sinkBuffer_1_io_enq_ready),
-    .io_enq_valid      (_GEN_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:246:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+    .io_enq_valid      (_GEN_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:243:36, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
     .io_enq_bits_addr
       (_qPtrInputVector_io_deq_valid
          ? {_downsizerColumnIndices_sink_bits_data[24:0], 5'h0}
            + _qPtrInputVector_io_deq_bits[29:0]
-         : 30'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:173:46, :186:31, :244:{11,26}, :246:36, :249:{18,30,42}
-    .io_enq_bits_len   (4'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:244:26
-    .io_enq_bits_size  (_qPtrInputVector_io_deq_valid ? 3'h5 : 3'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:186:31, :244:{11,26}, :246:36, :250:18
-    .io_enq_bits_burst (2'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7
-    .io_deq_ready      (m_axi_ls_ar_ready),
-    .io_deq_valid      (m_axi_ls_ar_valid),
-    .io_deq_bits_addr  (m_axi_ls_ar_bits_addr),
-    .io_deq_bits_len   (m_axi_ls_ar_bits_len),
-    .io_deq_bits_size  (m_axi_ls_ar_bits_size),
-    .io_deq_bits_burst (m_axi_ls_ar_bits_burst)
+         : 30'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:170:46, :183:31, :241:{11,26}, :243:36, :246:{18,30,42}
+    .io_enq_bits_len   (4'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:241:26
+    .io_enq_bits_size  (_qPtrInputVector_io_deq_valid ? 3'h5 : 3'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:183:31, :241:{11,26}, :243:36, :247:18
+    .io_enq_bits_burst (2'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7
+    .io_deq_ready      (m_axi_random_ar_ready),
+    .io_deq_valid      (m_axi_random_ar_valid),
+    .io_deq_bits_addr  (m_axi_random_ar_bits_addr),
+    .io_deq_bits_len   (m_axi_random_ar_bits_len),
+    .io_deq_bits_size  (m_axi_random_ar_bits_size),
+    .io_deq_bits_burst (m_axi_random_ar_bits_burst)
   );
-  BatchMultiply batchMultiply (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
+  BatchMultiply batchMultiply (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
     .clock           (clock),
     .reset           (reset),
     .sourceInA_ready (_batchMultiply_sourceInA_ready),
@@ -11265,23 +11265,23 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sinkBuffer_io_enq_ready),
-    .io_enq_valid (_downsizerValues_sink_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:172:39
-    .io_enq_bits  (_downsizerValues_sink_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:172:39
-    .io_deq_ready (_batchMultiply_sourceInA_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
+    .io_enq_valid (_downsizerValues_sink_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:169:39
+    .io_enq_bits  (_downsizerValues_sink_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:169:39
+    .io_deq_ready (_batchMultiply_sourceInA_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
     .io_deq_valid (_sinkBuffer_io_deq_valid),
     .io_deq_bits  (_sinkBuffer_io_deq_bits)
   );
   Queue2_UInt256 sinkBuffer_1 (	// src/main/scala/chext/elastic/Buffer.scala:148:30
     .clock        (clock),
     .reset        (reset),
-    .io_enq_ready (m_axi_ls_r_ready),
-    .io_enq_valid (m_axi_ls_r_valid),
-    .io_enq_bits  (m_axi_ls_r_bits_data),
-    .io_deq_ready (_batchMultiply_sourceInB_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
+    .io_enq_ready (m_axi_random_r_ready),
+    .io_enq_valid (m_axi_random_r_valid),
+    .io_enq_bits  (m_axi_random_r_bits_data),
+    .io_deq_ready (_batchMultiply_sourceInB_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
     .io_deq_valid (_sinkBuffer_1_io_deq_valid),
     .io_deq_bits  (_sinkBuffer_1_io_deq_bits)
   );
-  RowReduce rowReduce (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
+  RowReduce rowReduce (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
     .clock             (clock),
     .reset             (reset),
     .sourceElem_ready  (_rowReduce_sourceElem_ready),
@@ -11298,9 +11298,9 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sinkBuffer_2_io_enq_ready),
-    .io_enq_valid (_downsizerRowLengths_sink_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:174:43
-    .io_enq_bits  (_downsizerRowLengths_sink_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:174:43
-    .io_deq_ready (_rowReduce_sourceCount_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
+    .io_enq_valid (_downsizerRowLengths_sink_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:171:43
+    .io_enq_bits  (_downsizerRowLengths_sink_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:171:43
+    .io_deq_ready (_rowReduce_sourceCount_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
     .io_deq_valid (_sinkBuffer_2_io_deq_valid),
     .io_deq_bits  (_sinkBuffer_2_io_deq_bits)
   );
@@ -11308,9 +11308,9 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sinkBuffer_3_io_enq_ready),
-    .io_enq_valid (_batchMultiply_sinkOut_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
-    .io_enq_bits  (_batchMultiply_sinkOut_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:263:37
-    .io_deq_ready (_rowReduce_sourceElem_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
+    .io_enq_valid (_batchMultiply_sinkOut_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
+    .io_enq_bits  (_batchMultiply_sinkOut_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:260:37
+    .io_deq_ready (_rowReduce_sourceElem_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
     .io_deq_valid (_sinkBuffer_3_io_deq_valid),
     .io_deq_bits  (_sinkBuffer_3_io_deq_bits)
   );
@@ -11318,15 +11318,15 @@ module Spmv(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/sp
     .clock        (clock),
     .reset        (reset),
     .io_enq_ready (_sinkBuffer_4_io_enq_ready),
-    .io_enq_valid (_rowReduce_sinkResult_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
-    .io_enq_bits  (_rowReduce_sinkResult_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:273:33
-    .io_deq_ready (_writeStreamResult_sourceData_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:148:41
+    .io_enq_valid (_rowReduce_sinkResult_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
+    .io_enq_bits  (_rowReduce_sinkResult_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:270:33
+    .io_deq_ready (_writeStreamResult_sourceData_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:143:41
     .io_deq_valid (_sinkBuffer_4_io_deq_valid),
     .io_deq_bits  (_sinkBuffer_4_io_deq_bits)
   );
-  assign sourceTask_ready = sourceTask_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, :191:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
-  assign sinkDone_valid = sinkDone_valid_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, src/main/scala/chext/elastic/Join.scala:41:55
-  assign sinkDone_bits = rTime - _qTime_io_deq_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:123:7, :140:30, :143:29, :282:20
+  assign sourceTask_ready = sourceTask_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, :188:32, src/main/scala/chext/elastic/Arrival.scala:65:45, src/main/scala/chisel3/util/Decoupled.scala:67:20
+  assign sinkDone_valid = sinkDone_valid_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, src/main/scala/chext/elastic/Join.scala:41:55
+  assign sinkDone_bits = rTime - _qTime_io_deq_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/hbmex/components/spmv/Spmv.scala:118:7, :135:30, :138:29, :279:20
 endmodule
 
 // VCS coverage exclude_file
@@ -13904,42 +13904,42 @@ module Mux_1(	// src/main/scala/chext/amba/axi4/full/components/Mux.scala:31:7
   assign s_axi_1_b_bits_id = _write_demux_io_sinks_1_bits_id[7:0];	// src/main/scala/chext/amba/axi4/full/components/Mux.scala:31:7, src/main/scala/chext/elastic/Connect.scala:12:15, src/main/scala/chext/elastic/Demux.scala:48:23
 endmodule
 
-module CounterEx_3(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+module CounterEx_3(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
   input        clock,	// <stdin>:78505:11
                reset,	// <stdin>:78506:11
-  input  [8:0] io_up,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
-               io_down,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
-  output [8:0] io_left	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
+  input  [8:0] io_up,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
+               io_down,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
+  output [8:0] io_left	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:16:14
 );
 
-  reg [8:0] rLeft;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
+  reg [8:0] rLeft;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
   always @(posedge clock) begin	// <stdin>:78505:11
     if (reset)	// <stdin>:78505:11
-      rLeft <= 9'h100;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
-    else if (io_up > io_down)	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
-      rLeft <= rLeft - (io_up - io_down);	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :28:29, :29:20
-    else	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
-      rLeft <= rLeft + io_down - io_up;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :31:31, :32:20
+      rLeft <= 9'h100;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30
+    else if (io_up > io_down)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
+      rLeft <= rLeft - (io_up - io_down);	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :28:29, :29:20
+    else	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:27:14
+      rLeft <= rLeft + io_down - io_up;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:25:30, :31:31, :32:20
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-    `ifdef FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      `FIRRTL_BEFORE_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+  `ifdef ENABLE_INITIAL_REG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+    `ifdef FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      `FIRRTL_BEFORE_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      automatic logic [31:0] _RANDOM[0:0];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      `ifdef INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-        `INIT_RANDOM_PROLOG_	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+    initial begin	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      automatic logic [31:0] _RANDOM[0:0];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      `ifdef INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+        `INIT_RANDOM_PROLOG_	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-        rLeft = _RANDOM[/*Zero width*/ 1'b0][17:9];	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
+      `ifdef RANDOMIZE_REG_INIT	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+        rLeft = _RANDOM[/*Zero width*/ 1'b0][17:9];	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
-      `FIRRTL_AFTER_INITIAL	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+    `ifdef FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
+      `FIRRTL_AFTER_INITIAL	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign io_left = rLeft;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
+  assign io_left = rLeft;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:13:15, :25:30
 endmodule
 
 // VCS coverage exclude_file
@@ -14052,29 +14052,29 @@ module Queue256_ReadDataChannel(	// src/main/scala/chisel3/util/Decoupled.scala:
   assign io_deq_bits_last = _ram_ext_R0_data[258];	// src/main/scala/chisel3/util/Decoupled.scala:243:7, :256:91
 endmodule
 
-module ResponseBuffer_3(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7
+module ResponseBuffer_3(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7
   input          clock,	// <stdin>:78691:11
                  reset,	// <stdin>:78692:11
-  output         s_axi_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input          s_axi_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [29:0]  s_axi_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [3:0]   s_axi_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [2:0]   s_axi_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input  [1:0]   s_axi_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input          s_axi_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  output         s_axi_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  output [255:0] s_axi_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
-  input          m_axi_ar_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output         m_axi_ar_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [29:0]  m_axi_ar_bits_addr,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [3:0]   m_axi_ar_bits_len,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [2:0]   m_axi_ar_bits_size,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output [1:0]   m_axi_ar_bits_burst,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  output         m_axi_r_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input          m_axi_r_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input  [255:0] m_axi_r_bits_data,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input  [1:0]   m_axi_r_bits_resp,	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
-  input          m_axi_r_bits_last	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output         s_axi_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input          s_axi_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [29:0]  s_axi_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [3:0]   s_axi_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [2:0]   s_axi_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input  [1:0]   s_axi_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input          s_axi_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  output         s_axi_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  output [255:0] s_axi_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:62:17
+  input          m_axi_ar_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output         m_axi_ar_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [29:0]  m_axi_ar_bits_addr,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [3:0]   m_axi_ar_bits_len,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [2:0]   m_axi_ar_bits_size,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output [1:0]   m_axi_ar_bits_burst,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  output         m_axi_r_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input          m_axi_r_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input  [255:0] m_axi_r_bits_data,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input  [1:0]   m_axi_r_bits_resp,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
+  input          m_axi_r_bits_last	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:63:17
 );
 
   wire         _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
@@ -14083,27 +14083,27 @@ module ResponseBuffer_3(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/a
   wire [1:0]   _read_arrival1_sourceBuffer_io_deq_bits_resp;	// src/main/scala/chext/elastic/Buffer.scala:93:32
   wire         _read_arrival1_sourceBuffer_io_deq_bits_last;	// src/main/scala/chext/elastic/Buffer.scala:93:32
   wire         _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready;	// src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire [8:0]   _read_ctrR_io_left;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
+  wire [8:0]   _read_ctrR_io_left;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
   wire         _read_arrival0_T =
     _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready & s_axi_ar_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:131:30
-  wire [8:0]   _GEN = {4'h0, {1'h0, s_axi_ar_bits_len} + 5'h1};	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :74:26
-  wire         _read_arrival0_T_1 = _read_ctrR_io_left >= _GEN;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :66:22
-  wire         s_axi_ar_ready_0 = _read_arrival0_T & _read_arrival0_T_1;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
+  wire [8:0]   _GEN = {4'h0, {1'h0, s_axi_ar_bits_len} + 5'h1};	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :74:26
+  wire         _read_arrival0_T_1 = _read_ctrR_io_left >= _GEN;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :66:22
+  wire         s_axi_ar_ready_0 = _read_arrival0_T & _read_arrival0_T_1;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:{28,45}
   wire         read_arrival1_result_ready =
     _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready
     & _read_arrival1_sourceBuffer_io_deq_valid;	// src/main/scala/chext/elastic/Arrival.scala:65:28, src/main/scala/chext/elastic/Buffer.scala:93:32, :131:30
-  CounterEx_3 read_ctrR (	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
+  CounterEx_3 read_ctrR (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:66:22
     .clock   (clock),
     .reset   (reset),
-    .io_up   (_read_arrival0_T & _read_arrival0_T_1 ? _GEN : 9'h0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :76:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
-    .io_down ({8'h0, read_arrival1_result_ready}),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:42:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
+    .io_up   (_read_arrival0_T & _read_arrival0_T_1 ? _GEN : 9'h0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:38:32, :41:27, :76:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
+    .io_down ({8'h0, read_arrival1_result_ready}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:42:31, src/main/scala/chext/elastic/Arrival.scala:65:{28,45}
     .io_left (_read_ctrR_io_left)
   );
   Queue2_ReadAddressChannel read_arrival0_sinkBuffered__sinkBuffer (	// src/main/scala/chext/elastic/Buffer.scala:131:30
     .clock             (clock),
     .reset             (reset),
     .io_enq_ready      (_read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
-    .io_enq_valid      (s_axi_ar_ready_0),	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+    .io_enq_valid      (s_axi_ar_ready_0),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
     .io_enq_bits_addr  (s_axi_ar_bits_addr),
     .io_enq_bits_len   (s_axi_ar_bits_len),
     .io_enq_bits_size  (s_axi_ar_bits_size),
@@ -14141,250 +14141,250 @@ module ResponseBuffer_3(	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/a
     .io_deq_valid     (s_axi_r_valid),
     .io_deq_bits_data (s_axi_r_bits_data)
   );
-  assign s_axi_ar_ready = s_axi_ar_ready_0;	// janberq/repos/jnbrq/hbmex/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
+  assign s_axi_ar_ready = s_axi_ar_ready_0;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/main/scala/chext/amba/axi4/full/components/ResponseBuffer.scala:59:7, :76:31, src/main/scala/chext/elastic/Arrival.scala:35:18, :65:45
 endmodule
 
-module SpmvTop1_1(	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:42:7
+module SpmvTop1_1(	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:42:7
   input          clock,	// <stdin>:78790:11
                  reset,	// <stdin>:78791:11
-  output         s_axi_ARREADY,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input          s_axi_ARVALID,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [29:0]  s_axi_ARADDR,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [3:0]   s_axi_ARLEN,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [2:0]   s_axi_ARSIZE,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [1:0]   s_axi_ARBURST,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input          s_axi_RREADY,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output         s_axi_RVALID,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output [255:0] s_axi_RDATA,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output [1:0]   s_axi_RRESP,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output         s_axi_RLAST,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-                 s_axi_AWREADY,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input          s_axi_AWVALID,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [29:0]  s_axi_AWADDR,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [3:0]   s_axi_AWLEN,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [2:0]   s_axi_AWSIZE,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [1:0]   s_axi_AWBURST,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output         s_axi_WREADY,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input          s_axi_WVALID,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [255:0] s_axi_WDATA,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input  [31:0]  s_axi_WSTRB,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  input          s_axi_WLAST,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-                 s_axi_BREADY,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output         s_axi_BVALID,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output [1:0]   s_axi_BRESP,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
-  output         sourceTask_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:49:22
-  input          sourceTask_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:49:22
-  input  [447:0] sourceTask_bits,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:49:22
-  input          sinkDone_ready,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:50:20
-  output         sinkDone_valid,	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:50:20
-  output [63:0]  sinkDone_bits	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:50:20
+  output         s_axi_ARREADY,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input          s_axi_ARVALID,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [29:0]  s_axi_ARADDR,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [3:0]   s_axi_ARLEN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [2:0]   s_axi_ARSIZE,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [1:0]   s_axi_ARBURST,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input          s_axi_RREADY,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output         s_axi_RVALID,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output [255:0] s_axi_RDATA,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output [1:0]   s_axi_RRESP,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output         s_axi_RLAST,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+                 s_axi_AWREADY,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input          s_axi_AWVALID,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [29:0]  s_axi_AWADDR,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [3:0]   s_axi_AWLEN,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [2:0]   s_axi_AWSIZE,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [1:0]   s_axi_AWBURST,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output         s_axi_WREADY,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input          s_axi_WVALID,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [255:0] s_axi_WDATA,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input  [31:0]  s_axi_WSTRB,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  input          s_axi_WLAST,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+                 s_axi_BREADY,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output         s_axi_BVALID,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output [1:0]   s_axi_BRESP,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:48:17
+  output         sourceTask_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:49:22
+  input          sourceTask_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:49:22
+  input  [447:0] sourceTask_bits,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:49:22
+  input          sinkDone_ready,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:50:20
+  output         sinkDone_valid,	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:50:20
+  output [63:0]  sinkDone_bits	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:50:20
 );
 
-  wire         _responseBufferReadStreamValue_s_axi_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire         _responseBufferReadStreamValue_s_axi_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire [255:0] _responseBufferReadStreamValue_s_axi_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire         _responseBufferReadStreamValue_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire [29:0]  _responseBufferReadStreamValue_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire [3:0]   _responseBufferReadStreamValue_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire [2:0]   _responseBufferReadStreamValue_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire [1:0]   _responseBufferReadStreamValue_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire         _responseBufferReadStreamValue_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-  wire         _mux_s_axi_1_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_1_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [7:0]   _mux_s_axi_1_r_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [255:0] _mux_s_axi_1_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [1:0]   _mux_s_axi_1_r_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_1_r_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_1_aw_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_1_w_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_1_b_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [7:0]   _mux_s_axi_1_b_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [1:0]   _mux_s_axi_1_b_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_2_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_2_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [255:0] _mux_s_axi_2_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [1:0]   _mux_s_axi_2_r_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_s_axi_2_r_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_m_axi_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [9:0]   _mux_m_axi_ar_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [29:0]  _mux_m_axi_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [3:0]   _mux_m_axi_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [2:0]   _mux_m_axi_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [1:0]   _mux_m_axi_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_m_axi_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_m_axi_aw_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [9:0]   _mux_m_axi_aw_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [29:0]  _mux_m_axi_aw_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [3:0]   _mux_m_axi_aw_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [2:0]   _mux_m_axi_aw_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [1:0]   _mux_m_axi_aw_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_m_axi_w_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [255:0] _mux_m_axi_w_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire [31:0]  _mux_m_axi_w_bits_strb;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _mux_m_axi_b_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-  wire         _s_axi_mem_bridge_s_axi_ar_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_s_axi_r_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [9:0]   _s_axi_mem_bridge_s_axi_r_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [255:0] _s_axi_mem_bridge_s_axi_r_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_s_axi_r_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_s_axi_aw_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_s_axi_w_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_s_axi_b_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [9:0]   _s_axi_mem_bridge_s_axi_b_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [1:0]   _s_axi_mem_bridge_s_axi_b_bits_resp;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_read_req_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [24:0]  _s_axi_mem_bridge_read_req_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_read_resp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_write_req_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [24:0]  _s_axi_mem_bridge_write_req_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [255:0] _s_axi_mem_bridge_write_req_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire [31:0]  _s_axi_mem_bridge_write_req_bits_strb;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_bridge_write_resp_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-  wire         _s_axi_mem_mem_read1_req_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
-  wire         _s_axi_mem_mem_read1_resp_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
-  wire [255:0] _s_axi_mem_mem_read1_resp_bits;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
-  wire         _s_axi_mem_mem_write2_req_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
-  wire         _s_axi_mem_mem_write2_resp_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
-  wire         _spmv_m_axi_ls_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [29:0]  _spmv_m_axi_ls_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [3:0]   _spmv_m_axi_ls_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [2:0]   _spmv_m_axi_ls_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [1:0]   _spmv_m_axi_ls_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire         _spmv_m_axi_ls_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire         _spmv_m_axi_gp_ar_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [1:0]   _spmv_m_axi_gp_ar_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [29:0]  _spmv_m_axi_gp_ar_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [3:0]   _spmv_m_axi_gp_ar_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [2:0]   _spmv_m_axi_gp_ar_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [1:0]   _spmv_m_axi_gp_ar_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire         _spmv_m_axi_gp_r_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire         _spmv_m_axi_gp_aw_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [1:0]   _spmv_m_axi_gp_aw_bits_id;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [29:0]  _spmv_m_axi_gp_aw_bits_addr;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [3:0]   _spmv_m_axi_gp_aw_bits_len;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [2:0]   _spmv_m_axi_gp_aw_bits_size;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [1:0]   _spmv_m_axi_gp_aw_bits_burst;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire         _spmv_m_axi_gp_w_valid;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [255:0] _spmv_m_axi_gp_w_bits_data;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire [31:0]  _spmv_m_axi_gp_w_bits_strb;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire         _spmv_m_axi_gp_w_bits_last;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  wire         _spmv_m_axi_gp_b_ready;	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-  Spmv spmv (	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _responseBufferReadStreamValue_s_axi_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire         _responseBufferReadStreamValue_s_axi_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire [255:0] _responseBufferReadStreamValue_s_axi_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire         _responseBufferReadStreamValue_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire [29:0]  _responseBufferReadStreamValue_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire [3:0]   _responseBufferReadStreamValue_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire [2:0]   _responseBufferReadStreamValue_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire [1:0]   _responseBufferReadStreamValue_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire         _responseBufferReadStreamValue_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  wire         _mux_s_axi_1_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_1_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [7:0]   _mux_s_axi_1_r_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [255:0] _mux_s_axi_1_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [1:0]   _mux_s_axi_1_r_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_1_r_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_1_aw_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_1_w_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_1_b_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [7:0]   _mux_s_axi_1_b_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [1:0]   _mux_s_axi_1_b_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_2_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_2_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [255:0] _mux_s_axi_2_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [1:0]   _mux_s_axi_2_r_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_s_axi_2_r_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_m_axi_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [9:0]   _mux_m_axi_ar_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [29:0]  _mux_m_axi_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [3:0]   _mux_m_axi_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [2:0]   _mux_m_axi_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [1:0]   _mux_m_axi_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_m_axi_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_m_axi_aw_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [9:0]   _mux_m_axi_aw_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [29:0]  _mux_m_axi_aw_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [3:0]   _mux_m_axi_aw_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [2:0]   _mux_m_axi_aw_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [1:0]   _mux_m_axi_aw_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_m_axi_w_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [255:0] _mux_m_axi_w_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire [31:0]  _mux_m_axi_w_bits_strb;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _mux_m_axi_b_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  wire         _s_axi_mem_bridge_s_axi_ar_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_s_axi_r_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [9:0]   _s_axi_mem_bridge_s_axi_r_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [255:0] _s_axi_mem_bridge_s_axi_r_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_s_axi_r_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_s_axi_aw_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_s_axi_w_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_s_axi_b_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [9:0]   _s_axi_mem_bridge_s_axi_b_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [1:0]   _s_axi_mem_bridge_s_axi_b_bits_resp;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_read_req_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [24:0]  _s_axi_mem_bridge_read_req_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_read_resp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_write_req_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [24:0]  _s_axi_mem_bridge_write_req_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [255:0] _s_axi_mem_bridge_write_req_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire [31:0]  _s_axi_mem_bridge_write_req_bits_strb;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_bridge_write_resp_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  wire         _s_axi_mem_mem_read1_req_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+  wire         _s_axi_mem_mem_read1_resp_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+  wire [255:0] _s_axi_mem_mem_read1_resp_bits;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+  wire         _s_axi_mem_mem_write2_req_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+  wire         _s_axi_mem_mem_write2_resp_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+  wire         _spmv_m_axi_random_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [29:0]  _spmv_m_axi_random_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [3:0]   _spmv_m_axi_random_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [2:0]   _spmv_m_axi_random_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [1:0]   _spmv_m_axi_random_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _spmv_m_axi_random_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _spmv_m_axi_regular_ar_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [1:0]   _spmv_m_axi_regular_ar_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [29:0]  _spmv_m_axi_regular_ar_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [3:0]   _spmv_m_axi_regular_ar_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [2:0]   _spmv_m_axi_regular_ar_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [1:0]   _spmv_m_axi_regular_ar_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _spmv_m_axi_regular_r_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _spmv_m_axi_regular_aw_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [1:0]   _spmv_m_axi_regular_aw_bits_id;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [29:0]  _spmv_m_axi_regular_aw_bits_addr;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [3:0]   _spmv_m_axi_regular_aw_bits_len;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [2:0]   _spmv_m_axi_regular_aw_bits_size;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [1:0]   _spmv_m_axi_regular_aw_bits_burst;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _spmv_m_axi_regular_w_valid;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [255:0] _spmv_m_axi_regular_w_bits_data;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire [31:0]  _spmv_m_axi_regular_w_bits_strb;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _spmv_m_axi_regular_w_bits_last;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  wire         _spmv_m_axi_regular_b_ready;	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+  Spmv spmv (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
     .clock                            (clock),
     .reset                            (reset),
     .sourceTask_ready                 (sourceTask_ready),
     .sourceTask_valid                 (sourceTask_valid),
-    .sourceTask_bits_ptrValues        (sourceTask_bits[447:384]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
-    .sourceTask_bits_ptrColumnIndices (sourceTask_bits[383:320]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
-    .sourceTask_bits_ptrRowLengths    (sourceTask_bits[319:256]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
-    .sourceTask_bits_ptrInputVector   (sourceTask_bits[255:192]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
-    .sourceTask_bits_ptrOutputVector  (sourceTask_bits[191:128]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
-    .sourceTask_bits_numValues        (sourceTask_bits[127:64]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
-    .sourceTask_bits_numRows          (sourceTask_bits[63:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
+    .sourceTask_bits_ptrValues        (sourceTask_bits[447:384]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
+    .sourceTask_bits_ptrColumnIndices (sourceTask_bits[383:320]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
+    .sourceTask_bits_ptrRowLengths    (sourceTask_bits[319:256]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
+    .sourceTask_bits_ptrInputVector   (sourceTask_bits[255:192]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
+    .sourceTask_bits_ptrOutputVector  (sourceTask_bits[191:128]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
+    .sourceTask_bits_numValues        (sourceTask_bits[127:64]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
+    .sourceTask_bits_numRows          (sourceTask_bits[63:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:116:25
     .sinkDone_ready                   (sinkDone_ready),
     .sinkDone_valid                   (sinkDone_valid),
     .sinkDone_bits                    (sinkDone_bits),
-    .m_axi_ls_ar_ready                (_responseBufferReadStreamValue_s_axi_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .m_axi_ls_ar_valid                (_spmv_m_axi_ls_ar_valid),
-    .m_axi_ls_ar_bits_addr            (_spmv_m_axi_ls_ar_bits_addr),
-    .m_axi_ls_ar_bits_len             (_spmv_m_axi_ls_ar_bits_len),
-    .m_axi_ls_ar_bits_size            (_spmv_m_axi_ls_ar_bits_size),
-    .m_axi_ls_ar_bits_burst           (_spmv_m_axi_ls_ar_bits_burst),
-    .m_axi_ls_r_ready                 (_spmv_m_axi_ls_r_ready),
-    .m_axi_ls_r_valid                 (_responseBufferReadStreamValue_s_axi_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .m_axi_ls_r_bits_data             (_responseBufferReadStreamValue_s_axi_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .m_axi_gp_ar_ready                (_mux_s_axi_1_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_ar_valid                (_spmv_m_axi_gp_ar_valid),
-    .m_axi_gp_ar_bits_id              (_spmv_m_axi_gp_ar_bits_id),
-    .m_axi_gp_ar_bits_addr            (_spmv_m_axi_gp_ar_bits_addr),
-    .m_axi_gp_ar_bits_len             (_spmv_m_axi_gp_ar_bits_len),
-    .m_axi_gp_ar_bits_size            (_spmv_m_axi_gp_ar_bits_size),
-    .m_axi_gp_ar_bits_burst           (_spmv_m_axi_gp_ar_bits_burst),
-    .m_axi_gp_r_ready                 (_spmv_m_axi_gp_r_ready),
-    .m_axi_gp_r_valid                 (_mux_s_axi_1_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_r_bits_id               (_mux_s_axi_1_r_bits_id[1:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27, src/main/scala/chext/elastic/Connect.scala:12:15
-    .m_axi_gp_r_bits_data             (_mux_s_axi_1_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_r_bits_resp             (_mux_s_axi_1_r_bits_resp),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_r_bits_last             (_mux_s_axi_1_r_bits_last),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_aw_ready                (_mux_s_axi_1_aw_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_aw_valid                (_spmv_m_axi_gp_aw_valid),
-    .m_axi_gp_aw_bits_id              (_spmv_m_axi_gp_aw_bits_id),
-    .m_axi_gp_aw_bits_addr            (_spmv_m_axi_gp_aw_bits_addr),
-    .m_axi_gp_aw_bits_len             (_spmv_m_axi_gp_aw_bits_len),
-    .m_axi_gp_aw_bits_size            (_spmv_m_axi_gp_aw_bits_size),
-    .m_axi_gp_aw_bits_burst           (_spmv_m_axi_gp_aw_bits_burst),
-    .m_axi_gp_w_ready                 (_mux_s_axi_1_w_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_w_valid                 (_spmv_m_axi_gp_w_valid),
-    .m_axi_gp_w_bits_data             (_spmv_m_axi_gp_w_bits_data),
-    .m_axi_gp_w_bits_strb             (_spmv_m_axi_gp_w_bits_strb),
-    .m_axi_gp_w_bits_last             (_spmv_m_axi_gp_w_bits_last),
-    .m_axi_gp_b_ready                 (_spmv_m_axi_gp_b_ready),
-    .m_axi_gp_b_valid                 (_mux_s_axi_1_b_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_gp_b_bits_id               (_mux_s_axi_1_b_bits_id[1:0]),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27, src/main/scala/chext/elastic/Connect.scala:12:15
-    .m_axi_gp_b_bits_resp             (_mux_s_axi_1_b_bits_resp)	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_random_ar_ready            (_responseBufferReadStreamValue_s_axi_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .m_axi_random_ar_valid            (_spmv_m_axi_random_ar_valid),
+    .m_axi_random_ar_bits_addr        (_spmv_m_axi_random_ar_bits_addr),
+    .m_axi_random_ar_bits_len         (_spmv_m_axi_random_ar_bits_len),
+    .m_axi_random_ar_bits_size        (_spmv_m_axi_random_ar_bits_size),
+    .m_axi_random_ar_bits_burst       (_spmv_m_axi_random_ar_bits_burst),
+    .m_axi_random_r_ready             (_spmv_m_axi_random_r_ready),
+    .m_axi_random_r_valid             (_responseBufferReadStreamValue_s_axi_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .m_axi_random_r_bits_data         (_responseBufferReadStreamValue_s_axi_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .m_axi_regular_ar_ready           (_mux_s_axi_1_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_ar_valid           (_spmv_m_axi_regular_ar_valid),
+    .m_axi_regular_ar_bits_id         (_spmv_m_axi_regular_ar_bits_id),
+    .m_axi_regular_ar_bits_addr       (_spmv_m_axi_regular_ar_bits_addr),
+    .m_axi_regular_ar_bits_len        (_spmv_m_axi_regular_ar_bits_len),
+    .m_axi_regular_ar_bits_size       (_spmv_m_axi_regular_ar_bits_size),
+    .m_axi_regular_ar_bits_burst      (_spmv_m_axi_regular_ar_bits_burst),
+    .m_axi_regular_r_ready            (_spmv_m_axi_regular_r_ready),
+    .m_axi_regular_r_valid            (_mux_s_axi_1_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_r_bits_id          (_mux_s_axi_1_r_bits_id[1:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27, src/main/scala/chext/elastic/Connect.scala:12:15
+    .m_axi_regular_r_bits_data        (_mux_s_axi_1_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_r_bits_resp        (_mux_s_axi_1_r_bits_resp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_r_bits_last        (_mux_s_axi_1_r_bits_last),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_aw_ready           (_mux_s_axi_1_aw_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_aw_valid           (_spmv_m_axi_regular_aw_valid),
+    .m_axi_regular_aw_bits_id         (_spmv_m_axi_regular_aw_bits_id),
+    .m_axi_regular_aw_bits_addr       (_spmv_m_axi_regular_aw_bits_addr),
+    .m_axi_regular_aw_bits_len        (_spmv_m_axi_regular_aw_bits_len),
+    .m_axi_regular_aw_bits_size       (_spmv_m_axi_regular_aw_bits_size),
+    .m_axi_regular_aw_bits_burst      (_spmv_m_axi_regular_aw_bits_burst),
+    .m_axi_regular_w_ready            (_mux_s_axi_1_w_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_w_valid            (_spmv_m_axi_regular_w_valid),
+    .m_axi_regular_w_bits_data        (_spmv_m_axi_regular_w_bits_data),
+    .m_axi_regular_w_bits_strb        (_spmv_m_axi_regular_w_bits_strb),
+    .m_axi_regular_w_bits_last        (_spmv_m_axi_regular_w_bits_last),
+    .m_axi_regular_b_ready            (_spmv_m_axi_regular_b_ready),
+    .m_axi_regular_b_valid            (_mux_s_axi_1_b_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_regular_b_bits_id          (_mux_s_axi_1_b_bits_id[1:0]),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27, src/main/scala/chext/elastic/Connect.scala:12:15
+    .m_axi_regular_b_bits_resp        (_mux_s_axi_1_b_bits_resp)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
   );
-  ChiselTrueDualPortRAM s_axi_mem_mem (	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+  ChiselTrueDualPortRAM s_axi_mem_mem (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
     .clock                (clock),
     .reset                (reset),
     .read1_req_ready      (_s_axi_mem_mem_read1_req_ready),
-    .read1_req_valid      (_s_axi_mem_bridge_read_req_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .read1_req_bits       (_s_axi_mem_bridge_read_req_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .read1_resp_ready     (_s_axi_mem_bridge_read_resp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .read1_req_valid      (_s_axi_mem_bridge_read_req_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .read1_req_bits       (_s_axi_mem_bridge_read_req_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .read1_resp_ready     (_s_axi_mem_bridge_read_resp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
     .read1_resp_valid     (_s_axi_mem_mem_read1_resp_valid),
     .read1_resp_bits      (_s_axi_mem_mem_read1_resp_bits),
     .write2_req_ready     (_s_axi_mem_mem_write2_req_ready),
-    .write2_req_valid     (_s_axi_mem_bridge_write_req_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .write2_req_bits_addr (_s_axi_mem_bridge_write_req_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .write2_req_bits_data (_s_axi_mem_bridge_write_req_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .write2_req_bits_strb (_s_axi_mem_bridge_write_req_bits_strb),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .write2_resp_ready    (_s_axi_mem_bridge_write_resp_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .write2_req_valid     (_s_axi_mem_bridge_write_req_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .write2_req_bits_addr (_s_axi_mem_bridge_write_req_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .write2_req_bits_data (_s_axi_mem_bridge_write_req_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .write2_req_bits_strb (_s_axi_mem_bridge_write_req_bits_strb),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .write2_resp_ready    (_s_axi_mem_bridge_write_resp_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
     .write2_resp_valid    (_s_axi_mem_mem_write2_resp_valid)
   );
-  Axi4FullToReadWriteBridge s_axi_mem_bridge (	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+  Axi4FullToReadWriteBridge s_axi_mem_bridge (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
     .clock               (clock),
     .reset               (reset),
     .s_axi_ar_ready      (_s_axi_mem_bridge_s_axi_ar_ready),
-    .s_axi_ar_valid      (_mux_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_ar_bits_id    (_mux_m_axi_ar_bits_id),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_ar_bits_addr  (_mux_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_ar_bits_len   (_mux_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_ar_bits_size  (_mux_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_ar_bits_burst (_mux_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_r_ready       (_mux_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_ar_valid      (_mux_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_ar_bits_id    (_mux_m_axi_ar_bits_id),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_ar_bits_addr  (_mux_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_ar_bits_len   (_mux_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_ar_bits_size  (_mux_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_ar_bits_burst (_mux_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_r_ready       (_mux_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
     .s_axi_r_valid       (_s_axi_mem_bridge_s_axi_r_valid),
     .s_axi_r_bits_id     (_s_axi_mem_bridge_s_axi_r_bits_id),
     .s_axi_r_bits_data   (_s_axi_mem_bridge_s_axi_r_bits_data),
     .s_axi_r_bits_last   (_s_axi_mem_bridge_s_axi_r_bits_last),
     .s_axi_aw_ready      (_s_axi_mem_bridge_s_axi_aw_ready),
-    .s_axi_aw_valid      (_mux_m_axi_aw_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_aw_bits_id    (_mux_m_axi_aw_bits_id),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_aw_bits_addr  (_mux_m_axi_aw_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_aw_bits_len   (_mux_m_axi_aw_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_aw_bits_size  (_mux_m_axi_aw_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_aw_bits_burst (_mux_m_axi_aw_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_aw_valid      (_mux_m_axi_aw_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_aw_bits_id    (_mux_m_axi_aw_bits_id),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_aw_bits_addr  (_mux_m_axi_aw_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_aw_bits_len   (_mux_m_axi_aw_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_aw_bits_size  (_mux_m_axi_aw_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_aw_bits_burst (_mux_m_axi_aw_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
     .s_axi_w_ready       (_s_axi_mem_bridge_s_axi_w_ready),
-    .s_axi_w_valid       (_mux_m_axi_w_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_w_bits_data   (_mux_m_axi_w_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_w_bits_strb   (_mux_m_axi_w_bits_strb),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .s_axi_b_ready       (_mux_m_axi_b_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_w_valid       (_mux_m_axi_w_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_w_bits_data   (_mux_m_axi_w_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_w_bits_strb   (_mux_m_axi_w_bits_strb),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .s_axi_b_ready       (_mux_m_axi_b_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
     .s_axi_b_valid       (_s_axi_mem_bridge_s_axi_b_valid),
     .s_axi_b_bits_id     (_s_axi_mem_bridge_s_axi_b_bits_id),
     .s_axi_b_bits_resp   (_s_axi_mem_bridge_s_axi_b_bits_resp),
-    .read_req_ready      (_s_axi_mem_mem_read1_req_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+    .read_req_ready      (_s_axi_mem_mem_read1_req_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
     .read_req_valid      (_s_axi_mem_bridge_read_req_valid),
     .read_req_bits       (_s_axi_mem_bridge_read_req_bits),
     .read_resp_ready     (_s_axi_mem_bridge_read_resp_ready),
-    .read_resp_valid     (_s_axi_mem_mem_read1_resp_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
-    .read_resp_bits      (_s_axi_mem_mem_read1_resp_bits),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
-    .write_req_ready     (_s_axi_mem_mem_write2_req_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+    .read_resp_valid     (_s_axi_mem_mem_read1_resp_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+    .read_resp_bits      (_s_axi_mem_mem_read1_resp_bits),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+    .write_req_ready     (_s_axi_mem_mem_write2_req_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
     .write_req_valid     (_s_axi_mem_bridge_write_req_valid),
     .write_req_bits_addr (_s_axi_mem_bridge_write_req_bits_addr),
     .write_req_bits_data (_s_axi_mem_bridge_write_req_bits_data),
     .write_req_bits_strb (_s_axi_mem_bridge_write_req_bits_strb),
     .write_resp_ready    (_s_axi_mem_bridge_write_resp_ready),
-    .write_resp_valid    (_s_axi_mem_mem_write2_resp_valid)	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
+    .write_resp_valid    (_s_axi_mem_mem_write2_resp_valid)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:70:21
   );
-  Mux_1 mux (	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+  Mux_1 mux (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
     .clock                 (clock),
     .reset                 (reset),
     .s_axi_0_ar_ready      (s_axi_ARREADY),
@@ -14417,46 +14417,46 @@ module SpmvTop1_1(	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/compone
     .s_axi_0_b_bits_id     (/* unused */),
     .s_axi_0_b_bits_resp   (s_axi_BRESP),
     .s_axi_1_ar_ready      (_mux_s_axi_1_ar_ready),
-    .s_axi_1_ar_valid      (_spmv_m_axi_gp_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_ar_bits_id    ({6'h0, _spmv_m_axi_gp_ar_bits_id}),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28, src/main/scala/chext/elastic/Connect.scala:12:15
-    .s_axi_1_ar_bits_addr  (_spmv_m_axi_gp_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_ar_bits_len   (_spmv_m_axi_gp_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_ar_bits_size  (_spmv_m_axi_gp_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_ar_bits_burst (_spmv_m_axi_gp_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_r_ready       (_spmv_m_axi_gp_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_ar_valid      (_spmv_m_axi_regular_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_ar_bits_id    ({6'h0, _spmv_m_axi_regular_ar_bits_id}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28, src/main/scala/chext/elastic/Connect.scala:12:15
+    .s_axi_1_ar_bits_addr  (_spmv_m_axi_regular_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_ar_bits_len   (_spmv_m_axi_regular_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_ar_bits_size  (_spmv_m_axi_regular_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_ar_bits_burst (_spmv_m_axi_regular_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_r_ready       (_spmv_m_axi_regular_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
     .s_axi_1_r_valid       (_mux_s_axi_1_r_valid),
     .s_axi_1_r_bits_id     (_mux_s_axi_1_r_bits_id),
     .s_axi_1_r_bits_data   (_mux_s_axi_1_r_bits_data),
     .s_axi_1_r_bits_resp   (_mux_s_axi_1_r_bits_resp),
     .s_axi_1_r_bits_last   (_mux_s_axi_1_r_bits_last),
     .s_axi_1_aw_ready      (_mux_s_axi_1_aw_ready),
-    .s_axi_1_aw_valid      (_spmv_m_axi_gp_aw_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_aw_bits_id    ({6'h0, _spmv_m_axi_gp_aw_bits_id}),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28, src/main/scala/chext/elastic/Connect.scala:12:15
-    .s_axi_1_aw_bits_addr  (_spmv_m_axi_gp_aw_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_aw_bits_len   (_spmv_m_axi_gp_aw_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_aw_bits_size  (_spmv_m_axi_gp_aw_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_aw_bits_burst (_spmv_m_axi_gp_aw_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_aw_valid      (_spmv_m_axi_regular_aw_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_aw_bits_id    ({6'h0, _spmv_m_axi_regular_aw_bits_id}),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28, src/main/scala/chext/elastic/Connect.scala:12:15
+    .s_axi_1_aw_bits_addr  (_spmv_m_axi_regular_aw_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_aw_bits_len   (_spmv_m_axi_regular_aw_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_aw_bits_size  (_spmv_m_axi_regular_aw_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_aw_bits_burst (_spmv_m_axi_regular_aw_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
     .s_axi_1_w_ready       (_mux_s_axi_1_w_ready),
-    .s_axi_1_w_valid       (_spmv_m_axi_gp_w_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_w_bits_data   (_spmv_m_axi_gp_w_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_w_bits_strb   (_spmv_m_axi_gp_w_bits_strb),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_w_bits_last   (_spmv_m_axi_gp_w_bits_last),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_1_b_ready       (_spmv_m_axi_gp_b_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_w_valid       (_spmv_m_axi_regular_w_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_w_bits_data   (_spmv_m_axi_regular_w_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_w_bits_strb   (_spmv_m_axi_regular_w_bits_strb),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_w_bits_last   (_spmv_m_axi_regular_w_bits_last),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_1_b_ready       (_spmv_m_axi_regular_b_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
     .s_axi_1_b_valid       (_mux_s_axi_1_b_valid),
     .s_axi_1_b_bits_id     (_mux_s_axi_1_b_bits_id),
     .s_axi_1_b_bits_resp   (_mux_s_axi_1_b_bits_resp),
     .s_axi_2_ar_ready      (_mux_s_axi_2_ar_ready),
-    .s_axi_2_ar_valid      (_responseBufferReadStreamValue_m_axi_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .s_axi_2_ar_bits_addr  (_responseBufferReadStreamValue_m_axi_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .s_axi_2_ar_bits_len   (_responseBufferReadStreamValue_m_axi_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .s_axi_2_ar_bits_size  (_responseBufferReadStreamValue_m_axi_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .s_axi_2_ar_bits_burst (_responseBufferReadStreamValue_m_axi_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
-    .s_axi_2_r_ready       (_responseBufferReadStreamValue_m_axi_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .s_axi_2_ar_valid      (_responseBufferReadStreamValue_m_axi_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .s_axi_2_ar_bits_addr  (_responseBufferReadStreamValue_m_axi_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .s_axi_2_ar_bits_len   (_responseBufferReadStreamValue_m_axi_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .s_axi_2_ar_bits_size  (_responseBufferReadStreamValue_m_axi_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .s_axi_2_ar_bits_burst (_responseBufferReadStreamValue_m_axi_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+    .s_axi_2_r_ready       (_responseBufferReadStreamValue_m_axi_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
     .s_axi_2_r_valid       (_mux_s_axi_2_r_valid),
     .s_axi_2_r_bits_data   (_mux_s_axi_2_r_bits_data),
     .s_axi_2_r_bits_resp   (_mux_s_axi_2_r_bits_resp),
     .s_axi_2_r_bits_last   (_mux_s_axi_2_r_bits_last),
-    .m_axi_ar_ready        (_s_axi_mem_bridge_s_axi_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_ar_ready        (_s_axi_mem_bridge_s_axi_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
     .m_axi_ar_valid        (_mux_m_axi_ar_valid),
     .m_axi_ar_bits_id      (_mux_m_axi_ar_bits_id),
     .m_axi_ar_bits_addr    (_mux_m_axi_ar_bits_addr),
@@ -14464,49 +14464,49 @@ module SpmvTop1_1(	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/compone
     .m_axi_ar_bits_size    (_mux_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst   (_mux_m_axi_ar_bits_burst),
     .m_axi_r_ready         (_mux_m_axi_r_ready),
-    .m_axi_r_valid         (_s_axi_mem_bridge_s_axi_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .m_axi_r_bits_id       (_s_axi_mem_bridge_s_axi_r_bits_id),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .m_axi_r_bits_data     (_s_axi_mem_bridge_s_axi_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .m_axi_r_bits_last     (_s_axi_mem_bridge_s_axi_r_bits_last),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .m_axi_aw_ready        (_s_axi_mem_bridge_s_axi_aw_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_r_valid         (_s_axi_mem_bridge_s_axi_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_r_bits_id       (_s_axi_mem_bridge_s_axi_r_bits_id),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_r_bits_data     (_s_axi_mem_bridge_s_axi_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_r_bits_last     (_s_axi_mem_bridge_s_axi_r_bits_last),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_aw_ready        (_s_axi_mem_bridge_s_axi_aw_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
     .m_axi_aw_valid        (_mux_m_axi_aw_valid),
     .m_axi_aw_bits_id      (_mux_m_axi_aw_bits_id),
     .m_axi_aw_bits_addr    (_mux_m_axi_aw_bits_addr),
     .m_axi_aw_bits_len     (_mux_m_axi_aw_bits_len),
     .m_axi_aw_bits_size    (_mux_m_axi_aw_bits_size),
     .m_axi_aw_bits_burst   (_mux_m_axi_aw_bits_burst),
-    .m_axi_w_ready         (_s_axi_mem_bridge_s_axi_w_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_w_ready         (_s_axi_mem_bridge_s_axi_w_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
     .m_axi_w_valid         (_mux_m_axi_w_valid),
     .m_axi_w_bits_data     (_mux_m_axi_w_bits_data),
     .m_axi_w_bits_strb     (_mux_m_axi_w_bits_strb),
     .m_axi_b_ready         (_mux_m_axi_b_ready),
-    .m_axi_b_valid         (_s_axi_mem_bridge_s_axi_b_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .m_axi_b_bits_id       (_s_axi_mem_bridge_s_axi_b_bits_id),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
-    .m_axi_b_bits_resp     (_s_axi_mem_bridge_s_axi_b_bits_resp)	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_b_valid         (_s_axi_mem_bridge_s_axi_b_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_b_bits_id       (_s_axi_mem_bridge_s_axi_b_bits_id),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
+    .m_axi_b_bits_resp     (_s_axi_mem_bridge_s_axi_b_bits_resp)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:78:24
   );
-  ResponseBuffer_3 responseBufferReadStreamValue (	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
+  ResponseBuffer_3 responseBufferReadStreamValue (	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:101:53
     .clock               (clock),
     .reset               (reset),
     .s_axi_ar_ready      (_responseBufferReadStreamValue_s_axi_ar_ready),
-    .s_axi_ar_valid      (_spmv_m_axi_ls_ar_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_ar_bits_addr  (_spmv_m_axi_ls_ar_bits_addr),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_ar_bits_len   (_spmv_m_axi_ls_ar_bits_len),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_ar_bits_size  (_spmv_m_axi_ls_ar_bits_size),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_ar_bits_burst (_spmv_m_axi_ls_ar_bits_burst),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
-    .s_axi_r_ready       (_spmv_m_axi_ls_r_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_ar_valid      (_spmv_m_axi_random_ar_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_ar_bits_addr  (_spmv_m_axi_random_ar_bits_addr),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_ar_bits_len   (_spmv_m_axi_random_ar_bits_len),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_ar_bits_size  (_spmv_m_axi_random_ar_bits_size),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_ar_bits_burst (_spmv_m_axi_random_ar_bits_burst),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
+    .s_axi_r_ready       (_spmv_m_axi_random_r_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:46:28
     .s_axi_r_valid       (_responseBufferReadStreamValue_s_axi_r_valid),
     .s_axi_r_bits_data   (_responseBufferReadStreamValue_s_axi_r_bits_data),
-    .m_axi_ar_ready      (_mux_s_axi_2_ar_ready),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_ar_ready      (_mux_s_axi_2_ar_ready),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
     .m_axi_ar_valid      (_responseBufferReadStreamValue_m_axi_ar_valid),
     .m_axi_ar_bits_addr  (_responseBufferReadStreamValue_m_axi_ar_bits_addr),
     .m_axi_ar_bits_len   (_responseBufferReadStreamValue_m_axi_ar_bits_len),
     .m_axi_ar_bits_size  (_responseBufferReadStreamValue_m_axi_ar_bits_size),
     .m_axi_ar_bits_burst (_responseBufferReadStreamValue_m_axi_ar_bits_burst),
     .m_axi_r_ready       (_responseBufferReadStreamValue_m_axi_r_ready),
-    .m_axi_r_valid       (_mux_s_axi_2_r_valid),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_r_bits_data   (_mux_s_axi_2_r_bits_data),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_r_bits_resp   (_mux_s_axi_2_r_bits_resp),	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
-    .m_axi_r_bits_last   (_mux_s_axi_2_r_bits_last)	// janberq/repos/jnbrq/hbmex/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_r_valid       (_mux_s_axi_2_r_valid),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_r_bits_data   (_mux_s_axi_2_r_bits_data),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_r_bits_resp   (_mux_s_axi_2_r_bits_resp),	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
+    .m_axi_r_bits_last   (_mux_s_axi_2_r_bits_last)	// home/janberq/repos/jnbrq/hbmex-fccm2025/rtl/src/test/scala/hbmex/components/spmv/Spmv.tb.scala:95:27
   );
 endmodule
 

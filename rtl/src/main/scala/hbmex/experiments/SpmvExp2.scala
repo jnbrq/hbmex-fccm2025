@@ -25,7 +25,7 @@ case class SpmvExp2Config(val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64), va
   val memAdapterCfg = stream.MemAdapterConfig(spmv.Defs.wTime, spmv.Defs.wTask, 10)
 
   val idParallizeCfg = axi4.full.components.IdParallelizeNoReadBurstConfig(
-    spmvCfg.axiLsMasterCfg,
+    spmvCfg.axiRandomCfg,
     6,
     true,
     true
@@ -47,7 +47,7 @@ case class SpmvExp2Config(val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64), va
 
     stripe.StripeConfig(
       2,
-      spmvCfg.axiLsMasterCfg.copy(wAddr = 34),
+      spmvCfg.axiRandomCfg.copy(wAddr = 34),
       transformations
     )
   }
@@ -67,7 +67,7 @@ class SpmvExp2(cfg: SpmvExp2Config = SpmvExp2Config()) extends Module {
   val M_AXI_STRIPED = IO(axi4.Master(stripeCfg.axiCfg))
 
   val M_AXI_LS = IO(axi4.Master(idParallizeCfg.axiMasterCfg))
-  val M_AXI_GP = IO(axi4.Master(spmvCfg.axiGpMasterCfg))
+  val M_AXI_GP = IO(axi4.Master(spmvCfg.axiRegularCfg))
 
   private val controlDemux = Module(new axi4.lite.components.Demux(controlDemuxCfg))
 
@@ -94,11 +94,11 @@ class SpmvExp2(cfg: SpmvExp2Config = SpmvExp2Config()) extends Module {
   private val idParallize = Module(
     new axi4.full.components.IdParallelizeNoReadBurst(idParallizeCfg)
   )
-  spmv0.m_axi_ls :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_random :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
   stripe0.M_AXI(0).asFull :=> axi4.full.MasterBuffer(idParallize.s_axi, axi4.BufferConfig.all(2))
   idParallize.m_axi :=> axi4.full.MasterBuffer(M_AXI_LS.asFull, axi4.BufferConfig.all(2))
 
-  spmv0.m_axi_gp :=> axi4.full.MasterBuffer(M_AXI_GP.asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_GP.asFull, axi4.BufferConfig.all(2))
 }
 
 object EmitSpmvExp2 extends App {

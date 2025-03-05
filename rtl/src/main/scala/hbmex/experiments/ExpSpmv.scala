@@ -16,7 +16,7 @@ case class ExpSpmvConfig(val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64), val
   val memAdapterCfg = stream.MemAdapterConfig(spmv.Defs.wTime, spmv.Defs.wTask, 10)
 
   val responseBufferCfg = axi4.full.components.ResponseBufferConfig(
-    spmvCfg.axiLsMasterCfg,
+    spmvCfg.axiRandomCfg,
     512,
     2,
     writePassThrough = true
@@ -31,8 +31,8 @@ class ExpSpmv(cfg: ExpSpmvConfig = ExpSpmvConfig()) extends Module {
   private val memAdapter0 = Module(new stream.MemAdapter(memAdapterCfg))
 
   val S_AXI_CONTROL = IO(axi4.Slave(memAdapter0.s_axil.cfg))
-  val M_AXI_LS = IO(axi4.Master(spmvCfg.axiLsMasterCfg))
-  val M_AXI_GP = IO(axi4.Master(spmvCfg.axiGpMasterCfg))
+  val M_AXI_RANDOM = IO(axi4.Master(spmvCfg.axiRandomCfg))
+  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularCfg))
 
   S_AXI_CONTROL.asLite :=> memAdapter0.s_axil
 
@@ -51,10 +51,10 @@ class ExpSpmv(cfg: ExpSpmvConfig = ExpSpmvConfig()) extends Module {
   private val responseBufferReadStreamValue = Module(
     new axi4.full.components.ResponseBuffer(responseBufferCfg)
   )
-  spmv0.m_axi_ls :=> axi4.full.MasterBuffer(responseBufferReadStreamValue.s_axi, axi4.BufferConfig.all(2))
-  responseBufferReadStreamValue.m_axi :=> axi4.full.MasterBuffer(M_AXI_LS.asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_random :=> axi4.full.MasterBuffer(responseBufferReadStreamValue.s_axi, axi4.BufferConfig.all(2))
+  responseBufferReadStreamValue.m_axi :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
 
-  spmv0.m_axi_gp :=> axi4.full.MasterBuffer(M_AXI_GP.asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_REGULAR.asFull, axi4.BufferConfig.all(2))
 }
 
 object EmitExpSpmv extends App {

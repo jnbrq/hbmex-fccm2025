@@ -96,19 +96,19 @@ class SpmvTop1(cfg: SpmvTop1Config = SpmvTop1Config()) extends Module with chext
   mux.m_axi :=> s_axi_mem
 
   s_axi.asFull :=> mux.s_axi(0)
-  spmv.m_axi_gp :=> mux.s_axi(1)
+  spmv.m_axi_regular :=> mux.s_axi(1)
 
   private val responseBufferReadStreamValue = Module(
     new axi4.full.components.ResponseBuffer(
       axi4.full.components.ResponseBufferConfig(
-        spmv.m_axi_ls.cfg,
+        spmv.m_axi_random.cfg,
         256,
         2,
         writePassThrough = true
       )
     )
   )
-  spmv.m_axi_ls :=> responseBufferReadStreamValue.s_axi
+  spmv.m_axi_random :=> responseBufferReadStreamValue.s_axi
   responseBufferReadStreamValue.m_axi :=> mux.s_axi(2)
 
   new elastic.Transform(sourceTask, spmv.sourceTask) {
@@ -268,19 +268,19 @@ class SpmvTop2(cfg: SpmvTop2Config = SpmvTop2Config()) extends Module with chext
   mux.m_axi :=> s_axi_mem
 
   s_axi.asFull :=> mux.s_axi(0)
-  spmvAxi.m_axi_gp :=> mux.s_axi(1)
+  spmvAxi.m_axi_regular :=> mux.s_axi(1)
 
   private val responseBufferReadStreamValue = Module(
     new axi4.full.components.ResponseBuffer(
       axi4.full.components.ResponseBufferConfig(
-        spmvAxi.m_axi_ls.cfg,
+        spmvAxi.m_axi_random.cfg,
         256,
         2,
         writePassThrough = true
       )
     )
   )
-  spmvAxi.m_axi_ls :=> responseBufferReadStreamValue.s_axi
+  spmvAxi.m_axi_random :=> responseBufferReadStreamValue.s_axi
   responseBufferReadStreamValue.m_axi :=> mux.s_axi(2)
 
   s_axi_control :=> spmvAxi.s_axi

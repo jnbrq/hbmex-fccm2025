@@ -27,7 +27,7 @@ case class SpmvExp0Config(val desiredName: String = "SpmvExp0") {
   val memAdapterCfg = stream.MemAdapterConfig(spmv.Defs.wTime, spmv.Defs.wTask, 10)
 
   val responseBufferCfg = axi4.full.components.ResponseBufferConfig(
-    spmvCfg.axiLsMasterCfg,
+    spmvCfg.axiRandomCfg,
     512,
     2,
     writePassThrough = true
@@ -49,7 +49,7 @@ case class SpmvExp0Config(val desiredName: String = "SpmvExp0") {
   val stripeCfg =
     stripe.StripeConfig(
       2,
-      spmvCfg.axiLsMasterCfg.copy(wAddr = 34),
+      spmvCfg.axiRandomCfg.copy(wAddr = 34),
       stripeTransformations
     )
 }
@@ -67,8 +67,8 @@ class SpmvExp0(cfg: SpmvExp0Config = SpmvExp0Config()) extends Module {
   val S_AXI_STRIPED = IO(axi4.Slave(stripeCfg.axiCfg))
   val M_AXI_STRIPED = IO(axi4.Master(stripeCfg.axiCfg))
 
-  val M_AXI_LS = IO(axi4.Master(spmvCfg.axiLsMasterCfg))
-  val M_AXI_GP = IO(axi4.Master(spmvCfg.axiGpMasterCfg))
+  val M_AXI_RANDOM = IO(axi4.Master(spmvCfg.axiRandomCfg))
+  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularCfg))
 
   private val controlDemux = Module(new axi4.lite.components.Demux(controlDemuxCfg))
 
@@ -96,11 +96,11 @@ class SpmvExp0(cfg: SpmvExp0Config = SpmvExp0Config()) extends Module {
     new axi4.full.components.ResponseBuffer(responseBufferCfg)
   )
 
-  spmv0.m_axi_ls :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_random :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
   stripe0.M_AXI(0) :=> axi4.full.MasterBuffer(responseBuffer.s_axi, axi4.BufferConfig.all(2))
-  responseBuffer.m_axi :=> axi4.full.MasterBuffer(M_AXI_LS.asFull, axi4.BufferConfig.all(2))
+  responseBuffer.m_axi :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
 
-  spmv0.m_axi_gp :=> axi4.full.MasterBuffer(M_AXI_GP.asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_REGULAR.asFull, axi4.BufferConfig.all(2))
 }
 
 object EmitSpmvExp0 extends App {

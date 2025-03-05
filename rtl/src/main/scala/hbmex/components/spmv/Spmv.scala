@@ -71,15 +71,11 @@ case class SpmvConfig(
         wData = 256
       )
 
-  /** AXI configuration for the latency-sensitive interface.
-    */
-  val axiLsMasterCfg = axiRandomCfg
-
   /** AXI configuration for streaming requests.
     */
-  val axiLinearCfg =
+  val axiRegularCfg =
     axi4.Config(
-      wId = 0,
+      wId = 2,
       wAddr = wAddr,
       wData = 256,
       axi3Compat = true,
@@ -90,23 +86,22 @@ case class SpmvConfig(
       hasLock = false
     )
 
-  /** AXI configuration for the general-purpose interface.
-    */
-  val axiGpMasterCfg = axiLinearCfg.copy(wId = 2)
-
   val responseBufferReadStreamCfg = axi4.full.components.ResponseBufferConfig(
-    axiLinearCfg,
+    axiRegularCfg.copy(wId = 0),
     bufLengthR = 32,
     writePassThrough = true
   )
 
   val readStreamCfg = stream.ReadStreamConfig(
-    axiLinearCfg,
+    axiRegularCfg.copy(wId = 0),
     maxBurstLength = 16,
     queueLength = 8
   )
 
-  val writeStreamCfg = stream.WriteStreamConfig(axiLinearCfg, maxBurstLength = 16)
+  val writeStreamCfg = stream.WriteStreamConfig(
+    axiRegularCfg.copy(wId = 0),
+    maxBurstLength = 16
+  )
 
   // HARDCODED
   val downsizeConfig = stream.DownsizeConfig(256, 32)
@@ -130,11 +125,11 @@ class Spmv(cfg: SpmvConfig) extends Module {
   // How many cycles it took to complete the task
   val sinkDone = IO(elastic.Sink(UInt(Defs.wTime.W)))
 
-  /** Latency-sensitive memory access requests. */
-  val m_axi_ls = IO(axi4.full.Master(axiLsMasterCfg))
+  /** Random memory access requests. */
+  val m_axi_random = IO(axi4.full.Master(axiRandomCfg))
 
-  /** Latency-insensitive memory access requests. */
-  val m_axi_gp = IO(axi4.full.Master(axiGpMasterCfg))
+  /** Regular memory access requests. */
+  val m_axi_regular = IO(axi4.full.Master(axiRegularCfg))
 
   /** for benchmarking */
   private val rTime = RegInit(0.U(Defs.wTime.W))
@@ -147,6 +142,8 @@ class Spmv(cfg: SpmvConfig) extends Module {
   private val readStreamRowLengths = Module(new stream.ReadStream(readStreamCfg))
   private val writeStreamResult = Module(new stream.WriteStream(writeStreamCfg))
 
+  // TODO: Maybe we should use a response buffer embedded in the stream later?
+  // These response buffers avoid deadlocks due to sharing of the master interface
   private val responseBufferReadStreamValue = Module(new axi4.full.components.ResponseBuffer(responseBufferReadStreamCfg))
   private val responseBufferReadStreamColumnIndices = Module(new axi4.full.components.ResponseBuffer(responseBufferReadStreamCfg))
   private val responseBufferReadStreamRowLengths = Module(new axi4.full.components.ResponseBuffer(responseBufferReadStreamCfg))
@@ -164,10 +161,10 @@ class Spmv(cfg: SpmvConfig) extends Module {
 
   writeStreamResult.m_axi :=> mux.s_axi(3)
 
-  mux.m_axi :=> m_axi_gp
+  mux.m_axi :=> m_axi_regular
 
-  private val m_axi_random = Wire(axi4.full.Interface(axiRandomCfg))
-  m_axi_random :=> m_axi_ls
+  private val m_axi_random_ = Wire(axi4.full.Interface(axiRandomCfg))
+  m_axi_random_ :=> m_axi_random
 
   private val downsizerValues = Module(new stream.Downsize(downsizeConfig))
   private val downsizerColumnIndices = Module(new stream.DownsizeWithLast(downsizeConfig))
@@ -239,7 +236,7 @@ class Spmv(cfg: SpmvConfig) extends Module {
   val rvPtrInputVector = qPtrInputVector.io.deq
   rvPtrInputVector.nodeq()
 
-  new elastic.Arrival(rvColumnIndices, m_axi_random.ar) {
+  new elastic.Arrival(rvColumnIndices, m_axi_random_.ar) {
     protected def onArrival: Unit = {
       out := 0.U.asTypeOf(out)
 
@@ -264,7 +261,7 @@ class Spmv(cfg: SpmvConfig) extends Module {
 
   downsizerValues.sink :=> elastic.SinkBuffer(batchMultiply.sourceInA)
 
-  new elastic.Transform(m_axi_random.r, elastic.SinkBuffer(batchMultiply.sourceInB)) {
+  new elastic.Transform(m_axi_random_.r, elastic.SinkBuffer(batchMultiply.sourceInB)) {
     protected def onTransform: Unit = {
       out := in.data
     }
@@ -283,24 +280,24 @@ class Spmv(cfg: SpmvConfig) extends Module {
     }
   }
 
-  if (m_axi_random.cfg.write) {
-    m_axi_random.aw.noenq()
-    m_axi_random.w.noenq()
-    m_axi_random.b.nodeq()
+  if (m_axi_random_.cfg.write) {
+    m_axi_random_.aw.noenq()
+    m_axi_random_.w.noenq()
+    m_axi_random_.b.nodeq()
   }
 
   override val desiredName = cfg.desiredName
 }
 
-class SpmvAxi(cfg: SpmvConfig, val addResponseBuffer: Boolean = false) extends Module {
+class SpmvAxi(cfg: SpmvConfig) extends Module {
   override val desiredName: String = f"${cfg.desiredName}Axi"
 
   private val spmv = Module(new Spmv(cfg))
   private val memAdapter = Module(new stream.MemAdapter(stream.MemAdapterConfig(Defs.wTime, Defs.wTask, 10)))
 
   val s_axi = IO(axi4.Slave(memAdapter.s_axil.cfg))
-  val m_axi_ls = IO(axi4.Master(cfg.axiLsMasterCfg))
-  val m_axi_gp = IO(axi4.Master(cfg.axiGpMasterCfg))
+  val m_axi_random = IO(axi4.Master(cfg.axiRandomCfg))
+  val m_axi_regular = IO(axi4.Master(cfg.axiRegularCfg))
 
   s_axi.asLite :=> memAdapter.s_axil
 
@@ -319,17 +316,17 @@ class SpmvAxi(cfg: SpmvConfig, val addResponseBuffer: Boolean = false) extends M
   private val responseBufferReadStreamValue = Module(
     new axi4.full.components.ResponseBuffer(
       axi4.full.components.ResponseBufferConfig(
-        spmv.m_axi_ls.cfg,
+        spmv.m_axi_random.cfg,
         512,
         2,
         writePassThrough = true
       )
     )
   )
-  spmv.m_axi_ls :=> responseBufferReadStreamValue.s_axi
-  responseBufferReadStreamValue.m_axi :=> m_axi_ls.asFull
+  spmv.m_axi_random :=> responseBufferReadStreamValue.s_axi
+  responseBufferReadStreamValue.m_axi :=> m_axi_random.asFull
 
-  spmv.m_axi_gp :=> m_axi_gp.asFull
+  spmv.m_axi_regular :=> m_axi_regular.asFull
 }
 
 object EmitSpmv extends App {
