@@ -9,6 +9,8 @@ import elastic.ConnectOp._
 import chext.amba.axi4
 import axi4.Ops._
 
+import hbmex.components.stream
+
 case class SpmvTop1Config(val desiredName: String = "SpmvTop1_1") {
   val wAddr = 30
   val wData = 256
@@ -39,11 +41,15 @@ case class SpmvTop1Config(val desiredName: String = "SpmvTop1_1") {
   )
 }
 
+/** Uses the elastic task interface for testing.
+  *
+  * @param cfg
+  */
 class SpmvTop1(cfg: SpmvTop1Config = SpmvTop1Config()) extends Module with chext.HasHdlinfoModule {
   import cfg._
   override val desiredName = cfg.desiredName
 
-  private val spmv = Module(new Spmv(spmvCfg))
+  private val spmv0 = Module(new Spmv(spmvCfg))
 
   val s_axi = IO(axi4.Slave(axiSlaveCfg))
   val sourceTask = IO(elastic.Source(UInt(wSourceTask.W)))
@@ -96,28 +102,28 @@ class SpmvTop1(cfg: SpmvTop1Config = SpmvTop1Config()) extends Module with chext
   mux.m_axi :=> s_axi_mem
 
   s_axi.asFull :=> mux.s_axi(0)
-  spmv.m_axi_regular :=> mux.s_axi(1)
+  spmv0.m_axi_regular :=> mux.s_axi(1)
 
   private val responseBufferReadStreamValue = Module(
     new axi4.full.components.ResponseBuffer(
       axi4.full.components.ResponseBufferConfig(
-        spmv.m_axi_random.cfg,
+        spmv0.m_axi_random.cfg,
         256,
         2,
         writePassThrough = true
       )
     )
   )
-  spmv.m_axi_random :=> responseBufferReadStreamValue.s_axi
+  spmv0.m_axi_random :=> responseBufferReadStreamValue.s_axi
   responseBufferReadStreamValue.m_axi :=> mux.s_axi(2)
 
-  new elastic.Transform(sourceTask, spmv.sourceTask) {
+  new elastic.Transform(sourceTask, spmv0.sourceTask) {
     protected def onTransform: Unit = {
       out := in.asTypeOf(out)
     }
   }
 
-  new elastic.Transform(spmv.sinkDone, sinkDone) {
+  new elastic.Transform(spmv0.sinkDone, sinkDone) {
     protected def onTransform: Unit = {
       out := in.asTypeOf(out)
     }
@@ -205,6 +211,7 @@ case class SpmvTop2Config(val desiredName: String = "SpmvTop2_1") {
   val axiMemCfg = axiSlaveCfg.copy(wId = wId + 2)
 
   val spmvCfg = SpmvConfig(wAddr)
+  val memAdapterCfg = stream.MemAdapterConfig(Defs.wTime, Defs.wTask, 10)
 
   val muxCfg = axi4.full.components.MuxConfig(
     axiSlaveCfg.copy(wId = wId),
@@ -212,11 +219,16 @@ case class SpmvTop2Config(val desiredName: String = "SpmvTop2_1") {
   )
 }
 
+/** Uses an AXI4-Lite interface for sending tasks.
+  *
+  * @param cfg
+  */
 class SpmvTop2(cfg: SpmvTop2Config = SpmvTop2Config()) extends Module with chext.HasHdlinfoModule {
   import cfg._
   override val desiredName = cfg.desiredName
 
-  private val spmvAxi = Module(new SpmvAxi(spmvCfg))
+  private val spmv0 = Module(new Spmv(spmvCfg))
+  private val memAdapter0 = Module(new stream.MemAdapter(memAdapterCfg))
 
   val s_axi_control = IO(axi4.Slave(axiControlCfg))
   val s_axi = IO(axi4.Slave(axiSlaveCfg))
@@ -268,22 +280,34 @@ class SpmvTop2(cfg: SpmvTop2Config = SpmvTop2Config()) extends Module with chext
   mux.m_axi :=> s_axi_mem
 
   s_axi.asFull :=> mux.s_axi(0)
-  spmvAxi.m_axi_regular :=> mux.s_axi(1)
+  spmv0.m_axi_regular :=> mux.s_axi(1)
 
   private val responseBufferReadStreamValue = Module(
     new axi4.full.components.ResponseBuffer(
       axi4.full.components.ResponseBufferConfig(
-        spmvAxi.m_axi_random.cfg,
+        spmv0.m_axi_random.cfg,
         256,
         2,
         writePassThrough = true
       )
     )
   )
-  spmvAxi.m_axi_random :=> responseBufferReadStreamValue.s_axi
+  spmv0.m_axi_random :=> responseBufferReadStreamValue.s_axi
   responseBufferReadStreamValue.m_axi :=> mux.s_axi(2)
 
-  s_axi_control :=> spmvAxi.s_axi
+  s_axi_control :=> memAdapter0.s_axil
+
+  new elastic.Transform(elastic.SourceBuffer(memAdapter0.sink, 4), spmv0.sourceTask) {
+    protected def onTransform: Unit = {
+      out := in.asTypeOf(out)
+    }
+  }
+
+  new elastic.Transform(spmv0.sinkDone, elastic.SinkBuffer(memAdapter0.source, 4)) {
+    protected def onTransform: Unit = {
+      out := in.asUInt
+    }
+  }
 
   def hdlinfoModule: hdlinfo.Module = {
     import hdlinfo._

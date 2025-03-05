@@ -289,58 +289,6 @@ class Spmv(cfg: SpmvConfig) extends Module {
   override val desiredName = cfg.desiredName
 }
 
-class SpmvAxi(cfg: SpmvConfig) extends Module {
-  override val desiredName: String = f"${cfg.desiredName}Axi"
-
-  private val spmv = Module(new Spmv(cfg))
-  private val memAdapter = Module(new stream.MemAdapter(stream.MemAdapterConfig(Defs.wTime, Defs.wTask, 10)))
-
-  val s_axi = IO(axi4.Slave(memAdapter.s_axil.cfg))
-  val m_axi_random = IO(axi4.Master(cfg.axiRandomCfg))
-  val m_axi_regular = IO(axi4.Master(cfg.axiRegularCfg))
-
-  s_axi.asLite :=> memAdapter.s_axil
-
-  new elastic.Transform(elastic.SourceBuffer(memAdapter.sink, 4), spmv.sourceTask) {
-    protected def onTransform: Unit = {
-      out := in.asTypeOf(out)
-    }
-  }
-
-  new elastic.Transform(spmv.sinkDone, elastic.SinkBuffer(memAdapter.source, 4)) {
-    protected def onTransform: Unit = {
-      out := in.asUInt
-    }
-  }
-
-  private val responseBufferReadStreamValue = Module(
-    new axi4.full.components.ResponseBuffer(
-      axi4.full.components.ResponseBufferConfig(
-        spmv.m_axi_random.cfg,
-        512,
-        2,
-        writePassThrough = true
-      )
-    )
-  )
-  spmv.m_axi_random :=> responseBufferReadStreamValue.s_axi
-  responseBufferReadStreamValue.m_axi :=> m_axi_random.asFull
-
-  spmv.m_axi_regular :=> m_axi_regular.asFull
-}
-
 object EmitSpmv extends App {
   emitVerilog(new Spmv(SpmvConfig(wAddr = 64, desiredName = "spmv")))
-}
-
-object EmitSpmvAxi extends App {
-  emitVerilog(new SpmvAxi(SpmvConfig(wAddr = 64, desiredName = "spmv")))
-}
-
-object EmitIdParallize extends App {
-  val cfg = axi4.full.components.IdParallelizeConfig(
-    axiSlaveCfg = axi4.Config(0, 64, 256),
-    6
-  )
-  emitVerilog(new axi4.full.components.IdParallelize(cfg))
 }
