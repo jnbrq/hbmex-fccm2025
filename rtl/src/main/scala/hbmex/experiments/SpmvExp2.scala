@@ -13,7 +13,10 @@ import hbmex.components.spmv
 import hbmex.components.stream
 import hbmex.components.stripe
 
-case class SpmvExp2Config(val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64), val desiredName: String = "SpmvExp2") {
+case class SpmvExp2Config(val desiredName: String = "SpmvExp2") {
+  // No need for the response buffer because the ID parallelize module already has a buffer
+  val spmvCfg = spmv.SpmvConfig(64, useResponseBufferRandom = false)
+
   val axiControlCfg = axi4.Config(wAddr = 11, wData = 32, lite = true)
 
   val controlDemuxCfg = axi4.lite.components.DemuxConfig(
@@ -25,7 +28,7 @@ case class SpmvExp2Config(val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64), va
   val memAdapterCfg = stream.MemAdapterConfig(spmv.Defs.wTime, spmv.Defs.wTask, 10)
 
   val idParallizeCfg = axi4.full.components.IdParallelizeNoReadBurstConfig(
-    spmvCfg.axiRandomCfg,
+    spmvCfg.axiRandomMasterCfg,
     6,
     true,
     true
@@ -47,7 +50,7 @@ case class SpmvExp2Config(val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64), va
 
     stripe.StripeConfig(
       2,
-      spmvCfg.axiRandomCfg.copy(wAddr = 34),
+      spmvCfg.axiRandomMasterCfg.copy(wAddr = 34),
       transformations
     )
   }
@@ -66,8 +69,8 @@ class SpmvExp2(cfg: SpmvExp2Config = SpmvExp2Config()) extends Module {
   val S_AXI_STRIPED = IO(axi4.Slave(stripeCfg.axiCfg))
   val M_AXI_STRIPED = IO(axi4.Master(stripeCfg.axiCfg))
 
-  val M_AXI_LS = IO(axi4.Master(idParallizeCfg.axiMasterCfg))
-  val M_AXI_GP = IO(axi4.Master(spmvCfg.axiRegularCfg))
+  val M_AXI_RANDOM = IO(axi4.Master(idParallizeCfg.axiMasterCfg))
+  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularMasterCfg))
 
   private val controlDemux = Module(new axi4.lite.components.Demux(controlDemuxCfg))
 
@@ -96,11 +99,11 @@ class SpmvExp2(cfg: SpmvExp2Config = SpmvExp2Config()) extends Module {
   )
   spmv0.m_axi_random :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
   stripe0.M_AXI(0).asFull :=> axi4.full.MasterBuffer(idParallize.s_axi, axi4.BufferConfig.all(2))
-  idParallize.m_axi :=> axi4.full.MasterBuffer(M_AXI_LS.asFull, axi4.BufferConfig.all(2))
+  idParallize.m_axi :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
 
-  spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_GP.asFull, axi4.BufferConfig.all(2))
+  spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_REGULAR.asFull, axi4.BufferConfig.all(2))
 }
 
 object EmitSpmvExp2 extends App {
-  emitVerilog(new SpmvExp2(SpmvExp2Config(spmv.SpmvConfig(64))))
+  emitVerilog(new SpmvExp2(SpmvExp2Config()))
 }

@@ -15,7 +15,9 @@ import hbmex.components.stripe
 import hbmex.components.attachment
 
 case class SpmvExp3Config(val desiredName: String = "SpmvExp3") {
-  val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64)
+  // No need for the response buffer because the ID parallelize module already has a buffer
+  val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64, useResponseBufferRandom = false)
+
   val axiControlCfg = axi4.Config(wAddr = 11, wData = 32, lite = true)
 
   val controlDemuxCfg = axi4.lite.components.DemuxConfig(
@@ -60,7 +62,7 @@ case class SpmvExp3Config(val desiredName: String = "SpmvExp3") {
 
     stripe.StripeConfig(
       2,
-      spmvCfg.axiRandomCfg.copy(wAddr = 34),
+      spmvCfg.axiRandomMasterCfg.copy(wAddr = 34),
       transformations
     )
   }
@@ -80,7 +82,7 @@ class SpmvExp3(cfg: SpmvExp3Config = SpmvExp3Config()) extends Module {
   val M_AXI_STRIPED = IO(axi4.Master(stripeCfg.axiCfg))
 
   val M_AXI_RANDOM = IO(axi4.Master(ankaraCfg.axiMasterCfg))
-  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularCfg))
+  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularMasterCfg))
 
   private val controlDemux = Module(new axi4.lite.components.Demux(controlDemuxCfg))
 

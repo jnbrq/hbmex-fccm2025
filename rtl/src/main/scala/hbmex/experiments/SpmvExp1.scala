@@ -26,13 +26,6 @@ case class SpmvExp1Config(val desiredName: String = "SpmvExp1") {
 
   val memAdapterCfg = stream.MemAdapterConfig(spmv.Defs.wTime, spmv.Defs.wTask, 10)
 
-  val responseBufferCfg = axi4.full.components.ResponseBufferConfig(
-    spmvCfg.axiRandomCfg,
-    512,
-    2,
-    writePassThrough = true
-  )
-
   val stripeTransformations = Seq(
     Seq(33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0).reverse,
     Seq(33, 32, 31, 30, 14, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 29, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0).reverse,
@@ -49,14 +42,14 @@ case class SpmvExp1Config(val desiredName: String = "SpmvExp1") {
   val stripeCfg0 =
     stripe.StripeConfig(
       1,
-      spmvCfg.axiRandomCfg.copy(wAddr = 34),
+      spmvCfg.axiRandomMasterCfg.copy(wAddr = 34),
       stripeTransformations
     )
 
   val stripeCfg1 =
     stripe.StripeConfig(
       1,
-      spmvCfg.axiRegularCfg.copy(wAddr = 34),
+      spmvCfg.axiRegularMasterCfg.copy(wAddr = 34),
       stripeTransformations
     )
 }
@@ -75,8 +68,8 @@ class SpmvExp1(cfg: SpmvExp1Config = SpmvExp1Config()) extends Module {
   val S_AXI_STRIPED = IO(axi4.Slave(stripeCfg1.axiCfg))
   val M_AXI_STRIPED = IO(axi4.Master(stripeCfg1.axiCfg))
 
-  val M_AXI_RANDOM = IO(axi4.Master(spmvCfg.axiRandomCfg))
-  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularCfg))
+  val M_AXI_RANDOM = IO(axi4.Master(spmvCfg.axiRandomMasterCfg))
+  val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularMasterCfg))
 
   private val controlDemux = Module(new axi4.lite.components.Demux(controlDemuxCfg))
 
@@ -101,13 +94,14 @@ class SpmvExp1(cfg: SpmvExp1Config = SpmvExp1Config()) extends Module {
     }
   }
 
-  private val responseBuffer = Module(
-    new axi4.full.components.ResponseBuffer(responseBufferCfg)
-  )
+  // NOTE: The buffers placed to the master ports ensure the compatibility between
+  // elastic protocols.
+  //
+  // Some AXI might assert READY only after VALID is asserted for a clock cycle.
+  //
 
   spmv0.m_axi_random :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
-  stripe0.M_AXI(0) :=> axi4.full.MasterBuffer(responseBuffer.s_axi, axi4.BufferConfig.all(2))
-  responseBuffer.m_axi :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
+  stripe0.M_AXI(0) :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
 
   spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_REGULAR.asFull, axi4.BufferConfig.all(2))
 }

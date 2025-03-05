@@ -40,18 +40,19 @@ class SpmvTask extends Bundle {
 /** @param wAddr
   * @param desiredName
   * @param hbmCompat
-  *   Only affects the LS port. The GP port is always HBM-compatible.
+  *   Only affects the random access port. The regular access port is always HBM-compatible.
   */
 case class SpmvConfig(
     val wAddr: Int = 32,
     val hbmCompat: Boolean = true,
+    val useResponseBufferRandom: Boolean = true,
     val desiredName: String = "Spmv"
 ) {
   require(wAddr <= Defs.wPointer)
 
   /** AXI configuration for random-access requests.
     */
-  val axiRandomCfg =
+  val axiRandomMasterCfg =
     if (hbmCompat)
       axi4.Config(
         wId = 0,
@@ -73,7 +74,7 @@ case class SpmvConfig(
 
   /** AXI configuration for streaming requests.
     */
-  val axiRegularCfg =
+  val axiRegularMasterCfg =
     axi4.Config(
       wId = 2,
       wAddr = wAddr,
@@ -86,20 +87,34 @@ case class SpmvConfig(
       hasLock = false
     )
 
-  val responseBufferReadStreamCfg = axi4.full.components.ResponseBufferConfig(
-    axiRegularCfg.copy(wId = 0),
+  val responseBufferRegularCfg = axi4.full.components.ResponseBufferConfig(
+    axiRegularMasterCfg.copy(wId = 0),
+
+    // HARDCODED
     bufLengthR = 32,
     writePassThrough = true
   )
 
+  val responseBufferRandomCfg = axi4.full.components.ResponseBufferConfig(
+    axiRandomMasterCfg,
+
+    // HARDCODED: random access response buffer length
+    bufLengthR = 512,
+    writePassThrough = true
+  )
+
   val readStreamCfg = stream.ReadStreamConfig(
-    axiRegularCfg.copy(wId = 0),
+    axiRegularMasterCfg.copy(wId = 0),
+
+    // HARDCODED: burst length
     maxBurstLength = 16,
     queueLength = 8
   )
 
   val writeStreamCfg = stream.WriteStreamConfig(
-    axiRegularCfg.copy(wId = 0),
+    axiRegularMasterCfg.copy(wId = 0),
+
+    // HARDCODED: burst length
     maxBurstLength = 16
   )
 
@@ -126,10 +141,10 @@ class Spmv(cfg: SpmvConfig) extends Module {
   val sinkDone = IO(elastic.Sink(UInt(Defs.wTime.W)))
 
   /** Random memory access requests. */
-  val m_axi_random = IO(axi4.full.Master(axiRandomCfg))
+  val m_axi_random = IO(axi4.full.Master(axiRandomMasterCfg))
 
   /** Regular memory access requests. */
-  val m_axi_regular = IO(axi4.full.Master(axiRegularCfg))
+  val m_axi_regular = IO(axi4.full.Master(axiRegularMasterCfg))
 
   /** for benchmarking */
   private val rTime = RegInit(0.U(Defs.wTime.W))
@@ -144,27 +159,34 @@ class Spmv(cfg: SpmvConfig) extends Module {
 
   // TODO: Maybe we should use a response buffer embedded in the stream later?
   // These response buffers avoid deadlocks due to sharing of the master interface
-  private val responseBufferReadStreamValue = Module(new axi4.full.components.ResponseBuffer(responseBufferReadStreamCfg))
-  private val responseBufferReadStreamColumnIndices = Module(new axi4.full.components.ResponseBuffer(responseBufferReadStreamCfg))
-  private val responseBufferReadStreamRowLengths = Module(new axi4.full.components.ResponseBuffer(responseBufferReadStreamCfg))
+  private val responseBufferValue = Module(new axi4.full.components.ResponseBuffer(responseBufferRegularCfg))
+  private val responseBufferColumnIndices = Module(new axi4.full.components.ResponseBuffer(responseBufferRegularCfg))
+  private val responseBufferRowLengths = Module(new axi4.full.components.ResponseBuffer(responseBufferRegularCfg))
 
   private val mux = Module(new axi4.full.components.Mux(muxCfg))
 
-  readStreamValues.m_axi :=> responseBufferReadStreamValue.s_axi
-  responseBufferReadStreamValue.m_axi :=> mux.s_axi(0)
+  readStreamValues.m_axi :=> responseBufferValue.s_axi
+  responseBufferValue.m_axi :=> mux.s_axi(0)
 
-  readStreamColumnIndices.m_axi :=> responseBufferReadStreamColumnIndices.s_axi
-  responseBufferReadStreamColumnIndices.m_axi :=> mux.s_axi(1)
+  readStreamColumnIndices.m_axi :=> responseBufferColumnIndices.s_axi
+  responseBufferColumnIndices.m_axi :=> mux.s_axi(1)
 
-  readStreamRowLengths.m_axi :=> responseBufferReadStreamRowLengths.s_axi
-  responseBufferReadStreamRowLengths.m_axi :=> mux.s_axi(2)
+  readStreamRowLengths.m_axi :=> responseBufferRowLengths.s_axi
+  responseBufferRowLengths.m_axi :=> mux.s_axi(2)
 
   writeStreamResult.m_axi :=> mux.s_axi(3)
 
   mux.m_axi :=> m_axi_regular
 
-  private val m_axi_random_ = Wire(axi4.full.Interface(axiRandomCfg))
-  m_axi_random_ :=> m_axi_random
+  private val m_axi_random_ = Wire(axi4.full.Interface(axiRandomMasterCfg))
+
+  if (useResponseBufferRandom) {
+    val responseBufferRandom = Module(new axi4.full.components.ResponseBuffer(responseBufferRandomCfg))
+    m_axi_random_ :=> responseBufferRandom.s_axi
+    responseBufferRandom.m_axi :=> m_axi_random
+  } else {
+    m_axi_random_ :=> m_axi_random
+  }
 
   private val downsizerValues = Module(new stream.Downsize(downsizeConfig))
   private val downsizerColumnIndices = Module(new stream.DownsizeWithLast(downsizeConfig))
