@@ -11,7 +11,7 @@ import axi4.Ops._
 
 import hbmex.components.stream
 
-case class SpmvTop1Config(val desiredName: String = "SpmvTop1_1") {
+case class SpmvTop1Config(val desiredName: String) {
   val wAddr = 30
   val wData = 256
   val wId = 8
@@ -45,7 +45,7 @@ case class SpmvTop1Config(val desiredName: String = "SpmvTop1_1") {
   *
   * @param cfg
   */
-class SpmvTop1(cfg: SpmvTop1Config = SpmvTop1Config()) extends Module with chext.HasHdlinfoModule {
+class SpmvTop1(cfg: SpmvTop1Config) extends Module with chext.HasHdlinfoModule {
   import cfg._
   override val desiredName = cfg.desiredName
 
@@ -337,7 +337,7 @@ class SpmvTop2(cfg: SpmvTop2Config = SpmvTop2Config()) extends Module with chext
   }
 }
 
-object SpmvTestBench extends chext.TestBench {
-  emit(new SpmvTop1(SpmvTop1Config(desiredName = "SpmvTop1_1")))
-  emit(new SpmvTop2(SpmvTop2Config(desiredName = "SpmvTop2_1")))
+object Spmv_TB extends chext.TestBench {
+  emit(new SpmvTop1(SpmvTop1Config("SpmvTop1_1")))
+  emit(new SpmvTop2(SpmvTop2Config("SpmvTop2_1")))
 }

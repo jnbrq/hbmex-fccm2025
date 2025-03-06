@@ -1,5 +1,5 @@
 {
-  "name" : "IdParallelizeNoReadBurstTestTop2_2",
+  "name" : "IdParallelizeNoReadBurstTop2_1",
   "ports" : [
     {
       "name" : "clock",
@@ -78,7 +78,7 @@
         "config" : {
           "typeName" : "chext.amba.axi4.Config",
           "obj" : {
-            "wId" : 3,
+            "wId" : 2,
             "wAddr" : 32,
             "wData" : 64,
             "read" : true,

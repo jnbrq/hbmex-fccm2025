@@ -171,6 +171,6 @@ class ElasticTop extends Module with chext.HasHdlinfoModule {
   }
 }
 
-object ElasticTopTestBench extends chext.TestBench {
+object ElasticTop_TB extends chext.TestBench {
   emit(new ElasticTop())
 }

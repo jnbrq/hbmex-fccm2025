@@ -1,9 +1,9 @@
-#include <IdParallelizeNoReadBurstTestTop2_1.hpp>
-#include <IdParallelizeNoReadBurstTestTop2_2.hpp>
-#include <IdParallelizeNoReadBurstTestTop2_3.hpp>
-#include <IdParallelizeNoReadBurstTestTop2_4.hpp>
-#include <IdParallelizeNoReadBurstTestTop2_5.hpp>
-#include <IdParallelizeNoReadBurstTestTop2_6.hpp>
+#include <IdParallelizeNoReadBurstTop2_1.hpp>
+#include <IdParallelizeNoReadBurstTop2_2.hpp>
+#include <IdParallelizeNoReadBurstTop2_3.hpp>
+#include <IdParallelizeNoReadBurstTop2_4.hpp>
+#include <IdParallelizeNoReadBurstTop2_5.hpp>
+#include <IdParallelizeNoReadBurstTop2_6.hpp>
 
 #include <verilated_vcd_sc.h>
 
@@ -304,12 +304,12 @@ struct MyTestBench : virtual TestBenchBase {
         , tester6 { "tester6", logEnabled } {
     }
 
-    DutTester<IdParallelizeNoReadBurstTestTop2_1> tester1;
-    DutTester<IdParallelizeNoReadBurstTestTop2_2> tester2;
-    DutTester<IdParallelizeNoReadBurstTestTop2_3> tester3;
-    DutTester<IdParallelizeNoReadBurstTestTop2_4> tester4;
-    DutTester<IdParallelizeNoReadBurstTestTop2_5> tester5;
-    DutTester<IdParallelizeNoReadBurstTestTop2_6> tester6;
+    DutTester<IdParallelizeNoReadBurstTop2_1> tester1;
+    DutTester<IdParallelizeNoReadBurstTop2_2> tester2;
+    DutTester<IdParallelizeNoReadBurstTop2_3> tester3;
+    DutTester<IdParallelizeNoReadBurstTop2_4> tester4;
+    DutTester<IdParallelizeNoReadBurstTop2_5> tester5;
+    DutTester<IdParallelizeNoReadBurstTop2_6> tester6;
 
 private:
     sc_clock clock;

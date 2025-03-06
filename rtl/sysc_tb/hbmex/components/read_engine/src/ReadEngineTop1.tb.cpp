@@ -1,4 +1,4 @@
-#include <ReadEngineSim1.hpp>
+#include <ReadEngineTop1_1.hpp>
 
 #include <systemc>
 
@@ -40,7 +40,7 @@ struct MyTestBench : chext_test::TestBenchBase {
     sc_clock clock;
     sc_signal<bool> reset;
 
-    ReadEngineSim1 dut;
+    ReadEngineTop1_1 dut;
 
 protected:
     std::shared_ptr<hal::Memory> S_AXI_CTRL;
@@ -95,7 +95,7 @@ int sc_main(int argc, char** argv) {
 
     std::unique_ptr<VerilatedVcdSc> trace_file = std::make_unique<VerilatedVcdSc>();
     testBench.dut.traceVerilated(trace_file.get(), 99);
-    trace_file->open(fmt::format("{}.vcd", "ReadEngineSim1").c_str());
+    trace_file->open(fmt::format("{}.vcd", "ReadEngineTop1_1").c_str());
 
     testBench.start();
 

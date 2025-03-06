@@ -120,6 +120,7 @@
           "wUserW" : 0,
           "wUserB" : 0
         },
+        "maxBurstLength" : 256,
         "queueLength" : 8
       }
     },
@@ -145,6 +146,7 @@
           "wUserW" : 0,
           "wUserB" : 0
         },
+        "maxBurstLength" : 256,
         "queueLengthB" : 8,
         "queueLengthW" : 8
       }

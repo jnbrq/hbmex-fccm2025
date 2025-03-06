@@ -96,7 +96,6 @@ Used for generating:
 
 1. Green data series in Figures 10 and 11.
 
-# Notes
+# Emitting Verilog files to be used in the Vivado project
 
-`chext.amba.axi4.full.components.IdParallelizeNoReadBurst` module is available in `${REPO_ROOT}/rtl/src/main/scala/chext/amba/axi4/full/components/IdParallelizeNoReadBurst.scala`.
-We refer to this module simple as "ID Parallize" in the paper.
+Please run the `Emit` object in `Emit.scala`.You

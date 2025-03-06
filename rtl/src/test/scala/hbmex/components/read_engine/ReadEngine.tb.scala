@@ -13,15 +13,13 @@ import chext.ip.memory
 
 import chext.HasHdlinfoModule
 
-class ReadEngineSim1(val moduleName: String = "ReadEngineSim1") extends Module with HasHdlinfoModule {
+class ReadEngineTop1(override val desiredName: String) extends Module with HasHdlinfoModule {
 
   private val axiMasterCfg = axi4.Config(10, 12, 32)
   private val readEngineCfg = Config(
     axiMasterCfg = axiMasterCfg,
     log2numDesc = 12
   )
-
-  override def desiredName: String = moduleName
 
   val S_AXI_CTRL = IO(axi4.Slave(readEngineCfg.axiCtrlCfg))
   val S_AXI_DESC = IO(axi4.Slave(readEngineCfg.axiDescCfg))
@@ -139,7 +137,7 @@ class ReadEngineSim1(val moduleName: String = "ReadEngineSim1") extends Module w
     )
 
     Module(
-      moduleName,
+      desiredName,
       ports.toSeq,
       interfaces.toSeq,
       Map("config" -> TypedObject(this))
@@ -147,11 +145,7 @@ class ReadEngineSim1(val moduleName: String = "ReadEngineSim1") extends Module w
   }
 }
 
-object ReadEngineSim1_TB extends chext.TestBench {
-  emit(new ReadEngineSim1)
-}
-
-class ReadEngineMultiSim1(val moduleName: String = "ReadEngineMultiSim1") extends Module with HasHdlinfoModule {
+class ReadEngineMultiTop1(override val desiredName: String) extends Module with HasHdlinfoModule {
   val log2n = 2
 
   private val axiMasterCfg = axi4.Config(10, 12, 32)
@@ -163,8 +157,6 @@ class ReadEngineMultiSim1(val moduleName: String = "ReadEngineMultiSim1") extend
     1 << log2n,
     readEngineCfg
   )
-
-  override def desiredName: String = moduleName
 
   val S_AXI_CTRL = IO(axi4.Slave(readEngineMultiCfg.axiCtrlCfg))
   val S_AXI_DESC = IO(axi4.Slave(readEngineMultiCfg.axiDescCfg))
@@ -261,7 +253,7 @@ class ReadEngineMultiSim1(val moduleName: String = "ReadEngineMultiSim1") extend
     )
 
     Module(
-      moduleName,
+      desiredName,
       ports.toSeq,
       interfaces.toSeq,
       Map("config" -> TypedObject(this))
@@ -269,6 +261,7 @@ class ReadEngineMultiSim1(val moduleName: String = "ReadEngineMultiSim1") extend
   }
 }
 
-object ReadEngineMul_tiSim1_TB extends chext.TestBench {
-  emit(new ReadEngineMultiSim1)
+object ReadEngine_TB extends chext.TestBench {
+  emit(new ReadEngineTop1("ReadEngineTop1_1"))
+  emit(new ReadEngineMultiTop1("ReadEngineMultiTop1_1"))
 }

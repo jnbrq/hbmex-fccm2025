@@ -1,5 +1,5 @@
 {
-  "name" : "RowReduceTop",
+  "name" : "RowReduceSingleTop1_1",
   "ports" : [
     {
       "name" : "clock",
@@ -40,26 +40,13 @@
     {
       "name" : "sourceElem",
       "role" : "source",
-      "kind" : "readyValid[chext.elastic.Data]",
+      "kind" : "readyValid[chext.elastic.DataLast]",
       "associatedClock" : "clock",
       "associatedReset" : "reset",
       "args" : {
         "width" : {
           "typeName" : "scala.Int",
           "obj" : 256
-        }
-      }
-    },
-    {
-      "name" : "sourceCount",
-      "role" : "source",
-      "kind" : "readyValid[chext.elastic.Data]",
-      "associatedClock" : "clock",
-      "associatedReset" : "reset",
-      "args" : {
-        "width" : {
-          "typeName" : "scala.Int",
-          "obj" : 32
         }
       }
     },

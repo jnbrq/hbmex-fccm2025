@@ -1,10 +1,10 @@
 generate_tb(
-    TARGET_NAME IdParallelizeNoReadBurst
+    TARGET_NAME IdParallelizeNoReadBurstTop
     HDL_MODULES
-        IdParallelizeNoReadBurstTestTop2_1
-        IdParallelizeNoReadBurstTestTop2_2
-        IdParallelizeNoReadBurstTestTop2_3
-        IdParallelizeNoReadBurstTestTop2_4
-        IdParallelizeNoReadBurstTestTop2_5
-        IdParallelizeNoReadBurstTestTop2_6
+        IdParallelizeNoReadBurstTop2_1
+        IdParallelizeNoReadBurstTop2_2
+        IdParallelizeNoReadBurstTop2_3
+        IdParallelizeNoReadBurstTop2_4
+        IdParallelizeNoReadBurstTop2_5
+        IdParallelizeNoReadBurstTop2_6
 )

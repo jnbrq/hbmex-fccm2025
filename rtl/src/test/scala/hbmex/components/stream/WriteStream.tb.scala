@@ -142,7 +142,7 @@ class WriteStreamTop1(
   }
 }
 
-object WriteStreamTestBench extends chext.TestBench {
+object WriteStream_TB extends chext.TestBench {
   emit(
     new WriteStreamTop1(
       "WriteStreamTop1_1"

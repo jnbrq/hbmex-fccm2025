@@ -1,17 +1,17 @@
 generate_tb(
-    TARGET_NAME RowReduceSingleTop
+    TARGET_NAME RowReduceSingleTop1
     HDL_MODULES
-        RowReduceSingleTop
+        RowReduceSingleTop1_1
     CPP_SOURCES
-        RowReduceSingleTop.tb.cpp
+        RowReduceSingleTop1.tb.cpp
 )
 
 generate_tb(
-    TARGET_NAME RowReduceTop
+    TARGET_NAME RowReduceTop1
     HDL_MODULES
-        RowReduceTop
+        RowReduceTop1_1
     CPP_SOURCES
-        RowReduceTop.tb.cpp
+        RowReduceTop1.tb.cpp
 )
 
 generate_tb(

@@ -489,3 +489,6 @@ gensrc
 output/
 
 .trash
+
+# test bench related things
+sysc_tb/tb_output/

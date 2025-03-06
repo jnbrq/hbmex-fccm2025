@@ -1,5 +1,5 @@
 {
-  "name" : "IdParallelizeNoReadBurstTestTop2_6",
+  "name" : "ReadEngineTop1_1",
   "ports" : [
     {
       "name" : "clock",
@@ -38,9 +38,9 @@
   ],
   "interfaces" : [
     {
-      "name" : "S_AXI",
+      "name" : "S_AXI_CTRL",
       "role" : "slave",
-      "kind" : "axi4",
+      "kind" : "axi4_rtl",
       "associatedClock" : "clock",
       "associatedReset" : "reset",
       "args" : {
@@ -48,11 +48,11 @@
           "typeName" : "chext.amba.axi4.Config",
           "obj" : {
             "wId" : 0,
-            "wAddr" : 32,
-            "wData" : 64,
+            "wAddr" : 8,
+            "wData" : 32,
             "read" : true,
             "write" : true,
-            "lite" : false,
+            "lite" : true,
             "hasLock" : true,
             "hasCache" : true,
             "hasProt" : true,
@@ -63,23 +63,23 @@
             "wUserR" : 0,
             "wUserAW" : 0,
             "wUserW" : 0,
-            "wUserB" : 32
+            "wUserB" : 0
           }
         }
       }
     },
     {
-      "name" : "M_AXI",
-      "role" : "master",
-      "kind" : "axi4",
+      "name" : "S_AXI_DESC",
+      "role" : "slave",
+      "kind" : "axi4_rtl",
       "associatedClock" : "clock",
       "associatedReset" : "reset",
       "args" : {
         "config" : {
           "typeName" : "chext.amba.axi4.Config",
           "obj" : {
-            "wId" : 6,
-            "wAddr" : 32,
+            "wId" : 0,
+            "wAddr" : 15,
             "wData" : 64,
             "read" : true,
             "write" : true,
@@ -94,13 +94,49 @@
             "wUserR" : 0,
             "wUserAW" : 0,
             "wUserW" : 0,
-            "wUserB" : 32
+            "wUserB" : 0
+          }
+        }
+      }
+    },
+    {
+      "name" : "S_AXI_DATA",
+      "role" : "slave",
+      "kind" : "axi4_rtl",
+      "associatedClock" : "clock",
+      "associatedReset" : "reset",
+      "args" : {
+        "config" : {
+          "typeName" : "chext.amba.axi4.Config",
+          "obj" : {
+            "wId" : 10,
+            "wAddr" : 12,
+            "wData" : 32,
+            "read" : true,
+            "write" : true,
+            "lite" : false,
+            "hasLock" : true,
+            "hasCache" : true,
+            "hasProt" : true,
+            "hasQos" : true,
+            "hasRegion" : true,
+            "axi3Compat" : false,
+            "wUserAR" : 0,
+            "wUserR" : 0,
+            "wUserAW" : 0,
+            "wUserW" : 0,
+            "wUserB" : 0
           }
         }
       }
     }
   ],
   "args" : {
-    
+    "config" : {
+      "typeName" : "hbmex.components.read_engine.ReadEngineTop1",
+      "obj" : {
+        "desiredName" : "ReadEngineTop1_1"
+      }
+    }
   }
 }

@@ -183,7 +183,7 @@ class ReadStreamTop2(
   }
 }
 
-object ReadStreamTestBench extends chext.TestBench {
+object ReadStream_TB extends chext.TestBench {
   emit(
     new ReadStreamTop1(
       ReadStreamConfig(axi4.Config(wAddr = 32, wData = 64)),

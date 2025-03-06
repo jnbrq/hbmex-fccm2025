@@ -1,5 +1,5 @@
 {
-  "name" : "IdParallelizeNoReadBurstTestTop1_1",
+  "name" : "IdParallelizeNoReadBurstTop2_3",
   "ports" : [
     {
       "name" : "clock",
@@ -38,7 +38,7 @@
   ],
   "interfaces" : [
     {
-      "name" : "S_AXI_NORMAL",
+      "name" : "S_AXI",
       "role" : "slave",
       "kind" : "axi4",
       "associatedClock" : "clock",
@@ -47,9 +47,9 @@
         "config" : {
           "typeName" : "chext.amba.axi4.Config",
           "obj" : {
-            "wId" : 4,
-            "wAddr" : 14,
-            "wData" : 128,
+            "wId" : 0,
+            "wAddr" : 32,
+            "wData" : 64,
             "read" : true,
             "write" : true,
             "lite" : false,
@@ -63,14 +63,14 @@
             "wUserR" : 0,
             "wUserAW" : 0,
             "wUserW" : 0,
-            "wUserB" : 0
+            "wUserB" : 32
           }
         }
       }
     },
     {
-      "name" : "S_AXI_TEST",
-      "role" : "slave",
+      "name" : "M_AXI",
+      "role" : "master",
       "kind" : "axi4",
       "associatedClock" : "clock",
       "associatedReset" : "reset",
@@ -78,9 +78,9 @@
         "config" : {
           "typeName" : "chext.amba.axi4.Config",
           "obj" : {
-            "wId" : 4,
-            "wAddr" : 14,
-            "wData" : 128,
+            "wId" : 6,
+            "wAddr" : 32,
+            "wData" : 64,
             "read" : true,
             "write" : true,
             "lite" : false,
@@ -94,7 +94,7 @@
             "wUserR" : 0,
             "wUserAW" : 0,
             "wUserW" : 0,
-            "wUserB" : 0
+            "wUserB" : 32
           }
         }
       }

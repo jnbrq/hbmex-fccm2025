@@ -329,7 +329,7 @@ int sc_main(int argc, char** argv) {
 
     std::unique_ptr<VerilatedVcdSc> trace_file = std::make_unique<VerilatedVcdSc>();
     tb.dut.traceVerilated(trace_file.get(), 99);
-    trace_file->open(fmt::format("{}.vcd", "SpmvTop1").c_str());
+    trace_file->open(fmt::format("{}.vcd", "SpmvTop1_1").c_str());
 
     tb.start();
 

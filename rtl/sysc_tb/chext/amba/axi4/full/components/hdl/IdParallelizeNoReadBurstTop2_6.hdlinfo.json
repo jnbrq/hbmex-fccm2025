@@ -1,5 +1,5 @@
 {
-  "name" : "IdParallelizeNoReadBurstTestTop2_3",
+  "name" : "IdParallelizeNoReadBurstTop2_6",
   "ports" : [
     {
       "name" : "clock",

@@ -10,7 +10,7 @@ import chext.ip.memory
 import axi4.Ops._
 import elastic.ConnectOp._
 
-class IdParallelizeNoReadBurstTestTop1(override val desiredName: String) extends Module with chext.HasHdlinfoModule {
+class IdParallelizeNoReadBurstTop1(override val desiredName: String) extends Module with chext.HasHdlinfoModule {
   val log2bytesTotal = 14
   val wData = 128
 
@@ -107,7 +107,7 @@ class IdParallelizeNoReadBurstTestTop1(override val desiredName: String) extends
   }
 }
 
-class IdParallelizeNoReadBurstTestTop2(
+class IdParallelizeNoReadBurstTop2(
     val wId: Int,
     val readUseSyncMem: Boolean = true,
     val writeUseSyncMem: Boolean = true,
@@ -188,13 +188,13 @@ class IdParallelizeNoReadBurstTestTop2(
 }
 
 object IdParallelizeNoReadBurst_TB extends chext.TestBench {
-  emit(new IdParallelizeNoReadBurstTestTop1("IdParallelizeNoReadBurstTestTop1_1"))
+  emit(new IdParallelizeNoReadBurstTop1("IdParallelizeNoReadBurstTop1_1"))
 
-  emit(new IdParallelizeNoReadBurstTestTop2(2, true, true, "IdParallelizeNoReadBurstTestTop2_1"))
-  emit(new IdParallelizeNoReadBurstTestTop2(3, true, true, "IdParallelizeNoReadBurstTestTop2_2"))
-  emit(new IdParallelizeNoReadBurstTestTop2(6, true, true, "IdParallelizeNoReadBurstTestTop2_3"))
+  emit(new IdParallelizeNoReadBurstTop2(2, true, true, "IdParallelizeNoReadBurstTop2_1"))
+  emit(new IdParallelizeNoReadBurstTop2(3, true, true, "IdParallelizeNoReadBurstTop2_2"))
+  emit(new IdParallelizeNoReadBurstTop2(6, true, true, "IdParallelizeNoReadBurstTop2_3"))
 
-  emit(new IdParallelizeNoReadBurstTestTop2(2, false, false, "IdParallelizeNoReadBurstTestTop2_4"))
-  emit(new IdParallelizeNoReadBurstTestTop2(3, false, false, "IdParallelizeNoReadBurstTestTop2_5"))
-  emit(new IdParallelizeNoReadBurstTestTop2(6, false, false, "IdParallelizeNoReadBurstTestTop2_6"))
+  emit(new IdParallelizeNoReadBurstTop2(2, false, false, "IdParallelizeNoReadBurstTop2_4"))
+  emit(new IdParallelizeNoReadBurstTop2(3, false, false, "IdParallelizeNoReadBurstTop2_5"))
+  emit(new IdParallelizeNoReadBurstTop2(6, false, false, "IdParallelizeNoReadBurstTop2_6"))
 }

@@ -6,7 +6,7 @@ import chisel3.util._
 import chext.elastic
 import elastic.ConnectOp._
 
-class RowReduceSingleTop(override val desiredName: String = "RowReduceSingleTop") extends Module with chext.HasHdlinfoModule {
+class RowReduceSingleTop1(override val desiredName: String) extends Module with chext.HasHdlinfoModule {
   private val dut = Module(new RowReduceSingle)
   private val batchAdd = Module(new BatchAdd)
 
@@ -69,7 +69,7 @@ class RowReduceSingleTop(override val desiredName: String = "RowReduceSingleTop"
   }
 }
 
-class RowReduceTop(override val desiredName: String = "RowReduceTop") extends Module with chext.HasHdlinfoModule {
+class RowReduceTop1(override val desiredName: String) extends Module with chext.HasHdlinfoModule {
   private val dut = Module(new RowReduce)
   chext.exportIO.module(this, dut)
 
@@ -133,7 +133,7 @@ class RowReduceTop(override val desiredName: String = "RowReduceTop") extends Mo
   }
 }
 
-object RowReduceTestBench extends chext.TestBench {
-  emit(new RowReduceSingleTop)
-  emit(new RowReduceTop)
+object RowReduce_TB extends chext.TestBench {
+  emit(new RowReduceSingleTop1("RowReduceSingleTop1_1"))
+  emit(new RowReduceTop1("RowReduceTop1_1"))
 }

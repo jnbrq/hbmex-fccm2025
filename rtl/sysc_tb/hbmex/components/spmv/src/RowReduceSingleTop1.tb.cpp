@@ -3,7 +3,7 @@
 #include <systemc>
 #include <verilated_vcd_sc.h>
 
-#include <RowReduceSingleTop.hpp>
+#include <RowReduceSingleTop1_1.hpp>
 
 using namespace chext_test;
 using namespace sc_core;
@@ -35,7 +35,7 @@ public:
         dut.reset(reset);
     }
 
-    RowReduceSingleTop dut;
+    RowReduceSingleTop1_1 dut;
 
 private:
     sc_clock clock;
@@ -91,7 +91,7 @@ int sc_main(int argc, char** argv) {
 
     std::unique_ptr<VerilatedVcdSc> trace_file = std::make_unique<VerilatedVcdSc>();
     tb.dut.traceVerilated(trace_file.get(), 99);
-    trace_file->open(fmt::format("{}.vcd", "RowReduceSingleTop").c_str());
+    trace_file->open(fmt::format("{}.vcd", "RowReduceSingleTop1_1").c_str());
 
     tb.start();
 

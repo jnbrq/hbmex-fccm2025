@@ -84,6 +84,7 @@
           "wUserW" : 0,
           "wUserB" : 0
         },
+        "maxBurstLength" : 256,
         "queueLength" : 16
       }
     }

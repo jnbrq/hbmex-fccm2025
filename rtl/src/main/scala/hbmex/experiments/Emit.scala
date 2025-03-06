@@ -1,4 +1,4 @@
-package hbmex
+package hbmex.experiments
 
 import scala.sys.process._
 import java.io.File
