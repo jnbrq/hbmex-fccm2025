@@ -12,6 +12,7 @@ import axi4.Ops._
 import hbmex.components.spmv
 import hbmex.components.stream
 import hbmex.components.stripe
+import hbmex.components.id_parallelize
 
 case class SpmvExp2Config(val desiredName: String = "SpmvExp2") {
   // No need for the response buffer because the ID parallelize module already has a buffer
@@ -26,13 +27,6 @@ case class SpmvExp2Config(val desiredName: String = "SpmvExp2") {
   )
 
   val memAdapterCfg = stream.MemAdapterConfig(spmv.Defs.wTime, spmv.Defs.wTask, 10)
-
-  val idParallizeCfg = axi4.full.components.IdParallelizeNoReadBurstConfig(
-    spmvCfg.axiRandomMasterCfg,
-    6,
-    true,
-    true
-  )
 
   val stripeCfg = {
     val transformations = Seq(
@@ -54,6 +48,13 @@ case class SpmvExp2Config(val desiredName: String = "SpmvExp2") {
       transformations
     )
   }
+
+  val idParallizeCfg = id_parallelize.IdParallelizeNoReadBurstConfig(
+    axiSlaveCfg = spmvCfg.axiRandomMasterCfg,
+    wIdMaster = 6,
+    readUseSyncMem = true,
+    writeUseSyncMem = true
+  )
 }
 
 class SpmvExp2(cfg: SpmvExp2Config = SpmvExp2Config()) extends Module {
@@ -63,6 +64,7 @@ class SpmvExp2(cfg: SpmvExp2Config = SpmvExp2Config()) extends Module {
   private val spmv0 = Module(new spmv.Spmv(spmvCfg))
   private val memAdapter0 = Module(new stream.MemAdapter(memAdapterCfg))
   private val stripe0 = Module(new stripe.Stripe(stripeCfg))
+  private val idParallize0 = Module(new id_parallelize.IdParallelizeNoReadBurst(idParallizeCfg))
 
   val S_AXI_CONTROL = IO(axi4.Slave(axiControlCfg))
 
@@ -94,12 +96,9 @@ class SpmvExp2(cfg: SpmvExp2Config = SpmvExp2Config()) extends Module {
     }
   }
 
-  private val idParallize = Module(
-    new axi4.full.components.IdParallelizeNoReadBurst(idParallizeCfg)
-  )
   spmv0.m_axi_random :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
-  stripe0.M_AXI(0).asFull :=> axi4.full.MasterBuffer(idParallize.s_axi, axi4.BufferConfig.all(2))
-  idParallize.m_axi :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
+  stripe0.M_AXI(0).asFull :=> axi4.full.MasterBuffer(idParallize0.s_axi, axi4.BufferConfig.all(2))
+  idParallize0.m_axi :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
 
   spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_REGULAR.asFull, axi4.BufferConfig.all(2))
 }

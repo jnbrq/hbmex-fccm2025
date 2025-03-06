@@ -12,11 +12,12 @@ import axi4.Ops._
 import hbmex.components.spmv
 import hbmex.components.stream
 import hbmex.components.stripe
-import hbmex.components.attachment
+import hbmex.components.id_parallelize
+import hbmex.components.enhance
 
 case class SpmvExp3Config(val desiredName: String = "SpmvExp3") {
   // No need for the response buffer because the ID parallelize module already has a buffer
-  val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64, useResponseBufferRandom = false)
+  val spmvCfg: spmv.SpmvConfig = spmv.SpmvConfig(64, hbmCompat = true, useResponseBufferRandom = false)
 
   val axiControlCfg = axi4.Config(wAddr = 11, wData = 32, lite = true)
 
@@ -28,23 +29,7 @@ case class SpmvExp3Config(val desiredName: String = "SpmvExp3") {
 
   val memAdapterCfg = stream.MemAdapterConfig(spmv.Defs.wTime, spmv.Defs.wTask, 10)
 
-  val ankaraCfg = attachment.AnkaraConfig(
-    axiSlaveCfg = axi4.Config(
-      wId = 0,
-      wAddr = 34,
-      wData = 256,
-      axi3Compat = true,
-      hasQos = false,
-      hasProt = false,
-      hasCache = false,
-      hasRegion = false,
-      hasLock = false
-    ),
-    log2numOutstandinRequests = 8,
-    wSegmentOffset = 29,
-    log2numSegments = 3,
-    log2lenIdQueue = 6
-  )
+  // BEGIN: HBMex Components Config
 
   val stripeCfg = {
     val transformations = Seq(
@@ -66,6 +51,20 @@ case class SpmvExp3Config(val desiredName: String = "SpmvExp3") {
       transformations
     )
   }
+
+  val idParallizeCfg = id_parallelize.IdParallelizeNoReadBurstConfig(
+    axiSlaveCfg = spmvCfg.axiRandomMasterCfg,
+    wIdMaster = 8 /* 2 **8 = 256 is the buffer size, number of outstanding requests */
+  )
+
+  val enhanceCfg = enhance.EnhanceConfig(
+    axiSlaveCfg = idParallizeCfg.axiMasterCfg,
+    wSegmentOffset = 29,
+    log2numSegments = 3,
+    log2lenIdQueue = 6
+  )
+
+  // END: HBMex Components
 }
 
 class SpmvExp3(cfg: SpmvExp3Config = SpmvExp3Config()) extends Module {
@@ -74,14 +73,21 @@ class SpmvExp3(cfg: SpmvExp3Config = SpmvExp3Config()) extends Module {
 
   private val spmv0 = Module(new spmv.Spmv(spmvCfg))
   private val memAdapter0 = Module(new stream.MemAdapter(memAdapterCfg))
+
+  // BEGIN: HBMex Components
+
   private val stripe0 = Module(new stripe.Stripe(stripeCfg))
+  private val idParallize0 = Module(new id_parallelize.IdParallelizeNoReadBurst(idParallizeCfg))
+  private val enhance0 = Module(new enhance.Enhance(enhanceCfg))
+
+  // END: HBMex Components
 
   val S_AXI_CONTROL = IO(axi4.Slave(axiControlCfg))
 
   val S_AXI_STRIPED = IO(axi4.Slave(stripeCfg.axiCfg))
   val M_AXI_STRIPED = IO(axi4.Master(stripeCfg.axiCfg))
 
-  val M_AXI_RANDOM = IO(axi4.Master(ankaraCfg.axiMasterCfg))
+  val M_AXI_RANDOM = IO(axi4.Master(enhanceCfg.axiMasterCfg))
   val M_AXI_REGULAR = IO(axi4.Master(spmvCfg.axiRegularMasterCfg))
 
   private val controlDemux = Module(new axi4.lite.components.Demux(controlDemuxCfg))
@@ -106,12 +112,10 @@ class SpmvExp3(cfg: SpmvExp3Config = SpmvExp3Config()) extends Module {
     }
   }
 
-  private val ankara = Module(
-    new attachment.Ankara(ankaraCfg)
-  )
   spmv0.m_axi_random :=> axi4.full.MasterBuffer(stripe0.S_AXI(0).asFull, axi4.BufferConfig.all(2))
-  stripe0.M_AXI(0).asFull :=> axi4.full.MasterBuffer(ankara.s_axi, axi4.BufferConfig.all(2))
-  ankara.m_axi :=> M_AXI_RANDOM.asFull
+  stripe0.M_AXI(0).asFull :=> axi4.full.MasterBuffer(idParallize0.s_axi, axi4.BufferConfig.all(2))
+  idParallize0.m_axi :=> axi4.full.MasterBuffer(enhance0.s_axi, axi4.BufferConfig.all(2))
+  enhance0.m_axi :=> axi4.full.MasterBuffer(M_AXI_RANDOM.asFull, axi4.BufferConfig.all(2))
 
   spmv0.m_axi_regular :=> axi4.full.MasterBuffer(M_AXI_REGULAR.asFull, axi4.BufferConfig.all(2))
 }

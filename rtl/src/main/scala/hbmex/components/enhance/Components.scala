@@ -1,4 +1,4 @@
-package hbmex.components.attachment
+package hbmex.components.enhance
 
 import chext.amba.axi4
 import chext.elastic
