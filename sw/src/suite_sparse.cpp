@@ -204,17 +204,17 @@ private:
 
             std::vector<const char*> files {
                 "amazon-2008.csr",
-                // "cit-Patents.csr",
-                // "com-Youtube.csr",
-                // "cont11_l.csr",
-                // "dblp-2010.csr",
-                // "eu-2005.csr",
-                // "flickr.csr",
-                // "in-2004.csr",
-                // "ljournal-2008.csr",
-                // "road_usa.csr",
-                // "webbase-1M.csr",
-                // "wikipedia-20061104.csr"
+                "cit-Patents.csr",
+                "com-Youtube.csr",
+                "cont11_l.csr",
+                "dblp-2010.csr",
+                "eu-2005.csr",
+                "flickr.csr",
+                "in-2004.csr",
+                "ljournal-2008.csr",
+                "road_usa.csr",
+                "webbase-1M.csr",
+                "wikipedia-20061104.csr"
             };
 
             for (auto file : files) {

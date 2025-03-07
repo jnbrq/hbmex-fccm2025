@@ -3,19 +3,16 @@
 urls=(
     "https://suitesparse-collection-website.herokuapp.com/MM/LAW/amazon-2008.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/SNAP/cit-Patents.tar.gz"
+    "https://suitesparse-collection-website.herokuapp.com/MM/SNAP/com-Youtube.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/Mittelmann/cont11_l.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/LAW/dblp-2010.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/LAW/eu-2005.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/Gleich/flickr.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/LAW/in-2004.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/LAW/ljournal-2008.tar.gz"
-    "https://suitesparse-collection-website.herokuapp.com/MM/MAWI/mawi_201512012345.tar.gz"
-    "https://suitesparse-collection-website.herokuapp.com/MM/Mittelmann/pds-80.tar.gz"
-    "https://suitesparse-collection-website.herokuapp.com/MM/Mittelmann/rail4284.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/DIMACS10/road_usa.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/Williams/webbase-1M.tar.gz"
     "https://suitesparse-collection-website.herokuapp.com/MM/Gleich/wikipedia-20061104.tar.gz"
-    "https://suitesparse-collection-website.herokuapp.com/MM/SNAP/com-Youtube.tar.gz"
 )
 
 temp_dir=$(mktemp -d)

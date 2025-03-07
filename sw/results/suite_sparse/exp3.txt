@@ -15,7 +15,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9729948, cyclesPerValue = 1.886236641185858
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9801680, cyclesPerValue = 1.9001425250349333
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -30,7 +30,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9733574, cyclesPerValue = 1.8869395734174526
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9798674, cyclesPerValue = 1.8995597852974337
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -45,7 +45,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9722994, cyclesPerValue = 1.884888546663379
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9801578, cyclesPerValue = 1.9001227514310661
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -60,7 +60,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9730043, cyclesPerValue = 1.886255057777695
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9796888, cyclesPerValue = 1.8992135533708954
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -75,7 +75,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9725913, cyclesPerValue = 1.8854544206799329
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 9792883, cyclesPerValue = 1.8984371486308136
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -90,7 +90,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36210735, cyclesPerValue = 2.192072172617246
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36279767, cyclesPerValue = 2.1962511302169774
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -105,7 +105,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36208874, cyclesPerValue = 2.191959514138669
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36276942, cyclesPerValue = 2.196080114525425
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -120,7 +120,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36213054, cyclesPerValue = 2.192212556825639
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36276854, cyclesPerValue = 2.1960747873109625
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -135,7 +135,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36212622, cyclesPerValue = 2.19218640504555
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36287941, cyclesPerValue = 2.1967459557967115
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -150,7 +150,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36215300, cyclesPerValue = 2.1923485218674887
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 36292344, cyclesPerValue = 2.1970124981294212
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -165,7 +165,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22661307, cyclesPerValue = 3.792529950221313
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22689734, cyclesPerValue = 3.7972874096606533
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -180,7 +180,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22659124, cyclesPerValue = 3.7921646097367003
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22689920, cyclesPerValue = 3.797318538075742
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -195,7 +195,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22660440, cyclesPerValue = 3.7923848516413043
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22684816, cyclesPerValue = 3.7964643475885853
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -210,7 +210,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22658618, cyclesPerValue = 3.7920799270590946
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22688918, cyclesPerValue = 3.7971508462912333
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -225,7 +225,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22664391, cyclesPerValue = 3.7930460794263268
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 22688337, cyclesPerValue = 3.7970536118333498
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -240,7 +240,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8648886, cyclesPerValue = 1.6067036968233328
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8689118, cyclesPerValue = 1.6141775961359837
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -255,7 +255,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8647781, cyclesPerValue = 1.6064984209548578
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8687171, cyclesPerValue = 1.6138159019134313
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -270,7 +270,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8645643, cyclesPerValue = 1.606101244659112
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8692922, cyclesPerValue = 1.6148842652795838
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -285,7 +285,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8646889, cyclesPerValue = 1.6063327140999442
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8690321, cyclesPerValue = 1.614401077466097
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -300,7 +300,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8645786, cyclesPerValue = 1.6061278097715028
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 8688866, cyclesPerValue = 1.6141307820917703
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -315,7 +315,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3177320, cyclesPerValue = 1.9668936486319177
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3187253, cyclesPerValue = 1.9730425900705708
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -330,7 +330,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3172891, cyclesPerValue = 1.9641519128389253
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3191373, cyclesPerValue = 1.9755930419710288
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -345,7 +345,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3177161, cyclesPerValue = 1.9667952209978952
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3190952, cyclesPerValue = 1.9753324254054723
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -360,7 +360,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3174020, cyclesPerValue = 1.9648508109446576
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3191523, cyclesPerValue = 1.9756858982295407
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -375,7 +375,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3177476, cyclesPerValue = 1.96699021914077
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 3192767, cyclesPerValue = 1.9764559861334654
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -390,7 +390,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58174302, cyclesPerValue = 3.0243756948219365
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58299961, cyclesPerValue = 3.030908476692454
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -405,7 +405,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58163727, cyclesPerValue = 3.0238259198891364
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58301202, cyclesPerValue = 3.030972994015537
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -420,7 +420,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58162309, cyclesPerValue = 3.023752200659376
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58293807, cyclesPerValue = 3.030588541473877
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -435,7 +435,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58163573, cyclesPerValue = 3.0238179137104457
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58298649, cyclesPerValue = 3.0308402682090656
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -450,7 +450,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58170367, cyclesPerValue = 3.0241711213599443
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 58300317, cyclesPerValue = 3.030926984482154
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -465,7 +465,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58802478, cyclesPerValue = 5.977552795425047
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58814283, cyclesPerValue = 5.978752830068995
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -480,7 +480,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58801562, cyclesPerValue = 5.977459679649201
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58811264, cyclesPerValue = 5.978445934296858
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -495,7 +495,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58802788, cyclesPerValue = 5.977584308405955
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58812433, cyclesPerValue = 5.9785647687313155
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -510,7 +510,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58802970, cyclesPerValue = 5.977602809575392
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58815771, cyclesPerValue = 5.9789040923773555
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -525,7 +525,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58803724, cyclesPerValue = 5.977679457277343
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58811677, cyclesPerValue = 5.97848791771981
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -540,7 +540,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61432239, cyclesPerValue = 3.631378828562133
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61507270, cyclesPerValue = 3.6358140565356054
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -555,7 +555,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61431049, cyclesPerValue = 3.63130848535348
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61503861, cyclesPerValue = 3.6356125439319937
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -570,7 +570,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61437673, cyclesPerValue = 3.6317000428443342
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61507834, cyclesPerValue = 3.6358473956697903
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -585,7 +585,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61428125, cyclesPerValue = 3.63113564204079
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61505442, cyclesPerValue = 3.635705999909204
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -600,7 +600,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61435590, cyclesPerValue = 3.631576912673222
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 61508017, cyclesPerValue = 3.6358582131548185
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -615,7 +615,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 306811938, cyclesPerValue = 3.8825579756735573
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 307077069, cyclesPerValue = 3.8859130813625944
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -630,7 +630,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 306813052, cyclesPerValue = 3.8825720728094546
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 307069459, cyclesPerValue = 3.885816780461177
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -645,7 +645,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 306807593, cyclesPerValue = 3.8825029917817493
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 307067454, cyclesPerValue = 3.8857914081474663
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -660,7 +660,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 306803285, cyclesPerValue = 3.8824484761072022
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 307060081, cyclesPerValue = 3.8856981063674207
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -675,7 +675,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 306817396, cyclesPerValue = 3.8826270440467416
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 307069315, cyclesPerValue = 3.8858149582102177
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -690,7 +690,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 106018604, cyclesPerValue = 1.8371362311463189
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 106699683, cyclesPerValue = 1.848938262676303
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -705,7 +705,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 105980945, cyclesPerValue = 1.8364836597039638
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 106709071, cyclesPerValue = 1.8491009420013202
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -720,7 +720,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 105997040, cyclesPerValue = 1.836762560826264
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 106723686, cyclesPerValue = 1.8493541970434089
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -735,7 +735,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 105996105, cyclesPerValue = 1.836746358741806
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 106721197, cyclesPerValue = 1.849311066574729
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -750,7 +750,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 105992307, cyclesPerValue = 1.836680545354885
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 106727682, cyclesPerValue = 1.84942344145998
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -765,7 +765,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8618102, cyclesPerValue = 2.7750771525430715
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8639013, cyclesPerValue = 2.7818106117591297
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -780,7 +780,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8614905, cyclesPerValue = 2.7740477006223725
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8638329, cyclesPerValue = 2.7815903599249854
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -795,7 +795,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8619080, cyclesPerValue = 2.7753920740252247
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8641846, cyclesPerValue = 2.782722853639436
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -810,7 +810,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8619095, cyclesPerValue = 2.7753969041093067
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8638098, cyclesPerValue = 2.781515976630121
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -825,7 +825,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8615408, cyclesPerValue = 2.774209669441926
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 8639369, cyclesPerValue = 2.781925245754678
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -840,7 +840,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132886021, cyclesPerValue = 3.3741769595391338
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132965290, cyclesPerValue = 3.376189719281603
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -855,7 +855,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132883836, cyclesPerValue = 3.3741214790860274
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132958943, cyclesPerValue = 3.376028559356721
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -870,7 +870,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132875736, cyclesPerValue = 3.373915807841102
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132966153, cyclesPerValue = 3.376211632156217
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -885,7 +885,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132882862, cyclesPerValue = 3.374096747753613
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132961359, cyclesPerValue = 3.3760899052490347
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -900,7 +900,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132881081, cyclesPerValue = 3.374051525471241
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 132967673, cyclesPerValue = 3.37625022725403
 stripe index = 1
 loading... [DONE]
 TaskParameters:
@@ -916,7 +916,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8357538, cyclesPerValue = 1.620182801151987
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8404857, cyclesPerValue = 1.6293560086166388
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -931,7 +931,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8363519, cyclesPerValue = 1.6213422710022813
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8401372, cyclesPerValue = 1.6286804104845076
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -946,7 +946,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8360268, cyclesPerValue = 1.6207120358437281
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8406383, cyclesPerValue = 1.6296518372392017
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -961,7 +961,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8360231, cyclesPerValue = 1.6207048630658547
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8405428, cyclesPerValue = 1.629466702026523
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -976,7 +976,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8364227, cyclesPerValue = 1.6214795230761834
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 8397188, cyclesPerValue = 1.6278693050082274
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -991,7 +991,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28396751, cyclesPerValue = 1.719040711541507
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28401468, cyclesPerValue = 1.7193262623440033
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1006,7 +1006,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28391116, cyclesPerValue = 1.718699588206322
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28397650, cyclesPerValue = 1.7190951338801639
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1021,7 +1021,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28394966, cyclesPerValue = 1.718932653839057
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28402569, cyclesPerValue = 1.7193929130613128
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1036,7 +1036,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28393320, cyclesPerValue = 1.7188330107139969
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28397572, cyclesPerValue = 1.7190904120309811
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1051,7 +1051,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28395638, cyclesPerValue = 1.7189733343858618
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 28398328, cyclesPerValue = 1.7191361776461365
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1066,7 +1066,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21773556, cyclesPerValue = 3.643958543645385
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21771564, cyclesPerValue = 3.6436251683612126
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1081,7 +1081,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21773662, cyclesPerValue = 3.643976283494844
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21770634, cyclesPerValue = 3.643469526285771
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1096,7 +1096,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21773166, cyclesPerValue = 3.6438932743879415
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21772095, cyclesPerValue = 3.643714034965578
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1111,7 +1111,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21770108, cyclesPerValue = 3.6433814964667577
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21772113, cyclesPerValue = 3.6437170473928444
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1126,7 +1126,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21771591, cyclesPerValue = 3.6436296870021128
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21772370, cyclesPerValue = 3.643760058159929
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -1141,7 +1141,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7056701, cyclesPerValue = 1.3109234627531117
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7066422, cyclesPerValue = 1.31272933308564
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -1156,7 +1156,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7055711, cyclesPerValue = 1.3107395504365595
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7067501, cyclesPerValue = 1.31292977893368
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -1171,7 +1171,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7055087, cyclesPerValue = 1.3106236299461267
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7067011, cyclesPerValue = 1.3128387516254876
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -1186,7 +1186,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7058958, cyclesPerValue = 1.311342745680847
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7067117, cyclesPerValue = 1.3128584432472599
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -1201,7 +1201,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7057372, cyclesPerValue = 1.3110481144343302
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 7064939, cyclesPerValue = 1.3124538361508453
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -1216,7 +1216,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2849539, cyclesPerValue = 1.7639835334901572
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2860553, cyclesPerValue = 1.7708016590318187
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -1231,7 +1231,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2849772, cyclesPerValue = 1.7641277702117122
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2859964, cyclesPerValue = 1.770437043456729
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -1246,7 +1246,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2848513, cyclesPerValue = 1.7633483966819363
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2859631, cyclesPerValue = 1.7702309025628327
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -1261,7 +1261,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2851573, cyclesPerValue = 1.7652426643555776
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2862835, cyclesPerValue = 1.7722143122446452
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -1276,7 +1276,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2850621, cyclesPerValue = 1.764653336634889
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2860464, cyclesPerValue = 1.770746564318435
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -1291,7 +1291,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55269119, cyclesPerValue = 2.8733405375078034
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55314713, cyclesPerValue = 2.8757108862819014
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -1306,7 +1306,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55267890, cyclesPerValue = 2.8732766440428
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55312020, cyclesPerValue = 2.8755708821311656
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -1321,7 +1321,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55268612, cyclesPerValue = 2.873314179503933
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55311178, cyclesPerValue = 2.875527108089235
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -1336,7 +1336,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55270460, cyclesPerValue = 2.8734102536482182
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55310758, cyclesPerValue = 2.8755052730564428
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -1351,7 +1351,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55270854, cyclesPerValue = 2.873430736988504
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 55314085, cyclesPerValue = 2.87567823770906
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -1366,7 +1366,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58344119, cyclesPerValue = 5.930958413437298
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58343900, cyclesPerValue = 5.930936151041108
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -1381,7 +1381,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58346165, cyclesPerValue = 5.9311663991112935
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58345297, cyclesPerValue = 5.9310781627647495
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -1396,7 +1396,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58345145, cyclesPerValue = 5.931062711238627
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58344255, cyclesPerValue = 5.930972238486986
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -1411,7 +1411,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58344397, cyclesPerValue = 5.9309866734653385
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58345246, cyclesPerValue = 5.931072978371116
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -1426,7 +1426,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58346570, cyclesPerValue = 5.931207569296029
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58346057, cyclesPerValue = 5.931155420395364
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -1441,7 +1441,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59566456, cyclesPerValue = 3.521088775730245
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59592514, cyclesPerValue = 3.5226291146639226
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -1456,7 +1456,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59567907, cyclesPerValue = 3.52117454715525
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59596141, cyclesPerValue = 3.522843513670464
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -1471,7 +1471,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59565959, cyclesPerValue = 3.5210593970960433
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59593920, cyclesPerValue = 3.5227122260516253
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -1486,7 +1486,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59568029, cyclesPerValue = 3.521181758811935
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59597049, cyclesPerValue = 3.522897187312024
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -1501,7 +1501,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59567994, cyclesPerValue = 3.5211796898940335
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59594308, cyclesPerValue = 3.5227351614843623
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -1516,7 +1516,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301914210, cyclesPerValue = 3.8205795760290173
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301992414, cyclesPerValue = 3.8215692101544327
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -1531,7 +1531,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301915306, cyclesPerValue = 3.820593445383545
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301992028, cyclesPerValue = 3.821564325509499
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -1546,7 +1546,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301913780, cyclesPerValue = 3.820574134585179
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301995774, cyclesPerValue = 3.821611729343495
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -1561,7 +1561,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301911919, cyclesPerValue = 3.820550584522428
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301992058, cyclesPerValue = 3.8215647051451156
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -1576,7 +1576,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301914214, cyclesPerValue = 3.8205796266471
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 301991233, cyclesPerValue = 3.821554265165658
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -1591,7 +1591,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 86917102, cyclesPerValue = 1.50613714165148
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 87326726, cyclesPerValue = 1.5132352835167235
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -1606,7 +1606,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 86914941, cyclesPerValue = 1.5060996949086847
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 87295121, cyclesPerValue = 1.5126876184051798
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -1621,7 +1621,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 86906571, cyclesPerValue = 1.505954655928029
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 87311409, cyclesPerValue = 1.5129698639149671
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -1636,7 +1636,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 86926043, cyclesPerValue = 1.5062920751671363
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 87328046, cyclesPerValue = 1.513258157047723
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -1651,7 +1651,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 86915063, cyclesPerValue = 1.506101808977459
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 87319675, cyclesPerValue = 1.513113100738635
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -1666,7 +1666,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7835919, cyclesPerValue = 2.52320984203693
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7835336, cyclesPerValue = 2.523022112768939
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -1681,7 +1681,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7836657, cyclesPerValue = 2.52344748217377
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7835288, cyclesPerValue = 2.5230066564998763
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -1696,7 +1696,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7836531, cyclesPerValue = 2.52340690946748
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7834489, cyclesPerValue = 2.522749374021103
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -1711,7 +1711,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7838781, cyclesPerValue = 2.5241314220797957
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7836481, cyclesPerValue = 2.523390809187206
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -1726,7 +1726,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7834855, cyclesPerValue = 2.5228672280727062
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7837488, cyclesPerValue = 2.523715068831918
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -1741,7 +1741,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130251739, cyclesPerValue = 3.3072885572644606
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130256920, cyclesPerValue = 3.307420110686678
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -1756,7 +1756,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130249972, cyclesPerValue = 3.307243690463253
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130256122, cyclesPerValue = 3.307399848260326
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -1771,7 +1771,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130249350, cyclesPerValue = 3.3072278969429636
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130255650, cyclesPerValue = 3.3073878634667944
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -1786,7 +1786,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130248804, cyclesPerValue = 3.307214033177565
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130254421, cyclesPerValue = 3.3073566572988917
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -1801,7 +1801,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130251384, cyclesPerValue = 3.3072795432778004
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130256382, cyclesPerValue = 3.307406450053373
 stripe index = 2
 loading... [DONE]
 TaskParameters:
@@ -1817,7 +1817,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7426506, cyclesPerValue = 1.4396939976643885
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7455812, cyclesPerValue = 1.4453752254578558
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -1832,7 +1832,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7430197, cyclesPerValue = 1.4404095307219769
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7455907, cyclesPerValue = 1.445393642049693
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -1847,7 +1847,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7429708, cyclesPerValue = 1.440314733738731
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7454061, cyclesPerValue = 1.445035778591468
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -1862,7 +1862,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7435931, cyclesPerValue = 1.4415211174334948
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7455984, cyclesPerValue = 1.4454085691820242
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -1877,7 +1877,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7430585, cyclesPerValue = 1.440484747960217
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 7455449, cyclesPerValue = 1.4453048546911518
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1892,7 +1892,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26736954, cyclesPerValue = 1.6185623640046898
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737862, cyclesPerValue = 1.6186173311720986
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1907,7 +1907,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26736956, cyclesPerValue = 1.6185624850777458
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737607, cyclesPerValue = 1.618601894357463
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1922,7 +1922,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737657, cyclesPerValue = 1.618604921183862
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26738100, cyclesPerValue = 1.6186317388657585
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1937,7 +1937,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737161, cyclesPerValue = 1.6185748950659824
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26738031, cyclesPerValue = 1.6186275618453276
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -1952,7 +1952,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737037, cyclesPerValue = 1.6185673885365124
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737594, cyclesPerValue = 1.618601107382599
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1967,7 +1967,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21585990, cyclesPerValue = 3.6125680473848116
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21583941, cyclesPerValue = 3.612225132747628
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1982,7 +1982,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21583038, cyclesPerValue = 3.612074009313086
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21583897, cyclesPerValue = 3.612217769036532
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -1997,7 +1997,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21582559, cyclesPerValue = 3.61199384527638
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21584221, cyclesPerValue = 3.6122719927273312
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -2012,7 +2012,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21584367, cyclesPerValue = 3.6122964268596047
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21585756, cyclesPerValue = 3.6125288858303453
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -2027,7 +2027,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21587133, cyclesPerValue = 3.6127593365162416
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21585651, cyclesPerValue = 3.612511313337957
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2042,7 +2042,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6834904, cyclesPerValue = 1.2697202303548207
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6839690, cyclesPerValue = 1.2706093256548394
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2057,7 +2057,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6834594, cyclesPerValue = 1.2696626416496377
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6839682, cyclesPerValue = 1.2706078394947056
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2072,7 +2072,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6834759, cyclesPerValue = 1.2696932937023964
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6840689, cyclesPerValue = 1.2707949099015419
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2087,7 +2087,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6830339, cyclesPerValue = 1.2688721902284972
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6841242, cyclesPerValue = 1.2708976407207877
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2102,7 +2102,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6831568, cyclesPerValue = 1.269100501579045
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6840983, cyclesPerValue = 1.2708495262864574
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -2117,7 +2117,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2661373, cyclesPerValue = 1.647500928562585
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2666341, cyclesPerValue = 1.6505763278444967
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -2132,7 +2132,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2663543, cyclesPerValue = 1.6488442491023896
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2669095, cyclesPerValue = 1.652281168750774
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -2147,7 +2147,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2664912, cyclesPerValue = 1.6496917172217407
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2670762, cyclesPerValue = 1.6533131113037018
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -2162,7 +2162,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2663531, cyclesPerValue = 1.6488368206017086
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2666860, cyclesPerValue = 1.6508976104989477
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -2177,7 +2177,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2664803, cyclesPerValue = 1.6496242416738889
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2667655, cyclesPerValue = 1.6513897486690603
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -2192,7 +2192,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54458280, cyclesPerValue = 2.831186499045705
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54473840, cyclesPerValue = 2.8319954350224776
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -2207,7 +2207,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54457118, cyclesPerValue = 2.831126088788314
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54477951, cyclesPerValue = 2.832209158402973
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -2222,7 +2222,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54457326, cyclesPerValue = 2.831136902328363
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54477672, cyclesPerValue = 2.8321946537026186
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -2237,7 +2237,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54459909, cyclesPerValue = 2.8312711877800343
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54472900, cyclesPerValue = 2.831946566139562
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -2252,7 +2252,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54455183, cyclesPerValue = 2.8310254916729503
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54477435, cyclesPerValue = 2.832182332505543
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -2267,7 +2267,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58318451, cyclesPerValue = 5.92834913861808
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58319890, cyclesPerValue = 5.928495419842362
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -2282,7 +2282,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317493, cyclesPerValue = 5.928251753341596
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58319075, cyclesPerValue = 5.928412571199006
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -2297,7 +2297,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58318263, cyclesPerValue = 5.928330027519981
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58318898, cyclesPerValue = 5.928394578303455
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -2312,7 +2312,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58316852, cyclesPerValue = 5.9281865926294595
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58319988, cyclesPerValue = 5.9285053820105205
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -2327,7 +2327,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58318258, cyclesPerValue = 5.928329519246096
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58319023, cyclesPerValue = 5.928407285150596
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -2342,7 +2342,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59096967, cyclesPerValue = 3.4933363701107334
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59110393, cyclesPerValue = 3.4941300070177697
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -2357,7 +2357,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59099203, cyclesPerValue = 3.4934685444086724
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59109956, cyclesPerValue = 3.49410417509997
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -2372,7 +2372,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59098690, cyclesPerValue = 3.49343821998343
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59108896, cyclesPerValue = 3.4940415164435232
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -2387,7 +2387,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59098545, cyclesPerValue = 3.4934296487521235
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59111996, cyclesPerValue = 3.4942247634576606
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -2402,7 +2402,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59094695, cyclesPerValue = 3.4932020677829523
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 59112601, cyclesPerValue = 3.4942605261813875
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -2417,7 +2417,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300933842, cyclesPerValue = 3.8081734890224057
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300952628, cyclesPerValue = 3.8084112168455357
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -2432,7 +2432,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300936944, cyclesPerValue = 3.8082127433451647
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300950383, cyclesPerValue = 3.808382807446892
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -2447,7 +2447,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300935762, cyclesPerValue = 3.8081977857018696
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300951154, cyclesPerValue = 3.808392564082239
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -2462,7 +2462,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300935909, cyclesPerValue = 3.808199645916391
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300950315, cyclesPerValue = 3.808381946939494
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -2477,7 +2477,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300939592, cyclesPerValue = 3.808246252515592
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300952859, cyclesPerValue = 3.8084141400397837
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -2492,7 +2492,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80112394, cyclesPerValue = 1.3882222178785617
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80398670, cyclesPerValue = 1.3931829322425016
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -2507,7 +2507,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80117264, cyclesPerValue = 1.3883066073452037
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80370829, cyclesPerValue = 1.3927004913511714
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -2522,7 +2522,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80129508, cyclesPerValue = 1.3885187766736562
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80392729, cyclesPerValue = 1.3930799840245713
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -2537,7 +2537,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80110986, cyclesPerValue = 1.3881978194454958
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80385494, cyclesPerValue = 1.3929546128148889
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -2552,7 +2552,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80125750, cyclesPerValue = 1.3884536564240382
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 80389465, cyclesPerValue = 1.3930234240206456
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -2567,7 +2567,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7671071, cyclesPerValue = 2.4701278619858216
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7671824, cyclesPerValue = 2.470370332206743
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -2582,7 +2582,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7666095, cyclesPerValue = 2.468525562092985
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7670938, cyclesPerValue = 2.4700850352402934
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -2597,7 +2597,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7668731, cyclesPerValue = 2.4693743688690133
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7671285, cyclesPerValue = 2.470196771185393
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -2612,7 +2612,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7669346, cyclesPerValue = 2.4695724023163796
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7670776, cyclesPerValue = 2.4700328703322065
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -2627,7 +2627,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7667250, cyclesPerValue = 2.468897478567307
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7672596, cyclesPerValue = 2.470618920534169
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -2642,7 +2642,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130137638, cyclesPerValue = 3.3043913603857886
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130139940, cyclesPerValue = 3.304449811645766
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -2657,7 +2657,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130137415, cyclesPerValue = 3.304385698078675
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130138470, cyclesPerValue = 3.304412486123539
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -2672,7 +2672,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130137398, cyclesPerValue = 3.304385266422976
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130139358, cyclesPerValue = 3.3044350337859454
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -2687,7 +2687,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130136595, cyclesPerValue = 3.3043648770390655
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130138748, cyclesPerValue = 3.304419544963797
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -2702,7 +2702,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130137621, cyclesPerValue = 3.3043909287300894
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130138066, cyclesPerValue = 3.3044022279528042
 stripe index = 3
 loading... [DONE]
 TaskParameters:
@@ -2718,7 +2718,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6887303, cyclesPerValue = 1.3351647179973913
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6901909, cyclesPerValue = 1.3379962205276372
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -2733,7 +2733,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6888479, cyclesPerValue = 1.3353926960184492
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6906738, cyclesPerValue = 1.3389323649695486
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -2748,7 +2748,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6888493, cyclesPerValue = 1.3353954100425094
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6905986, cyclesPerValue = 1.338786583105743
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -2763,7 +2763,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6891685, cyclesPerValue = 1.3360142075282375
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6902601, cyclesPerValue = 1.3381303708597563
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001013ae000, ptrRowLengths: 0x00010275c000,
@@ -2778,7 +2778,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6888669, cyclesPerValue = 1.3354295292021234
+file = workloads/suite_sparse/amazon-2008.csr, numRows = 735328, numCols = 735328, numValues = 5158392, sparsity = 99.99904599173911%, tolerance = 0.01, totalCycles = 6906991, cyclesPerValue = 1.338981411261494
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -2793,7 +2793,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737208, cyclesPerValue = 1.6185777402827977
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737861, cyclesPerValue = 1.6186172706355706
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -2808,7 +2808,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737470, cyclesPerValue = 1.6185936008531292
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737900, cyclesPerValue = 1.618619631560162
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -2823,7 +2823,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737034, cyclesPerValue = 1.6185672069269286
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737983, cyclesPerValue = 1.6186246560919846
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -2838,7 +2838,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737195, cyclesPerValue = 1.6185769533079337
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737526, cyclesPerValue = 1.6185969908986961
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000103f04000, ptrRowLengths: 0x000107e08000,
@@ -2853,7 +2853,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737260, cyclesPerValue = 1.6185808881822528
+file = workloads/suite_sparse/cit-Patents.csr, numRows = 3774768, numCols = 3774768, numValues = 16518952, sparsity = 99.99988406836475%, tolerance = 0.01, totalCycles = 26737782, cyclesPerValue = 1.6186124882498598
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -2868,7 +2868,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21562734, cyclesPerValue = 3.608675991356342
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21565045, cyclesPerValue = 3.6090627535459614
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -2883,7 +2883,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21565561, cyclesPerValue = 3.6091491097942714
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21562600, cyclesPerValue = 3.608653565508913
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -2898,7 +2898,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21562623, cyclesPerValue = 3.6086574147215313
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21566663, cyclesPerValue = 3.6093335372858166
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -2913,7 +2913,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21565867, cyclesPerValue = 3.609200321057804
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21565200, cyclesPerValue = 3.6090886938918687
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x0001016cc000, ptrRowLengths: 0x000102d98000,
@@ -2928,7 +2928,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21562764, cyclesPerValue = 3.608681012068453
+file = workloads/suite_sparse/com-Youtube.csr, numRows = 1134896, numCols = 1134896, numValues = 5975248, sparsity = 99.99953607924283%, tolerance = 0.01, totalCycles = 21564317, cyclesPerValue = 3.608940917598734
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2943,7 +2943,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6740395, cyclesPerValue = 1.2521632918446963
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6742199, cyclesPerValue = 1.252498420954858
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2958,7 +2958,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6741715, cyclesPerValue = 1.2524085082667658
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6741971, cyclesPerValue = 1.252456065391046
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2973,7 +2973,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6740868, cyclesPerValue = 1.2522511610626046
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6741533, cyclesPerValue = 1.252374698123723
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -2988,7 +2988,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6740325, cyclesPerValue = 1.252150287943526
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6742873, cyclesPerValue = 1.2526236299461266
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000101489000, ptrRowLengths: 0x000102912000,
@@ -3003,7 +3003,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6740217, cyclesPerValue = 1.2521302247817203
+file = workloads/suite_sparse/cont11_l.csr, numRows = 1468600, numCols = 1961400, numValues = 5383000, sparsity = 99.99981312350286%, tolerance = 0.01, totalCycles = 6742205, cyclesPerValue = 1.2524995355749582
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -3018,7 +3018,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2581464, cyclesPerValue = 1.598033923486443
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2584341, cyclesPerValue = 1.5998149065246998
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -3033,7 +3033,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2580402, cyclesPerValue = 1.5973765011761794
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2584294, cyclesPerValue = 1.5997858115636994
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -3048,7 +3048,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2580182, cyclesPerValue = 1.5972403119970287
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2584700, cyclesPerValue = 1.6000371425034048
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -3063,7 +3063,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2579656, cyclesPerValue = 1.5969146960505138
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2584906, cyclesPerValue = 1.6001646650984276
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010062a000, ptrRowLengths: 0x000100c54000,
@@ -3078,7 +3078,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2582522, cyclesPerValue = 1.5986888696298132
+file = workloads/suite_sparse/dblp-2010.csr, numRows = 326192, numCols = 326192, numValues = 1615400, sparsity = 99.99848178433773%, tolerance = 0.01, totalCycles = 2584748, cyclesPerValue = 1.6000668565061285
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -3093,7 +3093,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54285743, cyclesPerValue = 2.8222166155865533
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54292755, cyclesPerValue = 2.8225811566578343
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -3108,7 +3108,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54284387, cyclesPerValue = 2.822146119623539
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54292235, cyclesPerValue = 2.822554122807711
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -3123,7 +3123,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54284574, cyclesPerValue = 2.822155841411949
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54292401, cyclesPerValue = 2.822562752844481
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -3138,7 +3138,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54287582, cyclesPerValue = 2.8223122218372785
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54291858, cyclesPerValue = 2.822534523266371
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104961000, ptrRowLengths: 0x0001092c2000,
@@ -3153,7 +3153,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54284909, cyclesPerValue = 2.822173257450009
+file = workloads/suite_sparse/eu-2005.csr, numRows = 862664, numCols = 862664, numValues = 19235144, sparsity = 99.99741528839748%, tolerance = 0.01, totalCycles = 54293793, cyclesPerValue = 2.822635120381735
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -3168,7 +3168,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317565, cyclesPerValue = 5.928259072485549
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317388, cyclesPerValue = 5.928241079589998
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -3183,7 +3183,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317042, cyclesPerValue = 5.928205907037113
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317810, cyclesPerValue = 5.928283977905944
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -3198,7 +3198,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317554, cyclesPerValue = 5.9282579542830005
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58316939, cyclesPerValue = 5.928195436595069
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -3213,7 +3213,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58316923, cyclesPerValue = 5.9281938101186356
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58319400, cyclesPerValue = 5.928445609001571
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000102587000, ptrRowLengths: 0x000104b0e000,
@@ -3228,7 +3228,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317765, cyclesPerValue = 5.928279403440974
+file = workloads/suite_sparse/flickr.csr, numRows = 820880, numCols = 820880, numValues = 9837216, sparsity = 99.99854013445638%, tolerance = 0.01, totalCycles = 58317567, cyclesPerValue = 5.928259275795103
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -3243,7 +3243,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58826340, cyclesPerValue = 3.4773390831123336
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58833055, cyclesPerValue = 3.477736019789732
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -3258,7 +3258,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58826597, cyclesPerValue = 3.4773542748809247
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58833252, cyclesPerValue = 3.4777476648419205
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -3273,7 +3273,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58826083, cyclesPerValue = 3.477323891343742
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58831780, cyclesPerValue = 3.477660652066175
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -3288,7 +3288,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58826332, cyclesPerValue = 3.477338610216813
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58833762, cyclesPerValue = 3.477777811931343
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000104089000, ptrRowLengths: 0x000108112000,
@@ -3303,7 +3303,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58823350, cyclesPerValue = 3.477162338411601
+file = workloads/suite_sparse/in-2004.csr, numRows = 1382912, numCols = 1382912, numValues = 16917056, sparsity = 99.99911542289087%, tolerance = 0.01, totalCycles = 58832327, cyclesPerValue = 3.4776929862973796
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -3318,7 +3318,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300738946, cyclesPerValue = 3.805707173584488
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300745920, cyclesPerValue = 3.8057954262108327
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -3333,7 +3333,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300739156, cyclesPerValue = 3.8057098310338047
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300746984, cyclesPerValue = 3.8058088906207024
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -3348,7 +3348,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300736134, cyclesPerValue = 3.80567158907269
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300746532, cyclesPerValue = 3.805803170777412
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -3363,7 +3363,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300739458, cyclesPerValue = 3.8057136526990116
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300746381, cyclesPerValue = 3.805801259944808
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000112d74000, ptrRowLengths: 0x000125ae8000,
@@ -3378,7 +3378,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300737966, cyclesPerValue = 3.8056947721543453
+file = workloads/suite_sparse/ljournal-2008.csr, numRows = 5363264, numCols = 5363264, numValues = 79023144, sparsity = 99.99972527640925%, tolerance = 0.01, totalCycles = 300746620, cyclesPerValue = 3.8058042843752204
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -3393,7 +3393,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78157539, cyclesPerValue = 1.3543476448164835
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78367592, cyclesPerValue = 1.3579875340642327
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -3408,7 +3408,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78140613, cyclesPerValue = 1.3540543437667132
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78376938, cyclesPerValue = 1.358149485595082
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -3423,7 +3423,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78152878, cyclesPerValue = 1.35426687699225
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78369652, cyclesPerValue = 1.358023230635338
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -3438,7 +3438,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78161111, cyclesPerValue = 1.3544095419776427
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78380070, cyclesPerValue = 1.3582037582459079
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010dc25000, ptrRowLengths: 0x00011b84a000,
@@ -3453,7 +3453,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78148072, cyclesPerValue = 1.3541835965452929
+file = workloads/suite_sparse/road_usa.csr, numRows = 23947352, numCols = 23947352, numValues = 57708624, sparsity = 99.99998993704054%, tolerance = 0.01, totalCycles = 78368972, cyclesPerValue = 1.3580114473011868
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -3468,7 +3468,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7638059, cyclesPerValue = 2.4594978129379275
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7642195, cyclesPerValue = 2.460829628122166
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -3483,7 +3483,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7640146, cyclesPerValue = 2.460169838636551
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7645160, cyclesPerValue = 2.4617843747423955
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -3498,7 +3498,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7639866, cyclesPerValue = 2.4600796770670184
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7641454, cyclesPerValue = 2.4605910219685105
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -3513,7 +3513,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7638618, cyclesPerValue = 2.4596778140713873
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7641727, cyclesPerValue = 2.4606789294988047
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x000100bd9000, ptrRowLengths: 0x0001017b2000,
@@ -3528,7 +3528,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7640478, cyclesPerValue = 2.4602767444975684
+file = workloads/suite_sparse/webbase-1M.csr, numRows = 1000008, numCols = 1000008, numValues = 3105536, sparsity = 99.9996894513688%, tolerance = 0.01, totalCycles = 7644175, cyclesPerValue = 2.461467199221004
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -3543,7 +3543,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118187, cyclesPerValue = 3.3038974700913384
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118005, cyclesPerValue = 3.3038928488362056
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -3558,7 +3558,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118243, cyclesPerValue = 3.3038988920159946
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118685, cyclesPerValue = 3.3039101150641743
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -3573,7 +3573,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118672, cyclesPerValue = 3.3039097849745223
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118382, cyclesPerValue = 3.3039024214361237
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -3588,7 +3588,7 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118160, cyclesPerValue = 3.303896784520522
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130117910, cyclesPerValue = 3.3038904366425923
 loading... [DONE]
 TaskParameters:
   ptrValues: 0x000100000000, ptrColumnIndices: 0x00010963d000, ptrRowLengths: 0x000112c7a000,
@@ -3603,4 +3603,4 @@ waiting... [ DONE ]
 reading output... [ DONE ]
 Total number of mismatches: 0
 RMS relative error: among mismatches: -nan, all data points: 0
-file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130117639, cyclesPerValue = 3.303883555542916
+file = workloads/suite_sparse/wikipedia-20061104.csr, numRows = 3148440, numCols = 3148440, numValues = 39383240, sparsity = 99.999602698139%, tolerance = 0.01, totalCycles = 130118421, cyclesPerValue = 3.3039034117050807

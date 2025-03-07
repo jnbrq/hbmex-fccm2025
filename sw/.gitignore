@@ -1,4 +1,5 @@
 *.csr
+*.mtx
 .trash
 
 # Compiled Object files

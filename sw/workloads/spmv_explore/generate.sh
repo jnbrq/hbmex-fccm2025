@@ -1,3 +1,3 @@
 #!/bin/bash
 
-../build/spmv_explore_generate
+../../build/spmv_explore_generate
