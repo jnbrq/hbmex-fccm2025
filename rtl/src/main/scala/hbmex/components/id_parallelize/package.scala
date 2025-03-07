@@ -4,7 +4,7 @@ package hbmex.components
   *
   * The original source code is available in:
   *
-  * `${REPO_ROOT}/rtl/src/main/scala/chext/amba/axi4/full/components/IdParallelizeNoReadBurst.scala`
+  * `${HBMEX_ROOT}/rtl/src/main/scala/chext/amba/axi4/full/components/IdParallelizeNoReadBurst.scala`
   */
 package object id_parallelize {
 
