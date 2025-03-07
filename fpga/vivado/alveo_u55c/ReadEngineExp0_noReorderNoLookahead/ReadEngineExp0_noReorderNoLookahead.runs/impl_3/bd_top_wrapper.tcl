@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/ReadEngineExp0_noReorderNoLookahead/ReadEngineExp0_noReorderNoLookahead.runs/impl_3/bd_top_wrapper.tcl"
+  variable script "/janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/ReadEngineExp0_noReorderNoLookahead/ReadEngineExp0_noReorderNoLookahead.runs/impl_3/bd_top_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,7 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_3" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_3" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -107,10 +106,9 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 8
-  set_param bd.open.in_stealth_mode 1
   set_param runs.launchOptions { -jobs 32  }
   open_checkpoint bd_top_wrapper_routed.dcp
-  set_property webtalk.parent_dir /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/ReadEngineExp0_noReorderNoLookahead/ReadEngineExp0_noReorderNoLookahead.cache/wt [current_project]
+  set_property webtalk.parent_dir /janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/ReadEngineExp0_noReorderNoLookahead/ReadEngineExp0_noReorderNoLookahead.cache/wt [current_project]
 set_property TOP bd_top_wrapper [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

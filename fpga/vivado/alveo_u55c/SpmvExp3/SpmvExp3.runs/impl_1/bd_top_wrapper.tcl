@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.runs/impl_1/bd_top_wrapper.tcl"
+  variable script "/janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.runs/impl_1/bd_top_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,196 +97,42 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
-OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
-start_step init_design
-set ACTIVE_STEP init_design
+OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
+OPTRACE "write_bitstream setup" START { }
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
 set rc [catch {
-  create_msg_db init_design.pb
-  set_param power.BramSDPPropagationFix 1
+  create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 8
-  set_param xicom.use_bs_reader 1
-  set_param power.enableUnconnectedCarry8PinPower 1
-  set_param power.enableCarry8RouteBelPower 1
-  set_param power.enableLutRouteBelPower 1
-  set_param runs.launchOptions { -jobs 32  }
-OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xcu55c-fsvh2892-2L-e
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-OPTRACE "create in-memory project" END { }
-OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.cache/wt [current_project]
-  set_property parent.project_path /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.xpr [current_project]
-  set_property ip_output_repo /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
+  set_param runs.launchOptions { -jobs 1  }
+  open_checkpoint bd_top_wrapper_routed.dcp
+  set_property webtalk.parent_dir /janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.cache/wt [current_project]
+set_property TOP bd_top_wrapper [current_fileset]
+OPTRACE "read constraints: write_bitstream" START { }
+OPTRACE "read constraints: write_bitstream" END { }
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-OPTRACE "set parameters" END { }
-OPTRACE "add files" START { }
-  add_files -quiet /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.runs/synth_1/bd_top_wrapper.dcp
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.srcs/sources_1/bd/bd_top/bd_top.bd
-  set_param project.isImplRun false
-OPTRACE "read constraints: implementation" START { }
-  read_xdc /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.srcs/constrs_1/alveo_u55c.xdc
-OPTRACE "read constraints: implementation" END { }
-OPTRACE "read constraints: implementation_pre" START { }
-OPTRACE "read constraints: implementation_pre" END { }
-OPTRACE "add files" END { }
-OPTRACE "link_design" START { }
-  set_param project.isImplRun true
-  link_design -top bd_top_wrapper -part xcu55c-fsvh2892-2L-e 
-OPTRACE "link_design" END { }
-  set_param project.isImplRun false
-OPTRACE "gray box cells" START { }
-OPTRACE "gray box cells" END { }
-OPTRACE "init_design_reports" START { REPORT }
-OPTRACE "init_design_reports" END { }
-OPTRACE "init_design_write_hwdef" START { }
-OPTRACE "init_design_write_hwdef" END { }
-  close_msg_db -file init_design.pb
+  catch { write_mem_info -force -no_partial_mmi bd_top_wrapper.mmi }
+OPTRACE "write_bitstream setup" END { }
+OPTRACE "write_bitstream" START { }
+  write_bitstream -force bd_top_wrapper.bit 
+OPTRACE "write_bitstream" END { }
+OPTRACE "write_bitstream misc" START { }
+OPTRACE "read constraints: write_bitstream_post" START { }
+OPTRACE "read constraints: write_bitstream_post" END { }
+  catch {write_debug_probes -quiet -force bd_top_wrapper}
+  catch {file copy -force bd_top_wrapper.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
-  step_failed init_design
+  step_failed write_bitstream
   return -code error $RESULT
 } else {
-  end_step init_design
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 
-OPTRACE "Phase: Init Design" END { }
-OPTRACE "Phase: Opt Design" START { ROLLUP_AUTO }
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-OPTRACE "read constraints: opt_design" START { }
-OPTRACE "read constraints: opt_design" END { }
-OPTRACE "opt_design" START { }
-  opt_design -directive Explore
-OPTRACE "opt_design" END { }
-OPTRACE "read constraints: opt_design_post" START { }
-OPTRACE "read constraints: opt_design_post" END { }
-OPTRACE "opt_design reports" START { REPORT }
-  set_param project.isImplRun true
-  generate_parallel_reports -reports { "report_drc -file bd_top_wrapper_drc_opted.rpt -pb bd_top_wrapper_drc_opted.pb -rpx bd_top_wrapper_drc_opted.rpx"  }
-  set_param project.isImplRun false
-OPTRACE "opt_design reports" END { }
-OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force bd_top_wrapper_opt.dcp
-OPTRACE "Opt Design: write_checkpoint" END { }
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "Phase: Opt Design" END { }
-OPTRACE "Phase: Place Design" START { ROLLUP_AUTO }
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-OPTRACE "read constraints: place_design" START { }
-OPTRACE "read constraints: place_design" END { }
-  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
-OPTRACE "implement_debug_core" START { }
-    implement_debug_core 
-OPTRACE "implement_debug_core" END { }
-  } 
-OPTRACE "place_design" START { }
-  place_design -directive Auto_2
-OPTRACE "place_design" END { }
-OPTRACE "read constraints: place_design_post" START { }
-OPTRACE "read constraints: place_design_post" END { }
-OPTRACE "place_design reports" START { REPORT }
-  set_param project.isImplRun true
-  generate_parallel_reports -reports { "report_io -file bd_top_wrapper_io_placed.rpt" "report_utilization -file bd_top_wrapper_utilization_placed.rpt -pb bd_top_wrapper_utilization_placed.pb" "report_control_sets -verbose -file bd_top_wrapper_control_sets_placed.rpt"  }
-  set_param project.isImplRun false
-OPTRACE "place_design reports" END { }
-OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force bd_top_wrapper_placed.dcp
-OPTRACE "Place Design: write_checkpoint" END { }
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "Phase: Place Design" END { }
-OPTRACE "Phase: Physical Opt Design" START { ROLLUP_AUTO }
-start_step phys_opt_design
-set ACTIVE_STEP phys_opt_design
-set rc [catch {
-  create_msg_db phys_opt_design.pb
-OPTRACE "read constraints: phys_opt_design" START { }
-OPTRACE "read constraints: phys_opt_design" END { }
-OPTRACE "phys_opt_design" START { }
-  phys_opt_design -directive AggressiveExplore
-OPTRACE "phys_opt_design" END { }
-OPTRACE "read constraints: phys_opt_design_post" START { }
-OPTRACE "read constraints: phys_opt_design_post" END { }
-OPTRACE "phys_opt_design report" START { REPORT }
-OPTRACE "phys_opt_design report" END { }
-OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force bd_top_wrapper_physopt.dcp
-OPTRACE "Post-Place Phys Opt Design: write_checkpoint" END { }
-  close_msg_db -file phys_opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed phys_opt_design
-  return -code error $RESULT
-} else {
-  end_step phys_opt_design
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "Phase: Physical Opt Design" END { }
-OPTRACE "Phase: Route Design" START { ROLLUP_AUTO }
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-OPTRACE "read constraints: route_design" START { }
-OPTRACE "read constraints: route_design" END { }
-OPTRACE "route_design" START { }
-  route_design -directive NoTimingRelaxation
-OPTRACE "route_design" END { }
-OPTRACE "read constraints: route_design_post" START { }
-OPTRACE "read constraints: route_design_post" END { }
-OPTRACE "route_design reports" START { REPORT }
-  set_param project.isImplRun true
-  generate_parallel_reports -reports { "report_drc -file bd_top_wrapper_drc_routed.rpt -pb bd_top_wrapper_drc_routed.pb -rpx bd_top_wrapper_drc_routed.rpx" "report_methodology -file bd_top_wrapper_methodology_drc_routed.rpt -pb bd_top_wrapper_methodology_drc_routed.pb -rpx bd_top_wrapper_methodology_drc_routed.rpx" "report_power -file bd_top_wrapper_power_routed.rpt -pb bd_top_wrapper_power_summary_routed.pb -rpx bd_top_wrapper_power_routed.rpx" "report_route_status -file bd_top_wrapper_route_status.rpt -pb bd_top_wrapper_route_status.pb" "report_timing_summary -max_paths 10 -report_unconstrained -file bd_top_wrapper_timing_summary_routed.rpt -pb bd_top_wrapper_timing_summary_routed.pb -rpx bd_top_wrapper_timing_summary_routed.rpx -warn_on_violation " "report_incremental_reuse -file bd_top_wrapper_incremental_reuse_routed.rpt" "report_clock_utilization -file bd_top_wrapper_clock_utilization_routed.rpt" "report_bus_skew -warn_on_violation -file bd_top_wrapper_bus_skew_routed.rpt -pb bd_top_wrapper_bus_skew_routed.pb -rpx bd_top_wrapper_bus_skew_routed.rpx"  }
-  set_param project.isImplRun false
-OPTRACE "route_design reports" END { }
-OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force bd_top_wrapper_routed.dcp
-OPTRACE "Route Design: write_checkpoint" END { }
-OPTRACE "route_design misc" START { }
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
-OPTRACE "route_design write_checkpoint" END { }
-  write_checkpoint -force bd_top_wrapper_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "route_design misc" END { }
-OPTRACE "Phase: Route Design" END { }
+OPTRACE "write_bitstream misc" END { }
+OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "impl_1" END { }

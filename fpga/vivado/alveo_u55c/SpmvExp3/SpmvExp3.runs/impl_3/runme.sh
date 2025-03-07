@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.runs/impl_3'
+HD_PWD='/janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.runs/impl_3'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -38,7 +38,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log bd_top_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source bd_top_wrapper.tcl -notrace
 
 

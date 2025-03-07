@@ -33,4 +33,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_top_proc
 # IP: bd/bd_top/ip/bd_top_SpmvExp3_0_0/bd_top_SpmvExp3_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_top_SpmvExp3_0_0 || ORIG_REF_NAME==bd_top_SpmvExp3_0_0} -quiet] -quiet
 
-# XDC: /janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.gen/sources_1/bd/bd_top/bd_top_ooc.xdc
+# XDC: /janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.gen/sources_1/bd/bd_top/bd_top_ooc.xdc

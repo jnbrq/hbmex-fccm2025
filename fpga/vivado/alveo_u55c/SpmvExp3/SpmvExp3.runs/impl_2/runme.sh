@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.runs/impl_2'
+HD_PWD='/janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/SpmvExp3/SpmvExp3.runs/impl_2'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

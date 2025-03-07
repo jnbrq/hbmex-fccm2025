@@ -3604,6 +3604,390 @@ module Mux (
 	assign m_axi_r_ready = m_axi__r_ready;
 	assign m_axi_b_ready = m_axi__b_ready;
 endmodule
+module CounterEx_3 (
+	clock,
+	reset,
+	io_up,
+	io_down,
+	io_left
+);
+	input clock;
+	input reset;
+	input [9:0] io_up;
+	input [9:0] io_down;
+	output wire [9:0] io_left;
+	reg [9:0] rLeft;
+	always @(posedge clock)
+		if (reset)
+			rLeft <= 10'h200;
+		else if (io_up > io_down)
+			rLeft <= rLeft - (io_up - io_down);
+		else
+			rLeft <= (rLeft + io_down) - io_up;
+	initial begin : sv2v_autoblock_1
+		reg [31:0] _RANDOM [0:0];
+	end
+	assign io_left = rLeft;
+endmodule
+module ram_2x93 (
+	R0_addr,
+	R0_en,
+	R0_clk,
+	R0_data,
+	W0_addr,
+	W0_en,
+	W0_clk,
+	W0_data
+);
+	input R0_addr;
+	input R0_en;
+	input R0_clk;
+	output wire [92:0] R0_data;
+	input W0_addr;
+	input W0_en;
+	input W0_clk;
+	input [92:0] W0_data;
+	reg [92:0] Memory [0:1];
+	always @(posedge W0_clk)
+		if (W0_en & 1'h1)
+			Memory[W0_addr] <= W0_data;
+	reg [95:0] _RANDOM_MEM;
+	assign R0_data = (R0_en ? Memory[R0_addr] : 93'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+endmodule
+module Queue2_ReadAddressChannel_7 (
+	clock,
+	reset,
+	io_enq_ready,
+	io_enq_valid,
+	io_enq_bits_addr,
+	io_enq_bits_len,
+	io_enq_bits_size,
+	io_enq_bits_burst,
+	io_enq_bits_lock,
+	io_enq_bits_cache,
+	io_enq_bits_prot,
+	io_enq_bits_qos,
+	io_enq_bits_region,
+	io_deq_ready,
+	io_deq_valid,
+	io_deq_bits_addr,
+	io_deq_bits_len,
+	io_deq_bits_size,
+	io_deq_bits_burst,
+	io_deq_bits_lock,
+	io_deq_bits_cache,
+	io_deq_bits_prot,
+	io_deq_bits_qos,
+	io_deq_bits_region
+);
+	input clock;
+	input reset;
+	output wire io_enq_ready;
+	input io_enq_valid;
+	input [63:0] io_enq_bits_addr;
+	input [7:0] io_enq_bits_len;
+	input [2:0] io_enq_bits_size;
+	input [1:0] io_enq_bits_burst;
+	input io_enq_bits_lock;
+	input [3:0] io_enq_bits_cache;
+	input [2:0] io_enq_bits_prot;
+	input [3:0] io_enq_bits_qos;
+	input [3:0] io_enq_bits_region;
+	input io_deq_ready;
+	output wire io_deq_valid;
+	output wire [63:0] io_deq_bits_addr;
+	output wire [7:0] io_deq_bits_len;
+	output wire [2:0] io_deq_bits_size;
+	output wire [1:0] io_deq_bits_burst;
+	output wire io_deq_bits_lock;
+	output wire [3:0] io_deq_bits_cache;
+	output wire [2:0] io_deq_bits_prot;
+	output wire [3:0] io_deq_bits_qos;
+	output wire [3:0] io_deq_bits_region;
+	wire [92:0] _ram_ext_R0_data;
+	reg wrap;
+	reg wrap_1;
+	reg maybe_full;
+	wire ptr_match = wrap == wrap_1;
+	wire empty = ptr_match & ~maybe_full;
+	wire full = ptr_match & maybe_full;
+	wire do_enq = ~full & io_enq_valid;
+	always @(posedge clock)
+		if (reset) begin
+			wrap <= 1'h0;
+			wrap_1 <= 1'h0;
+			maybe_full <= 1'h0;
+		end
+		else begin : sv2v_autoblock_1
+			reg do_deq;
+			do_deq = io_deq_ready & ~empty;
+			if (do_enq)
+				wrap <= wrap - 1'h1;
+			if (do_deq)
+				wrap_1 <= wrap_1 - 1'h1;
+			if (~(do_enq == do_deq))
+				maybe_full <= do_enq;
+		end
+	initial begin : sv2v_autoblock_2
+		reg [31:0] _RANDOM [0:0];
+	end
+	ram_2x93 ram_ext(
+		.R0_addr(wrap_1),
+		.R0_en(1'h1),
+		.R0_clk(clock),
+		.R0_data(_ram_ext_R0_data),
+		.W0_addr(wrap),
+		.W0_en(do_enq),
+		.W0_clk(clock),
+		.W0_data({io_enq_bits_region, io_enq_bits_qos, io_enq_bits_prot, io_enq_bits_cache, io_enq_bits_lock, io_enq_bits_burst, io_enq_bits_size, io_enq_bits_len, io_enq_bits_addr})
+	);
+	assign io_enq_ready = ~full;
+	assign io_deq_valid = ~empty;
+	assign io_deq_bits_addr = _ram_ext_R0_data[63:0];
+	assign io_deq_bits_len = _ram_ext_R0_data[71:64];
+	assign io_deq_bits_size = _ram_ext_R0_data[74:72];
+	assign io_deq_bits_burst = _ram_ext_R0_data[76:75];
+	assign io_deq_bits_lock = _ram_ext_R0_data[77];
+	assign io_deq_bits_cache = _ram_ext_R0_data[81:78];
+	assign io_deq_bits_prot = _ram_ext_R0_data[84:82];
+	assign io_deq_bits_qos = _ram_ext_R0_data[88:85];
+	assign io_deq_bits_region = _ram_ext_R0_data[92:89];
+endmodule
+module ram_512x259 (
+	R0_addr,
+	R0_en,
+	R0_clk,
+	R0_data,
+	W0_addr,
+	W0_en,
+	W0_clk,
+	W0_data
+);
+	input [8:0] R0_addr;
+	input R0_en;
+	input R0_clk;
+	output wire [258:0] R0_data;
+	input [8:0] W0_addr;
+	input W0_en;
+	input W0_clk;
+	input [258:0] W0_data;
+	reg [258:0] Memory [0:511];
+	always @(posedge W0_clk)
+		if (W0_en & 1'h1)
+			Memory[W0_addr] <= W0_data;
+	reg [287:0] _RANDOM_MEM;
+	assign R0_data = (R0_en ? Memory[R0_addr] : 259'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+endmodule
+module Queue512_ReadDataChannel (
+	clock,
+	reset,
+	io_enq_ready,
+	io_enq_valid,
+	io_enq_bits_data,
+	io_enq_bits_resp,
+	io_enq_bits_last,
+	io_deq_ready,
+	io_deq_valid,
+	io_deq_bits_data,
+	io_deq_bits_resp,
+	io_deq_bits_last
+);
+	input clock;
+	input reset;
+	output wire io_enq_ready;
+	input io_enq_valid;
+	input [255:0] io_enq_bits_data;
+	input [1:0] io_enq_bits_resp;
+	input io_enq_bits_last;
+	input io_deq_ready;
+	output wire io_deq_valid;
+	output wire [255:0] io_deq_bits_data;
+	output wire [1:0] io_deq_bits_resp;
+	output wire io_deq_bits_last;
+	wire [258:0] _ram_ext_R0_data;
+	reg [8:0] enq_ptr_value;
+	reg [8:0] deq_ptr_value;
+	reg maybe_full;
+	wire ptr_match = enq_ptr_value == deq_ptr_value;
+	wire empty = ptr_match & ~maybe_full;
+	wire full = ptr_match & maybe_full;
+	wire do_enq = ~full & io_enq_valid;
+	always @(posedge clock)
+		if (reset) begin
+			enq_ptr_value <= 9'h000;
+			deq_ptr_value <= 9'h000;
+			maybe_full <= 1'h0;
+		end
+		else begin : sv2v_autoblock_1
+			reg do_deq;
+			do_deq = io_deq_ready & ~empty;
+			if (do_enq)
+				enq_ptr_value <= enq_ptr_value + 9'h001;
+			if (do_deq)
+				deq_ptr_value <= deq_ptr_value + 9'h001;
+			if (~(do_enq == do_deq))
+				maybe_full <= do_enq;
+		end
+	initial begin : sv2v_autoblock_2
+		reg [31:0] _RANDOM [0:0];
+	end
+	ram_512x259 ram_ext(
+		.R0_addr(deq_ptr_value),
+		.R0_en(1'h1),
+		.R0_clk(clock),
+		.R0_data(_ram_ext_R0_data),
+		.W0_addr(enq_ptr_value),
+		.W0_en(do_enq),
+		.W0_clk(clock),
+		.W0_data({io_enq_bits_last, io_enq_bits_resp, io_enq_bits_data})
+	);
+	assign io_enq_ready = ~full;
+	assign io_deq_valid = ~empty;
+	assign io_deq_bits_data = _ram_ext_R0_data[255:0];
+	assign io_deq_bits_resp = _ram_ext_R0_data[257:256];
+	assign io_deq_bits_last = _ram_ext_R0_data[258];
+endmodule
+module ResponseBuffer_3 (
+	clock,
+	reset,
+	s_axi_ar_ready,
+	s_axi_ar_valid,
+	s_axi_ar_bits_addr,
+	s_axi_ar_bits_len,
+	s_axi_ar_bits_size,
+	s_axi_ar_bits_burst,
+	s_axi_ar_bits_lock,
+	s_axi_ar_bits_cache,
+	s_axi_ar_bits_prot,
+	s_axi_ar_bits_qos,
+	s_axi_ar_bits_region,
+	s_axi_r_ready,
+	s_axi_r_valid,
+	s_axi_r_bits_data,
+	m_axi_ar_ready,
+	m_axi_ar_valid,
+	m_axi_ar_bits_addr,
+	m_axi_ar_bits_len,
+	m_axi_ar_bits_size,
+	m_axi_ar_bits_burst,
+	m_axi_ar_bits_lock,
+	m_axi_ar_bits_cache,
+	m_axi_ar_bits_prot,
+	m_axi_ar_bits_qos,
+	m_axi_ar_bits_region,
+	m_axi_r_ready,
+	m_axi_r_valid,
+	m_axi_r_bits_data,
+	m_axi_r_bits_resp,
+	m_axi_r_bits_last
+);
+	input clock;
+	input reset;
+	output wire s_axi_ar_ready;
+	input s_axi_ar_valid;
+	input [63:0] s_axi_ar_bits_addr;
+	input [7:0] s_axi_ar_bits_len;
+	input [2:0] s_axi_ar_bits_size;
+	input [1:0] s_axi_ar_bits_burst;
+	input s_axi_ar_bits_lock;
+	input [3:0] s_axi_ar_bits_cache;
+	input [2:0] s_axi_ar_bits_prot;
+	input [3:0] s_axi_ar_bits_qos;
+	input [3:0] s_axi_ar_bits_region;
+	input s_axi_r_ready;
+	output wire s_axi_r_valid;
+	output wire [255:0] s_axi_r_bits_data;
+	input m_axi_ar_ready;
+	output wire m_axi_ar_valid;
+	output wire [63:0] m_axi_ar_bits_addr;
+	output wire [7:0] m_axi_ar_bits_len;
+	output wire [2:0] m_axi_ar_bits_size;
+	output wire [1:0] m_axi_ar_bits_burst;
+	output wire m_axi_ar_bits_lock;
+	output wire [3:0] m_axi_ar_bits_cache;
+	output wire [2:0] m_axi_ar_bits_prot;
+	output wire [3:0] m_axi_ar_bits_qos;
+	output wire [3:0] m_axi_ar_bits_region;
+	output wire m_axi_r_ready;
+	input m_axi_r_valid;
+	input [255:0] m_axi_r_bits_data;
+	input [1:0] m_axi_r_bits_resp;
+	input m_axi_r_bits_last;
+	wire _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready;
+	wire _read_arrival1_sourceBuffer_io_deq_valid;
+	wire [255:0] _read_arrival1_sourceBuffer_io_deq_bits_data;
+	wire [1:0] _read_arrival1_sourceBuffer_io_deq_bits_resp;
+	wire _read_arrival1_sourceBuffer_io_deq_bits_last;
+	wire _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready;
+	wire [9:0] _read_ctrR_io_left;
+	wire _read_arrival0_T = _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready & s_axi_ar_valid;
+	wire [9:0] _GEN = {1'h0, {1'h0, s_axi_ar_bits_len} + 9'h001};
+	wire _read_arrival0_T_1 = _read_ctrR_io_left >= _GEN;
+	wire s_axi_ar_ready_0 = _read_arrival0_T & _read_arrival0_T_1;
+	wire read_arrival1_result_ready = _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready & _read_arrival1_sourceBuffer_io_deq_valid;
+	CounterEx_3 read_ctrR(
+		.clock(clock),
+		.reset(reset),
+		.io_up((_read_arrival0_T & _read_arrival0_T_1 ? _GEN : 10'h000)),
+		.io_down({9'h000, read_arrival1_result_ready}),
+		.io_left(_read_ctrR_io_left)
+	);
+	Queue2_ReadAddressChannel_7 read_arrival0_sinkBuffered__sinkBuffer(
+		.clock(clock),
+		.reset(reset),
+		.io_enq_ready(_read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
+		.io_enq_valid(s_axi_ar_ready_0),
+		.io_enq_bits_addr(s_axi_ar_bits_addr),
+		.io_enq_bits_len(s_axi_ar_bits_len),
+		.io_enq_bits_size(s_axi_ar_bits_size),
+		.io_enq_bits_burst(s_axi_ar_bits_burst),
+		.io_enq_bits_lock(s_axi_ar_bits_lock),
+		.io_enq_bits_cache(s_axi_ar_bits_cache),
+		.io_enq_bits_prot(s_axi_ar_bits_prot),
+		.io_enq_bits_qos(s_axi_ar_bits_qos),
+		.io_enq_bits_region(s_axi_ar_bits_region),
+		.io_deq_ready(m_axi_ar_ready),
+		.io_deq_valid(m_axi_ar_valid),
+		.io_deq_bits_addr(m_axi_ar_bits_addr),
+		.io_deq_bits_len(m_axi_ar_bits_len),
+		.io_deq_bits_size(m_axi_ar_bits_size),
+		.io_deq_bits_burst(m_axi_ar_bits_burst),
+		.io_deq_bits_lock(m_axi_ar_bits_lock),
+		.io_deq_bits_cache(m_axi_ar_bits_cache),
+		.io_deq_bits_prot(m_axi_ar_bits_prot),
+		.io_deq_bits_qos(m_axi_ar_bits_qos),
+		.io_deq_bits_region(m_axi_ar_bits_region)
+	);
+	Queue512_ReadDataChannel read_arrival1_sourceBuffer(
+		.clock(clock),
+		.reset(reset),
+		.io_enq_ready(m_axi_r_ready),
+		.io_enq_valid(m_axi_r_valid),
+		.io_enq_bits_data(m_axi_r_bits_data),
+		.io_enq_bits_resp(m_axi_r_bits_resp),
+		.io_enq_bits_last(m_axi_r_bits_last),
+		.io_deq_ready(read_arrival1_result_ready),
+		.io_deq_valid(_read_arrival1_sourceBuffer_io_deq_valid),
+		.io_deq_bits_data(_read_arrival1_sourceBuffer_io_deq_bits_data),
+		.io_deq_bits_resp(_read_arrival1_sourceBuffer_io_deq_bits_resp),
+		.io_deq_bits_last(_read_arrival1_sourceBuffer_io_deq_bits_last)
+	);
+	Queue2_ReadDataChannel read_arrival1_sinkBuffered__sinkBuffer(
+		.clock(clock),
+		.reset(reset),
+		.io_enq_ready(_read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready),
+		.io_enq_valid(read_arrival1_result_ready),
+		.io_enq_bits_data(_read_arrival1_sourceBuffer_io_deq_bits_data),
+		.io_enq_bits_resp(_read_arrival1_sourceBuffer_io_deq_bits_resp),
+		.io_enq_bits_last(_read_arrival1_sourceBuffer_io_deq_bits_last),
+		.io_deq_ready(s_axi_r_ready),
+		.io_deq_valid(s_axi_r_valid),
+		.io_deq_bits_data(s_axi_r_bits_data),
+		.io_deq_bits_resp(),
+		.io_deq_bits_last()
+	);
+	assign s_axi_ar_ready = s_axi_ar_ready_0;
+endmodule
 module SteerRight (
 	dataIn,
 	offsetIn,
@@ -4001,130 +4385,6 @@ module Queue2_SpmvTask (
 	assign io_deq_bits_ptrOutputVector = _ram_ext_R0_data[319:256];
 	assign io_deq_bits_numValues = _ram_ext_R0_data[383:320];
 	assign io_deq_bits_numRows = _ram_ext_R0_data[447:384];
-endmodule
-module ram_2x93 (
-	R0_addr,
-	R0_en,
-	R0_clk,
-	R0_data,
-	W0_addr,
-	W0_en,
-	W0_clk,
-	W0_data
-);
-	input R0_addr;
-	input R0_en;
-	input R0_clk;
-	output wire [92:0] R0_data;
-	input W0_addr;
-	input W0_en;
-	input W0_clk;
-	input [92:0] W0_data;
-	reg [92:0] Memory [0:1];
-	always @(posedge W0_clk)
-		if (W0_en & 1'h1)
-			Memory[W0_addr] <= W0_data;
-	reg [95:0] _RANDOM_MEM;
-	assign R0_data = (R0_en ? Memory[R0_addr] : 93'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
-endmodule
-module Queue2_ReadAddressChannel_7 (
-	clock,
-	reset,
-	io_enq_ready,
-	io_enq_valid,
-	io_enq_bits_addr,
-	io_enq_bits_len,
-	io_enq_bits_size,
-	io_enq_bits_burst,
-	io_enq_bits_lock,
-	io_enq_bits_cache,
-	io_enq_bits_prot,
-	io_enq_bits_qos,
-	io_enq_bits_region,
-	io_deq_ready,
-	io_deq_valid,
-	io_deq_bits_addr,
-	io_deq_bits_len,
-	io_deq_bits_size,
-	io_deq_bits_burst,
-	io_deq_bits_lock,
-	io_deq_bits_cache,
-	io_deq_bits_prot,
-	io_deq_bits_qos,
-	io_deq_bits_region
-);
-	input clock;
-	input reset;
-	output wire io_enq_ready;
-	input io_enq_valid;
-	input [63:0] io_enq_bits_addr;
-	input [7:0] io_enq_bits_len;
-	input [2:0] io_enq_bits_size;
-	input [1:0] io_enq_bits_burst;
-	input io_enq_bits_lock;
-	input [3:0] io_enq_bits_cache;
-	input [2:0] io_enq_bits_prot;
-	input [3:0] io_enq_bits_qos;
-	input [3:0] io_enq_bits_region;
-	input io_deq_ready;
-	output wire io_deq_valid;
-	output wire [63:0] io_deq_bits_addr;
-	output wire [7:0] io_deq_bits_len;
-	output wire [2:0] io_deq_bits_size;
-	output wire [1:0] io_deq_bits_burst;
-	output wire io_deq_bits_lock;
-	output wire [3:0] io_deq_bits_cache;
-	output wire [2:0] io_deq_bits_prot;
-	output wire [3:0] io_deq_bits_qos;
-	output wire [3:0] io_deq_bits_region;
-	wire [92:0] _ram_ext_R0_data;
-	reg wrap;
-	reg wrap_1;
-	reg maybe_full;
-	wire ptr_match = wrap == wrap_1;
-	wire empty = ptr_match & ~maybe_full;
-	wire full = ptr_match & maybe_full;
-	wire do_enq = ~full & io_enq_valid;
-	always @(posedge clock)
-		if (reset) begin
-			wrap <= 1'h0;
-			wrap_1 <= 1'h0;
-			maybe_full <= 1'h0;
-		end
-		else begin : sv2v_autoblock_1
-			reg do_deq;
-			do_deq = io_deq_ready & ~empty;
-			if (do_enq)
-				wrap <= wrap - 1'h1;
-			if (do_deq)
-				wrap_1 <= wrap_1 - 1'h1;
-			if (~(do_enq == do_deq))
-				maybe_full <= do_enq;
-		end
-	initial begin : sv2v_autoblock_2
-		reg [31:0] _RANDOM [0:0];
-	end
-	ram_2x93 ram_ext(
-		.R0_addr(wrap_1),
-		.R0_en(1'h1),
-		.R0_clk(clock),
-		.R0_data(_ram_ext_R0_data),
-		.W0_addr(wrap),
-		.W0_en(do_enq),
-		.W0_clk(clock),
-		.W0_data({io_enq_bits_region, io_enq_bits_qos, io_enq_bits_prot, io_enq_bits_cache, io_enq_bits_lock, io_enq_bits_burst, io_enq_bits_size, io_enq_bits_len, io_enq_bits_addr})
-	);
-	assign io_enq_ready = ~full;
-	assign io_deq_valid = ~empty;
-	assign io_deq_bits_addr = _ram_ext_R0_data[63:0];
-	assign io_deq_bits_len = _ram_ext_R0_data[71:64];
-	assign io_deq_bits_size = _ram_ext_R0_data[74:72];
-	assign io_deq_bits_burst = _ram_ext_R0_data[76:75];
-	assign io_deq_bits_lock = _ram_ext_R0_data[77];
-	assign io_deq_bits_cache = _ram_ext_R0_data[81:78];
-	assign io_deq_bits_prot = _ram_ext_R0_data[84:82];
-	assign io_deq_bits_qos = _ram_ext_R0_data[88:85];
-	assign io_deq_bits_region = _ram_ext_R0_data[92:89];
 endmodule
 module MulFullRawFN (
 	io_a_isNaN,
@@ -9865,49 +10125,51 @@ module Spmv (
 	sinkDone_ready,
 	sinkDone_valid,
 	sinkDone_bits,
-	m_axi_ls_ar_ready,
-	m_axi_ls_ar_valid,
-	m_axi_ls_ar_bits_addr,
-	m_axi_ls_ar_bits_len,
-	m_axi_ls_ar_bits_size,
-	m_axi_ls_ar_bits_burst,
-	m_axi_ls_ar_bits_lock,
-	m_axi_ls_ar_bits_cache,
-	m_axi_ls_ar_bits_prot,
-	m_axi_ls_ar_bits_qos,
-	m_axi_ls_ar_bits_region,
-	m_axi_ls_r_ready,
-	m_axi_ls_r_valid,
-	m_axi_ls_r_bits_data,
-	m_axi_gp_ar_ready,
-	m_axi_gp_ar_valid,
-	m_axi_gp_ar_bits_id,
-	m_axi_gp_ar_bits_addr,
-	m_axi_gp_ar_bits_len,
-	m_axi_gp_ar_bits_size,
-	m_axi_gp_ar_bits_burst,
-	m_axi_gp_r_ready,
-	m_axi_gp_r_valid,
-	m_axi_gp_r_bits_id,
-	m_axi_gp_r_bits_data,
-	m_axi_gp_r_bits_resp,
-	m_axi_gp_r_bits_last,
-	m_axi_gp_aw_ready,
-	m_axi_gp_aw_valid,
-	m_axi_gp_aw_bits_id,
-	m_axi_gp_aw_bits_addr,
-	m_axi_gp_aw_bits_len,
-	m_axi_gp_aw_bits_size,
-	m_axi_gp_aw_bits_burst,
-	m_axi_gp_w_ready,
-	m_axi_gp_w_valid,
-	m_axi_gp_w_bits_data,
-	m_axi_gp_w_bits_strb,
-	m_axi_gp_w_bits_last,
-	m_axi_gp_b_ready,
-	m_axi_gp_b_valid,
-	m_axi_gp_b_bits_id,
-	m_axi_gp_b_bits_resp
+	m_axi_random_ar_ready,
+	m_axi_random_ar_valid,
+	m_axi_random_ar_bits_addr,
+	m_axi_random_ar_bits_len,
+	m_axi_random_ar_bits_size,
+	m_axi_random_ar_bits_burst,
+	m_axi_random_ar_bits_lock,
+	m_axi_random_ar_bits_cache,
+	m_axi_random_ar_bits_prot,
+	m_axi_random_ar_bits_qos,
+	m_axi_random_ar_bits_region,
+	m_axi_random_r_ready,
+	m_axi_random_r_valid,
+	m_axi_random_r_bits_data,
+	m_axi_random_r_bits_resp,
+	m_axi_random_r_bits_last,
+	m_axi_regular_ar_ready,
+	m_axi_regular_ar_valid,
+	m_axi_regular_ar_bits_id,
+	m_axi_regular_ar_bits_addr,
+	m_axi_regular_ar_bits_len,
+	m_axi_regular_ar_bits_size,
+	m_axi_regular_ar_bits_burst,
+	m_axi_regular_r_ready,
+	m_axi_regular_r_valid,
+	m_axi_regular_r_bits_id,
+	m_axi_regular_r_bits_data,
+	m_axi_regular_r_bits_resp,
+	m_axi_regular_r_bits_last,
+	m_axi_regular_aw_ready,
+	m_axi_regular_aw_valid,
+	m_axi_regular_aw_bits_id,
+	m_axi_regular_aw_bits_addr,
+	m_axi_regular_aw_bits_len,
+	m_axi_regular_aw_bits_size,
+	m_axi_regular_aw_bits_burst,
+	m_axi_regular_w_ready,
+	m_axi_regular_w_valid,
+	m_axi_regular_w_bits_data,
+	m_axi_regular_w_bits_strb,
+	m_axi_regular_w_bits_last,
+	m_axi_regular_b_ready,
+	m_axi_regular_b_valid,
+	m_axi_regular_b_bits_id,
+	m_axi_regular_b_bits_resp
 );
 	input clock;
 	input reset;
@@ -9923,49 +10185,51 @@ module Spmv (
 	input sinkDone_ready;
 	output wire sinkDone_valid;
 	output wire [63:0] sinkDone_bits;
-	input m_axi_ls_ar_ready;
-	output wire m_axi_ls_ar_valid;
-	output wire [63:0] m_axi_ls_ar_bits_addr;
-	output wire [7:0] m_axi_ls_ar_bits_len;
-	output wire [2:0] m_axi_ls_ar_bits_size;
-	output wire [1:0] m_axi_ls_ar_bits_burst;
-	output wire m_axi_ls_ar_bits_lock;
-	output wire [3:0] m_axi_ls_ar_bits_cache;
-	output wire [2:0] m_axi_ls_ar_bits_prot;
-	output wire [3:0] m_axi_ls_ar_bits_qos;
-	output wire [3:0] m_axi_ls_ar_bits_region;
-	output wire m_axi_ls_r_ready;
-	input m_axi_ls_r_valid;
-	input [255:0] m_axi_ls_r_bits_data;
-	input m_axi_gp_ar_ready;
-	output wire m_axi_gp_ar_valid;
-	output wire [1:0] m_axi_gp_ar_bits_id;
-	output wire [63:0] m_axi_gp_ar_bits_addr;
-	output wire [3:0] m_axi_gp_ar_bits_len;
-	output wire [2:0] m_axi_gp_ar_bits_size;
-	output wire [1:0] m_axi_gp_ar_bits_burst;
-	output wire m_axi_gp_r_ready;
-	input m_axi_gp_r_valid;
-	input [1:0] m_axi_gp_r_bits_id;
-	input [255:0] m_axi_gp_r_bits_data;
-	input [1:0] m_axi_gp_r_bits_resp;
-	input m_axi_gp_r_bits_last;
-	input m_axi_gp_aw_ready;
-	output wire m_axi_gp_aw_valid;
-	output wire [1:0] m_axi_gp_aw_bits_id;
-	output wire [63:0] m_axi_gp_aw_bits_addr;
-	output wire [3:0] m_axi_gp_aw_bits_len;
-	output wire [2:0] m_axi_gp_aw_bits_size;
-	output wire [1:0] m_axi_gp_aw_bits_burst;
-	input m_axi_gp_w_ready;
-	output wire m_axi_gp_w_valid;
-	output wire [255:0] m_axi_gp_w_bits_data;
-	output wire [31:0] m_axi_gp_w_bits_strb;
-	output wire m_axi_gp_w_bits_last;
-	output wire m_axi_gp_b_ready;
-	input m_axi_gp_b_valid;
-	input [1:0] m_axi_gp_b_bits_id;
-	input [1:0] m_axi_gp_b_bits_resp;
+	input m_axi_random_ar_ready;
+	output wire m_axi_random_ar_valid;
+	output wire [63:0] m_axi_random_ar_bits_addr;
+	output wire [7:0] m_axi_random_ar_bits_len;
+	output wire [2:0] m_axi_random_ar_bits_size;
+	output wire [1:0] m_axi_random_ar_bits_burst;
+	output wire m_axi_random_ar_bits_lock;
+	output wire [3:0] m_axi_random_ar_bits_cache;
+	output wire [2:0] m_axi_random_ar_bits_prot;
+	output wire [3:0] m_axi_random_ar_bits_qos;
+	output wire [3:0] m_axi_random_ar_bits_region;
+	output wire m_axi_random_r_ready;
+	input m_axi_random_r_valid;
+	input [255:0] m_axi_random_r_bits_data;
+	input [1:0] m_axi_random_r_bits_resp;
+	input m_axi_random_r_bits_last;
+	input m_axi_regular_ar_ready;
+	output wire m_axi_regular_ar_valid;
+	output wire [1:0] m_axi_regular_ar_bits_id;
+	output wire [63:0] m_axi_regular_ar_bits_addr;
+	output wire [3:0] m_axi_regular_ar_bits_len;
+	output wire [2:0] m_axi_regular_ar_bits_size;
+	output wire [1:0] m_axi_regular_ar_bits_burst;
+	output wire m_axi_regular_r_ready;
+	input m_axi_regular_r_valid;
+	input [1:0] m_axi_regular_r_bits_id;
+	input [255:0] m_axi_regular_r_bits_data;
+	input [1:0] m_axi_regular_r_bits_resp;
+	input m_axi_regular_r_bits_last;
+	input m_axi_regular_aw_ready;
+	output wire m_axi_regular_aw_valid;
+	output wire [1:0] m_axi_regular_aw_bits_id;
+	output wire [63:0] m_axi_regular_aw_bits_addr;
+	output wire [3:0] m_axi_regular_aw_bits_len;
+	output wire [2:0] m_axi_regular_aw_bits_size;
+	output wire [1:0] m_axi_regular_aw_bits_burst;
+	input m_axi_regular_w_ready;
+	output wire m_axi_regular_w_valid;
+	output wire [255:0] m_axi_regular_w_bits_data;
+	output wire [31:0] m_axi_regular_w_bits_strb;
+	output wire m_axi_regular_w_bits_last;
+	output wire m_axi_regular_b_ready;
+	input m_axi_regular_b_valid;
+	input [1:0] m_axi_regular_b_bits_id;
+	input [1:0] m_axi_regular_b_bits_resp;
 	wire _sinkBuffer_4_io_enq_ready;
 	wire _sinkBuffer_4_io_deq_valid;
 	wire [255:0] _sinkBuffer_4_io_deq_bits;
@@ -9979,6 +10243,7 @@ module Spmv (
 	wire _rowReduce_sourceCount_ready;
 	wire _rowReduce_sinkResult_valid;
 	wire [255:0] _rowReduce_sinkResult_bits;
+	wire _sinkBuffer_1_io_enq_ready;
 	wire _sinkBuffer_1_io_deq_valid;
 	wire [255:0] _sinkBuffer_1_io_deq_bits;
 	wire _sinkBuffer_io_enq_ready;
@@ -9989,6 +10254,16 @@ module Spmv (
 	wire _batchMultiply_sinkOut_valid;
 	wire [255:0] _batchMultiply_sinkOut_bits;
 	wire _sinkBuffered__sinkBuffer_1_io_enq_ready;
+	wire _sinkBuffered__sinkBuffer_1_io_deq_valid;
+	wire [63:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_addr;
+	wire [7:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_len;
+	wire [2:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_size;
+	wire [1:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_burst;
+	wire _sinkBuffered__sinkBuffer_1_io_deq_bits_lock;
+	wire [3:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_cache;
+	wire [2:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_prot;
+	wire [3:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_qos;
+	wire [3:0] _sinkBuffered__sinkBuffer_1_io_deq_bits_region;
 	wire _sinkBuffered__sinkBuffer_io_enq_ready;
 	wire _sinkBuffered__sinkBuffer_io_deq_valid;
 	wire [63:0] _sinkBuffered__sinkBuffer_io_deq_bits_ptrValues;
@@ -10011,6 +10286,9 @@ module Spmv (
 	wire _downsizerValues_source_ready;
 	wire _downsizerValues_sink_valid;
 	wire [31:0] _downsizerValues_sink_bits;
+	wire _responseBufferRandom_s_axi_ar_ready;
+	wire _responseBufferRandom_s_axi_r_valid;
+	wire [255:0] _responseBufferRandom_s_axi_r_bits_data;
 	wire _mux_s_axi_0_ar_ready;
 	wire _mux_s_axi_0_r_valid;
 	wire [255:0] _mux_s_axi_0_r_bits_data;
@@ -10030,33 +10308,33 @@ module Spmv (
 	wire _mux_s_axi_3_w_ready;
 	wire _mux_s_axi_3_b_valid;
 	wire [1:0] _mux_s_axi_3_b_bits_resp;
-	wire _responseBufferReadStreamRowLengths_s_axi_ar_ready;
-	wire _responseBufferReadStreamRowLengths_s_axi_r_valid;
-	wire [255:0] _responseBufferReadStreamRowLengths_s_axi_r_bits_data;
-	wire _responseBufferReadStreamRowLengths_m_axi_ar_valid;
-	wire [63:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_addr;
-	wire [3:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_len;
-	wire [2:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_size;
-	wire [1:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_burst;
-	wire _responseBufferReadStreamRowLengths_m_axi_r_ready;
-	wire _responseBufferReadStreamColumnIndices_s_axi_ar_ready;
-	wire _responseBufferReadStreamColumnIndices_s_axi_r_valid;
-	wire [255:0] _responseBufferReadStreamColumnIndices_s_axi_r_bits_data;
-	wire _responseBufferReadStreamColumnIndices_m_axi_ar_valid;
-	wire [63:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr;
-	wire [3:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_len;
-	wire [2:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_size;
-	wire [1:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst;
-	wire _responseBufferReadStreamColumnIndices_m_axi_r_ready;
-	wire _responseBufferReadStreamValue_s_axi_ar_ready;
-	wire _responseBufferReadStreamValue_s_axi_r_valid;
-	wire [255:0] _responseBufferReadStreamValue_s_axi_r_bits_data;
-	wire _responseBufferReadStreamValue_m_axi_ar_valid;
-	wire [63:0] _responseBufferReadStreamValue_m_axi_ar_bits_addr;
-	wire [3:0] _responseBufferReadStreamValue_m_axi_ar_bits_len;
-	wire [2:0] _responseBufferReadStreamValue_m_axi_ar_bits_size;
-	wire [1:0] _responseBufferReadStreamValue_m_axi_ar_bits_burst;
-	wire _responseBufferReadStreamValue_m_axi_r_ready;
+	wire _responseBufferRowLengths_s_axi_ar_ready;
+	wire _responseBufferRowLengths_s_axi_r_valid;
+	wire [255:0] _responseBufferRowLengths_s_axi_r_bits_data;
+	wire _responseBufferRowLengths_m_axi_ar_valid;
+	wire [63:0] _responseBufferRowLengths_m_axi_ar_bits_addr;
+	wire [3:0] _responseBufferRowLengths_m_axi_ar_bits_len;
+	wire [2:0] _responseBufferRowLengths_m_axi_ar_bits_size;
+	wire [1:0] _responseBufferRowLengths_m_axi_ar_bits_burst;
+	wire _responseBufferRowLengths_m_axi_r_ready;
+	wire _responseBufferColumnIndices_s_axi_ar_ready;
+	wire _responseBufferColumnIndices_s_axi_r_valid;
+	wire [255:0] _responseBufferColumnIndices_s_axi_r_bits_data;
+	wire _responseBufferColumnIndices_m_axi_ar_valid;
+	wire [63:0] _responseBufferColumnIndices_m_axi_ar_bits_addr;
+	wire [3:0] _responseBufferColumnIndices_m_axi_ar_bits_len;
+	wire [2:0] _responseBufferColumnIndices_m_axi_ar_bits_size;
+	wire [1:0] _responseBufferColumnIndices_m_axi_ar_bits_burst;
+	wire _responseBufferColumnIndices_m_axi_r_ready;
+	wire _responseBufferValue_s_axi_ar_ready;
+	wire _responseBufferValue_s_axi_r_valid;
+	wire [255:0] _responseBufferValue_s_axi_r_bits_data;
+	wire _responseBufferValue_m_axi_ar_valid;
+	wire [63:0] _responseBufferValue_m_axi_ar_bits_addr;
+	wire [3:0] _responseBufferValue_m_axi_ar_bits_len;
+	wire [2:0] _responseBufferValue_m_axi_ar_bits_size;
+	wire [1:0] _responseBufferValue_m_axi_ar_bits_burst;
+	wire _responseBufferValue_m_axi_r_ready;
 	wire _writeStreamResult_m_axi_aw_valid;
 	wire [63:0] _writeStreamResult_m_axi_aw_bits_addr;
 	wire [3:0] _writeStreamResult_m_axi_aw_bits_len;
@@ -10151,15 +10429,15 @@ module Spmv (
 	ReadStream readStreamValues(
 		.clock(clock),
 		.reset(reset),
-		.m_axi_ar_ready(_responseBufferReadStreamValue_s_axi_ar_ready),
+		.m_axi_ar_ready(_responseBufferValue_s_axi_ar_ready),
 		.m_axi_ar_valid(_readStreamValues_m_axi_ar_valid),
 		.m_axi_ar_bits_addr(_readStreamValues_m_axi_ar_bits_addr),
 		.m_axi_ar_bits_len(_readStreamValues_m_axi_ar_bits_len),
 		.m_axi_ar_bits_size(_readStreamValues_m_axi_ar_bits_size),
 		.m_axi_ar_bits_burst(_readStreamValues_m_axi_ar_bits_burst),
 		.m_axi_r_ready(_readStreamValues_m_axi_r_ready),
-		.m_axi_r_valid(_responseBufferReadStreamValue_s_axi_r_valid),
-		.m_axi_r_bits_data(_responseBufferReadStreamValue_s_axi_r_bits_data),
+		.m_axi_r_valid(_responseBufferValue_s_axi_r_valid),
+		.m_axi_r_bits_data(_responseBufferValue_s_axi_r_bits_data),
 		.sourceTask_ready(_readStreamValues_sourceTask_ready),
 		.sourceTask_valid(_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_0),
 		.sourceTask_bits_address(_sinkBuffered__sinkBuffer_io_deq_bits_ptrValues),
@@ -10171,15 +10449,15 @@ module Spmv (
 	ReadStreamWithLast readStreamColumnIndices(
 		.clock(clock),
 		.reset(reset),
-		.m_axi_ar_ready(_responseBufferReadStreamColumnIndices_s_axi_ar_ready),
+		.m_axi_ar_ready(_responseBufferColumnIndices_s_axi_ar_ready),
 		.m_axi_ar_valid(_readStreamColumnIndices_m_axi_ar_valid),
 		.m_axi_ar_bits_addr(_readStreamColumnIndices_m_axi_ar_bits_addr),
 		.m_axi_ar_bits_len(_readStreamColumnIndices_m_axi_ar_bits_len),
 		.m_axi_ar_bits_size(_readStreamColumnIndices_m_axi_ar_bits_size),
 		.m_axi_ar_bits_burst(_readStreamColumnIndices_m_axi_ar_bits_burst),
 		.m_axi_r_ready(_readStreamColumnIndices_m_axi_r_ready),
-		.m_axi_r_valid(_responseBufferReadStreamColumnIndices_s_axi_r_valid),
-		.m_axi_r_bits_data(_responseBufferReadStreamColumnIndices_s_axi_r_bits_data),
+		.m_axi_r_valid(_responseBufferColumnIndices_s_axi_r_valid),
+		.m_axi_r_bits_data(_responseBufferColumnIndices_s_axi_r_bits_data),
 		.sourceTask_ready(_readStreamColumnIndices_sourceTask_ready),
 		.sourceTask_valid(_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_1),
 		.sourceTask_bits_address(_sinkBuffered__sinkBuffer_io_deq_bits_ptrColumnIndices),
@@ -10192,15 +10470,15 @@ module Spmv (
 	ReadStream readStreamRowLengths(
 		.clock(clock),
 		.reset(reset),
-		.m_axi_ar_ready(_responseBufferReadStreamRowLengths_s_axi_ar_ready),
+		.m_axi_ar_ready(_responseBufferRowLengths_s_axi_ar_ready),
 		.m_axi_ar_valid(_readStreamRowLengths_m_axi_ar_valid),
 		.m_axi_ar_bits_addr(_readStreamRowLengths_m_axi_ar_bits_addr),
 		.m_axi_ar_bits_len(_readStreamRowLengths_m_axi_ar_bits_len),
 		.m_axi_ar_bits_size(_readStreamRowLengths_m_axi_ar_bits_size),
 		.m_axi_ar_bits_burst(_readStreamRowLengths_m_axi_ar_bits_burst),
 		.m_axi_r_ready(_readStreamRowLengths_m_axi_r_ready),
-		.m_axi_r_valid(_responseBufferReadStreamRowLengths_s_axi_r_valid),
-		.m_axi_r_bits_data(_responseBufferReadStreamRowLengths_s_axi_r_bits_data),
+		.m_axi_r_valid(_responseBufferRowLengths_s_axi_r_valid),
+		.m_axi_r_bits_data(_responseBufferRowLengths_s_axi_r_bits_data),
 		.sourceTask_ready(_readStreamRowLengths_sourceTask_ready),
 		.sourceTask_valid(_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_2),
 		.sourceTask_bits_address(_sinkBuffered__sinkBuffer_io_deq_bits_ptrRowLengths),
@@ -10236,73 +10514,73 @@ module Spmv (
 		.sourceData_valid(_sinkBuffer_4_io_deq_valid),
 		.sourceData_bits(_sinkBuffer_4_io_deq_bits)
 	);
-	ResponseBuffer responseBufferReadStreamValue(
+	ResponseBuffer responseBufferValue(
 		.clock(clock),
 		.reset(reset),
-		.s_axi_ar_ready(_responseBufferReadStreamValue_s_axi_ar_ready),
+		.s_axi_ar_ready(_responseBufferValue_s_axi_ar_ready),
 		.s_axi_ar_valid(_readStreamValues_m_axi_ar_valid),
 		.s_axi_ar_bits_addr(_readStreamValues_m_axi_ar_bits_addr),
 		.s_axi_ar_bits_len(_readStreamValues_m_axi_ar_bits_len),
 		.s_axi_ar_bits_size(_readStreamValues_m_axi_ar_bits_size),
 		.s_axi_ar_bits_burst(_readStreamValues_m_axi_ar_bits_burst),
 		.s_axi_r_ready(_readStreamValues_m_axi_r_ready),
-		.s_axi_r_valid(_responseBufferReadStreamValue_s_axi_r_valid),
-		.s_axi_r_bits_data(_responseBufferReadStreamValue_s_axi_r_bits_data),
+		.s_axi_r_valid(_responseBufferValue_s_axi_r_valid),
+		.s_axi_r_bits_data(_responseBufferValue_s_axi_r_bits_data),
 		.m_axi_ar_ready(_mux_s_axi_0_ar_ready),
-		.m_axi_ar_valid(_responseBufferReadStreamValue_m_axi_ar_valid),
-		.m_axi_ar_bits_addr(_responseBufferReadStreamValue_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_responseBufferReadStreamValue_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_responseBufferReadStreamValue_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_responseBufferReadStreamValue_m_axi_ar_bits_burst),
-		.m_axi_r_ready(_responseBufferReadStreamValue_m_axi_r_ready),
+		.m_axi_ar_valid(_responseBufferValue_m_axi_ar_valid),
+		.m_axi_ar_bits_addr(_responseBufferValue_m_axi_ar_bits_addr),
+		.m_axi_ar_bits_len(_responseBufferValue_m_axi_ar_bits_len),
+		.m_axi_ar_bits_size(_responseBufferValue_m_axi_ar_bits_size),
+		.m_axi_ar_bits_burst(_responseBufferValue_m_axi_ar_bits_burst),
+		.m_axi_r_ready(_responseBufferValue_m_axi_r_ready),
 		.m_axi_r_valid(_mux_s_axi_0_r_valid),
 		.m_axi_r_bits_data(_mux_s_axi_0_r_bits_data),
 		.m_axi_r_bits_resp(_mux_s_axi_0_r_bits_resp),
 		.m_axi_r_bits_last(_mux_s_axi_0_r_bits_last)
 	);
-	ResponseBuffer responseBufferReadStreamColumnIndices(
+	ResponseBuffer responseBufferColumnIndices(
 		.clock(clock),
 		.reset(reset),
-		.s_axi_ar_ready(_responseBufferReadStreamColumnIndices_s_axi_ar_ready),
+		.s_axi_ar_ready(_responseBufferColumnIndices_s_axi_ar_ready),
 		.s_axi_ar_valid(_readStreamColumnIndices_m_axi_ar_valid),
 		.s_axi_ar_bits_addr(_readStreamColumnIndices_m_axi_ar_bits_addr),
 		.s_axi_ar_bits_len(_readStreamColumnIndices_m_axi_ar_bits_len),
 		.s_axi_ar_bits_size(_readStreamColumnIndices_m_axi_ar_bits_size),
 		.s_axi_ar_bits_burst(_readStreamColumnIndices_m_axi_ar_bits_burst),
 		.s_axi_r_ready(_readStreamColumnIndices_m_axi_r_ready),
-		.s_axi_r_valid(_responseBufferReadStreamColumnIndices_s_axi_r_valid),
-		.s_axi_r_bits_data(_responseBufferReadStreamColumnIndices_s_axi_r_bits_data),
+		.s_axi_r_valid(_responseBufferColumnIndices_s_axi_r_valid),
+		.s_axi_r_bits_data(_responseBufferColumnIndices_s_axi_r_bits_data),
 		.m_axi_ar_ready(_mux_s_axi_1_ar_ready),
-		.m_axi_ar_valid(_responseBufferReadStreamColumnIndices_m_axi_ar_valid),
-		.m_axi_ar_bits_addr(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst),
-		.m_axi_r_ready(_responseBufferReadStreamColumnIndices_m_axi_r_ready),
+		.m_axi_ar_valid(_responseBufferColumnIndices_m_axi_ar_valid),
+		.m_axi_ar_bits_addr(_responseBufferColumnIndices_m_axi_ar_bits_addr),
+		.m_axi_ar_bits_len(_responseBufferColumnIndices_m_axi_ar_bits_len),
+		.m_axi_ar_bits_size(_responseBufferColumnIndices_m_axi_ar_bits_size),
+		.m_axi_ar_bits_burst(_responseBufferColumnIndices_m_axi_ar_bits_burst),
+		.m_axi_r_ready(_responseBufferColumnIndices_m_axi_r_ready),
 		.m_axi_r_valid(_mux_s_axi_1_r_valid),
 		.m_axi_r_bits_data(_mux_s_axi_1_r_bits_data),
 		.m_axi_r_bits_resp(_mux_s_axi_1_r_bits_resp),
 		.m_axi_r_bits_last(_mux_s_axi_1_r_bits_last)
 	);
-	ResponseBuffer responseBufferReadStreamRowLengths(
+	ResponseBuffer responseBufferRowLengths(
 		.clock(clock),
 		.reset(reset),
-		.s_axi_ar_ready(_responseBufferReadStreamRowLengths_s_axi_ar_ready),
+		.s_axi_ar_ready(_responseBufferRowLengths_s_axi_ar_ready),
 		.s_axi_ar_valid(_readStreamRowLengths_m_axi_ar_valid),
 		.s_axi_ar_bits_addr(_readStreamRowLengths_m_axi_ar_bits_addr),
 		.s_axi_ar_bits_len(_readStreamRowLengths_m_axi_ar_bits_len),
 		.s_axi_ar_bits_size(_readStreamRowLengths_m_axi_ar_bits_size),
 		.s_axi_ar_bits_burst(_readStreamRowLengths_m_axi_ar_bits_burst),
 		.s_axi_r_ready(_readStreamRowLengths_m_axi_r_ready),
-		.s_axi_r_valid(_responseBufferReadStreamRowLengths_s_axi_r_valid),
-		.s_axi_r_bits_data(_responseBufferReadStreamRowLengths_s_axi_r_bits_data),
+		.s_axi_r_valid(_responseBufferRowLengths_s_axi_r_valid),
+		.s_axi_r_bits_data(_responseBufferRowLengths_s_axi_r_bits_data),
 		.m_axi_ar_ready(_mux_s_axi_2_ar_ready),
-		.m_axi_ar_valid(_responseBufferReadStreamRowLengths_m_axi_ar_valid),
-		.m_axi_ar_bits_addr(_responseBufferReadStreamRowLengths_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_responseBufferReadStreamRowLengths_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_responseBufferReadStreamRowLengths_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_responseBufferReadStreamRowLengths_m_axi_ar_bits_burst),
-		.m_axi_r_ready(_responseBufferReadStreamRowLengths_m_axi_r_ready),
+		.m_axi_ar_valid(_responseBufferRowLengths_m_axi_ar_valid),
+		.m_axi_ar_bits_addr(_responseBufferRowLengths_m_axi_ar_bits_addr),
+		.m_axi_ar_bits_len(_responseBufferRowLengths_m_axi_ar_bits_len),
+		.m_axi_ar_bits_size(_responseBufferRowLengths_m_axi_ar_bits_size),
+		.m_axi_ar_bits_burst(_responseBufferRowLengths_m_axi_ar_bits_burst),
+		.m_axi_r_ready(_responseBufferRowLengths_m_axi_r_ready),
 		.m_axi_r_valid(_mux_s_axi_2_r_valid),
 		.m_axi_r_bits_data(_mux_s_axi_2_r_bits_data),
 		.m_axi_r_bits_resp(_mux_s_axi_2_r_bits_resp),
@@ -10312,34 +10590,34 @@ module Spmv (
 		.clock(clock),
 		.reset(reset),
 		.s_axi_0_ar_ready(_mux_s_axi_0_ar_ready),
-		.s_axi_0_ar_valid(_responseBufferReadStreamValue_m_axi_ar_valid),
-		.s_axi_0_ar_bits_addr(_responseBufferReadStreamValue_m_axi_ar_bits_addr),
-		.s_axi_0_ar_bits_len(_responseBufferReadStreamValue_m_axi_ar_bits_len),
-		.s_axi_0_ar_bits_size(_responseBufferReadStreamValue_m_axi_ar_bits_size),
-		.s_axi_0_ar_bits_burst(_responseBufferReadStreamValue_m_axi_ar_bits_burst),
-		.s_axi_0_r_ready(_responseBufferReadStreamValue_m_axi_r_ready),
+		.s_axi_0_ar_valid(_responseBufferValue_m_axi_ar_valid),
+		.s_axi_0_ar_bits_addr(_responseBufferValue_m_axi_ar_bits_addr),
+		.s_axi_0_ar_bits_len(_responseBufferValue_m_axi_ar_bits_len),
+		.s_axi_0_ar_bits_size(_responseBufferValue_m_axi_ar_bits_size),
+		.s_axi_0_ar_bits_burst(_responseBufferValue_m_axi_ar_bits_burst),
+		.s_axi_0_r_ready(_responseBufferValue_m_axi_r_ready),
 		.s_axi_0_r_valid(_mux_s_axi_0_r_valid),
 		.s_axi_0_r_bits_data(_mux_s_axi_0_r_bits_data),
 		.s_axi_0_r_bits_resp(_mux_s_axi_0_r_bits_resp),
 		.s_axi_0_r_bits_last(_mux_s_axi_0_r_bits_last),
 		.s_axi_1_ar_ready(_mux_s_axi_1_ar_ready),
-		.s_axi_1_ar_valid(_responseBufferReadStreamColumnIndices_m_axi_ar_valid),
-		.s_axi_1_ar_bits_addr(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr),
-		.s_axi_1_ar_bits_len(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_len),
-		.s_axi_1_ar_bits_size(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_size),
-		.s_axi_1_ar_bits_burst(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst),
-		.s_axi_1_r_ready(_responseBufferReadStreamColumnIndices_m_axi_r_ready),
+		.s_axi_1_ar_valid(_responseBufferColumnIndices_m_axi_ar_valid),
+		.s_axi_1_ar_bits_addr(_responseBufferColumnIndices_m_axi_ar_bits_addr),
+		.s_axi_1_ar_bits_len(_responseBufferColumnIndices_m_axi_ar_bits_len),
+		.s_axi_1_ar_bits_size(_responseBufferColumnIndices_m_axi_ar_bits_size),
+		.s_axi_1_ar_bits_burst(_responseBufferColumnIndices_m_axi_ar_bits_burst),
+		.s_axi_1_r_ready(_responseBufferColumnIndices_m_axi_r_ready),
 		.s_axi_1_r_valid(_mux_s_axi_1_r_valid),
 		.s_axi_1_r_bits_data(_mux_s_axi_1_r_bits_data),
 		.s_axi_1_r_bits_resp(_mux_s_axi_1_r_bits_resp),
 		.s_axi_1_r_bits_last(_mux_s_axi_1_r_bits_last),
 		.s_axi_2_ar_ready(_mux_s_axi_2_ar_ready),
-		.s_axi_2_ar_valid(_responseBufferReadStreamRowLengths_m_axi_ar_valid),
-		.s_axi_2_ar_bits_addr(_responseBufferReadStreamRowLengths_m_axi_ar_bits_addr),
-		.s_axi_2_ar_bits_len(_responseBufferReadStreamRowLengths_m_axi_ar_bits_len),
-		.s_axi_2_ar_bits_size(_responseBufferReadStreamRowLengths_m_axi_ar_bits_size),
-		.s_axi_2_ar_bits_burst(_responseBufferReadStreamRowLengths_m_axi_ar_bits_burst),
-		.s_axi_2_r_ready(_responseBufferReadStreamRowLengths_m_axi_r_ready),
+		.s_axi_2_ar_valid(_responseBufferRowLengths_m_axi_ar_valid),
+		.s_axi_2_ar_bits_addr(_responseBufferRowLengths_m_axi_ar_bits_addr),
+		.s_axi_2_ar_bits_len(_responseBufferRowLengths_m_axi_ar_bits_len),
+		.s_axi_2_ar_bits_size(_responseBufferRowLengths_m_axi_ar_bits_size),
+		.s_axi_2_ar_bits_burst(_responseBufferRowLengths_m_axi_ar_bits_burst),
+		.s_axi_2_r_ready(_responseBufferRowLengths_m_axi_r_ready),
 		.s_axi_2_r_valid(_mux_s_axi_2_r_valid),
 		.s_axi_2_r_bits_data(_mux_s_axi_2_r_bits_data),
 		.s_axi_2_r_bits_resp(_mux_s_axi_2_r_bits_resp),
@@ -10358,35 +10636,69 @@ module Spmv (
 		.s_axi_3_b_ready(_writeStreamResult_m_axi_b_ready),
 		.s_axi_3_b_valid(_mux_s_axi_3_b_valid),
 		.s_axi_3_b_bits_resp(_mux_s_axi_3_b_bits_resp),
-		.m_axi_ar_ready(m_axi_gp_ar_ready),
-		.m_axi_ar_valid(m_axi_gp_ar_valid),
-		.m_axi_ar_bits_id(m_axi_gp_ar_bits_id),
-		.m_axi_ar_bits_addr(m_axi_gp_ar_bits_addr),
-		.m_axi_ar_bits_len(m_axi_gp_ar_bits_len),
-		.m_axi_ar_bits_size(m_axi_gp_ar_bits_size),
-		.m_axi_ar_bits_burst(m_axi_gp_ar_bits_burst),
-		.m_axi_r_ready(m_axi_gp_r_ready),
-		.m_axi_r_valid(m_axi_gp_r_valid),
-		.m_axi_r_bits_id(m_axi_gp_r_bits_id),
-		.m_axi_r_bits_data(m_axi_gp_r_bits_data),
-		.m_axi_r_bits_resp(m_axi_gp_r_bits_resp),
-		.m_axi_r_bits_last(m_axi_gp_r_bits_last),
-		.m_axi_aw_ready(m_axi_gp_aw_ready),
-		.m_axi_aw_valid(m_axi_gp_aw_valid),
-		.m_axi_aw_bits_id(m_axi_gp_aw_bits_id),
-		.m_axi_aw_bits_addr(m_axi_gp_aw_bits_addr),
-		.m_axi_aw_bits_len(m_axi_gp_aw_bits_len),
-		.m_axi_aw_bits_size(m_axi_gp_aw_bits_size),
-		.m_axi_aw_bits_burst(m_axi_gp_aw_bits_burst),
-		.m_axi_w_ready(m_axi_gp_w_ready),
-		.m_axi_w_valid(m_axi_gp_w_valid),
-		.m_axi_w_bits_data(m_axi_gp_w_bits_data),
-		.m_axi_w_bits_strb(m_axi_gp_w_bits_strb),
-		.m_axi_w_bits_last(m_axi_gp_w_bits_last),
-		.m_axi_b_ready(m_axi_gp_b_ready),
-		.m_axi_b_valid(m_axi_gp_b_valid),
-		.m_axi_b_bits_id(m_axi_gp_b_bits_id),
-		.m_axi_b_bits_resp(m_axi_gp_b_bits_resp)
+		.m_axi_ar_ready(m_axi_regular_ar_ready),
+		.m_axi_ar_valid(m_axi_regular_ar_valid),
+		.m_axi_ar_bits_id(m_axi_regular_ar_bits_id),
+		.m_axi_ar_bits_addr(m_axi_regular_ar_bits_addr),
+		.m_axi_ar_bits_len(m_axi_regular_ar_bits_len),
+		.m_axi_ar_bits_size(m_axi_regular_ar_bits_size),
+		.m_axi_ar_bits_burst(m_axi_regular_ar_bits_burst),
+		.m_axi_r_ready(m_axi_regular_r_ready),
+		.m_axi_r_valid(m_axi_regular_r_valid),
+		.m_axi_r_bits_id(m_axi_regular_r_bits_id),
+		.m_axi_r_bits_data(m_axi_regular_r_bits_data),
+		.m_axi_r_bits_resp(m_axi_regular_r_bits_resp),
+		.m_axi_r_bits_last(m_axi_regular_r_bits_last),
+		.m_axi_aw_ready(m_axi_regular_aw_ready),
+		.m_axi_aw_valid(m_axi_regular_aw_valid),
+		.m_axi_aw_bits_id(m_axi_regular_aw_bits_id),
+		.m_axi_aw_bits_addr(m_axi_regular_aw_bits_addr),
+		.m_axi_aw_bits_len(m_axi_regular_aw_bits_len),
+		.m_axi_aw_bits_size(m_axi_regular_aw_bits_size),
+		.m_axi_aw_bits_burst(m_axi_regular_aw_bits_burst),
+		.m_axi_w_ready(m_axi_regular_w_ready),
+		.m_axi_w_valid(m_axi_regular_w_valid),
+		.m_axi_w_bits_data(m_axi_regular_w_bits_data),
+		.m_axi_w_bits_strb(m_axi_regular_w_bits_strb),
+		.m_axi_w_bits_last(m_axi_regular_w_bits_last),
+		.m_axi_b_ready(m_axi_regular_b_ready),
+		.m_axi_b_valid(m_axi_regular_b_valid),
+		.m_axi_b_bits_id(m_axi_regular_b_bits_id),
+		.m_axi_b_bits_resp(m_axi_regular_b_bits_resp)
+	);
+	ResponseBuffer_3 responseBufferRandom(
+		.clock(clock),
+		.reset(reset),
+		.s_axi_ar_ready(_responseBufferRandom_s_axi_ar_ready),
+		.s_axi_ar_valid(_sinkBuffered__sinkBuffer_1_io_deq_valid),
+		.s_axi_ar_bits_addr(_sinkBuffered__sinkBuffer_1_io_deq_bits_addr),
+		.s_axi_ar_bits_len(_sinkBuffered__sinkBuffer_1_io_deq_bits_len),
+		.s_axi_ar_bits_size(_sinkBuffered__sinkBuffer_1_io_deq_bits_size),
+		.s_axi_ar_bits_burst(_sinkBuffered__sinkBuffer_1_io_deq_bits_burst),
+		.s_axi_ar_bits_lock(_sinkBuffered__sinkBuffer_1_io_deq_bits_lock),
+		.s_axi_ar_bits_cache(_sinkBuffered__sinkBuffer_1_io_deq_bits_cache),
+		.s_axi_ar_bits_prot(_sinkBuffered__sinkBuffer_1_io_deq_bits_prot),
+		.s_axi_ar_bits_qos(_sinkBuffered__sinkBuffer_1_io_deq_bits_qos),
+		.s_axi_ar_bits_region(_sinkBuffered__sinkBuffer_1_io_deq_bits_region),
+		.s_axi_r_ready(_sinkBuffer_1_io_enq_ready),
+		.s_axi_r_valid(_responseBufferRandom_s_axi_r_valid),
+		.s_axi_r_bits_data(_responseBufferRandom_s_axi_r_bits_data),
+		.m_axi_ar_ready(m_axi_random_ar_ready),
+		.m_axi_ar_valid(m_axi_random_ar_valid),
+		.m_axi_ar_bits_addr(m_axi_random_ar_bits_addr),
+		.m_axi_ar_bits_len(m_axi_random_ar_bits_len),
+		.m_axi_ar_bits_size(m_axi_random_ar_bits_size),
+		.m_axi_ar_bits_burst(m_axi_random_ar_bits_burst),
+		.m_axi_ar_bits_lock(m_axi_random_ar_bits_lock),
+		.m_axi_ar_bits_cache(m_axi_random_ar_bits_cache),
+		.m_axi_ar_bits_prot(m_axi_random_ar_bits_prot),
+		.m_axi_ar_bits_qos(m_axi_random_ar_bits_qos),
+		.m_axi_ar_bits_region(m_axi_random_ar_bits_region),
+		.m_axi_r_ready(m_axi_random_r_ready),
+		.m_axi_r_valid(m_axi_random_r_valid),
+		.m_axi_r_bits_data(m_axi_random_r_bits_data),
+		.m_axi_r_bits_resp(m_axi_random_r_bits_resp),
+		.m_axi_r_bits_last(m_axi_random_r_bits_last)
 	);
 	Downsize downsizerValues(
 		.clock(clock),
@@ -10466,17 +10778,17 @@ module Spmv (
 		.io_enq_bits_prot(3'h0),
 		.io_enq_bits_qos(4'h0),
 		.io_enq_bits_region(4'h0),
-		.io_deq_ready(m_axi_ls_ar_ready),
-		.io_deq_valid(m_axi_ls_ar_valid),
-		.io_deq_bits_addr(m_axi_ls_ar_bits_addr),
-		.io_deq_bits_len(m_axi_ls_ar_bits_len),
-		.io_deq_bits_size(m_axi_ls_ar_bits_size),
-		.io_deq_bits_burst(m_axi_ls_ar_bits_burst),
-		.io_deq_bits_lock(m_axi_ls_ar_bits_lock),
-		.io_deq_bits_cache(m_axi_ls_ar_bits_cache),
-		.io_deq_bits_prot(m_axi_ls_ar_bits_prot),
-		.io_deq_bits_qos(m_axi_ls_ar_bits_qos),
-		.io_deq_bits_region(m_axi_ls_ar_bits_region)
+		.io_deq_ready(_responseBufferRandom_s_axi_ar_ready),
+		.io_deq_valid(_sinkBuffered__sinkBuffer_1_io_deq_valid),
+		.io_deq_bits_addr(_sinkBuffered__sinkBuffer_1_io_deq_bits_addr),
+		.io_deq_bits_len(_sinkBuffered__sinkBuffer_1_io_deq_bits_len),
+		.io_deq_bits_size(_sinkBuffered__sinkBuffer_1_io_deq_bits_size),
+		.io_deq_bits_burst(_sinkBuffered__sinkBuffer_1_io_deq_bits_burst),
+		.io_deq_bits_lock(_sinkBuffered__sinkBuffer_1_io_deq_bits_lock),
+		.io_deq_bits_cache(_sinkBuffered__sinkBuffer_1_io_deq_bits_cache),
+		.io_deq_bits_prot(_sinkBuffered__sinkBuffer_1_io_deq_bits_prot),
+		.io_deq_bits_qos(_sinkBuffered__sinkBuffer_1_io_deq_bits_qos),
+		.io_deq_bits_region(_sinkBuffered__sinkBuffer_1_io_deq_bits_region)
 	);
 	BatchMultiply batchMultiply(
 		.clock(clock),
@@ -10504,9 +10816,9 @@ module Spmv (
 	Queue2_UInt256 sinkBuffer_1(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(m_axi_ls_r_ready),
-		.io_enq_valid(m_axi_ls_r_valid),
-		.io_enq_bits(m_axi_ls_r_bits_data),
+		.io_enq_ready(_sinkBuffer_1_io_enq_ready),
+		.io_enq_valid(_responseBufferRandom_s_axi_r_valid),
+		.io_enq_bits(_responseBufferRandom_s_axi_r_bits_data),
 		.io_deq_ready(_batchMultiply_sourceInB_ready),
 		.io_deq_valid(_sinkBuffer_1_io_deq_valid),
 		.io_deq_bits(_sinkBuffer_1_io_deq_bits)
@@ -10672,7 +10984,7 @@ module ram_2x34 (
 	reg [63:0] _RANDOM_MEM;
 	assign R0_data = (R0_en ? Memory[R0_addr] : 34'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 endmodule
-module Queue2_ReadDataChannel_3 (
+module Queue2_ReadDataChannel_4 (
 	clock,
 	reset,
 	io_enq_ready,
@@ -11206,7 +11518,7 @@ module MemAdapter (
 		.io_deq_bits_addr(_s_axil__sourceBuffer_io_deq_bits_addr),
 		.io_deq_bits_prot(_s_axil__sourceBuffer_io_deq_bits_prot)
 	);
-	Queue2_ReadDataChannel_3 s_axil__sinkBuffer(
+	Queue2_ReadDataChannel_4 s_axil__sinkBuffer(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_s_axil__sinkBuffer_io_enq_ready),
@@ -11550,7 +11862,7 @@ module Stripe (
 		.io_deq_bits_addr(_s_axil__sourceBuffer_io_deq_bits_addr),
 		.io_deq_bits_prot(_s_axil__sourceBuffer_io_deq_bits_prot)
 	);
-	Queue2_ReadDataChannel_3 s_axil__sinkBuffer(
+	Queue2_ReadDataChannel_4 s_axil__sinkBuffer(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_s_axil__sinkBuffer_io_enq_ready),
@@ -11902,7 +12214,7 @@ module Stripe_1 (
 		.io_deq_bits_addr(_s_axil__sourceBuffer_io_deq_bits_addr),
 		.io_deq_bits_prot(_s_axil__sourceBuffer_io_deq_bits_prot)
 	);
-	Queue2_ReadDataChannel_3 s_axil__sinkBuffer(
+	Queue2_ReadDataChannel_4 s_axil__sinkBuffer(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_s_axil__sinkBuffer_io_enq_ready),
@@ -12660,7 +12972,7 @@ module axi4LiteDemux (
 		.io_deq_bits_addr(_s_axil__sourceBuffer_io_deq_bits_addr),
 		.io_deq_bits_prot(_s_axil__sourceBuffer_io_deq_bits_prot)
 	);
-	Queue2_ReadDataChannel_3 s_axil__sinkBuffer(
+	Queue2_ReadDataChannel_4 s_axil__sinkBuffer(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_s_axil__sinkBuffer_io_enq_ready),
@@ -13002,360 +13314,6 @@ module Queue4_UInt64 (
 	assign io_enq_ready = ~full;
 	assign io_deq_valid = ~empty;
 endmodule
-module CounterEx_3 (
-	clock,
-	reset,
-	io_up,
-	io_down,
-	io_left
-);
-	input clock;
-	input reset;
-	input [9:0] io_up;
-	input [9:0] io_down;
-	output wire [9:0] io_left;
-	reg [9:0] rLeft;
-	always @(posedge clock)
-		if (reset)
-			rLeft <= 10'h200;
-		else if (io_up > io_down)
-			rLeft <= rLeft - (io_up - io_down);
-		else
-			rLeft <= (rLeft + io_down) - io_up;
-	initial begin : sv2v_autoblock_1
-		reg [31:0] _RANDOM [0:0];
-	end
-	assign io_left = rLeft;
-endmodule
-module ram_512x259 (
-	R0_addr,
-	R0_en,
-	R0_clk,
-	R0_data,
-	W0_addr,
-	W0_en,
-	W0_clk,
-	W0_data
-);
-	input [8:0] R0_addr;
-	input R0_en;
-	input R0_clk;
-	output wire [258:0] R0_data;
-	input [8:0] W0_addr;
-	input W0_en;
-	input W0_clk;
-	input [258:0] W0_data;
-	reg [258:0] Memory [0:511];
-	always @(posedge W0_clk)
-		if (W0_en & 1'h1)
-			Memory[W0_addr] <= W0_data;
-	reg [287:0] _RANDOM_MEM;
-	assign R0_data = (R0_en ? Memory[R0_addr] : 259'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
-endmodule
-module Queue512_ReadDataChannel (
-	clock,
-	reset,
-	io_enq_ready,
-	io_enq_valid,
-	io_enq_bits_data,
-	io_enq_bits_resp,
-	io_enq_bits_last,
-	io_deq_ready,
-	io_deq_valid,
-	io_deq_bits_data,
-	io_deq_bits_resp,
-	io_deq_bits_last
-);
-	input clock;
-	input reset;
-	output wire io_enq_ready;
-	input io_enq_valid;
-	input [255:0] io_enq_bits_data;
-	input [1:0] io_enq_bits_resp;
-	input io_enq_bits_last;
-	input io_deq_ready;
-	output wire io_deq_valid;
-	output wire [255:0] io_deq_bits_data;
-	output wire [1:0] io_deq_bits_resp;
-	output wire io_deq_bits_last;
-	wire [258:0] _ram_ext_R0_data;
-	reg [8:0] enq_ptr_value;
-	reg [8:0] deq_ptr_value;
-	reg maybe_full;
-	wire ptr_match = enq_ptr_value == deq_ptr_value;
-	wire empty = ptr_match & ~maybe_full;
-	wire full = ptr_match & maybe_full;
-	wire do_enq = ~full & io_enq_valid;
-	always @(posedge clock)
-		if (reset) begin
-			enq_ptr_value <= 9'h000;
-			deq_ptr_value <= 9'h000;
-			maybe_full <= 1'h0;
-		end
-		else begin : sv2v_autoblock_1
-			reg do_deq;
-			do_deq = io_deq_ready & ~empty;
-			if (do_enq)
-				enq_ptr_value <= enq_ptr_value + 9'h001;
-			if (do_deq)
-				deq_ptr_value <= deq_ptr_value + 9'h001;
-			if (~(do_enq == do_deq))
-				maybe_full <= do_enq;
-		end
-	initial begin : sv2v_autoblock_2
-		reg [31:0] _RANDOM [0:0];
-	end
-	ram_512x259 ram_ext(
-		.R0_addr(deq_ptr_value),
-		.R0_en(1'h1),
-		.R0_clk(clock),
-		.R0_data(_ram_ext_R0_data),
-		.W0_addr(enq_ptr_value),
-		.W0_en(do_enq),
-		.W0_clk(clock),
-		.W0_data({io_enq_bits_last, io_enq_bits_resp, io_enq_bits_data})
-	);
-	assign io_enq_ready = ~full;
-	assign io_deq_valid = ~empty;
-	assign io_deq_bits_data = _ram_ext_R0_data[255:0];
-	assign io_deq_bits_resp = _ram_ext_R0_data[257:256];
-	assign io_deq_bits_last = _ram_ext_R0_data[258];
-endmodule
-module ResponseBuffer_3 (
-	clock,
-	reset,
-	s_axi_ar_ready,
-	s_axi_ar_valid,
-	s_axi_ar_bits_addr,
-	s_axi_ar_bits_len,
-	s_axi_ar_bits_size,
-	s_axi_ar_bits_burst,
-	s_axi_ar_bits_lock,
-	s_axi_ar_bits_cache,
-	s_axi_ar_bits_prot,
-	s_axi_ar_bits_qos,
-	s_axi_ar_bits_region,
-	s_axi_r_ready,
-	s_axi_r_valid,
-	s_axi_r_bits_data,
-	s_axi_r_bits_resp,
-	s_axi_r_bits_last,
-	s_axi_aw_ready,
-	s_axi_aw_valid,
-	s_axi_aw_bits_addr,
-	s_axi_aw_bits_len,
-	s_axi_aw_bits_size,
-	s_axi_aw_bits_burst,
-	s_axi_aw_bits_lock,
-	s_axi_aw_bits_cache,
-	s_axi_aw_bits_prot,
-	s_axi_aw_bits_qos,
-	s_axi_aw_bits_region,
-	s_axi_w_ready,
-	s_axi_w_valid,
-	s_axi_w_bits_data,
-	s_axi_w_bits_strb,
-	s_axi_w_bits_last,
-	s_axi_b_ready,
-	s_axi_b_valid,
-	m_axi_ar_ready,
-	m_axi_ar_valid,
-	m_axi_ar_bits_addr,
-	m_axi_ar_bits_len,
-	m_axi_ar_bits_size,
-	m_axi_ar_bits_burst,
-	m_axi_ar_bits_lock,
-	m_axi_ar_bits_cache,
-	m_axi_ar_bits_prot,
-	m_axi_ar_bits_qos,
-	m_axi_ar_bits_region,
-	m_axi_r_ready,
-	m_axi_r_valid,
-	m_axi_r_bits_data,
-	m_axi_r_bits_resp,
-	m_axi_r_bits_last,
-	m_axi_aw_ready,
-	m_axi_aw_valid,
-	m_axi_aw_bits_addr,
-	m_axi_aw_bits_len,
-	m_axi_aw_bits_size,
-	m_axi_aw_bits_burst,
-	m_axi_aw_bits_lock,
-	m_axi_aw_bits_cache,
-	m_axi_aw_bits_prot,
-	m_axi_aw_bits_qos,
-	m_axi_aw_bits_region,
-	m_axi_w_ready,
-	m_axi_w_valid,
-	m_axi_w_bits_data,
-	m_axi_w_bits_strb,
-	m_axi_w_bits_last,
-	m_axi_b_ready,
-	m_axi_b_valid
-);
-	input clock;
-	input reset;
-	output wire s_axi_ar_ready;
-	input s_axi_ar_valid;
-	input [63:0] s_axi_ar_bits_addr;
-	input [7:0] s_axi_ar_bits_len;
-	input [2:0] s_axi_ar_bits_size;
-	input [1:0] s_axi_ar_bits_burst;
-	input s_axi_ar_bits_lock;
-	input [3:0] s_axi_ar_bits_cache;
-	input [2:0] s_axi_ar_bits_prot;
-	input [3:0] s_axi_ar_bits_qos;
-	input [3:0] s_axi_ar_bits_region;
-	input s_axi_r_ready;
-	output wire s_axi_r_valid;
-	output wire [255:0] s_axi_r_bits_data;
-	output wire [1:0] s_axi_r_bits_resp;
-	output wire s_axi_r_bits_last;
-	output wire s_axi_aw_ready;
-	input s_axi_aw_valid;
-	input [63:0] s_axi_aw_bits_addr;
-	input [7:0] s_axi_aw_bits_len;
-	input [2:0] s_axi_aw_bits_size;
-	input [1:0] s_axi_aw_bits_burst;
-	input s_axi_aw_bits_lock;
-	input [3:0] s_axi_aw_bits_cache;
-	input [2:0] s_axi_aw_bits_prot;
-	input [3:0] s_axi_aw_bits_qos;
-	input [3:0] s_axi_aw_bits_region;
-	output wire s_axi_w_ready;
-	input s_axi_w_valid;
-	input [255:0] s_axi_w_bits_data;
-	input [31:0] s_axi_w_bits_strb;
-	input s_axi_w_bits_last;
-	input s_axi_b_ready;
-	output wire s_axi_b_valid;
-	input m_axi_ar_ready;
-	output wire m_axi_ar_valid;
-	output wire [63:0] m_axi_ar_bits_addr;
-	output wire [7:0] m_axi_ar_bits_len;
-	output wire [2:0] m_axi_ar_bits_size;
-	output wire [1:0] m_axi_ar_bits_burst;
-	output wire m_axi_ar_bits_lock;
-	output wire [3:0] m_axi_ar_bits_cache;
-	output wire [2:0] m_axi_ar_bits_prot;
-	output wire [3:0] m_axi_ar_bits_qos;
-	output wire [3:0] m_axi_ar_bits_region;
-	output wire m_axi_r_ready;
-	input m_axi_r_valid;
-	input [255:0] m_axi_r_bits_data;
-	input [1:0] m_axi_r_bits_resp;
-	input m_axi_r_bits_last;
-	input m_axi_aw_ready;
-	output wire m_axi_aw_valid;
-	output wire [63:0] m_axi_aw_bits_addr;
-	output wire [7:0] m_axi_aw_bits_len;
-	output wire [2:0] m_axi_aw_bits_size;
-	output wire [1:0] m_axi_aw_bits_burst;
-	output wire m_axi_aw_bits_lock;
-	output wire [3:0] m_axi_aw_bits_cache;
-	output wire [2:0] m_axi_aw_bits_prot;
-	output wire [3:0] m_axi_aw_bits_qos;
-	output wire [3:0] m_axi_aw_bits_region;
-	input m_axi_w_ready;
-	output wire m_axi_w_valid;
-	output wire [255:0] m_axi_w_bits_data;
-	output wire [31:0] m_axi_w_bits_strb;
-	output wire m_axi_w_bits_last;
-	output wire m_axi_b_ready;
-	input m_axi_b_valid;
-	wire _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready;
-	wire _read_arrival1_sourceBuffer_io_deq_valid;
-	wire [255:0] _read_arrival1_sourceBuffer_io_deq_bits_data;
-	wire [1:0] _read_arrival1_sourceBuffer_io_deq_bits_resp;
-	wire _read_arrival1_sourceBuffer_io_deq_bits_last;
-	wire _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready;
-	wire [9:0] _read_ctrR_io_left;
-	wire _read_arrival0_T = _read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready & s_axi_ar_valid;
-	wire [9:0] _GEN = {1'h0, {1'h0, s_axi_ar_bits_len} + 9'h001};
-	wire _read_arrival0_T_1 = _read_ctrR_io_left >= _GEN;
-	wire s_axi_ar_ready_0 = _read_arrival0_T & _read_arrival0_T_1;
-	wire read_arrival1_result_ready = _read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready & _read_arrival1_sourceBuffer_io_deq_valid;
-	CounterEx_3 read_ctrR(
-		.clock(clock),
-		.reset(reset),
-		.io_up((_read_arrival0_T & _read_arrival0_T_1 ? _GEN : 10'h000)),
-		.io_down({9'h000, read_arrival1_result_ready}),
-		.io_left(_read_ctrR_io_left)
-	);
-	Queue2_ReadAddressChannel_7 read_arrival0_sinkBuffered__sinkBuffer(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(_read_arrival0_sinkBuffered__sinkBuffer_io_enq_ready),
-		.io_enq_valid(s_axi_ar_ready_0),
-		.io_enq_bits_addr(s_axi_ar_bits_addr),
-		.io_enq_bits_len(s_axi_ar_bits_len),
-		.io_enq_bits_size(s_axi_ar_bits_size),
-		.io_enq_bits_burst(s_axi_ar_bits_burst),
-		.io_enq_bits_lock(s_axi_ar_bits_lock),
-		.io_enq_bits_cache(s_axi_ar_bits_cache),
-		.io_enq_bits_prot(s_axi_ar_bits_prot),
-		.io_enq_bits_qos(s_axi_ar_bits_qos),
-		.io_enq_bits_region(s_axi_ar_bits_region),
-		.io_deq_ready(m_axi_ar_ready),
-		.io_deq_valid(m_axi_ar_valid),
-		.io_deq_bits_addr(m_axi_ar_bits_addr),
-		.io_deq_bits_len(m_axi_ar_bits_len),
-		.io_deq_bits_size(m_axi_ar_bits_size),
-		.io_deq_bits_burst(m_axi_ar_bits_burst),
-		.io_deq_bits_lock(m_axi_ar_bits_lock),
-		.io_deq_bits_cache(m_axi_ar_bits_cache),
-		.io_deq_bits_prot(m_axi_ar_bits_prot),
-		.io_deq_bits_qos(m_axi_ar_bits_qos),
-		.io_deq_bits_region(m_axi_ar_bits_region)
-	);
-	Queue512_ReadDataChannel read_arrival1_sourceBuffer(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(m_axi_r_ready),
-		.io_enq_valid(m_axi_r_valid),
-		.io_enq_bits_data(m_axi_r_bits_data),
-		.io_enq_bits_resp(m_axi_r_bits_resp),
-		.io_enq_bits_last(m_axi_r_bits_last),
-		.io_deq_ready(read_arrival1_result_ready),
-		.io_deq_valid(_read_arrival1_sourceBuffer_io_deq_valid),
-		.io_deq_bits_data(_read_arrival1_sourceBuffer_io_deq_bits_data),
-		.io_deq_bits_resp(_read_arrival1_sourceBuffer_io_deq_bits_resp),
-		.io_deq_bits_last(_read_arrival1_sourceBuffer_io_deq_bits_last)
-	);
-	Queue2_ReadDataChannel read_arrival1_sinkBuffered__sinkBuffer(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(_read_arrival1_sinkBuffered__sinkBuffer_io_enq_ready),
-		.io_enq_valid(read_arrival1_result_ready),
-		.io_enq_bits_data(_read_arrival1_sourceBuffer_io_deq_bits_data),
-		.io_enq_bits_resp(_read_arrival1_sourceBuffer_io_deq_bits_resp),
-		.io_enq_bits_last(_read_arrival1_sourceBuffer_io_deq_bits_last),
-		.io_deq_ready(s_axi_r_ready),
-		.io_deq_valid(s_axi_r_valid),
-		.io_deq_bits_data(s_axi_r_bits_data),
-		.io_deq_bits_resp(s_axi_r_bits_resp),
-		.io_deq_bits_last(s_axi_r_bits_last)
-	);
-	assign s_axi_ar_ready = s_axi_ar_ready_0;
-	assign s_axi_aw_ready = m_axi_aw_ready;
-	assign s_axi_w_ready = m_axi_w_ready;
-	assign s_axi_b_valid = m_axi_b_valid;
-	assign m_axi_aw_valid = s_axi_aw_valid;
-	assign m_axi_aw_bits_addr = s_axi_aw_bits_addr;
-	assign m_axi_aw_bits_len = s_axi_aw_bits_len;
-	assign m_axi_aw_bits_size = s_axi_aw_bits_size;
-	assign m_axi_aw_bits_burst = s_axi_aw_bits_burst;
-	assign m_axi_aw_bits_lock = s_axi_aw_bits_lock;
-	assign m_axi_aw_bits_cache = s_axi_aw_bits_cache;
-	assign m_axi_aw_bits_prot = s_axi_aw_bits_prot;
-	assign m_axi_aw_bits_qos = s_axi_aw_bits_qos;
-	assign m_axi_aw_bits_region = s_axi_aw_bits_region;
-	assign m_axi_w_valid = s_axi_w_valid;
-	assign m_axi_w_bits_data = s_axi_w_bits_data;
-	assign m_axi_w_bits_strb = s_axi_w_bits_strb;
-	assign m_axi_w_bits_last = s_axi_w_bits_last;
-	assign m_axi_b_ready = s_axi_b_ready;
-endmodule
 module ram_2x63 (
 	R0_addr,
 	R0_en,
@@ -13696,7 +13654,7 @@ module ram_2x261 (
 	reg [287:0] _RANDOM_MEM;
 	assign R0_data = (R0_en ? Memory[R0_addr] : 261'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 endmodule
-module Queue2_ReadDataChannel_11 (
+module Queue2_ReadDataChannel_10 (
 	clock,
 	reset,
 	io_enq_ready,
@@ -13795,7 +13753,7 @@ module ram_2x4 (
 	reg [31:0] _RANDOM_MEM;
 	assign R0_data = (R0_en ? Memory[R0_addr] : 4'bxxxx);
 endmodule
-module Queue2_WriteResponseChannel_7 (
+module Queue2_WriteResponseChannel_6 (
 	clock,
 	reset,
 	io_enq_ready,
@@ -13939,70 +13897,70 @@ module SpmvExp1 (
 	M_AXI_STRIPED_BVALID,
 	M_AXI_STRIPED_BID,
 	M_AXI_STRIPED_BRESP,
-	M_AXI_LS_ARREADY,
-	M_AXI_LS_ARVALID,
-	M_AXI_LS_ARADDR,
-	M_AXI_LS_ARLEN,
-	M_AXI_LS_ARSIZE,
-	M_AXI_LS_ARBURST,
-	M_AXI_LS_ARLOCK,
-	M_AXI_LS_ARCACHE,
-	M_AXI_LS_ARPROT,
-	M_AXI_LS_ARQOS,
-	M_AXI_LS_ARREGION,
-	M_AXI_LS_RREADY,
-	M_AXI_LS_RVALID,
-	M_AXI_LS_RDATA,
-	M_AXI_LS_RRESP,
-	M_AXI_LS_RLAST,
-	M_AXI_LS_AWREADY,
-	M_AXI_LS_AWVALID,
-	M_AXI_LS_AWADDR,
-	M_AXI_LS_AWLEN,
-	M_AXI_LS_AWSIZE,
-	M_AXI_LS_AWBURST,
-	M_AXI_LS_AWLOCK,
-	M_AXI_LS_AWCACHE,
-	M_AXI_LS_AWPROT,
-	M_AXI_LS_AWQOS,
-	M_AXI_LS_AWREGION,
-	M_AXI_LS_WREADY,
-	M_AXI_LS_WVALID,
-	M_AXI_LS_WDATA,
-	M_AXI_LS_WSTRB,
-	M_AXI_LS_WLAST,
-	M_AXI_LS_BREADY,
-	M_AXI_LS_BVALID,
-	M_AXI_LS_BRESP,
-	M_AXI_GP_ARREADY,
-	M_AXI_GP_ARVALID,
-	M_AXI_GP_ARID,
-	M_AXI_GP_ARADDR,
-	M_AXI_GP_ARLEN,
-	M_AXI_GP_ARSIZE,
-	M_AXI_GP_ARBURST,
-	M_AXI_GP_RREADY,
-	M_AXI_GP_RVALID,
-	M_AXI_GP_RID,
-	M_AXI_GP_RDATA,
-	M_AXI_GP_RRESP,
-	M_AXI_GP_RLAST,
-	M_AXI_GP_AWREADY,
-	M_AXI_GP_AWVALID,
-	M_AXI_GP_AWID,
-	M_AXI_GP_AWADDR,
-	M_AXI_GP_AWLEN,
-	M_AXI_GP_AWSIZE,
-	M_AXI_GP_AWBURST,
-	M_AXI_GP_WREADY,
-	M_AXI_GP_WVALID,
-	M_AXI_GP_WDATA,
-	M_AXI_GP_WSTRB,
-	M_AXI_GP_WLAST,
-	M_AXI_GP_BREADY,
-	M_AXI_GP_BVALID,
-	M_AXI_GP_BID,
-	M_AXI_GP_BRESP
+	M_AXI_RANDOM_ARREADY,
+	M_AXI_RANDOM_ARVALID,
+	M_AXI_RANDOM_ARADDR,
+	M_AXI_RANDOM_ARLEN,
+	M_AXI_RANDOM_ARSIZE,
+	M_AXI_RANDOM_ARBURST,
+	M_AXI_RANDOM_ARLOCK,
+	M_AXI_RANDOM_ARCACHE,
+	M_AXI_RANDOM_ARPROT,
+	M_AXI_RANDOM_ARQOS,
+	M_AXI_RANDOM_ARREGION,
+	M_AXI_RANDOM_RREADY,
+	M_AXI_RANDOM_RVALID,
+	M_AXI_RANDOM_RDATA,
+	M_AXI_RANDOM_RRESP,
+	M_AXI_RANDOM_RLAST,
+	M_AXI_RANDOM_AWREADY,
+	M_AXI_RANDOM_AWVALID,
+	M_AXI_RANDOM_AWADDR,
+	M_AXI_RANDOM_AWLEN,
+	M_AXI_RANDOM_AWSIZE,
+	M_AXI_RANDOM_AWBURST,
+	M_AXI_RANDOM_AWLOCK,
+	M_AXI_RANDOM_AWCACHE,
+	M_AXI_RANDOM_AWPROT,
+	M_AXI_RANDOM_AWQOS,
+	M_AXI_RANDOM_AWREGION,
+	M_AXI_RANDOM_WREADY,
+	M_AXI_RANDOM_WVALID,
+	M_AXI_RANDOM_WDATA,
+	M_AXI_RANDOM_WSTRB,
+	M_AXI_RANDOM_WLAST,
+	M_AXI_RANDOM_BREADY,
+	M_AXI_RANDOM_BVALID,
+	M_AXI_RANDOM_BRESP,
+	M_AXI_REGULAR_ARREADY,
+	M_AXI_REGULAR_ARVALID,
+	M_AXI_REGULAR_ARID,
+	M_AXI_REGULAR_ARADDR,
+	M_AXI_REGULAR_ARLEN,
+	M_AXI_REGULAR_ARSIZE,
+	M_AXI_REGULAR_ARBURST,
+	M_AXI_REGULAR_RREADY,
+	M_AXI_REGULAR_RVALID,
+	M_AXI_REGULAR_RID,
+	M_AXI_REGULAR_RDATA,
+	M_AXI_REGULAR_RRESP,
+	M_AXI_REGULAR_RLAST,
+	M_AXI_REGULAR_AWREADY,
+	M_AXI_REGULAR_AWVALID,
+	M_AXI_REGULAR_AWID,
+	M_AXI_REGULAR_AWADDR,
+	M_AXI_REGULAR_AWLEN,
+	M_AXI_REGULAR_AWSIZE,
+	M_AXI_REGULAR_AWBURST,
+	M_AXI_REGULAR_WREADY,
+	M_AXI_REGULAR_WVALID,
+	M_AXI_REGULAR_WDATA,
+	M_AXI_REGULAR_WSTRB,
+	M_AXI_REGULAR_WLAST,
+	M_AXI_REGULAR_BREADY,
+	M_AXI_REGULAR_BVALID,
+	M_AXI_REGULAR_BID,
+	M_AXI_REGULAR_BRESP
 );
 	input clock;
 	input reset;
@@ -14083,123 +14041,89 @@ module SpmvExp1 (
 	input M_AXI_STRIPED_BVALID;
 	input [1:0] M_AXI_STRIPED_BID;
 	input [1:0] M_AXI_STRIPED_BRESP;
-	input M_AXI_LS_ARREADY;
-	output wire M_AXI_LS_ARVALID;
-	output wire [63:0] M_AXI_LS_ARADDR;
-	output wire [7:0] M_AXI_LS_ARLEN;
-	output wire [2:0] M_AXI_LS_ARSIZE;
-	output wire [1:0] M_AXI_LS_ARBURST;
-	output wire M_AXI_LS_ARLOCK;
-	output wire [3:0] M_AXI_LS_ARCACHE;
-	output wire [2:0] M_AXI_LS_ARPROT;
-	output wire [3:0] M_AXI_LS_ARQOS;
-	output wire [3:0] M_AXI_LS_ARREGION;
-	output wire M_AXI_LS_RREADY;
-	input M_AXI_LS_RVALID;
-	input [255:0] M_AXI_LS_RDATA;
-	input [1:0] M_AXI_LS_RRESP;
-	input M_AXI_LS_RLAST;
-	input M_AXI_LS_AWREADY;
-	output wire M_AXI_LS_AWVALID;
-	output wire [63:0] M_AXI_LS_AWADDR;
-	output wire [7:0] M_AXI_LS_AWLEN;
-	output wire [2:0] M_AXI_LS_AWSIZE;
-	output wire [1:0] M_AXI_LS_AWBURST;
-	output wire M_AXI_LS_AWLOCK;
-	output wire [3:0] M_AXI_LS_AWCACHE;
-	output wire [2:0] M_AXI_LS_AWPROT;
-	output wire [3:0] M_AXI_LS_AWQOS;
-	output wire [3:0] M_AXI_LS_AWREGION;
-	input M_AXI_LS_WREADY;
-	output wire M_AXI_LS_WVALID;
-	output wire [255:0] M_AXI_LS_WDATA;
-	output wire [31:0] M_AXI_LS_WSTRB;
-	output wire M_AXI_LS_WLAST;
-	output wire M_AXI_LS_BREADY;
-	input M_AXI_LS_BVALID;
-	input [1:0] M_AXI_LS_BRESP;
-	input M_AXI_GP_ARREADY;
-	output wire M_AXI_GP_ARVALID;
-	output wire [1:0] M_AXI_GP_ARID;
-	output wire [63:0] M_AXI_GP_ARADDR;
-	output wire [3:0] M_AXI_GP_ARLEN;
-	output wire [2:0] M_AXI_GP_ARSIZE;
-	output wire [1:0] M_AXI_GP_ARBURST;
-	output wire M_AXI_GP_RREADY;
-	input M_AXI_GP_RVALID;
-	input [1:0] M_AXI_GP_RID;
-	input [255:0] M_AXI_GP_RDATA;
-	input [1:0] M_AXI_GP_RRESP;
-	input M_AXI_GP_RLAST;
-	input M_AXI_GP_AWREADY;
-	output wire M_AXI_GP_AWVALID;
-	output wire [1:0] M_AXI_GP_AWID;
-	output wire [63:0] M_AXI_GP_AWADDR;
-	output wire [3:0] M_AXI_GP_AWLEN;
-	output wire [2:0] M_AXI_GP_AWSIZE;
-	output wire [1:0] M_AXI_GP_AWBURST;
-	input M_AXI_GP_WREADY;
-	output wire M_AXI_GP_WVALID;
-	output wire [255:0] M_AXI_GP_WDATA;
-	output wire [31:0] M_AXI_GP_WSTRB;
-	output wire M_AXI_GP_WLAST;
-	output wire M_AXI_GP_BREADY;
-	input M_AXI_GP_BVALID;
-	input [1:0] M_AXI_GP_BID;
-	input [1:0] M_AXI_GP_BRESP;
-	wire _sinkBuffer_8_io_deq_valid;
-	wire [1:0] _sinkBuffer_8_io_deq_bits_id;
-	wire [1:0] _sinkBuffer_8_io_deq_bits_resp;
-	wire _sourceBuffer_12_io_enq_ready;
-	wire _sourceBuffer_11_io_enq_ready;
-	wire _sinkBuffer_7_io_deq_valid;
-	wire [1:0] _sinkBuffer_7_io_deq_bits_id;
-	wire [255:0] _sinkBuffer_7_io_deq_bits_data;
-	wire [1:0] _sinkBuffer_7_io_deq_bits_resp;
-	wire _sinkBuffer_7_io_deq_bits_last;
-	wire _sourceBuffer_10_io_enq_ready;
+	input M_AXI_RANDOM_ARREADY;
+	output wire M_AXI_RANDOM_ARVALID;
+	output wire [63:0] M_AXI_RANDOM_ARADDR;
+	output wire [7:0] M_AXI_RANDOM_ARLEN;
+	output wire [2:0] M_AXI_RANDOM_ARSIZE;
+	output wire [1:0] M_AXI_RANDOM_ARBURST;
+	output wire M_AXI_RANDOM_ARLOCK;
+	output wire [3:0] M_AXI_RANDOM_ARCACHE;
+	output wire [2:0] M_AXI_RANDOM_ARPROT;
+	output wire [3:0] M_AXI_RANDOM_ARQOS;
+	output wire [3:0] M_AXI_RANDOM_ARREGION;
+	output wire M_AXI_RANDOM_RREADY;
+	input M_AXI_RANDOM_RVALID;
+	input [255:0] M_AXI_RANDOM_RDATA;
+	input [1:0] M_AXI_RANDOM_RRESP;
+	input M_AXI_RANDOM_RLAST;
+	input M_AXI_RANDOM_AWREADY;
+	output wire M_AXI_RANDOM_AWVALID;
+	output wire [63:0] M_AXI_RANDOM_AWADDR;
+	output wire [7:0] M_AXI_RANDOM_AWLEN;
+	output wire [2:0] M_AXI_RANDOM_AWSIZE;
+	output wire [1:0] M_AXI_RANDOM_AWBURST;
+	output wire M_AXI_RANDOM_AWLOCK;
+	output wire [3:0] M_AXI_RANDOM_AWCACHE;
+	output wire [2:0] M_AXI_RANDOM_AWPROT;
+	output wire [3:0] M_AXI_RANDOM_AWQOS;
+	output wire [3:0] M_AXI_RANDOM_AWREGION;
+	input M_AXI_RANDOM_WREADY;
+	output wire M_AXI_RANDOM_WVALID;
+	output wire [255:0] M_AXI_RANDOM_WDATA;
+	output wire [31:0] M_AXI_RANDOM_WSTRB;
+	output wire M_AXI_RANDOM_WLAST;
+	output wire M_AXI_RANDOM_BREADY;
+	input M_AXI_RANDOM_BVALID;
+	input [1:0] M_AXI_RANDOM_BRESP;
+	input M_AXI_REGULAR_ARREADY;
+	output wire M_AXI_REGULAR_ARVALID;
+	output wire [1:0] M_AXI_REGULAR_ARID;
+	output wire [63:0] M_AXI_REGULAR_ARADDR;
+	output wire [3:0] M_AXI_REGULAR_ARLEN;
+	output wire [2:0] M_AXI_REGULAR_ARSIZE;
+	output wire [1:0] M_AXI_REGULAR_ARBURST;
+	output wire M_AXI_REGULAR_RREADY;
+	input M_AXI_REGULAR_RVALID;
+	input [1:0] M_AXI_REGULAR_RID;
+	input [255:0] M_AXI_REGULAR_RDATA;
+	input [1:0] M_AXI_REGULAR_RRESP;
+	input M_AXI_REGULAR_RLAST;
+	input M_AXI_REGULAR_AWREADY;
+	output wire M_AXI_REGULAR_AWVALID;
+	output wire [1:0] M_AXI_REGULAR_AWID;
+	output wire [63:0] M_AXI_REGULAR_AWADDR;
+	output wire [3:0] M_AXI_REGULAR_AWLEN;
+	output wire [2:0] M_AXI_REGULAR_AWSIZE;
+	output wire [1:0] M_AXI_REGULAR_AWBURST;
+	input M_AXI_REGULAR_WREADY;
+	output wire M_AXI_REGULAR_WVALID;
+	output wire [255:0] M_AXI_REGULAR_WDATA;
+	output wire [31:0] M_AXI_REGULAR_WSTRB;
+	output wire M_AXI_REGULAR_WLAST;
+	output wire M_AXI_REGULAR_BREADY;
+	input M_AXI_REGULAR_BVALID;
+	input [1:0] M_AXI_REGULAR_BID;
+	input [1:0] M_AXI_REGULAR_BRESP;
 	wire _sinkBuffer_6_io_deq_valid;
+	wire [1:0] _sinkBuffer_6_io_deq_bits_id;
+	wire [1:0] _sinkBuffer_6_io_deq_bits_resp;
 	wire _sourceBuffer_9_io_enq_ready;
 	wire _sourceBuffer_8_io_enq_ready;
 	wire _sinkBuffer_5_io_deq_valid;
+	wire [1:0] _sinkBuffer_5_io_deq_bits_id;
 	wire [255:0] _sinkBuffer_5_io_deq_bits_data;
 	wire [1:0] _sinkBuffer_5_io_deq_bits_resp;
 	wire _sinkBuffer_5_io_deq_bits_last;
 	wire _sourceBuffer_7_io_enq_ready;
-	wire _sinkBuffer_4_io_enq_ready;
 	wire _sinkBuffer_4_io_deq_valid;
 	wire _sourceBuffer_6_io_enq_ready;
-	wire _sourceBuffer_6_io_deq_valid;
-	wire [255:0] _sourceBuffer_6_io_deq_bits_data;
-	wire [31:0] _sourceBuffer_6_io_deq_bits_strb;
-	wire _sourceBuffer_6_io_deq_bits_last;
 	wire _sourceBuffer_5_io_enq_ready;
-	wire _sourceBuffer_5_io_deq_valid;
-	wire [63:0] _sourceBuffer_5_io_deq_bits_addr;
-	wire [7:0] _sourceBuffer_5_io_deq_bits_len;
-	wire [2:0] _sourceBuffer_5_io_deq_bits_size;
-	wire [1:0] _sourceBuffer_5_io_deq_bits_burst;
-	wire _sourceBuffer_5_io_deq_bits_lock;
-	wire [3:0] _sourceBuffer_5_io_deq_bits_cache;
-	wire [2:0] _sourceBuffer_5_io_deq_bits_prot;
-	wire [3:0] _sourceBuffer_5_io_deq_bits_qos;
-	wire [3:0] _sourceBuffer_5_io_deq_bits_region;
-	wire _sinkBuffer_3_io_enq_ready;
 	wire _sinkBuffer_3_io_deq_valid;
 	wire [255:0] _sinkBuffer_3_io_deq_bits_data;
 	wire [1:0] _sinkBuffer_3_io_deq_bits_resp;
 	wire _sinkBuffer_3_io_deq_bits_last;
 	wire _sourceBuffer_4_io_enq_ready;
-	wire _sourceBuffer_4_io_deq_valid;
-	wire [63:0] _sourceBuffer_4_io_deq_bits_addr;
-	wire [7:0] _sourceBuffer_4_io_deq_bits_len;
-	wire [2:0] _sourceBuffer_4_io_deq_bits_size;
-	wire [1:0] _sourceBuffer_4_io_deq_bits_burst;
-	wire _sourceBuffer_4_io_deq_bits_lock;
-	wire [3:0] _sourceBuffer_4_io_deq_bits_cache;
-	wire [2:0] _sourceBuffer_4_io_deq_bits_prot;
-	wire [3:0] _sourceBuffer_4_io_deq_bits_qos;
-	wire [3:0] _sourceBuffer_4_io_deq_bits_region;
 	wire _sinkBuffer_2_io_enq_ready;
 	wire _sourceBuffer_3_io_deq_valid;
 	wire [255:0] _sourceBuffer_3_io_deq_bits_data;
@@ -14218,6 +14142,8 @@ module SpmvExp1 (
 	wire _sinkBuffer_1_io_enq_ready;
 	wire _sinkBuffer_1_io_deq_valid;
 	wire [255:0] _sinkBuffer_1_io_deq_bits_data;
+	wire [1:0] _sinkBuffer_1_io_deq_bits_resp;
+	wire _sinkBuffer_1_io_deq_bits_last;
 	wire _sourceBuffer_1_io_enq_ready;
 	wire _sourceBuffer_1_io_deq_valid;
 	wire [33:0] _sourceBuffer_1_io_deq_bits_addr;
@@ -14229,40 +14155,6 @@ module SpmvExp1 (
 	wire [2:0] _sourceBuffer_1_io_deq_bits_prot;
 	wire [3:0] _sourceBuffer_1_io_deq_bits_qos;
 	wire [3:0] _sourceBuffer_1_io_deq_bits_region;
-	wire _responseBuffer_s_axi_ar_ready;
-	wire _responseBuffer_s_axi_r_valid;
-	wire [255:0] _responseBuffer_s_axi_r_bits_data;
-	wire [1:0] _responseBuffer_s_axi_r_bits_resp;
-	wire _responseBuffer_s_axi_r_bits_last;
-	wire _responseBuffer_s_axi_aw_ready;
-	wire _responseBuffer_s_axi_w_ready;
-	wire _responseBuffer_s_axi_b_valid;
-	wire _responseBuffer_m_axi_ar_valid;
-	wire [63:0] _responseBuffer_m_axi_ar_bits_addr;
-	wire [7:0] _responseBuffer_m_axi_ar_bits_len;
-	wire [2:0] _responseBuffer_m_axi_ar_bits_size;
-	wire [1:0] _responseBuffer_m_axi_ar_bits_burst;
-	wire _responseBuffer_m_axi_ar_bits_lock;
-	wire [3:0] _responseBuffer_m_axi_ar_bits_cache;
-	wire [2:0] _responseBuffer_m_axi_ar_bits_prot;
-	wire [3:0] _responseBuffer_m_axi_ar_bits_qos;
-	wire [3:0] _responseBuffer_m_axi_ar_bits_region;
-	wire _responseBuffer_m_axi_r_ready;
-	wire _responseBuffer_m_axi_aw_valid;
-	wire [63:0] _responseBuffer_m_axi_aw_bits_addr;
-	wire [7:0] _responseBuffer_m_axi_aw_bits_len;
-	wire [2:0] _responseBuffer_m_axi_aw_bits_size;
-	wire [1:0] _responseBuffer_m_axi_aw_bits_burst;
-	wire _responseBuffer_m_axi_aw_bits_lock;
-	wire [3:0] _responseBuffer_m_axi_aw_bits_cache;
-	wire [2:0] _responseBuffer_m_axi_aw_bits_prot;
-	wire [3:0] _responseBuffer_m_axi_aw_bits_qos;
-	wire [3:0] _responseBuffer_m_axi_aw_bits_region;
-	wire _responseBuffer_m_axi_w_valid;
-	wire [255:0] _responseBuffer_m_axi_w_bits_data;
-	wire [31:0] _responseBuffer_m_axi_w_bits_strb;
-	wire _responseBuffer_m_axi_w_bits_last;
-	wire _responseBuffer_m_axi_b_ready;
 	wire _sinkBuffer_io_enq_ready;
 	wire _sinkBuffer_io_deq_valid;
 	wire [63:0] _sinkBuffer_io_deq_bits;
@@ -14366,35 +14258,35 @@ module SpmvExp1 (
 	wire _spmv0_sourceTask_ready;
 	wire _spmv0_sinkDone_valid;
 	wire [63:0] _spmv0_sinkDone_bits;
-	wire _spmv0_m_axi_ls_ar_valid;
-	wire [63:0] _spmv0_m_axi_ls_ar_bits_addr;
-	wire [7:0] _spmv0_m_axi_ls_ar_bits_len;
-	wire [2:0] _spmv0_m_axi_ls_ar_bits_size;
-	wire [1:0] _spmv0_m_axi_ls_ar_bits_burst;
-	wire _spmv0_m_axi_ls_ar_bits_lock;
-	wire [3:0] _spmv0_m_axi_ls_ar_bits_cache;
-	wire [2:0] _spmv0_m_axi_ls_ar_bits_prot;
-	wire [3:0] _spmv0_m_axi_ls_ar_bits_qos;
-	wire [3:0] _spmv0_m_axi_ls_ar_bits_region;
-	wire _spmv0_m_axi_ls_r_ready;
-	wire _spmv0_m_axi_gp_ar_valid;
-	wire [1:0] _spmv0_m_axi_gp_ar_bits_id;
-	wire [63:0] _spmv0_m_axi_gp_ar_bits_addr;
-	wire [3:0] _spmv0_m_axi_gp_ar_bits_len;
-	wire [2:0] _spmv0_m_axi_gp_ar_bits_size;
-	wire [1:0] _spmv0_m_axi_gp_ar_bits_burst;
-	wire _spmv0_m_axi_gp_r_ready;
-	wire _spmv0_m_axi_gp_aw_valid;
-	wire [1:0] _spmv0_m_axi_gp_aw_bits_id;
-	wire [63:0] _spmv0_m_axi_gp_aw_bits_addr;
-	wire [3:0] _spmv0_m_axi_gp_aw_bits_len;
-	wire [2:0] _spmv0_m_axi_gp_aw_bits_size;
-	wire [1:0] _spmv0_m_axi_gp_aw_bits_burst;
-	wire _spmv0_m_axi_gp_w_valid;
-	wire [255:0] _spmv0_m_axi_gp_w_bits_data;
-	wire [31:0] _spmv0_m_axi_gp_w_bits_strb;
-	wire _spmv0_m_axi_gp_w_bits_last;
-	wire _spmv0_m_axi_gp_b_ready;
+	wire _spmv0_m_axi_random_ar_valid;
+	wire [63:0] _spmv0_m_axi_random_ar_bits_addr;
+	wire [7:0] _spmv0_m_axi_random_ar_bits_len;
+	wire [2:0] _spmv0_m_axi_random_ar_bits_size;
+	wire [1:0] _spmv0_m_axi_random_ar_bits_burst;
+	wire _spmv0_m_axi_random_ar_bits_lock;
+	wire [3:0] _spmv0_m_axi_random_ar_bits_cache;
+	wire [2:0] _spmv0_m_axi_random_ar_bits_prot;
+	wire [3:0] _spmv0_m_axi_random_ar_bits_qos;
+	wire [3:0] _spmv0_m_axi_random_ar_bits_region;
+	wire _spmv0_m_axi_random_r_ready;
+	wire _spmv0_m_axi_regular_ar_valid;
+	wire [1:0] _spmv0_m_axi_regular_ar_bits_id;
+	wire [63:0] _spmv0_m_axi_regular_ar_bits_addr;
+	wire [3:0] _spmv0_m_axi_regular_ar_bits_len;
+	wire [2:0] _spmv0_m_axi_regular_ar_bits_size;
+	wire [1:0] _spmv0_m_axi_regular_ar_bits_burst;
+	wire _spmv0_m_axi_regular_r_ready;
+	wire _spmv0_m_axi_regular_aw_valid;
+	wire [1:0] _spmv0_m_axi_regular_aw_bits_id;
+	wire [63:0] _spmv0_m_axi_regular_aw_bits_addr;
+	wire [3:0] _spmv0_m_axi_regular_aw_bits_len;
+	wire [2:0] _spmv0_m_axi_regular_aw_bits_size;
+	wire [1:0] _spmv0_m_axi_regular_aw_bits_burst;
+	wire _spmv0_m_axi_regular_w_valid;
+	wire [255:0] _spmv0_m_axi_regular_w_bits_data;
+	wire [31:0] _spmv0_m_axi_regular_w_bits_strb;
+	wire _spmv0_m_axi_regular_w_bits_last;
+	wire _spmv0_m_axi_regular_b_ready;
 	Spmv spmv0(
 		.clock(clock),
 		.reset(reset),
@@ -14410,49 +14302,51 @@ module SpmvExp1 (
 		.sinkDone_ready(_sinkBuffer_io_enq_ready),
 		.sinkDone_valid(_spmv0_sinkDone_valid),
 		.sinkDone_bits(_spmv0_sinkDone_bits),
-		.m_axi_ls_ar_ready(_sourceBuffer_1_io_enq_ready),
-		.m_axi_ls_ar_valid(_spmv0_m_axi_ls_ar_valid),
-		.m_axi_ls_ar_bits_addr(_spmv0_m_axi_ls_ar_bits_addr),
-		.m_axi_ls_ar_bits_len(_spmv0_m_axi_ls_ar_bits_len),
-		.m_axi_ls_ar_bits_size(_spmv0_m_axi_ls_ar_bits_size),
-		.m_axi_ls_ar_bits_burst(_spmv0_m_axi_ls_ar_bits_burst),
-		.m_axi_ls_ar_bits_lock(_spmv0_m_axi_ls_ar_bits_lock),
-		.m_axi_ls_ar_bits_cache(_spmv0_m_axi_ls_ar_bits_cache),
-		.m_axi_ls_ar_bits_prot(_spmv0_m_axi_ls_ar_bits_prot),
-		.m_axi_ls_ar_bits_qos(_spmv0_m_axi_ls_ar_bits_qos),
-		.m_axi_ls_ar_bits_region(_spmv0_m_axi_ls_ar_bits_region),
-		.m_axi_ls_r_ready(_spmv0_m_axi_ls_r_ready),
-		.m_axi_ls_r_valid(_sinkBuffer_1_io_deq_valid),
-		.m_axi_ls_r_bits_data(_sinkBuffer_1_io_deq_bits_data),
-		.m_axi_gp_ar_ready(_sourceBuffer_10_io_enq_ready),
-		.m_axi_gp_ar_valid(_spmv0_m_axi_gp_ar_valid),
-		.m_axi_gp_ar_bits_id(_spmv0_m_axi_gp_ar_bits_id),
-		.m_axi_gp_ar_bits_addr(_spmv0_m_axi_gp_ar_bits_addr),
-		.m_axi_gp_ar_bits_len(_spmv0_m_axi_gp_ar_bits_len),
-		.m_axi_gp_ar_bits_size(_spmv0_m_axi_gp_ar_bits_size),
-		.m_axi_gp_ar_bits_burst(_spmv0_m_axi_gp_ar_bits_burst),
-		.m_axi_gp_r_ready(_spmv0_m_axi_gp_r_ready),
-		.m_axi_gp_r_valid(_sinkBuffer_7_io_deq_valid),
-		.m_axi_gp_r_bits_id(_sinkBuffer_7_io_deq_bits_id),
-		.m_axi_gp_r_bits_data(_sinkBuffer_7_io_deq_bits_data),
-		.m_axi_gp_r_bits_resp(_sinkBuffer_7_io_deq_bits_resp),
-		.m_axi_gp_r_bits_last(_sinkBuffer_7_io_deq_bits_last),
-		.m_axi_gp_aw_ready(_sourceBuffer_11_io_enq_ready),
-		.m_axi_gp_aw_valid(_spmv0_m_axi_gp_aw_valid),
-		.m_axi_gp_aw_bits_id(_spmv0_m_axi_gp_aw_bits_id),
-		.m_axi_gp_aw_bits_addr(_spmv0_m_axi_gp_aw_bits_addr),
-		.m_axi_gp_aw_bits_len(_spmv0_m_axi_gp_aw_bits_len),
-		.m_axi_gp_aw_bits_size(_spmv0_m_axi_gp_aw_bits_size),
-		.m_axi_gp_aw_bits_burst(_spmv0_m_axi_gp_aw_bits_burst),
-		.m_axi_gp_w_ready(_sourceBuffer_12_io_enq_ready),
-		.m_axi_gp_w_valid(_spmv0_m_axi_gp_w_valid),
-		.m_axi_gp_w_bits_data(_spmv0_m_axi_gp_w_bits_data),
-		.m_axi_gp_w_bits_strb(_spmv0_m_axi_gp_w_bits_strb),
-		.m_axi_gp_w_bits_last(_spmv0_m_axi_gp_w_bits_last),
-		.m_axi_gp_b_ready(_spmv0_m_axi_gp_b_ready),
-		.m_axi_gp_b_valid(_sinkBuffer_8_io_deq_valid),
-		.m_axi_gp_b_bits_id(_sinkBuffer_8_io_deq_bits_id),
-		.m_axi_gp_b_bits_resp(_sinkBuffer_8_io_deq_bits_resp)
+		.m_axi_random_ar_ready(_sourceBuffer_1_io_enq_ready),
+		.m_axi_random_ar_valid(_spmv0_m_axi_random_ar_valid),
+		.m_axi_random_ar_bits_addr(_spmv0_m_axi_random_ar_bits_addr),
+		.m_axi_random_ar_bits_len(_spmv0_m_axi_random_ar_bits_len),
+		.m_axi_random_ar_bits_size(_spmv0_m_axi_random_ar_bits_size),
+		.m_axi_random_ar_bits_burst(_spmv0_m_axi_random_ar_bits_burst),
+		.m_axi_random_ar_bits_lock(_spmv0_m_axi_random_ar_bits_lock),
+		.m_axi_random_ar_bits_cache(_spmv0_m_axi_random_ar_bits_cache),
+		.m_axi_random_ar_bits_prot(_spmv0_m_axi_random_ar_bits_prot),
+		.m_axi_random_ar_bits_qos(_spmv0_m_axi_random_ar_bits_qos),
+		.m_axi_random_ar_bits_region(_spmv0_m_axi_random_ar_bits_region),
+		.m_axi_random_r_ready(_spmv0_m_axi_random_r_ready),
+		.m_axi_random_r_valid(_sinkBuffer_1_io_deq_valid),
+		.m_axi_random_r_bits_data(_sinkBuffer_1_io_deq_bits_data),
+		.m_axi_random_r_bits_resp(_sinkBuffer_1_io_deq_bits_resp),
+		.m_axi_random_r_bits_last(_sinkBuffer_1_io_deq_bits_last),
+		.m_axi_regular_ar_ready(_sourceBuffer_7_io_enq_ready),
+		.m_axi_regular_ar_valid(_spmv0_m_axi_regular_ar_valid),
+		.m_axi_regular_ar_bits_id(_spmv0_m_axi_regular_ar_bits_id),
+		.m_axi_regular_ar_bits_addr(_spmv0_m_axi_regular_ar_bits_addr),
+		.m_axi_regular_ar_bits_len(_spmv0_m_axi_regular_ar_bits_len),
+		.m_axi_regular_ar_bits_size(_spmv0_m_axi_regular_ar_bits_size),
+		.m_axi_regular_ar_bits_burst(_spmv0_m_axi_regular_ar_bits_burst),
+		.m_axi_regular_r_ready(_spmv0_m_axi_regular_r_ready),
+		.m_axi_regular_r_valid(_sinkBuffer_5_io_deq_valid),
+		.m_axi_regular_r_bits_id(_sinkBuffer_5_io_deq_bits_id),
+		.m_axi_regular_r_bits_data(_sinkBuffer_5_io_deq_bits_data),
+		.m_axi_regular_r_bits_resp(_sinkBuffer_5_io_deq_bits_resp),
+		.m_axi_regular_r_bits_last(_sinkBuffer_5_io_deq_bits_last),
+		.m_axi_regular_aw_ready(_sourceBuffer_8_io_enq_ready),
+		.m_axi_regular_aw_valid(_spmv0_m_axi_regular_aw_valid),
+		.m_axi_regular_aw_bits_id(_spmv0_m_axi_regular_aw_bits_id),
+		.m_axi_regular_aw_bits_addr(_spmv0_m_axi_regular_aw_bits_addr),
+		.m_axi_regular_aw_bits_len(_spmv0_m_axi_regular_aw_bits_len),
+		.m_axi_regular_aw_bits_size(_spmv0_m_axi_regular_aw_bits_size),
+		.m_axi_regular_aw_bits_burst(_spmv0_m_axi_regular_aw_bits_burst),
+		.m_axi_regular_w_ready(_sourceBuffer_9_io_enq_ready),
+		.m_axi_regular_w_valid(_spmv0_m_axi_regular_w_valid),
+		.m_axi_regular_w_bits_data(_spmv0_m_axi_regular_w_bits_data),
+		.m_axi_regular_w_bits_strb(_spmv0_m_axi_regular_w_bits_strb),
+		.m_axi_regular_w_bits_last(_spmv0_m_axi_regular_w_bits_last),
+		.m_axi_regular_b_ready(_spmv0_m_axi_regular_b_ready),
+		.m_axi_regular_b_valid(_sinkBuffer_6_io_deq_valid),
+		.m_axi_regular_b_bits_id(_sinkBuffer_6_io_deq_bits_id),
+		.m_axi_regular_b_bits_resp(_sinkBuffer_6_io_deq_bits_resp)
 	);
 	MemAdapter memAdapter0(
 		.clock(clock),
@@ -14755,92 +14649,20 @@ module SpmvExp1 (
 		.io_deq_valid(_sinkBuffer_io_deq_valid),
 		.io_deq_bits(_sinkBuffer_io_deq_bits)
 	);
-	ResponseBuffer_3 responseBuffer(
-		.clock(clock),
-		.reset(reset),
-		.s_axi_ar_ready(_responseBuffer_s_axi_ar_ready),
-		.s_axi_ar_valid(_sourceBuffer_4_io_deq_valid),
-		.s_axi_ar_bits_addr(_sourceBuffer_4_io_deq_bits_addr),
-		.s_axi_ar_bits_len(_sourceBuffer_4_io_deq_bits_len),
-		.s_axi_ar_bits_size(_sourceBuffer_4_io_deq_bits_size),
-		.s_axi_ar_bits_burst(_sourceBuffer_4_io_deq_bits_burst),
-		.s_axi_ar_bits_lock(_sourceBuffer_4_io_deq_bits_lock),
-		.s_axi_ar_bits_cache(_sourceBuffer_4_io_deq_bits_cache),
-		.s_axi_ar_bits_prot(_sourceBuffer_4_io_deq_bits_prot),
-		.s_axi_ar_bits_qos(_sourceBuffer_4_io_deq_bits_qos),
-		.s_axi_ar_bits_region(_sourceBuffer_4_io_deq_bits_region),
-		.s_axi_r_ready(_sinkBuffer_3_io_enq_ready),
-		.s_axi_r_valid(_responseBuffer_s_axi_r_valid),
-		.s_axi_r_bits_data(_responseBuffer_s_axi_r_bits_data),
-		.s_axi_r_bits_resp(_responseBuffer_s_axi_r_bits_resp),
-		.s_axi_r_bits_last(_responseBuffer_s_axi_r_bits_last),
-		.s_axi_aw_ready(_responseBuffer_s_axi_aw_ready),
-		.s_axi_aw_valid(_sourceBuffer_5_io_deq_valid),
-		.s_axi_aw_bits_addr(_sourceBuffer_5_io_deq_bits_addr),
-		.s_axi_aw_bits_len(_sourceBuffer_5_io_deq_bits_len),
-		.s_axi_aw_bits_size(_sourceBuffer_5_io_deq_bits_size),
-		.s_axi_aw_bits_burst(_sourceBuffer_5_io_deq_bits_burst),
-		.s_axi_aw_bits_lock(_sourceBuffer_5_io_deq_bits_lock),
-		.s_axi_aw_bits_cache(_sourceBuffer_5_io_deq_bits_cache),
-		.s_axi_aw_bits_prot(_sourceBuffer_5_io_deq_bits_prot),
-		.s_axi_aw_bits_qos(_sourceBuffer_5_io_deq_bits_qos),
-		.s_axi_aw_bits_region(_sourceBuffer_5_io_deq_bits_region),
-		.s_axi_w_ready(_responseBuffer_s_axi_w_ready),
-		.s_axi_w_valid(_sourceBuffer_6_io_deq_valid),
-		.s_axi_w_bits_data(_sourceBuffer_6_io_deq_bits_data),
-		.s_axi_w_bits_strb(_sourceBuffer_6_io_deq_bits_strb),
-		.s_axi_w_bits_last(_sourceBuffer_6_io_deq_bits_last),
-		.s_axi_b_ready(_sinkBuffer_4_io_enq_ready),
-		.s_axi_b_valid(_responseBuffer_s_axi_b_valid),
-		.m_axi_ar_ready(_sourceBuffer_7_io_enq_ready),
-		.m_axi_ar_valid(_responseBuffer_m_axi_ar_valid),
-		.m_axi_ar_bits_addr(_responseBuffer_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_responseBuffer_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_responseBuffer_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_responseBuffer_m_axi_ar_bits_burst),
-		.m_axi_ar_bits_lock(_responseBuffer_m_axi_ar_bits_lock),
-		.m_axi_ar_bits_cache(_responseBuffer_m_axi_ar_bits_cache),
-		.m_axi_ar_bits_prot(_responseBuffer_m_axi_ar_bits_prot),
-		.m_axi_ar_bits_qos(_responseBuffer_m_axi_ar_bits_qos),
-		.m_axi_ar_bits_region(_responseBuffer_m_axi_ar_bits_region),
-		.m_axi_r_ready(_responseBuffer_m_axi_r_ready),
-		.m_axi_r_valid(_sinkBuffer_5_io_deq_valid),
-		.m_axi_r_bits_data(_sinkBuffer_5_io_deq_bits_data),
-		.m_axi_r_bits_resp(_sinkBuffer_5_io_deq_bits_resp),
-		.m_axi_r_bits_last(_sinkBuffer_5_io_deq_bits_last),
-		.m_axi_aw_ready(_sourceBuffer_8_io_enq_ready),
-		.m_axi_aw_valid(_responseBuffer_m_axi_aw_valid),
-		.m_axi_aw_bits_addr(_responseBuffer_m_axi_aw_bits_addr),
-		.m_axi_aw_bits_len(_responseBuffer_m_axi_aw_bits_len),
-		.m_axi_aw_bits_size(_responseBuffer_m_axi_aw_bits_size),
-		.m_axi_aw_bits_burst(_responseBuffer_m_axi_aw_bits_burst),
-		.m_axi_aw_bits_lock(_responseBuffer_m_axi_aw_bits_lock),
-		.m_axi_aw_bits_cache(_responseBuffer_m_axi_aw_bits_cache),
-		.m_axi_aw_bits_prot(_responseBuffer_m_axi_aw_bits_prot),
-		.m_axi_aw_bits_qos(_responseBuffer_m_axi_aw_bits_qos),
-		.m_axi_aw_bits_region(_responseBuffer_m_axi_aw_bits_region),
-		.m_axi_w_ready(_sourceBuffer_9_io_enq_ready),
-		.m_axi_w_valid(_responseBuffer_m_axi_w_valid),
-		.m_axi_w_bits_data(_responseBuffer_m_axi_w_bits_data),
-		.m_axi_w_bits_strb(_responseBuffer_m_axi_w_bits_strb),
-		.m_axi_w_bits_last(_responseBuffer_m_axi_w_bits_last),
-		.m_axi_b_ready(_responseBuffer_m_axi_b_ready),
-		.m_axi_b_valid(_sinkBuffer_6_io_deq_valid)
-	);
 	Queue2_ReadAddressChannel_9 sourceBuffer_1(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_1_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_ls_ar_valid),
-		.io_enq_bits_addr(_spmv0_m_axi_ls_ar_bits_addr[33:0]),
-		.io_enq_bits_len(_spmv0_m_axi_ls_ar_bits_len),
-		.io_enq_bits_size(_spmv0_m_axi_ls_ar_bits_size),
-		.io_enq_bits_burst(_spmv0_m_axi_ls_ar_bits_burst),
-		.io_enq_bits_lock(_spmv0_m_axi_ls_ar_bits_lock),
-		.io_enq_bits_cache(_spmv0_m_axi_ls_ar_bits_cache),
-		.io_enq_bits_prot(_spmv0_m_axi_ls_ar_bits_prot),
-		.io_enq_bits_qos(_spmv0_m_axi_ls_ar_bits_qos),
-		.io_enq_bits_region(_spmv0_m_axi_ls_ar_bits_region),
+		.io_enq_valid(_spmv0_m_axi_random_ar_valid),
+		.io_enq_bits_addr(_spmv0_m_axi_random_ar_bits_addr[33:0]),
+		.io_enq_bits_len(_spmv0_m_axi_random_ar_bits_len),
+		.io_enq_bits_size(_spmv0_m_axi_random_ar_bits_size),
+		.io_enq_bits_burst(_spmv0_m_axi_random_ar_bits_burst),
+		.io_enq_bits_lock(_spmv0_m_axi_random_ar_bits_lock),
+		.io_enq_bits_cache(_spmv0_m_axi_random_ar_bits_cache),
+		.io_enq_bits_prot(_spmv0_m_axi_random_ar_bits_prot),
+		.io_enq_bits_qos(_spmv0_m_axi_random_ar_bits_qos),
+		.io_enq_bits_region(_spmv0_m_axi_random_ar_bits_region),
 		.io_deq_ready(_stripe0_S_AXI_0_ARREADY),
 		.io_deq_valid(_sourceBuffer_1_io_deq_valid),
 		.io_deq_bits_addr(_sourceBuffer_1_io_deq_bits_addr),
@@ -14861,11 +14683,11 @@ module SpmvExp1 (
 		.io_enq_bits_data(_stripe0_S_AXI_0_RDATA),
 		.io_enq_bits_resp(_stripe0_S_AXI_0_RRESP),
 		.io_enq_bits_last(_stripe0_S_AXI_0_RLAST),
-		.io_deq_ready(_spmv0_m_axi_ls_r_ready),
+		.io_deq_ready(_spmv0_m_axi_random_r_ready),
 		.io_deq_valid(_sinkBuffer_1_io_deq_valid),
 		.io_deq_bits_data(_sinkBuffer_1_io_deq_bits_data),
-		.io_deq_bits_resp(),
-		.io_deq_bits_last()
+		.io_deq_bits_resp(_sinkBuffer_1_io_deq_bits_resp),
+		.io_deq_bits_last(_sinkBuffer_1_io_deq_bits_last)
 	);
 	Queue2_WriteAddressChannel_2 sourceBuffer_2(
 		.clock(clock),
@@ -14918,26 +14740,26 @@ module SpmvExp1 (
 		.io_enq_bits_prot(_stripe0_M_AXI_0_ARPROT),
 		.io_enq_bits_qos(_stripe0_M_AXI_0_ARQOS),
 		.io_enq_bits_region(_stripe0_M_AXI_0_ARREGION),
-		.io_deq_ready(_responseBuffer_s_axi_ar_ready),
-		.io_deq_valid(_sourceBuffer_4_io_deq_valid),
-		.io_deq_bits_addr(_sourceBuffer_4_io_deq_bits_addr),
-		.io_deq_bits_len(_sourceBuffer_4_io_deq_bits_len),
-		.io_deq_bits_size(_sourceBuffer_4_io_deq_bits_size),
-		.io_deq_bits_burst(_sourceBuffer_4_io_deq_bits_burst),
-		.io_deq_bits_lock(_sourceBuffer_4_io_deq_bits_lock),
-		.io_deq_bits_cache(_sourceBuffer_4_io_deq_bits_cache),
-		.io_deq_bits_prot(_sourceBuffer_4_io_deq_bits_prot),
-		.io_deq_bits_qos(_sourceBuffer_4_io_deq_bits_qos),
-		.io_deq_bits_region(_sourceBuffer_4_io_deq_bits_region)
+		.io_deq_ready(M_AXI_RANDOM_ARREADY),
+		.io_deq_valid(M_AXI_RANDOM_ARVALID),
+		.io_deq_bits_addr(M_AXI_RANDOM_ARADDR),
+		.io_deq_bits_len(M_AXI_RANDOM_ARLEN),
+		.io_deq_bits_size(M_AXI_RANDOM_ARSIZE),
+		.io_deq_bits_burst(M_AXI_RANDOM_ARBURST),
+		.io_deq_bits_lock(M_AXI_RANDOM_ARLOCK),
+		.io_deq_bits_cache(M_AXI_RANDOM_ARCACHE),
+		.io_deq_bits_prot(M_AXI_RANDOM_ARPROT),
+		.io_deq_bits_qos(M_AXI_RANDOM_ARQOS),
+		.io_deq_bits_region(M_AXI_RANDOM_ARREGION)
 	);
 	Queue2_ReadDataChannel sinkBuffer_3(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(_sinkBuffer_3_io_enq_ready),
-		.io_enq_valid(_responseBuffer_s_axi_r_valid),
-		.io_enq_bits_data(_responseBuffer_s_axi_r_bits_data),
-		.io_enq_bits_resp(_responseBuffer_s_axi_r_bits_resp),
-		.io_enq_bits_last(_responseBuffer_s_axi_r_bits_last),
+		.io_enq_ready(M_AXI_RANDOM_RREADY),
+		.io_enq_valid(M_AXI_RANDOM_RVALID),
+		.io_enq_bits_data(M_AXI_RANDOM_RDATA),
+		.io_enq_bits_resp(M_AXI_RANDOM_RRESP),
+		.io_enq_bits_last(M_AXI_RANDOM_RLAST),
 		.io_deq_ready(_stripe0_M_AXI_0_RREADY),
 		.io_deq_valid(_sinkBuffer_3_io_deq_valid),
 		.io_deq_bits_data(_sinkBuffer_3_io_deq_bits_data),
@@ -14958,17 +14780,17 @@ module SpmvExp1 (
 		.io_enq_bits_prot(_stripe0_M_AXI_0_AWPROT),
 		.io_enq_bits_qos(_stripe0_M_AXI_0_AWQOS),
 		.io_enq_bits_region(_stripe0_M_AXI_0_AWREGION),
-		.io_deq_ready(_responseBuffer_s_axi_aw_ready),
-		.io_deq_valid(_sourceBuffer_5_io_deq_valid),
-		.io_deq_bits_addr(_sourceBuffer_5_io_deq_bits_addr),
-		.io_deq_bits_len(_sourceBuffer_5_io_deq_bits_len),
-		.io_deq_bits_size(_sourceBuffer_5_io_deq_bits_size),
-		.io_deq_bits_burst(_sourceBuffer_5_io_deq_bits_burst),
-		.io_deq_bits_lock(_sourceBuffer_5_io_deq_bits_lock),
-		.io_deq_bits_cache(_sourceBuffer_5_io_deq_bits_cache),
-		.io_deq_bits_prot(_sourceBuffer_5_io_deq_bits_prot),
-		.io_deq_bits_qos(_sourceBuffer_5_io_deq_bits_qos),
-		.io_deq_bits_region(_sourceBuffer_5_io_deq_bits_region)
+		.io_deq_ready(M_AXI_RANDOM_AWREADY),
+		.io_deq_valid(M_AXI_RANDOM_AWVALID),
+		.io_deq_bits_addr(M_AXI_RANDOM_AWADDR),
+		.io_deq_bits_len(M_AXI_RANDOM_AWLEN),
+		.io_deq_bits_size(M_AXI_RANDOM_AWSIZE),
+		.io_deq_bits_burst(M_AXI_RANDOM_AWBURST),
+		.io_deq_bits_lock(M_AXI_RANDOM_AWLOCK),
+		.io_deq_bits_cache(M_AXI_RANDOM_AWCACHE),
+		.io_deq_bits_prot(M_AXI_RANDOM_AWPROT),
+		.io_deq_bits_qos(M_AXI_RANDOM_AWQOS),
+		.io_deq_bits_region(M_AXI_RANDOM_AWREGION)
 	);
 	Queue2_WriteDataChannel sourceBuffer_6(
 		.clock(clock),
@@ -14978,184 +14800,96 @@ module SpmvExp1 (
 		.io_enq_bits_data(_stripe0_M_AXI_0_WDATA),
 		.io_enq_bits_strb(_stripe0_M_AXI_0_WSTRB),
 		.io_enq_bits_last(_stripe0_M_AXI_0_WLAST),
-		.io_deq_ready(_responseBuffer_s_axi_w_ready),
-		.io_deq_valid(_sourceBuffer_6_io_deq_valid),
-		.io_deq_bits_data(_sourceBuffer_6_io_deq_bits_data),
-		.io_deq_bits_strb(_sourceBuffer_6_io_deq_bits_strb),
-		.io_deq_bits_last(_sourceBuffer_6_io_deq_bits_last)
+		.io_deq_ready(M_AXI_RANDOM_WREADY),
+		.io_deq_valid(M_AXI_RANDOM_WVALID),
+		.io_deq_bits_data(M_AXI_RANDOM_WDATA),
+		.io_deq_bits_strb(M_AXI_RANDOM_WSTRB),
+		.io_deq_bits_last(M_AXI_RANDOM_WLAST)
 	);
 	Queue2_WriteResponseChannel_4 sinkBuffer_4(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(_sinkBuffer_4_io_enq_ready),
-		.io_enq_valid(_responseBuffer_s_axi_b_valid),
+		.io_enq_ready(M_AXI_RANDOM_BREADY),
+		.io_enq_valid(M_AXI_RANDOM_BVALID),
 		.io_deq_ready(_stripe0_M_AXI_0_BREADY),
 		.io_deq_valid(_sinkBuffer_4_io_deq_valid)
 	);
-	Queue2_ReadAddressChannel_7 sourceBuffer_7(
+	Queue2_ReadAddressChannel_6 sourceBuffer_7(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_7_io_enq_ready),
-		.io_enq_valid(_responseBuffer_m_axi_ar_valid),
-		.io_enq_bits_addr(_responseBuffer_m_axi_ar_bits_addr),
-		.io_enq_bits_len(_responseBuffer_m_axi_ar_bits_len),
-		.io_enq_bits_size(_responseBuffer_m_axi_ar_bits_size),
-		.io_enq_bits_burst(_responseBuffer_m_axi_ar_bits_burst),
-		.io_enq_bits_lock(_responseBuffer_m_axi_ar_bits_lock),
-		.io_enq_bits_cache(_responseBuffer_m_axi_ar_bits_cache),
-		.io_enq_bits_prot(_responseBuffer_m_axi_ar_bits_prot),
-		.io_enq_bits_qos(_responseBuffer_m_axi_ar_bits_qos),
-		.io_enq_bits_region(_responseBuffer_m_axi_ar_bits_region),
-		.io_deq_ready(M_AXI_LS_ARREADY),
-		.io_deq_valid(M_AXI_LS_ARVALID),
-		.io_deq_bits_addr(M_AXI_LS_ARADDR),
-		.io_deq_bits_len(M_AXI_LS_ARLEN),
-		.io_deq_bits_size(M_AXI_LS_ARSIZE),
-		.io_deq_bits_burst(M_AXI_LS_ARBURST),
-		.io_deq_bits_lock(M_AXI_LS_ARLOCK),
-		.io_deq_bits_cache(M_AXI_LS_ARCACHE),
-		.io_deq_bits_prot(M_AXI_LS_ARPROT),
-		.io_deq_bits_qos(M_AXI_LS_ARQOS),
-		.io_deq_bits_region(M_AXI_LS_ARREGION)
+		.io_enq_valid(_spmv0_m_axi_regular_ar_valid),
+		.io_enq_bits_id(_spmv0_m_axi_regular_ar_bits_id),
+		.io_enq_bits_addr(_spmv0_m_axi_regular_ar_bits_addr),
+		.io_enq_bits_len(_spmv0_m_axi_regular_ar_bits_len),
+		.io_enq_bits_size(_spmv0_m_axi_regular_ar_bits_size),
+		.io_enq_bits_burst(_spmv0_m_axi_regular_ar_bits_burst),
+		.io_deq_ready(M_AXI_REGULAR_ARREADY),
+		.io_deq_valid(M_AXI_REGULAR_ARVALID),
+		.io_deq_bits_id(M_AXI_REGULAR_ARID),
+		.io_deq_bits_addr(M_AXI_REGULAR_ARADDR),
+		.io_deq_bits_len(M_AXI_REGULAR_ARLEN),
+		.io_deq_bits_size(M_AXI_REGULAR_ARSIZE),
+		.io_deq_bits_burst(M_AXI_REGULAR_ARBURST)
 	);
-	Queue2_ReadDataChannel sinkBuffer_5(
+	Queue2_ReadDataChannel_10 sinkBuffer_5(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(M_AXI_LS_RREADY),
-		.io_enq_valid(M_AXI_LS_RVALID),
-		.io_enq_bits_data(M_AXI_LS_RDATA),
-		.io_enq_bits_resp(M_AXI_LS_RRESP),
-		.io_enq_bits_last(M_AXI_LS_RLAST),
-		.io_deq_ready(_responseBuffer_m_axi_r_ready),
+		.io_enq_ready(M_AXI_REGULAR_RREADY),
+		.io_enq_valid(M_AXI_REGULAR_RVALID),
+		.io_enq_bits_id(M_AXI_REGULAR_RID),
+		.io_enq_bits_data(M_AXI_REGULAR_RDATA),
+		.io_enq_bits_resp(M_AXI_REGULAR_RRESP),
+		.io_enq_bits_last(M_AXI_REGULAR_RLAST),
+		.io_deq_ready(_spmv0_m_axi_regular_r_ready),
 		.io_deq_valid(_sinkBuffer_5_io_deq_valid),
+		.io_deq_bits_id(_sinkBuffer_5_io_deq_bits_id),
 		.io_deq_bits_data(_sinkBuffer_5_io_deq_bits_data),
 		.io_deq_bits_resp(_sinkBuffer_5_io_deq_bits_resp),
 		.io_deq_bits_last(_sinkBuffer_5_io_deq_bits_last)
 	);
-	Queue2_WriteAddressChannel_3 sourceBuffer_8(
+	Queue2_WriteAddressChannel_1 sourceBuffer_8(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_8_io_enq_ready),
-		.io_enq_valid(_responseBuffer_m_axi_aw_valid),
-		.io_enq_bits_addr(_responseBuffer_m_axi_aw_bits_addr),
-		.io_enq_bits_len(_responseBuffer_m_axi_aw_bits_len),
-		.io_enq_bits_size(_responseBuffer_m_axi_aw_bits_size),
-		.io_enq_bits_burst(_responseBuffer_m_axi_aw_bits_burst),
-		.io_enq_bits_lock(_responseBuffer_m_axi_aw_bits_lock),
-		.io_enq_bits_cache(_responseBuffer_m_axi_aw_bits_cache),
-		.io_enq_bits_prot(_responseBuffer_m_axi_aw_bits_prot),
-		.io_enq_bits_qos(_responseBuffer_m_axi_aw_bits_qos),
-		.io_enq_bits_region(_responseBuffer_m_axi_aw_bits_region),
-		.io_deq_ready(M_AXI_LS_AWREADY),
-		.io_deq_valid(M_AXI_LS_AWVALID),
-		.io_deq_bits_addr(M_AXI_LS_AWADDR),
-		.io_deq_bits_len(M_AXI_LS_AWLEN),
-		.io_deq_bits_size(M_AXI_LS_AWSIZE),
-		.io_deq_bits_burst(M_AXI_LS_AWBURST),
-		.io_deq_bits_lock(M_AXI_LS_AWLOCK),
-		.io_deq_bits_cache(M_AXI_LS_AWCACHE),
-		.io_deq_bits_prot(M_AXI_LS_AWPROT),
-		.io_deq_bits_qos(M_AXI_LS_AWQOS),
-		.io_deq_bits_region(M_AXI_LS_AWREGION)
+		.io_enq_valid(_spmv0_m_axi_regular_aw_valid),
+		.io_enq_bits_id(_spmv0_m_axi_regular_aw_bits_id),
+		.io_enq_bits_addr(_spmv0_m_axi_regular_aw_bits_addr),
+		.io_enq_bits_len(_spmv0_m_axi_regular_aw_bits_len),
+		.io_enq_bits_size(_spmv0_m_axi_regular_aw_bits_size),
+		.io_enq_bits_burst(_spmv0_m_axi_regular_aw_bits_burst),
+		.io_deq_ready(M_AXI_REGULAR_AWREADY),
+		.io_deq_valid(M_AXI_REGULAR_AWVALID),
+		.io_deq_bits_id(M_AXI_REGULAR_AWID),
+		.io_deq_bits_addr(M_AXI_REGULAR_AWADDR),
+		.io_deq_bits_len(M_AXI_REGULAR_AWLEN),
+		.io_deq_bits_size(M_AXI_REGULAR_AWSIZE),
+		.io_deq_bits_burst(M_AXI_REGULAR_AWBURST)
 	);
 	Queue2_WriteDataChannel sourceBuffer_9(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_9_io_enq_ready),
-		.io_enq_valid(_responseBuffer_m_axi_w_valid),
-		.io_enq_bits_data(_responseBuffer_m_axi_w_bits_data),
-		.io_enq_bits_strb(_responseBuffer_m_axi_w_bits_strb),
-		.io_enq_bits_last(_responseBuffer_m_axi_w_bits_last),
-		.io_deq_ready(M_AXI_LS_WREADY),
-		.io_deq_valid(M_AXI_LS_WVALID),
-		.io_deq_bits_data(M_AXI_LS_WDATA),
-		.io_deq_bits_strb(M_AXI_LS_WSTRB),
-		.io_deq_bits_last(M_AXI_LS_WLAST)
+		.io_enq_valid(_spmv0_m_axi_regular_w_valid),
+		.io_enq_bits_data(_spmv0_m_axi_regular_w_bits_data),
+		.io_enq_bits_strb(_spmv0_m_axi_regular_w_bits_strb),
+		.io_enq_bits_last(_spmv0_m_axi_regular_w_bits_last),
+		.io_deq_ready(M_AXI_REGULAR_WREADY),
+		.io_deq_valid(M_AXI_REGULAR_WVALID),
+		.io_deq_bits_data(M_AXI_REGULAR_WDATA),
+		.io_deq_bits_strb(M_AXI_REGULAR_WSTRB),
+		.io_deq_bits_last(M_AXI_REGULAR_WLAST)
 	);
-	Queue2_WriteResponseChannel_4 sinkBuffer_6(
+	Queue2_WriteResponseChannel_6 sinkBuffer_6(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(M_AXI_LS_BREADY),
-		.io_enq_valid(M_AXI_LS_BVALID),
-		.io_deq_ready(_responseBuffer_m_axi_b_ready),
-		.io_deq_valid(_sinkBuffer_6_io_deq_valid)
-	);
-	Queue2_ReadAddressChannel_6 sourceBuffer_10(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(_sourceBuffer_10_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_gp_ar_valid),
-		.io_enq_bits_id(_spmv0_m_axi_gp_ar_bits_id),
-		.io_enq_bits_addr(_spmv0_m_axi_gp_ar_bits_addr),
-		.io_enq_bits_len(_spmv0_m_axi_gp_ar_bits_len),
-		.io_enq_bits_size(_spmv0_m_axi_gp_ar_bits_size),
-		.io_enq_bits_burst(_spmv0_m_axi_gp_ar_bits_burst),
-		.io_deq_ready(M_AXI_GP_ARREADY),
-		.io_deq_valid(M_AXI_GP_ARVALID),
-		.io_deq_bits_id(M_AXI_GP_ARID),
-		.io_deq_bits_addr(M_AXI_GP_ARADDR),
-		.io_deq_bits_len(M_AXI_GP_ARLEN),
-		.io_deq_bits_size(M_AXI_GP_ARSIZE),
-		.io_deq_bits_burst(M_AXI_GP_ARBURST)
-	);
-	Queue2_ReadDataChannel_11 sinkBuffer_7(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(M_AXI_GP_RREADY),
-		.io_enq_valid(M_AXI_GP_RVALID),
-		.io_enq_bits_id(M_AXI_GP_RID),
-		.io_enq_bits_data(M_AXI_GP_RDATA),
-		.io_enq_bits_resp(M_AXI_GP_RRESP),
-		.io_enq_bits_last(M_AXI_GP_RLAST),
-		.io_deq_ready(_spmv0_m_axi_gp_r_ready),
-		.io_deq_valid(_sinkBuffer_7_io_deq_valid),
-		.io_deq_bits_id(_sinkBuffer_7_io_deq_bits_id),
-		.io_deq_bits_data(_sinkBuffer_7_io_deq_bits_data),
-		.io_deq_bits_resp(_sinkBuffer_7_io_deq_bits_resp),
-		.io_deq_bits_last(_sinkBuffer_7_io_deq_bits_last)
-	);
-	Queue2_WriteAddressChannel_1 sourceBuffer_11(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(_sourceBuffer_11_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_gp_aw_valid),
-		.io_enq_bits_id(_spmv0_m_axi_gp_aw_bits_id),
-		.io_enq_bits_addr(_spmv0_m_axi_gp_aw_bits_addr),
-		.io_enq_bits_len(_spmv0_m_axi_gp_aw_bits_len),
-		.io_enq_bits_size(_spmv0_m_axi_gp_aw_bits_size),
-		.io_enq_bits_burst(_spmv0_m_axi_gp_aw_bits_burst),
-		.io_deq_ready(M_AXI_GP_AWREADY),
-		.io_deq_valid(M_AXI_GP_AWVALID),
-		.io_deq_bits_id(M_AXI_GP_AWID),
-		.io_deq_bits_addr(M_AXI_GP_AWADDR),
-		.io_deq_bits_len(M_AXI_GP_AWLEN),
-		.io_deq_bits_size(M_AXI_GP_AWSIZE),
-		.io_deq_bits_burst(M_AXI_GP_AWBURST)
-	);
-	Queue2_WriteDataChannel sourceBuffer_12(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(_sourceBuffer_12_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_gp_w_valid),
-		.io_enq_bits_data(_spmv0_m_axi_gp_w_bits_data),
-		.io_enq_bits_strb(_spmv0_m_axi_gp_w_bits_strb),
-		.io_enq_bits_last(_spmv0_m_axi_gp_w_bits_last),
-		.io_deq_ready(M_AXI_GP_WREADY),
-		.io_deq_valid(M_AXI_GP_WVALID),
-		.io_deq_bits_data(M_AXI_GP_WDATA),
-		.io_deq_bits_strb(M_AXI_GP_WSTRB),
-		.io_deq_bits_last(M_AXI_GP_WLAST)
-	);
-	Queue2_WriteResponseChannel_7 sinkBuffer_8(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_ready(M_AXI_GP_BREADY),
-		.io_enq_valid(M_AXI_GP_BVALID),
-		.io_enq_bits_id(M_AXI_GP_BID),
-		.io_enq_bits_resp(M_AXI_GP_BRESP),
-		.io_deq_ready(_spmv0_m_axi_gp_b_ready),
-		.io_deq_valid(_sinkBuffer_8_io_deq_valid),
-		.io_deq_bits_id(_sinkBuffer_8_io_deq_bits_id),
-		.io_deq_bits_resp(_sinkBuffer_8_io_deq_bits_resp)
+		.io_enq_ready(M_AXI_REGULAR_BREADY),
+		.io_enq_valid(M_AXI_REGULAR_BVALID),
+		.io_enq_bits_id(M_AXI_REGULAR_BID),
+		.io_enq_bits_resp(M_AXI_REGULAR_BRESP),
+		.io_deq_ready(_spmv0_m_axi_regular_b_ready),
+		.io_deq_valid(_sinkBuffer_6_io_deq_valid),
+		.io_deq_bits_id(_sinkBuffer_6_io_deq_bits_id),
+		.io_deq_bits_resp(_sinkBuffer_6_io_deq_bits_resp)
 	);
 endmodule

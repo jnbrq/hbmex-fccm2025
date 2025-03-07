@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_3" LaunchPart="xcu55c-fsvh2892-2L-e" LaunchTime="1735418770">
+<GenRun Id="impl_3" LaunchPart="xcu55c-fsvh2892-2L-e" LaunchTime="1741274710">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="bd_top_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="bd_top_wrapper_routed.rqs"/>
@@ -165,11 +165,5 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_proc_sys_reset_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_hbm_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_util_ds_buf_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_util_ds_buf_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_top_SpmvExp3_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_clk_wiz_0_0"/>
 </GenRun>

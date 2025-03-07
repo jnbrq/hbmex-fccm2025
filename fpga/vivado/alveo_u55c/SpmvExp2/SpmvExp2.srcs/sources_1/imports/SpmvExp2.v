@@ -9747,44 +9747,44 @@ module Spmv (
 	sinkDone_ready,
 	sinkDone_valid,
 	sinkDone_bits,
-	m_axi_ls_ar_ready,
-	m_axi_ls_ar_valid,
-	m_axi_ls_ar_bits_addr,
-	m_axi_ls_ar_bits_len,
-	m_axi_ls_ar_bits_size,
-	m_axi_ls_ar_bits_burst,
-	m_axi_ls_r_ready,
-	m_axi_ls_r_valid,
-	m_axi_ls_r_bits_data,
-	m_axi_gp_ar_ready,
-	m_axi_gp_ar_valid,
-	m_axi_gp_ar_bits_id,
-	m_axi_gp_ar_bits_addr,
-	m_axi_gp_ar_bits_len,
-	m_axi_gp_ar_bits_size,
-	m_axi_gp_ar_bits_burst,
-	m_axi_gp_r_ready,
-	m_axi_gp_r_valid,
-	m_axi_gp_r_bits_id,
-	m_axi_gp_r_bits_data,
-	m_axi_gp_r_bits_resp,
-	m_axi_gp_r_bits_last,
-	m_axi_gp_aw_ready,
-	m_axi_gp_aw_valid,
-	m_axi_gp_aw_bits_id,
-	m_axi_gp_aw_bits_addr,
-	m_axi_gp_aw_bits_len,
-	m_axi_gp_aw_bits_size,
-	m_axi_gp_aw_bits_burst,
-	m_axi_gp_w_ready,
-	m_axi_gp_w_valid,
-	m_axi_gp_w_bits_data,
-	m_axi_gp_w_bits_strb,
-	m_axi_gp_w_bits_last,
-	m_axi_gp_b_ready,
-	m_axi_gp_b_valid,
-	m_axi_gp_b_bits_id,
-	m_axi_gp_b_bits_resp
+	m_axi_random_ar_ready,
+	m_axi_random_ar_valid,
+	m_axi_random_ar_bits_addr,
+	m_axi_random_ar_bits_len,
+	m_axi_random_ar_bits_size,
+	m_axi_random_ar_bits_burst,
+	m_axi_random_r_ready,
+	m_axi_random_r_valid,
+	m_axi_random_r_bits_data,
+	m_axi_regular_ar_ready,
+	m_axi_regular_ar_valid,
+	m_axi_regular_ar_bits_id,
+	m_axi_regular_ar_bits_addr,
+	m_axi_regular_ar_bits_len,
+	m_axi_regular_ar_bits_size,
+	m_axi_regular_ar_bits_burst,
+	m_axi_regular_r_ready,
+	m_axi_regular_r_valid,
+	m_axi_regular_r_bits_id,
+	m_axi_regular_r_bits_data,
+	m_axi_regular_r_bits_resp,
+	m_axi_regular_r_bits_last,
+	m_axi_regular_aw_ready,
+	m_axi_regular_aw_valid,
+	m_axi_regular_aw_bits_id,
+	m_axi_regular_aw_bits_addr,
+	m_axi_regular_aw_bits_len,
+	m_axi_regular_aw_bits_size,
+	m_axi_regular_aw_bits_burst,
+	m_axi_regular_w_ready,
+	m_axi_regular_w_valid,
+	m_axi_regular_w_bits_data,
+	m_axi_regular_w_bits_strb,
+	m_axi_regular_w_bits_last,
+	m_axi_regular_b_ready,
+	m_axi_regular_b_valid,
+	m_axi_regular_b_bits_id,
+	m_axi_regular_b_bits_resp
 );
 	input clock;
 	input reset;
@@ -9800,44 +9800,44 @@ module Spmv (
 	input sinkDone_ready;
 	output wire sinkDone_valid;
 	output wire [63:0] sinkDone_bits;
-	input m_axi_ls_ar_ready;
-	output wire m_axi_ls_ar_valid;
-	output wire [63:0] m_axi_ls_ar_bits_addr;
-	output wire [3:0] m_axi_ls_ar_bits_len;
-	output wire [2:0] m_axi_ls_ar_bits_size;
-	output wire [1:0] m_axi_ls_ar_bits_burst;
-	output wire m_axi_ls_r_ready;
-	input m_axi_ls_r_valid;
-	input [255:0] m_axi_ls_r_bits_data;
-	input m_axi_gp_ar_ready;
-	output wire m_axi_gp_ar_valid;
-	output wire [1:0] m_axi_gp_ar_bits_id;
-	output wire [63:0] m_axi_gp_ar_bits_addr;
-	output wire [3:0] m_axi_gp_ar_bits_len;
-	output wire [2:0] m_axi_gp_ar_bits_size;
-	output wire [1:0] m_axi_gp_ar_bits_burst;
-	output wire m_axi_gp_r_ready;
-	input m_axi_gp_r_valid;
-	input [1:0] m_axi_gp_r_bits_id;
-	input [255:0] m_axi_gp_r_bits_data;
-	input [1:0] m_axi_gp_r_bits_resp;
-	input m_axi_gp_r_bits_last;
-	input m_axi_gp_aw_ready;
-	output wire m_axi_gp_aw_valid;
-	output wire [1:0] m_axi_gp_aw_bits_id;
-	output wire [63:0] m_axi_gp_aw_bits_addr;
-	output wire [3:0] m_axi_gp_aw_bits_len;
-	output wire [2:0] m_axi_gp_aw_bits_size;
-	output wire [1:0] m_axi_gp_aw_bits_burst;
-	input m_axi_gp_w_ready;
-	output wire m_axi_gp_w_valid;
-	output wire [255:0] m_axi_gp_w_bits_data;
-	output wire [31:0] m_axi_gp_w_bits_strb;
-	output wire m_axi_gp_w_bits_last;
-	output wire m_axi_gp_b_ready;
-	input m_axi_gp_b_valid;
-	input [1:0] m_axi_gp_b_bits_id;
-	input [1:0] m_axi_gp_b_bits_resp;
+	input m_axi_random_ar_ready;
+	output wire m_axi_random_ar_valid;
+	output wire [63:0] m_axi_random_ar_bits_addr;
+	output wire [3:0] m_axi_random_ar_bits_len;
+	output wire [2:0] m_axi_random_ar_bits_size;
+	output wire [1:0] m_axi_random_ar_bits_burst;
+	output wire m_axi_random_r_ready;
+	input m_axi_random_r_valid;
+	input [255:0] m_axi_random_r_bits_data;
+	input m_axi_regular_ar_ready;
+	output wire m_axi_regular_ar_valid;
+	output wire [1:0] m_axi_regular_ar_bits_id;
+	output wire [63:0] m_axi_regular_ar_bits_addr;
+	output wire [3:0] m_axi_regular_ar_bits_len;
+	output wire [2:0] m_axi_regular_ar_bits_size;
+	output wire [1:0] m_axi_regular_ar_bits_burst;
+	output wire m_axi_regular_r_ready;
+	input m_axi_regular_r_valid;
+	input [1:0] m_axi_regular_r_bits_id;
+	input [255:0] m_axi_regular_r_bits_data;
+	input [1:0] m_axi_regular_r_bits_resp;
+	input m_axi_regular_r_bits_last;
+	input m_axi_regular_aw_ready;
+	output wire m_axi_regular_aw_valid;
+	output wire [1:0] m_axi_regular_aw_bits_id;
+	output wire [63:0] m_axi_regular_aw_bits_addr;
+	output wire [3:0] m_axi_regular_aw_bits_len;
+	output wire [2:0] m_axi_regular_aw_bits_size;
+	output wire [1:0] m_axi_regular_aw_bits_burst;
+	input m_axi_regular_w_ready;
+	output wire m_axi_regular_w_valid;
+	output wire [255:0] m_axi_regular_w_bits_data;
+	output wire [31:0] m_axi_regular_w_bits_strb;
+	output wire m_axi_regular_w_bits_last;
+	output wire m_axi_regular_b_ready;
+	input m_axi_regular_b_valid;
+	input [1:0] m_axi_regular_b_bits_id;
+	input [1:0] m_axi_regular_b_bits_resp;
 	wire _sinkBuffer_4_io_enq_ready;
 	wire _sinkBuffer_4_io_deq_valid;
 	wire [255:0] _sinkBuffer_4_io_deq_bits;
@@ -9902,33 +9902,33 @@ module Spmv (
 	wire _mux_s_axi_3_w_ready;
 	wire _mux_s_axi_3_b_valid;
 	wire [1:0] _mux_s_axi_3_b_bits_resp;
-	wire _responseBufferReadStreamRowLengths_s_axi_ar_ready;
-	wire _responseBufferReadStreamRowLengths_s_axi_r_valid;
-	wire [255:0] _responseBufferReadStreamRowLengths_s_axi_r_bits_data;
-	wire _responseBufferReadStreamRowLengths_m_axi_ar_valid;
-	wire [63:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_addr;
-	wire [3:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_len;
-	wire [2:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_size;
-	wire [1:0] _responseBufferReadStreamRowLengths_m_axi_ar_bits_burst;
-	wire _responseBufferReadStreamRowLengths_m_axi_r_ready;
-	wire _responseBufferReadStreamColumnIndices_s_axi_ar_ready;
-	wire _responseBufferReadStreamColumnIndices_s_axi_r_valid;
-	wire [255:0] _responseBufferReadStreamColumnIndices_s_axi_r_bits_data;
-	wire _responseBufferReadStreamColumnIndices_m_axi_ar_valid;
-	wire [63:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr;
-	wire [3:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_len;
-	wire [2:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_size;
-	wire [1:0] _responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst;
-	wire _responseBufferReadStreamColumnIndices_m_axi_r_ready;
-	wire _responseBufferReadStreamValue_s_axi_ar_ready;
-	wire _responseBufferReadStreamValue_s_axi_r_valid;
-	wire [255:0] _responseBufferReadStreamValue_s_axi_r_bits_data;
-	wire _responseBufferReadStreamValue_m_axi_ar_valid;
-	wire [63:0] _responseBufferReadStreamValue_m_axi_ar_bits_addr;
-	wire [3:0] _responseBufferReadStreamValue_m_axi_ar_bits_len;
-	wire [2:0] _responseBufferReadStreamValue_m_axi_ar_bits_size;
-	wire [1:0] _responseBufferReadStreamValue_m_axi_ar_bits_burst;
-	wire _responseBufferReadStreamValue_m_axi_r_ready;
+	wire _responseBufferRowLengths_s_axi_ar_ready;
+	wire _responseBufferRowLengths_s_axi_r_valid;
+	wire [255:0] _responseBufferRowLengths_s_axi_r_bits_data;
+	wire _responseBufferRowLengths_m_axi_ar_valid;
+	wire [63:0] _responseBufferRowLengths_m_axi_ar_bits_addr;
+	wire [3:0] _responseBufferRowLengths_m_axi_ar_bits_len;
+	wire [2:0] _responseBufferRowLengths_m_axi_ar_bits_size;
+	wire [1:0] _responseBufferRowLengths_m_axi_ar_bits_burst;
+	wire _responseBufferRowLengths_m_axi_r_ready;
+	wire _responseBufferColumnIndices_s_axi_ar_ready;
+	wire _responseBufferColumnIndices_s_axi_r_valid;
+	wire [255:0] _responseBufferColumnIndices_s_axi_r_bits_data;
+	wire _responseBufferColumnIndices_m_axi_ar_valid;
+	wire [63:0] _responseBufferColumnIndices_m_axi_ar_bits_addr;
+	wire [3:0] _responseBufferColumnIndices_m_axi_ar_bits_len;
+	wire [2:0] _responseBufferColumnIndices_m_axi_ar_bits_size;
+	wire [1:0] _responseBufferColumnIndices_m_axi_ar_bits_burst;
+	wire _responseBufferColumnIndices_m_axi_r_ready;
+	wire _responseBufferValue_s_axi_ar_ready;
+	wire _responseBufferValue_s_axi_r_valid;
+	wire [255:0] _responseBufferValue_s_axi_r_bits_data;
+	wire _responseBufferValue_m_axi_ar_valid;
+	wire [63:0] _responseBufferValue_m_axi_ar_bits_addr;
+	wire [3:0] _responseBufferValue_m_axi_ar_bits_len;
+	wire [2:0] _responseBufferValue_m_axi_ar_bits_size;
+	wire [1:0] _responseBufferValue_m_axi_ar_bits_burst;
+	wire _responseBufferValue_m_axi_r_ready;
 	wire _writeStreamResult_m_axi_aw_valid;
 	wire [63:0] _writeStreamResult_m_axi_aw_bits_addr;
 	wire [3:0] _writeStreamResult_m_axi_aw_bits_len;
@@ -10023,15 +10023,15 @@ module Spmv (
 	ReadStream readStreamValues(
 		.clock(clock),
 		.reset(reset),
-		.m_axi_ar_ready(_responseBufferReadStreamValue_s_axi_ar_ready),
+		.m_axi_ar_ready(_responseBufferValue_s_axi_ar_ready),
 		.m_axi_ar_valid(_readStreamValues_m_axi_ar_valid),
 		.m_axi_ar_bits_addr(_readStreamValues_m_axi_ar_bits_addr),
 		.m_axi_ar_bits_len(_readStreamValues_m_axi_ar_bits_len),
 		.m_axi_ar_bits_size(_readStreamValues_m_axi_ar_bits_size),
 		.m_axi_ar_bits_burst(_readStreamValues_m_axi_ar_bits_burst),
 		.m_axi_r_ready(_readStreamValues_m_axi_r_ready),
-		.m_axi_r_valid(_responseBufferReadStreamValue_s_axi_r_valid),
-		.m_axi_r_bits_data(_responseBufferReadStreamValue_s_axi_r_bits_data),
+		.m_axi_r_valid(_responseBufferValue_s_axi_r_valid),
+		.m_axi_r_bits_data(_responseBufferValue_s_axi_r_bits_data),
 		.sourceTask_ready(_readStreamValues_sourceTask_ready),
 		.sourceTask_valid(_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_0),
 		.sourceTask_bits_address(_sinkBuffered__sinkBuffer_io_deq_bits_ptrValues),
@@ -10043,15 +10043,15 @@ module Spmv (
 	ReadStreamWithLast readStreamColumnIndices(
 		.clock(clock),
 		.reset(reset),
-		.m_axi_ar_ready(_responseBufferReadStreamColumnIndices_s_axi_ar_ready),
+		.m_axi_ar_ready(_responseBufferColumnIndices_s_axi_ar_ready),
 		.m_axi_ar_valid(_readStreamColumnIndices_m_axi_ar_valid),
 		.m_axi_ar_bits_addr(_readStreamColumnIndices_m_axi_ar_bits_addr),
 		.m_axi_ar_bits_len(_readStreamColumnIndices_m_axi_ar_bits_len),
 		.m_axi_ar_bits_size(_readStreamColumnIndices_m_axi_ar_bits_size),
 		.m_axi_ar_bits_burst(_readStreamColumnIndices_m_axi_ar_bits_burst),
 		.m_axi_r_ready(_readStreamColumnIndices_m_axi_r_ready),
-		.m_axi_r_valid(_responseBufferReadStreamColumnIndices_s_axi_r_valid),
-		.m_axi_r_bits_data(_responseBufferReadStreamColumnIndices_s_axi_r_bits_data),
+		.m_axi_r_valid(_responseBufferColumnIndices_s_axi_r_valid),
+		.m_axi_r_bits_data(_responseBufferColumnIndices_s_axi_r_bits_data),
 		.sourceTask_ready(_readStreamColumnIndices_sourceTask_ready),
 		.sourceTask_valid(_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_1),
 		.sourceTask_bits_address(_sinkBuffered__sinkBuffer_io_deq_bits_ptrColumnIndices),
@@ -10064,15 +10064,15 @@ module Spmv (
 	ReadStream readStreamRowLengths(
 		.clock(clock),
 		.reset(reset),
-		.m_axi_ar_ready(_responseBufferReadStreamRowLengths_s_axi_ar_ready),
+		.m_axi_ar_ready(_responseBufferRowLengths_s_axi_ar_ready),
 		.m_axi_ar_valid(_readStreamRowLengths_m_axi_ar_valid),
 		.m_axi_ar_bits_addr(_readStreamRowLengths_m_axi_ar_bits_addr),
 		.m_axi_ar_bits_len(_readStreamRowLengths_m_axi_ar_bits_len),
 		.m_axi_ar_bits_size(_readStreamRowLengths_m_axi_ar_bits_size),
 		.m_axi_ar_bits_burst(_readStreamRowLengths_m_axi_ar_bits_burst),
 		.m_axi_r_ready(_readStreamRowLengths_m_axi_r_ready),
-		.m_axi_r_valid(_responseBufferReadStreamRowLengths_s_axi_r_valid),
-		.m_axi_r_bits_data(_responseBufferReadStreamRowLengths_s_axi_r_bits_data),
+		.m_axi_r_valid(_responseBufferRowLengths_s_axi_r_valid),
+		.m_axi_r_bits_data(_responseBufferRowLengths_s_axi_r_bits_data),
 		.sourceTask_ready(_readStreamRowLengths_sourceTask_ready),
 		.sourceTask_valid(_sinkBuffered__sinkBuffer_io_deq_valid & ~eagerFork_regs_2),
 		.sourceTask_bits_address(_sinkBuffered__sinkBuffer_io_deq_bits_ptrRowLengths),
@@ -10108,73 +10108,73 @@ module Spmv (
 		.sourceData_valid(_sinkBuffer_4_io_deq_valid),
 		.sourceData_bits(_sinkBuffer_4_io_deq_bits)
 	);
-	ResponseBuffer responseBufferReadStreamValue(
+	ResponseBuffer responseBufferValue(
 		.clock(clock),
 		.reset(reset),
-		.s_axi_ar_ready(_responseBufferReadStreamValue_s_axi_ar_ready),
+		.s_axi_ar_ready(_responseBufferValue_s_axi_ar_ready),
 		.s_axi_ar_valid(_readStreamValues_m_axi_ar_valid),
 		.s_axi_ar_bits_addr(_readStreamValues_m_axi_ar_bits_addr),
 		.s_axi_ar_bits_len(_readStreamValues_m_axi_ar_bits_len),
 		.s_axi_ar_bits_size(_readStreamValues_m_axi_ar_bits_size),
 		.s_axi_ar_bits_burst(_readStreamValues_m_axi_ar_bits_burst),
 		.s_axi_r_ready(_readStreamValues_m_axi_r_ready),
-		.s_axi_r_valid(_responseBufferReadStreamValue_s_axi_r_valid),
-		.s_axi_r_bits_data(_responseBufferReadStreamValue_s_axi_r_bits_data),
+		.s_axi_r_valid(_responseBufferValue_s_axi_r_valid),
+		.s_axi_r_bits_data(_responseBufferValue_s_axi_r_bits_data),
 		.m_axi_ar_ready(_mux_s_axi_0_ar_ready),
-		.m_axi_ar_valid(_responseBufferReadStreamValue_m_axi_ar_valid),
-		.m_axi_ar_bits_addr(_responseBufferReadStreamValue_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_responseBufferReadStreamValue_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_responseBufferReadStreamValue_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_responseBufferReadStreamValue_m_axi_ar_bits_burst),
-		.m_axi_r_ready(_responseBufferReadStreamValue_m_axi_r_ready),
+		.m_axi_ar_valid(_responseBufferValue_m_axi_ar_valid),
+		.m_axi_ar_bits_addr(_responseBufferValue_m_axi_ar_bits_addr),
+		.m_axi_ar_bits_len(_responseBufferValue_m_axi_ar_bits_len),
+		.m_axi_ar_bits_size(_responseBufferValue_m_axi_ar_bits_size),
+		.m_axi_ar_bits_burst(_responseBufferValue_m_axi_ar_bits_burst),
+		.m_axi_r_ready(_responseBufferValue_m_axi_r_ready),
 		.m_axi_r_valid(_mux_s_axi_0_r_valid),
 		.m_axi_r_bits_data(_mux_s_axi_0_r_bits_data),
 		.m_axi_r_bits_resp(_mux_s_axi_0_r_bits_resp),
 		.m_axi_r_bits_last(_mux_s_axi_0_r_bits_last)
 	);
-	ResponseBuffer responseBufferReadStreamColumnIndices(
+	ResponseBuffer responseBufferColumnIndices(
 		.clock(clock),
 		.reset(reset),
-		.s_axi_ar_ready(_responseBufferReadStreamColumnIndices_s_axi_ar_ready),
+		.s_axi_ar_ready(_responseBufferColumnIndices_s_axi_ar_ready),
 		.s_axi_ar_valid(_readStreamColumnIndices_m_axi_ar_valid),
 		.s_axi_ar_bits_addr(_readStreamColumnIndices_m_axi_ar_bits_addr),
 		.s_axi_ar_bits_len(_readStreamColumnIndices_m_axi_ar_bits_len),
 		.s_axi_ar_bits_size(_readStreamColumnIndices_m_axi_ar_bits_size),
 		.s_axi_ar_bits_burst(_readStreamColumnIndices_m_axi_ar_bits_burst),
 		.s_axi_r_ready(_readStreamColumnIndices_m_axi_r_ready),
-		.s_axi_r_valid(_responseBufferReadStreamColumnIndices_s_axi_r_valid),
-		.s_axi_r_bits_data(_responseBufferReadStreamColumnIndices_s_axi_r_bits_data),
+		.s_axi_r_valid(_responseBufferColumnIndices_s_axi_r_valid),
+		.s_axi_r_bits_data(_responseBufferColumnIndices_s_axi_r_bits_data),
 		.m_axi_ar_ready(_mux_s_axi_1_ar_ready),
-		.m_axi_ar_valid(_responseBufferReadStreamColumnIndices_m_axi_ar_valid),
-		.m_axi_ar_bits_addr(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst),
-		.m_axi_r_ready(_responseBufferReadStreamColumnIndices_m_axi_r_ready),
+		.m_axi_ar_valid(_responseBufferColumnIndices_m_axi_ar_valid),
+		.m_axi_ar_bits_addr(_responseBufferColumnIndices_m_axi_ar_bits_addr),
+		.m_axi_ar_bits_len(_responseBufferColumnIndices_m_axi_ar_bits_len),
+		.m_axi_ar_bits_size(_responseBufferColumnIndices_m_axi_ar_bits_size),
+		.m_axi_ar_bits_burst(_responseBufferColumnIndices_m_axi_ar_bits_burst),
+		.m_axi_r_ready(_responseBufferColumnIndices_m_axi_r_ready),
 		.m_axi_r_valid(_mux_s_axi_1_r_valid),
 		.m_axi_r_bits_data(_mux_s_axi_1_r_bits_data),
 		.m_axi_r_bits_resp(_mux_s_axi_1_r_bits_resp),
 		.m_axi_r_bits_last(_mux_s_axi_1_r_bits_last)
 	);
-	ResponseBuffer responseBufferReadStreamRowLengths(
+	ResponseBuffer responseBufferRowLengths(
 		.clock(clock),
 		.reset(reset),
-		.s_axi_ar_ready(_responseBufferReadStreamRowLengths_s_axi_ar_ready),
+		.s_axi_ar_ready(_responseBufferRowLengths_s_axi_ar_ready),
 		.s_axi_ar_valid(_readStreamRowLengths_m_axi_ar_valid),
 		.s_axi_ar_bits_addr(_readStreamRowLengths_m_axi_ar_bits_addr),
 		.s_axi_ar_bits_len(_readStreamRowLengths_m_axi_ar_bits_len),
 		.s_axi_ar_bits_size(_readStreamRowLengths_m_axi_ar_bits_size),
 		.s_axi_ar_bits_burst(_readStreamRowLengths_m_axi_ar_bits_burst),
 		.s_axi_r_ready(_readStreamRowLengths_m_axi_r_ready),
-		.s_axi_r_valid(_responseBufferReadStreamRowLengths_s_axi_r_valid),
-		.s_axi_r_bits_data(_responseBufferReadStreamRowLengths_s_axi_r_bits_data),
+		.s_axi_r_valid(_responseBufferRowLengths_s_axi_r_valid),
+		.s_axi_r_bits_data(_responseBufferRowLengths_s_axi_r_bits_data),
 		.m_axi_ar_ready(_mux_s_axi_2_ar_ready),
-		.m_axi_ar_valid(_responseBufferReadStreamRowLengths_m_axi_ar_valid),
-		.m_axi_ar_bits_addr(_responseBufferReadStreamRowLengths_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_responseBufferReadStreamRowLengths_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_responseBufferReadStreamRowLengths_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_responseBufferReadStreamRowLengths_m_axi_ar_bits_burst),
-		.m_axi_r_ready(_responseBufferReadStreamRowLengths_m_axi_r_ready),
+		.m_axi_ar_valid(_responseBufferRowLengths_m_axi_ar_valid),
+		.m_axi_ar_bits_addr(_responseBufferRowLengths_m_axi_ar_bits_addr),
+		.m_axi_ar_bits_len(_responseBufferRowLengths_m_axi_ar_bits_len),
+		.m_axi_ar_bits_size(_responseBufferRowLengths_m_axi_ar_bits_size),
+		.m_axi_ar_bits_burst(_responseBufferRowLengths_m_axi_ar_bits_burst),
+		.m_axi_r_ready(_responseBufferRowLengths_m_axi_r_ready),
 		.m_axi_r_valid(_mux_s_axi_2_r_valid),
 		.m_axi_r_bits_data(_mux_s_axi_2_r_bits_data),
 		.m_axi_r_bits_resp(_mux_s_axi_2_r_bits_resp),
@@ -10184,34 +10184,34 @@ module Spmv (
 		.clock(clock),
 		.reset(reset),
 		.s_axi_0_ar_ready(_mux_s_axi_0_ar_ready),
-		.s_axi_0_ar_valid(_responseBufferReadStreamValue_m_axi_ar_valid),
-		.s_axi_0_ar_bits_addr(_responseBufferReadStreamValue_m_axi_ar_bits_addr),
-		.s_axi_0_ar_bits_len(_responseBufferReadStreamValue_m_axi_ar_bits_len),
-		.s_axi_0_ar_bits_size(_responseBufferReadStreamValue_m_axi_ar_bits_size),
-		.s_axi_0_ar_bits_burst(_responseBufferReadStreamValue_m_axi_ar_bits_burst),
-		.s_axi_0_r_ready(_responseBufferReadStreamValue_m_axi_r_ready),
+		.s_axi_0_ar_valid(_responseBufferValue_m_axi_ar_valid),
+		.s_axi_0_ar_bits_addr(_responseBufferValue_m_axi_ar_bits_addr),
+		.s_axi_0_ar_bits_len(_responseBufferValue_m_axi_ar_bits_len),
+		.s_axi_0_ar_bits_size(_responseBufferValue_m_axi_ar_bits_size),
+		.s_axi_0_ar_bits_burst(_responseBufferValue_m_axi_ar_bits_burst),
+		.s_axi_0_r_ready(_responseBufferValue_m_axi_r_ready),
 		.s_axi_0_r_valid(_mux_s_axi_0_r_valid),
 		.s_axi_0_r_bits_data(_mux_s_axi_0_r_bits_data),
 		.s_axi_0_r_bits_resp(_mux_s_axi_0_r_bits_resp),
 		.s_axi_0_r_bits_last(_mux_s_axi_0_r_bits_last),
 		.s_axi_1_ar_ready(_mux_s_axi_1_ar_ready),
-		.s_axi_1_ar_valid(_responseBufferReadStreamColumnIndices_m_axi_ar_valid),
-		.s_axi_1_ar_bits_addr(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_addr),
-		.s_axi_1_ar_bits_len(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_len),
-		.s_axi_1_ar_bits_size(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_size),
-		.s_axi_1_ar_bits_burst(_responseBufferReadStreamColumnIndices_m_axi_ar_bits_burst),
-		.s_axi_1_r_ready(_responseBufferReadStreamColumnIndices_m_axi_r_ready),
+		.s_axi_1_ar_valid(_responseBufferColumnIndices_m_axi_ar_valid),
+		.s_axi_1_ar_bits_addr(_responseBufferColumnIndices_m_axi_ar_bits_addr),
+		.s_axi_1_ar_bits_len(_responseBufferColumnIndices_m_axi_ar_bits_len),
+		.s_axi_1_ar_bits_size(_responseBufferColumnIndices_m_axi_ar_bits_size),
+		.s_axi_1_ar_bits_burst(_responseBufferColumnIndices_m_axi_ar_bits_burst),
+		.s_axi_1_r_ready(_responseBufferColumnIndices_m_axi_r_ready),
 		.s_axi_1_r_valid(_mux_s_axi_1_r_valid),
 		.s_axi_1_r_bits_data(_mux_s_axi_1_r_bits_data),
 		.s_axi_1_r_bits_resp(_mux_s_axi_1_r_bits_resp),
 		.s_axi_1_r_bits_last(_mux_s_axi_1_r_bits_last),
 		.s_axi_2_ar_ready(_mux_s_axi_2_ar_ready),
-		.s_axi_2_ar_valid(_responseBufferReadStreamRowLengths_m_axi_ar_valid),
-		.s_axi_2_ar_bits_addr(_responseBufferReadStreamRowLengths_m_axi_ar_bits_addr),
-		.s_axi_2_ar_bits_len(_responseBufferReadStreamRowLengths_m_axi_ar_bits_len),
-		.s_axi_2_ar_bits_size(_responseBufferReadStreamRowLengths_m_axi_ar_bits_size),
-		.s_axi_2_ar_bits_burst(_responseBufferReadStreamRowLengths_m_axi_ar_bits_burst),
-		.s_axi_2_r_ready(_responseBufferReadStreamRowLengths_m_axi_r_ready),
+		.s_axi_2_ar_valid(_responseBufferRowLengths_m_axi_ar_valid),
+		.s_axi_2_ar_bits_addr(_responseBufferRowLengths_m_axi_ar_bits_addr),
+		.s_axi_2_ar_bits_len(_responseBufferRowLengths_m_axi_ar_bits_len),
+		.s_axi_2_ar_bits_size(_responseBufferRowLengths_m_axi_ar_bits_size),
+		.s_axi_2_ar_bits_burst(_responseBufferRowLengths_m_axi_ar_bits_burst),
+		.s_axi_2_r_ready(_responseBufferRowLengths_m_axi_r_ready),
 		.s_axi_2_r_valid(_mux_s_axi_2_r_valid),
 		.s_axi_2_r_bits_data(_mux_s_axi_2_r_bits_data),
 		.s_axi_2_r_bits_resp(_mux_s_axi_2_r_bits_resp),
@@ -10230,35 +10230,35 @@ module Spmv (
 		.s_axi_3_b_ready(_writeStreamResult_m_axi_b_ready),
 		.s_axi_3_b_valid(_mux_s_axi_3_b_valid),
 		.s_axi_3_b_bits_resp(_mux_s_axi_3_b_bits_resp),
-		.m_axi_ar_ready(m_axi_gp_ar_ready),
-		.m_axi_ar_valid(m_axi_gp_ar_valid),
-		.m_axi_ar_bits_id(m_axi_gp_ar_bits_id),
-		.m_axi_ar_bits_addr(m_axi_gp_ar_bits_addr),
-		.m_axi_ar_bits_len(m_axi_gp_ar_bits_len),
-		.m_axi_ar_bits_size(m_axi_gp_ar_bits_size),
-		.m_axi_ar_bits_burst(m_axi_gp_ar_bits_burst),
-		.m_axi_r_ready(m_axi_gp_r_ready),
-		.m_axi_r_valid(m_axi_gp_r_valid),
-		.m_axi_r_bits_id(m_axi_gp_r_bits_id),
-		.m_axi_r_bits_data(m_axi_gp_r_bits_data),
-		.m_axi_r_bits_resp(m_axi_gp_r_bits_resp),
-		.m_axi_r_bits_last(m_axi_gp_r_bits_last),
-		.m_axi_aw_ready(m_axi_gp_aw_ready),
-		.m_axi_aw_valid(m_axi_gp_aw_valid),
-		.m_axi_aw_bits_id(m_axi_gp_aw_bits_id),
-		.m_axi_aw_bits_addr(m_axi_gp_aw_bits_addr),
-		.m_axi_aw_bits_len(m_axi_gp_aw_bits_len),
-		.m_axi_aw_bits_size(m_axi_gp_aw_bits_size),
-		.m_axi_aw_bits_burst(m_axi_gp_aw_bits_burst),
-		.m_axi_w_ready(m_axi_gp_w_ready),
-		.m_axi_w_valid(m_axi_gp_w_valid),
-		.m_axi_w_bits_data(m_axi_gp_w_bits_data),
-		.m_axi_w_bits_strb(m_axi_gp_w_bits_strb),
-		.m_axi_w_bits_last(m_axi_gp_w_bits_last),
-		.m_axi_b_ready(m_axi_gp_b_ready),
-		.m_axi_b_valid(m_axi_gp_b_valid),
-		.m_axi_b_bits_id(m_axi_gp_b_bits_id),
-		.m_axi_b_bits_resp(m_axi_gp_b_bits_resp)
+		.m_axi_ar_ready(m_axi_regular_ar_ready),
+		.m_axi_ar_valid(m_axi_regular_ar_valid),
+		.m_axi_ar_bits_id(m_axi_regular_ar_bits_id),
+		.m_axi_ar_bits_addr(m_axi_regular_ar_bits_addr),
+		.m_axi_ar_bits_len(m_axi_regular_ar_bits_len),
+		.m_axi_ar_bits_size(m_axi_regular_ar_bits_size),
+		.m_axi_ar_bits_burst(m_axi_regular_ar_bits_burst),
+		.m_axi_r_ready(m_axi_regular_r_ready),
+		.m_axi_r_valid(m_axi_regular_r_valid),
+		.m_axi_r_bits_id(m_axi_regular_r_bits_id),
+		.m_axi_r_bits_data(m_axi_regular_r_bits_data),
+		.m_axi_r_bits_resp(m_axi_regular_r_bits_resp),
+		.m_axi_r_bits_last(m_axi_regular_r_bits_last),
+		.m_axi_aw_ready(m_axi_regular_aw_ready),
+		.m_axi_aw_valid(m_axi_regular_aw_valid),
+		.m_axi_aw_bits_id(m_axi_regular_aw_bits_id),
+		.m_axi_aw_bits_addr(m_axi_regular_aw_bits_addr),
+		.m_axi_aw_bits_len(m_axi_regular_aw_bits_len),
+		.m_axi_aw_bits_size(m_axi_regular_aw_bits_size),
+		.m_axi_aw_bits_burst(m_axi_regular_aw_bits_burst),
+		.m_axi_w_ready(m_axi_regular_w_ready),
+		.m_axi_w_valid(m_axi_regular_w_valid),
+		.m_axi_w_bits_data(m_axi_regular_w_bits_data),
+		.m_axi_w_bits_strb(m_axi_regular_w_bits_strb),
+		.m_axi_w_bits_last(m_axi_regular_w_bits_last),
+		.m_axi_b_ready(m_axi_regular_b_ready),
+		.m_axi_b_valid(m_axi_regular_b_valid),
+		.m_axi_b_bits_id(m_axi_regular_b_bits_id),
+		.m_axi_b_bits_resp(m_axi_regular_b_bits_resp)
 	);
 	Downsize downsizerValues(
 		.clock(clock),
@@ -10333,12 +10333,12 @@ module Spmv (
 		.io_enq_bits_len(4'h0),
 		.io_enq_bits_size((_qPtrInputVector_io_deq_valid ? 3'h5 : 3'h0)),
 		.io_enq_bits_burst(2'h0),
-		.io_deq_ready(m_axi_ls_ar_ready),
-		.io_deq_valid(m_axi_ls_ar_valid),
-		.io_deq_bits_addr(m_axi_ls_ar_bits_addr),
-		.io_deq_bits_len(m_axi_ls_ar_bits_len),
-		.io_deq_bits_size(m_axi_ls_ar_bits_size),
-		.io_deq_bits_burst(m_axi_ls_ar_bits_burst)
+		.io_deq_ready(m_axi_random_ar_ready),
+		.io_deq_valid(m_axi_random_ar_valid),
+		.io_deq_bits_addr(m_axi_random_ar_bits_addr),
+		.io_deq_bits_len(m_axi_random_ar_bits_len),
+		.io_deq_bits_size(m_axi_random_ar_bits_size),
+		.io_deq_bits_burst(m_axi_random_ar_bits_burst)
 	);
 	BatchMultiply batchMultiply(
 		.clock(clock),
@@ -10366,9 +10366,9 @@ module Spmv (
 	Queue2_UInt256 sinkBuffer_1(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(m_axi_ls_r_ready),
-		.io_enq_valid(m_axi_ls_r_valid),
-		.io_enq_bits(m_axi_ls_r_bits_data),
+		.io_enq_ready(m_axi_random_r_ready),
+		.io_enq_valid(m_axi_random_r_valid),
+		.io_enq_bits(m_axi_random_r_bits_data),
 		.io_deq_ready(_batchMultiply_sourceInB_ready),
 		.io_deq_valid(_sinkBuffer_1_io_deq_valid),
 		.io_deq_bits(_sinkBuffer_1_io_deq_bits)
@@ -11637,6 +11637,704 @@ module Stripe (
 	assign M_AXI_1_WLAST = S_AXI_1_WLAST;
 	assign M_AXI_1_BREADY = S_AXI_1_BREADY;
 endmodule
+module ram_64x6 (
+	R0_addr,
+	R0_en,
+	R0_clk,
+	R0_data,
+	W0_addr,
+	W0_en,
+	W0_clk,
+	W0_data
+);
+	input [5:0] R0_addr;
+	input R0_en;
+	input R0_clk;
+	output wire [5:0] R0_data;
+	input [5:0] W0_addr;
+	input W0_en;
+	input W0_clk;
+	input [5:0] W0_data;
+	reg [5:0] Memory [0:63];
+	always @(posedge W0_clk)
+		if (W0_en & 1'h1)
+			Memory[W0_addr] <= W0_data;
+	reg [31:0] _RANDOM_MEM;
+	assign R0_data = (R0_en ? Memory[R0_addr] : 6'bxxxxxx);
+endmodule
+module Queue64_UInt6 (
+	clock,
+	reset,
+	io_enq_valid,
+	io_enq_bits,
+	io_deq_ready,
+	io_deq_valid,
+	io_deq_bits
+);
+	input clock;
+	input reset;
+	input io_enq_valid;
+	input [5:0] io_enq_bits;
+	input io_deq_ready;
+	output wire io_deq_valid;
+	output wire [5:0] io_deq_bits;
+	wire io_enq_ready;
+	reg [5:0] enq_ptr_value;
+	reg [5:0] deq_ptr_value;
+	reg maybe_full;
+	wire ptr_match = enq_ptr_value == deq_ptr_value;
+	wire empty = ptr_match & ~maybe_full;
+	wire do_enq = io_enq_ready & io_enq_valid;
+	assign io_enq_ready = ~(ptr_match & maybe_full);
+	always @(posedge clock)
+		if (reset) begin
+			enq_ptr_value <= 6'h00;
+			deq_ptr_value <= 6'h00;
+			maybe_full <= 1'h0;
+		end
+		else begin : sv2v_autoblock_1
+			reg do_deq;
+			do_deq = io_deq_ready & ~empty;
+			if (do_enq)
+				enq_ptr_value <= enq_ptr_value + 6'h01;
+			if (do_deq)
+				deq_ptr_value <= deq_ptr_value + 6'h01;
+			if (~(do_enq == do_deq))
+				maybe_full <= do_enq;
+		end
+	initial begin : sv2v_autoblock_2
+		reg [31:0] _RANDOM [0:0];
+	end
+	ram_64x6 ram_ext(
+		.R0_addr(deq_ptr_value),
+		.R0_en(1'h1),
+		.R0_clk(clock),
+		.R0_data(io_deq_bits),
+		.W0_addr(enq_ptr_value),
+		.W0_en(do_enq),
+		.W0_clk(clock),
+		.W0_data(io_enq_bits)
+	);
+	assign io_deq_valid = ~empty;
+endmodule
+module IdFreeList (
+	clock,
+	reset,
+	enq_valid,
+	enq_bits,
+	deq_ready,
+	deq_valid,
+	deq_bits
+);
+	input clock;
+	input reset;
+	input enq_valid;
+	input [5:0] enq_bits;
+	input deq_ready;
+	output wire deq_valid;
+	output wire [5:0] deq_bits;
+	wire _qIndex_io_deq_valid;
+	wire [5:0] _qIndex_io_deq_bits;
+	reg [6:0] rIndexSent;
+	always @(posedge clock)
+		if (reset)
+			rIndexSent <= 7'h00;
+		else if (rIndexSent[6] | ~deq_ready)
+			;
+		else
+			rIndexSent <= rIndexSent + 7'h01;
+	initial begin : sv2v_autoblock_1
+		reg [31:0] _RANDOM [0:0];
+	end
+	Queue64_UInt6 qIndex(
+		.clock(clock),
+		.reset(reset),
+		.io_enq_valid(enq_valid),
+		.io_enq_bits(enq_bits),
+		.io_deq_ready(rIndexSent[6] & deq_ready),
+		.io_deq_valid(_qIndex_io_deq_valid),
+		.io_deq_bits(_qIndex_io_deq_bits)
+	);
+	assign deq_valid = ~rIndexSent[6] | _qIndex_io_deq_valid;
+	assign deq_bits = (rIndexSent[6] ? _qIndex_io_deq_bits : rIndexSent[5:0]);
+endmodule
+module IdList (
+	clock,
+	reset,
+	enq_valid,
+	enq_bits,
+	deq_ready,
+	deq_bits
+);
+	input clock;
+	input reset;
+	input enq_valid;
+	input [5:0] enq_bits;
+	input deq_ready;
+	output wire [5:0] deq_bits;
+	Queue64_UInt6 qIndex(
+		.clock(clock),
+		.reset(reset),
+		.io_enq_valid(enq_valid),
+		.io_enq_bits(enq_bits),
+		.io_deq_ready(deq_ready),
+		.io_deq_valid(),
+		.io_deq_bits(deq_bits)
+	);
+endmodule
+module ram_4x259 (
+	R0_addr,
+	R0_en,
+	R0_clk,
+	R0_data,
+	W0_addr,
+	W0_en,
+	W0_clk,
+	W0_data
+);
+	input [1:0] R0_addr;
+	input R0_en;
+	input R0_clk;
+	output wire [258:0] R0_data;
+	input [1:0] W0_addr;
+	input W0_en;
+	input W0_clk;
+	input [258:0] W0_data;
+	reg [258:0] Memory [0:3];
+	always @(posedge W0_clk)
+		if (W0_en & 1'h1)
+			Memory[W0_addr] <= W0_data;
+	reg [287:0] _RANDOM_MEM;
+	assign R0_data = (R0_en ? Memory[R0_addr] : 259'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+endmodule
+module Queue4_ReadDataChannel (
+	clock,
+	reset,
+	io_enq_valid,
+	io_enq_bits_data,
+	io_enq_bits_resp,
+	io_enq_bits_last,
+	io_deq_ready,
+	io_deq_valid,
+	io_deq_bits_data,
+	io_deq_bits_resp,
+	io_deq_bits_last
+);
+	input clock;
+	input reset;
+	input io_enq_valid;
+	input [255:0] io_enq_bits_data;
+	input [1:0] io_enq_bits_resp;
+	input io_enq_bits_last;
+	input io_deq_ready;
+	output wire io_deq_valid;
+	output wire [255:0] io_deq_bits_data;
+	output wire [1:0] io_deq_bits_resp;
+	output wire io_deq_bits_last;
+	wire io_enq_ready;
+	wire [258:0] _ram_ext_R0_data;
+	reg [1:0] enq_ptr_value;
+	reg [1:0] deq_ptr_value;
+	reg maybe_full;
+	wire ptr_match = enq_ptr_value == deq_ptr_value;
+	wire empty = ptr_match & ~maybe_full;
+	wire do_enq = io_enq_ready & io_enq_valid;
+	assign io_enq_ready = ~(ptr_match & maybe_full);
+	always @(posedge clock)
+		if (reset) begin
+			enq_ptr_value <= 2'h0;
+			deq_ptr_value <= 2'h0;
+			maybe_full <= 1'h0;
+		end
+		else begin : sv2v_autoblock_1
+			reg do_deq;
+			do_deq = io_deq_ready & ~empty;
+			if (do_enq)
+				enq_ptr_value <= enq_ptr_value + 2'h1;
+			if (do_deq)
+				deq_ptr_value <= deq_ptr_value + 2'h1;
+			if (~(do_enq == do_deq))
+				maybe_full <= do_enq;
+		end
+	initial begin : sv2v_autoblock_2
+		reg [31:0] _RANDOM [0:0];
+	end
+	ram_4x259 ram_ext(
+		.R0_addr(deq_ptr_value),
+		.R0_en(1'h1),
+		.R0_clk(clock),
+		.R0_data(_ram_ext_R0_data),
+		.W0_addr(enq_ptr_value),
+		.W0_en(do_enq),
+		.W0_clk(clock),
+		.W0_data({io_enq_bits_last, io_enq_bits_resp, io_enq_bits_data})
+	);
+	assign io_deq_valid = ~empty;
+	assign io_deq_bits_data = _ram_ext_R0_data[255:0];
+	assign io_deq_bits_resp = _ram_ext_R0_data[257:256];
+	assign io_deq_bits_last = _ram_ext_R0_data[258];
+endmodule
+module sram_mem_64x259 (
+	R0_addr,
+	R0_en,
+	R0_clk,
+	R0_data,
+	W0_addr,
+	W0_en,
+	W0_clk,
+	W0_data
+);
+	input [5:0] R0_addr;
+	input R0_en;
+	input R0_clk;
+	output wire [258:0] R0_data;
+	input [5:0] W0_addr;
+	input W0_en;
+	input W0_clk;
+	input [258:0] W0_data;
+	reg [258:0] Memory [0:63];
+	reg _R0_en_d0;
+	reg [5:0] _R0_addr_d0;
+	always @(posedge R0_clk) begin
+		_R0_en_d0 <= R0_en;
+		_R0_addr_d0 <= R0_addr;
+	end
+	always @(posedge W0_clk)
+		if (W0_en & 1'h1)
+			Memory[W0_addr] <= W0_data;
+	reg [287:0] _RANDOM_MEM;
+	assign R0_data = (_R0_en_d0 ? Memory[_R0_addr_d0] : 259'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+endmodule
+module SyncWriteElasticReadMemory (
+	clock,
+	reset,
+	io_wrEn,
+	io_wrAddr,
+	io_wrData_data,
+	io_wrData_resp,
+	io_wrData_last,
+	io_rdReq_ready,
+	io_rdReq_valid,
+	io_rdReq_bits,
+	io_rdResp_ready,
+	io_rdResp_valid,
+	io_rdResp_bits_data,
+	io_rdResp_bits_resp,
+	io_rdResp_bits_last
+);
+	input clock;
+	input reset;
+	input io_wrEn;
+	input [5:0] io_wrAddr;
+	input [255:0] io_wrData_data;
+	input [1:0] io_wrData_resp;
+	input io_wrData_last;
+	output wire io_rdReq_ready;
+	input io_rdReq_valid;
+	input [5:0] io_rdReq_bits;
+	input io_rdResp_ready;
+	output wire io_rdResp_valid;
+	output wire [255:0] io_rdResp_bits_data;
+	output wire [1:0] io_rdResp_bits_resp;
+	output wire io_rdResp_bits_last;
+	wire _rdQueue_io_deq_valid;
+	wire _rdCounter_io_full;
+	wire [258:0] _sram_mem_ext_R0_data;
+	wire _GEN = ~_rdCounter_io_full & io_rdReq_valid;
+	reg r;
+	always @(posedge clock) r <= _GEN;
+	initial begin : sv2v_autoblock_1
+		reg [31:0] _RANDOM [0:0];
+	end
+	sram_mem_64x259 sram_mem_ext(
+		.R0_addr(io_rdReq_bits),
+		.R0_en(1'h1),
+		.R0_clk(clock),
+		.R0_data(_sram_mem_ext_R0_data),
+		.W0_addr(io_wrAddr),
+		.W0_en(io_wrEn),
+		.W0_clk(clock),
+		.W0_data({io_wrData_last, io_wrData_resp, io_wrData_data})
+	);
+	Counter rdCounter(
+		.clock(clock),
+		.reset(reset),
+		.io_incEn(_GEN),
+		.io_decEn(io_rdResp_ready & _rdQueue_io_deq_valid),
+		.io_full(_rdCounter_io_full)
+	);
+	Queue4_ReadDataChannel rdQueue(
+		.clock(clock),
+		.reset(reset),
+		.io_enq_valid(r),
+		.io_enq_bits_data(_sram_mem_ext_R0_data[255:0]),
+		.io_enq_bits_resp(_sram_mem_ext_R0_data[257:256]),
+		.io_enq_bits_last(_sram_mem_ext_R0_data[258]),
+		.io_deq_ready(io_rdResp_ready),
+		.io_deq_valid(_rdQueue_io_deq_valid),
+		.io_deq_bits_data(io_rdResp_bits_data),
+		.io_deq_bits_resp(io_rdResp_bits_resp),
+		.io_deq_bits_last(io_rdResp_bits_last)
+	);
+	assign io_rdReq_ready = ~_rdCounter_io_full;
+	assign io_rdResp_valid = _rdQueue_io_deq_valid;
+endmodule
+module Queue4_WriteResponseChannel (
+	clock,
+	reset,
+	io_enq_valid,
+	io_deq_ready,
+	io_deq_valid
+);
+	input clock;
+	input reset;
+	input io_enq_valid;
+	input io_deq_ready;
+	output wire io_deq_valid;
+	reg [1:0] enq_ptr_value;
+	reg [1:0] deq_ptr_value;
+	reg maybe_full;
+	wire ptr_match = enq_ptr_value == deq_ptr_value;
+	wire empty = ptr_match & ~maybe_full;
+	always @(posedge clock)
+		if (reset) begin
+			enq_ptr_value <= 2'h0;
+			deq_ptr_value <= 2'h0;
+			maybe_full <= 1'h0;
+		end
+		else begin : sv2v_autoblock_1
+			reg do_enq;
+			reg do_deq;
+			do_deq = io_deq_ready & ~empty;
+			do_enq = ~(ptr_match & maybe_full) & io_enq_valid;
+			if (do_enq)
+				enq_ptr_value <= enq_ptr_value + 2'h1;
+			if (do_deq)
+				deq_ptr_value <= deq_ptr_value + 2'h1;
+			if (~(do_enq == do_deq))
+				maybe_full <= do_enq;
+		end
+	initial begin : sv2v_autoblock_2
+		reg [31:0] _RANDOM [0:0];
+	end
+	assign io_deq_valid = ~empty;
+endmodule
+module SyncWriteElasticReadMemory_1 (
+	clock,
+	reset,
+	io_rdReq_ready,
+	io_rdReq_valid,
+	io_rdResp_ready,
+	io_rdResp_valid
+);
+	input clock;
+	input reset;
+	output wire io_rdReq_ready;
+	input io_rdReq_valid;
+	input io_rdResp_ready;
+	output wire io_rdResp_valid;
+	wire _rdQueue_io_deq_valid;
+	wire _rdCounter_io_full;
+	wire _GEN = ~_rdCounter_io_full & io_rdReq_valid;
+	reg r;
+	always @(posedge clock) r <= _GEN;
+	initial begin : sv2v_autoblock_1
+		reg [31:0] _RANDOM [0:0];
+	end
+	Counter rdCounter(
+		.clock(clock),
+		.reset(reset),
+		.io_incEn(_GEN),
+		.io_decEn(io_rdResp_ready & _rdQueue_io_deq_valid),
+		.io_full(_rdCounter_io_full)
+	);
+	Queue4_WriteResponseChannel rdQueue(
+		.clock(clock),
+		.reset(reset),
+		.io_enq_valid(r),
+		.io_deq_ready(io_rdResp_ready),
+		.io_deq_valid(_rdQueue_io_deq_valid)
+	);
+	assign io_rdReq_ready = ~_rdCounter_io_full;
+	assign io_rdResp_valid = _rdQueue_io_deq_valid;
+endmodule
+module mem_64x1 (
+	R0_addr,
+	R0_en,
+	R0_clk,
+	R0_data,
+	W0_addr,
+	W0_en,
+	W0_clk,
+	W0_data,
+	W1_addr,
+	W1_en,
+	W1_clk,
+	W1_data
+);
+	input [5:0] R0_addr;
+	input R0_en;
+	input R0_clk;
+	output wire R0_data;
+	input [5:0] W0_addr;
+	input W0_en;
+	input W0_clk;
+	input W0_data;
+	input [5:0] W1_addr;
+	input W1_en;
+	input W1_clk;
+	input W1_data;
+	reg Memory [0:63];
+	always @(posedge W0_clk) begin
+		if (W0_en & 1'h1)
+			Memory[W0_addr] <= W0_data;
+		if (W1_en & 1'h1)
+			Memory[W1_addr] <= W1_data;
+	end
+	reg [31:0] _RANDOM_MEM;
+	assign R0_data = (R0_en ? Memory[R0_addr] : 1'bx);
+endmodule
+module IdParallelizeNoReadBurst (
+	clock,
+	reset,
+	s_axi_ar_ready,
+	s_axi_ar_valid,
+	s_axi_ar_bits_addr,
+	s_axi_ar_bits_len,
+	s_axi_ar_bits_size,
+	s_axi_ar_bits_burst,
+	s_axi_r_ready,
+	s_axi_r_valid,
+	s_axi_r_bits_data,
+	s_axi_r_bits_resp,
+	s_axi_r_bits_last,
+	s_axi_aw_ready,
+	s_axi_aw_valid,
+	s_axi_aw_bits_addr,
+	s_axi_aw_bits_len,
+	s_axi_aw_bits_size,
+	s_axi_aw_bits_burst,
+	s_axi_w_ready,
+	s_axi_w_valid,
+	s_axi_w_bits_data,
+	s_axi_w_bits_strb,
+	s_axi_w_bits_last,
+	s_axi_b_ready,
+	s_axi_b_valid,
+	m_axi_ar_ready,
+	m_axi_ar_valid,
+	m_axi_ar_bits_id,
+	m_axi_ar_bits_addr,
+	m_axi_ar_bits_len,
+	m_axi_ar_bits_size,
+	m_axi_ar_bits_burst,
+	m_axi_r_valid,
+	m_axi_r_bits_id,
+	m_axi_r_bits_data,
+	m_axi_r_bits_resp,
+	m_axi_r_bits_last,
+	m_axi_aw_ready,
+	m_axi_aw_valid,
+	m_axi_aw_bits_id,
+	m_axi_aw_bits_addr,
+	m_axi_aw_bits_len,
+	m_axi_aw_bits_size,
+	m_axi_aw_bits_burst,
+	m_axi_w_ready,
+	m_axi_w_valid,
+	m_axi_w_bits_data,
+	m_axi_w_bits_strb,
+	m_axi_w_bits_last,
+	m_axi_b_valid,
+	m_axi_b_bits_id
+);
+	input clock;
+	input reset;
+	output wire s_axi_ar_ready;
+	input s_axi_ar_valid;
+	input [63:0] s_axi_ar_bits_addr;
+	input [3:0] s_axi_ar_bits_len;
+	input [2:0] s_axi_ar_bits_size;
+	input [1:0] s_axi_ar_bits_burst;
+	input s_axi_r_ready;
+	output wire s_axi_r_valid;
+	output wire [255:0] s_axi_r_bits_data;
+	output wire [1:0] s_axi_r_bits_resp;
+	output wire s_axi_r_bits_last;
+	output wire s_axi_aw_ready;
+	input s_axi_aw_valid;
+	input [63:0] s_axi_aw_bits_addr;
+	input [3:0] s_axi_aw_bits_len;
+	input [2:0] s_axi_aw_bits_size;
+	input [1:0] s_axi_aw_bits_burst;
+	output wire s_axi_w_ready;
+	input s_axi_w_valid;
+	input [255:0] s_axi_w_bits_data;
+	input [31:0] s_axi_w_bits_strb;
+	input s_axi_w_bits_last;
+	input s_axi_b_ready;
+	output wire s_axi_b_valid;
+	input m_axi_ar_ready;
+	output wire m_axi_ar_valid;
+	output wire [5:0] m_axi_ar_bits_id;
+	output wire [63:0] m_axi_ar_bits_addr;
+	output wire [3:0] m_axi_ar_bits_len;
+	output wire [2:0] m_axi_ar_bits_size;
+	output wire [1:0] m_axi_ar_bits_burst;
+	input m_axi_r_valid;
+	input [5:0] m_axi_r_bits_id;
+	input [255:0] m_axi_r_bits_data;
+	input [1:0] m_axi_r_bits_resp;
+	input m_axi_r_bits_last;
+	input m_axi_aw_ready;
+	output wire m_axi_aw_valid;
+	output wire [5:0] m_axi_aw_bits_id;
+	output wire [63:0] m_axi_aw_bits_addr;
+	output wire [3:0] m_axi_aw_bits_len;
+	output wire [2:0] m_axi_aw_bits_size;
+	output wire [1:0] m_axi_aw_bits_burst;
+	input m_axi_w_ready;
+	output wire m_axi_w_valid;
+	output wire [255:0] m_axi_w_bits_data;
+	output wire [31:0] m_axi_w_bits_strb;
+	output wire m_axi_w_bits_last;
+	input m_axi_b_valid;
+	input [5:0] m_axi_b_bits_id;
+	wire _write_bufferPayload_io_rdReq_ready;
+	wire _write_bufferValid_ext_R0_data;
+	wire [5:0] _write_idList_deq_bits;
+	wire _write_idFreelist_deq_valid;
+	wire [5:0] _write_idFreelist_deq_bits;
+	wire _read_bufferPayload_io_rdReq_ready;
+	wire _read_bufferValid_ext_R0_data;
+	wire [5:0] _read_idList_deq_bits;
+	wire _read_idFreelist_deq_valid;
+	wire [5:0] _read_idFreelist_deq_bits;
+	wire s_axi_ar_ready_0 = m_axi_ar_ready & _read_idFreelist_deq_valid;
+	wire m_axi_ar_valid_0 = _read_idFreelist_deq_valid & s_axi_ar_valid;
+	wire _read_T = s_axi_ar_ready_0 & s_axi_ar_valid;
+	wire _read_T_6 = _read_bufferPayload_io_rdReq_ready & _read_bufferValid_ext_R0_data;
+	wire s_axi_aw_ready_0 = m_axi_aw_ready & _write_idFreelist_deq_valid;
+	wire m_axi_aw_valid_0 = _write_idFreelist_deq_valid & s_axi_aw_valid;
+	wire _write_T = s_axi_aw_ready_0 & s_axi_aw_valid;
+	always @(posedge clock) begin
+		if ((_read_T & ~reset) & |s_axi_ar_bits_len) begin
+			$error("Assertion failed\n    at IdParallelizeNoReadBurst.scala:177 assert(s_axi.ar.bits.len === 0.U)\n");
+			$fatal;
+		end
+		if ((_write_T & ~reset) & |s_axi_aw_bits_len) begin
+			$error("Assertion failed\n    at IdParallelizeNoReadBurst.scala:241 assert(s_axi.aw.bits.len === 0.U)\n");
+			$fatal;
+		end
+	end
+	wire _write_T_6 = _write_bufferPayload_io_rdReq_ready & _write_bufferValid_ext_R0_data;
+	IdFreeList read_idFreelist(
+		.clock(clock),
+		.reset(reset),
+		.enq_valid(_read_T_6),
+		.enq_bits(_read_idList_deq_bits),
+		.deq_ready(_read_T),
+		.deq_valid(_read_idFreelist_deq_valid),
+		.deq_bits(_read_idFreelist_deq_bits)
+	);
+	IdList read_idList(
+		.clock(clock),
+		.reset(reset),
+		.enq_valid(m_axi_ar_ready & m_axi_ar_valid_0),
+		.enq_bits(_read_idFreelist_deq_bits),
+		.deq_ready(_read_T_6),
+		.deq_bits(_read_idList_deq_bits)
+	);
+	mem_64x1 read_bufferValid_ext(
+		.R0_addr(_read_idList_deq_bits),
+		.R0_en(1'h1),
+		.R0_clk(clock),
+		.R0_data(_read_bufferValid_ext_R0_data),
+		.W0_addr(_read_idList_deq_bits),
+		.W0_en(_read_T_6),
+		.W0_clk(clock),
+		.W0_data(1'h0),
+		.W1_addr(m_axi_r_bits_id),
+		.W1_en(m_axi_r_valid),
+		.W1_clk(clock),
+		.W1_data(1'h1)
+	);
+	SyncWriteElasticReadMemory read_bufferPayload(
+		.clock(clock),
+		.reset(reset),
+		.io_wrEn(m_axi_r_valid),
+		.io_wrAddr(m_axi_r_bits_id),
+		.io_wrData_data(m_axi_r_bits_data),
+		.io_wrData_resp(m_axi_r_bits_resp),
+		.io_wrData_last(m_axi_r_bits_last),
+		.io_rdReq_ready(_read_bufferPayload_io_rdReq_ready),
+		.io_rdReq_valid(_read_bufferValid_ext_R0_data),
+		.io_rdReq_bits(_read_idList_deq_bits),
+		.io_rdResp_ready(s_axi_r_ready),
+		.io_rdResp_valid(s_axi_r_valid),
+		.io_rdResp_bits_data(s_axi_r_bits_data),
+		.io_rdResp_bits_resp(s_axi_r_bits_resp),
+		.io_rdResp_bits_last(s_axi_r_bits_last)
+	);
+	IdFreeList write_idFreelist(
+		.clock(clock),
+		.reset(reset),
+		.enq_valid(_write_T_6),
+		.enq_bits(_write_idList_deq_bits),
+		.deq_ready(_write_T),
+		.deq_valid(_write_idFreelist_deq_valid),
+		.deq_bits(_write_idFreelist_deq_bits)
+	);
+	IdList write_idList(
+		.clock(clock),
+		.reset(reset),
+		.enq_valid(m_axi_aw_ready & m_axi_aw_valid_0),
+		.enq_bits(_write_idFreelist_deq_bits),
+		.deq_ready(_write_T_6),
+		.deq_bits(_write_idList_deq_bits)
+	);
+	mem_64x1 write_bufferValid_ext(
+		.R0_addr(_write_idList_deq_bits),
+		.R0_en(1'h1),
+		.R0_clk(clock),
+		.R0_data(_write_bufferValid_ext_R0_data),
+		.W0_addr(_write_idList_deq_bits),
+		.W0_en(_write_T_6),
+		.W0_clk(clock),
+		.W0_data(1'h0),
+		.W1_addr(m_axi_b_bits_id),
+		.W1_en(m_axi_b_valid),
+		.W1_clk(clock),
+		.W1_data(1'h1)
+	);
+	SyncWriteElasticReadMemory_1 write_bufferPayload(
+		.clock(clock),
+		.reset(reset),
+		.io_rdReq_ready(_write_bufferPayload_io_rdReq_ready),
+		.io_rdReq_valid(_write_bufferValid_ext_R0_data),
+		.io_rdResp_ready(s_axi_b_ready),
+		.io_rdResp_valid(s_axi_b_valid)
+	);
+	assign s_axi_ar_ready = s_axi_ar_ready_0;
+	assign s_axi_aw_ready = s_axi_aw_ready_0;
+	assign s_axi_w_ready = m_axi_w_ready;
+	assign m_axi_ar_valid = m_axi_ar_valid_0;
+	assign m_axi_ar_bits_id = _read_idFreelist_deq_bits;
+	assign m_axi_ar_bits_addr = s_axi_ar_bits_addr;
+	assign m_axi_ar_bits_len = s_axi_ar_bits_len;
+	assign m_axi_ar_bits_size = s_axi_ar_bits_size;
+	assign m_axi_ar_bits_burst = s_axi_ar_bits_burst;
+	assign m_axi_aw_valid = m_axi_aw_valid_0;
+	assign m_axi_aw_bits_id = _write_idFreelist_deq_bits;
+	assign m_axi_aw_bits_addr = s_axi_aw_bits_addr;
+	assign m_axi_aw_bits_len = s_axi_aw_bits_len;
+	assign m_axi_aw_bits_size = s_axi_aw_bits_size;
+	assign m_axi_aw_bits_burst = s_axi_aw_bits_burst;
+	assign m_axi_w_valid = s_axi_w_valid;
+	assign m_axi_w_bits_data = s_axi_w_bits_data;
+	assign m_axi_w_bits_strb = s_axi_w_bits_strb;
+	assign m_axi_w_bits_last = s_axi_w_bits_last;
+endmodule
 module ram_2x14 (
 	R0_addr,
 	R0_en,
@@ -12498,704 +13196,6 @@ module Queue4_UInt64 (
 	assign io_enq_ready = ~full;
 	assign io_deq_valid = ~empty;
 endmodule
-module ram_64x6 (
-	R0_addr,
-	R0_en,
-	R0_clk,
-	R0_data,
-	W0_addr,
-	W0_en,
-	W0_clk,
-	W0_data
-);
-	input [5:0] R0_addr;
-	input R0_en;
-	input R0_clk;
-	output wire [5:0] R0_data;
-	input [5:0] W0_addr;
-	input W0_en;
-	input W0_clk;
-	input [5:0] W0_data;
-	reg [5:0] Memory [0:63];
-	always @(posedge W0_clk)
-		if (W0_en & 1'h1)
-			Memory[W0_addr] <= W0_data;
-	reg [31:0] _RANDOM_MEM;
-	assign R0_data = (R0_en ? Memory[R0_addr] : 6'bxxxxxx);
-endmodule
-module Queue64_UInt6 (
-	clock,
-	reset,
-	io_enq_valid,
-	io_enq_bits,
-	io_deq_ready,
-	io_deq_valid,
-	io_deq_bits
-);
-	input clock;
-	input reset;
-	input io_enq_valid;
-	input [5:0] io_enq_bits;
-	input io_deq_ready;
-	output wire io_deq_valid;
-	output wire [5:0] io_deq_bits;
-	wire io_enq_ready;
-	reg [5:0] enq_ptr_value;
-	reg [5:0] deq_ptr_value;
-	reg maybe_full;
-	wire ptr_match = enq_ptr_value == deq_ptr_value;
-	wire empty = ptr_match & ~maybe_full;
-	wire do_enq = io_enq_ready & io_enq_valid;
-	assign io_enq_ready = ~(ptr_match & maybe_full);
-	always @(posedge clock)
-		if (reset) begin
-			enq_ptr_value <= 6'h00;
-			deq_ptr_value <= 6'h00;
-			maybe_full <= 1'h0;
-		end
-		else begin : sv2v_autoblock_1
-			reg do_deq;
-			do_deq = io_deq_ready & ~empty;
-			if (do_enq)
-				enq_ptr_value <= enq_ptr_value + 6'h01;
-			if (do_deq)
-				deq_ptr_value <= deq_ptr_value + 6'h01;
-			if (~(do_enq == do_deq))
-				maybe_full <= do_enq;
-		end
-	initial begin : sv2v_autoblock_2
-		reg [31:0] _RANDOM [0:0];
-	end
-	ram_64x6 ram_ext(
-		.R0_addr(deq_ptr_value),
-		.R0_en(1'h1),
-		.R0_clk(clock),
-		.R0_data(io_deq_bits),
-		.W0_addr(enq_ptr_value),
-		.W0_en(do_enq),
-		.W0_clk(clock),
-		.W0_data(io_enq_bits)
-	);
-	assign io_deq_valid = ~empty;
-endmodule
-module IdFreeList (
-	clock,
-	reset,
-	enq_valid,
-	enq_bits,
-	deq_ready,
-	deq_valid,
-	deq_bits
-);
-	input clock;
-	input reset;
-	input enq_valid;
-	input [5:0] enq_bits;
-	input deq_ready;
-	output wire deq_valid;
-	output wire [5:0] deq_bits;
-	wire _qIndex_io_deq_valid;
-	wire [5:0] _qIndex_io_deq_bits;
-	reg [6:0] rIndexSent;
-	always @(posedge clock)
-		if (reset)
-			rIndexSent <= 7'h00;
-		else if (rIndexSent[6] | ~deq_ready)
-			;
-		else
-			rIndexSent <= rIndexSent + 7'h01;
-	initial begin : sv2v_autoblock_1
-		reg [31:0] _RANDOM [0:0];
-	end
-	Queue64_UInt6 qIndex(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_valid(enq_valid),
-		.io_enq_bits(enq_bits),
-		.io_deq_ready(rIndexSent[6] & deq_ready),
-		.io_deq_valid(_qIndex_io_deq_valid),
-		.io_deq_bits(_qIndex_io_deq_bits)
-	);
-	assign deq_valid = ~rIndexSent[6] | _qIndex_io_deq_valid;
-	assign deq_bits = (rIndexSent[6] ? _qIndex_io_deq_bits : rIndexSent[5:0]);
-endmodule
-module IdList (
-	clock,
-	reset,
-	enq_valid,
-	enq_bits,
-	deq_ready,
-	deq_bits
-);
-	input clock;
-	input reset;
-	input enq_valid;
-	input [5:0] enq_bits;
-	input deq_ready;
-	output wire [5:0] deq_bits;
-	Queue64_UInt6 qIndex(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_valid(enq_valid),
-		.io_enq_bits(enq_bits),
-		.io_deq_ready(deq_ready),
-		.io_deq_valid(),
-		.io_deq_bits(deq_bits)
-	);
-endmodule
-module ram_4x259 (
-	R0_addr,
-	R0_en,
-	R0_clk,
-	R0_data,
-	W0_addr,
-	W0_en,
-	W0_clk,
-	W0_data
-);
-	input [1:0] R0_addr;
-	input R0_en;
-	input R0_clk;
-	output wire [258:0] R0_data;
-	input [1:0] W0_addr;
-	input W0_en;
-	input W0_clk;
-	input [258:0] W0_data;
-	reg [258:0] Memory [0:3];
-	always @(posedge W0_clk)
-		if (W0_en & 1'h1)
-			Memory[W0_addr] <= W0_data;
-	reg [287:0] _RANDOM_MEM;
-	assign R0_data = (R0_en ? Memory[R0_addr] : 259'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
-endmodule
-module Queue4_ReadDataChannel (
-	clock,
-	reset,
-	io_enq_valid,
-	io_enq_bits_data,
-	io_enq_bits_resp,
-	io_enq_bits_last,
-	io_deq_ready,
-	io_deq_valid,
-	io_deq_bits_data,
-	io_deq_bits_resp,
-	io_deq_bits_last
-);
-	input clock;
-	input reset;
-	input io_enq_valid;
-	input [255:0] io_enq_bits_data;
-	input [1:0] io_enq_bits_resp;
-	input io_enq_bits_last;
-	input io_deq_ready;
-	output wire io_deq_valid;
-	output wire [255:0] io_deq_bits_data;
-	output wire [1:0] io_deq_bits_resp;
-	output wire io_deq_bits_last;
-	wire io_enq_ready;
-	wire [258:0] _ram_ext_R0_data;
-	reg [1:0] enq_ptr_value;
-	reg [1:0] deq_ptr_value;
-	reg maybe_full;
-	wire ptr_match = enq_ptr_value == deq_ptr_value;
-	wire empty = ptr_match & ~maybe_full;
-	wire do_enq = io_enq_ready & io_enq_valid;
-	assign io_enq_ready = ~(ptr_match & maybe_full);
-	always @(posedge clock)
-		if (reset) begin
-			enq_ptr_value <= 2'h0;
-			deq_ptr_value <= 2'h0;
-			maybe_full <= 1'h0;
-		end
-		else begin : sv2v_autoblock_1
-			reg do_deq;
-			do_deq = io_deq_ready & ~empty;
-			if (do_enq)
-				enq_ptr_value <= enq_ptr_value + 2'h1;
-			if (do_deq)
-				deq_ptr_value <= deq_ptr_value + 2'h1;
-			if (~(do_enq == do_deq))
-				maybe_full <= do_enq;
-		end
-	initial begin : sv2v_autoblock_2
-		reg [31:0] _RANDOM [0:0];
-	end
-	ram_4x259 ram_ext(
-		.R0_addr(deq_ptr_value),
-		.R0_en(1'h1),
-		.R0_clk(clock),
-		.R0_data(_ram_ext_R0_data),
-		.W0_addr(enq_ptr_value),
-		.W0_en(do_enq),
-		.W0_clk(clock),
-		.W0_data({io_enq_bits_last, io_enq_bits_resp, io_enq_bits_data})
-	);
-	assign io_deq_valid = ~empty;
-	assign io_deq_bits_data = _ram_ext_R0_data[255:0];
-	assign io_deq_bits_resp = _ram_ext_R0_data[257:256];
-	assign io_deq_bits_last = _ram_ext_R0_data[258];
-endmodule
-module sram_mem_64x259 (
-	R0_addr,
-	R0_en,
-	R0_clk,
-	R0_data,
-	W0_addr,
-	W0_en,
-	W0_clk,
-	W0_data
-);
-	input [5:0] R0_addr;
-	input R0_en;
-	input R0_clk;
-	output wire [258:0] R0_data;
-	input [5:0] W0_addr;
-	input W0_en;
-	input W0_clk;
-	input [258:0] W0_data;
-	reg [258:0] Memory [0:63];
-	reg _R0_en_d0;
-	reg [5:0] _R0_addr_d0;
-	always @(posedge R0_clk) begin
-		_R0_en_d0 <= R0_en;
-		_R0_addr_d0 <= R0_addr;
-	end
-	always @(posedge W0_clk)
-		if (W0_en & 1'h1)
-			Memory[W0_addr] <= W0_data;
-	reg [287:0] _RANDOM_MEM;
-	assign R0_data = (_R0_en_d0 ? Memory[_R0_addr_d0] : 259'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
-endmodule
-module SyncWriteElasticReadMemory (
-	clock,
-	reset,
-	io_wrEn,
-	io_wrAddr,
-	io_wrData_data,
-	io_wrData_resp,
-	io_wrData_last,
-	io_rdReq_ready,
-	io_rdReq_valid,
-	io_rdReq_bits,
-	io_rdResp_ready,
-	io_rdResp_valid,
-	io_rdResp_bits_data,
-	io_rdResp_bits_resp,
-	io_rdResp_bits_last
-);
-	input clock;
-	input reset;
-	input io_wrEn;
-	input [5:0] io_wrAddr;
-	input [255:0] io_wrData_data;
-	input [1:0] io_wrData_resp;
-	input io_wrData_last;
-	output wire io_rdReq_ready;
-	input io_rdReq_valid;
-	input [5:0] io_rdReq_bits;
-	input io_rdResp_ready;
-	output wire io_rdResp_valid;
-	output wire [255:0] io_rdResp_bits_data;
-	output wire [1:0] io_rdResp_bits_resp;
-	output wire io_rdResp_bits_last;
-	wire _rdQueue_io_deq_valid;
-	wire _rdCounter_io_full;
-	wire [258:0] _sram_mem_ext_R0_data;
-	wire _GEN = ~_rdCounter_io_full & io_rdReq_valid;
-	reg r;
-	always @(posedge clock) r <= _GEN;
-	initial begin : sv2v_autoblock_1
-		reg [31:0] _RANDOM [0:0];
-	end
-	sram_mem_64x259 sram_mem_ext(
-		.R0_addr(io_rdReq_bits),
-		.R0_en(1'h1),
-		.R0_clk(clock),
-		.R0_data(_sram_mem_ext_R0_data),
-		.W0_addr(io_wrAddr),
-		.W0_en(io_wrEn),
-		.W0_clk(clock),
-		.W0_data({io_wrData_last, io_wrData_resp, io_wrData_data})
-	);
-	Counter rdCounter(
-		.clock(clock),
-		.reset(reset),
-		.io_incEn(_GEN),
-		.io_decEn(io_rdResp_ready & _rdQueue_io_deq_valid),
-		.io_full(_rdCounter_io_full)
-	);
-	Queue4_ReadDataChannel rdQueue(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_valid(r),
-		.io_enq_bits_data(_sram_mem_ext_R0_data[255:0]),
-		.io_enq_bits_resp(_sram_mem_ext_R0_data[257:256]),
-		.io_enq_bits_last(_sram_mem_ext_R0_data[258]),
-		.io_deq_ready(io_rdResp_ready),
-		.io_deq_valid(_rdQueue_io_deq_valid),
-		.io_deq_bits_data(io_rdResp_bits_data),
-		.io_deq_bits_resp(io_rdResp_bits_resp),
-		.io_deq_bits_last(io_rdResp_bits_last)
-	);
-	assign io_rdReq_ready = ~_rdCounter_io_full;
-	assign io_rdResp_valid = _rdQueue_io_deq_valid;
-endmodule
-module Queue4_WriteResponseChannel (
-	clock,
-	reset,
-	io_enq_valid,
-	io_deq_ready,
-	io_deq_valid
-);
-	input clock;
-	input reset;
-	input io_enq_valid;
-	input io_deq_ready;
-	output wire io_deq_valid;
-	reg [1:0] enq_ptr_value;
-	reg [1:0] deq_ptr_value;
-	reg maybe_full;
-	wire ptr_match = enq_ptr_value == deq_ptr_value;
-	wire empty = ptr_match & ~maybe_full;
-	always @(posedge clock)
-		if (reset) begin
-			enq_ptr_value <= 2'h0;
-			deq_ptr_value <= 2'h0;
-			maybe_full <= 1'h0;
-		end
-		else begin : sv2v_autoblock_1
-			reg do_enq;
-			reg do_deq;
-			do_deq = io_deq_ready & ~empty;
-			do_enq = ~(ptr_match & maybe_full) & io_enq_valid;
-			if (do_enq)
-				enq_ptr_value <= enq_ptr_value + 2'h1;
-			if (do_deq)
-				deq_ptr_value <= deq_ptr_value + 2'h1;
-			if (~(do_enq == do_deq))
-				maybe_full <= do_enq;
-		end
-	initial begin : sv2v_autoblock_2
-		reg [31:0] _RANDOM [0:0];
-	end
-	assign io_deq_valid = ~empty;
-endmodule
-module SyncWriteElasticReadMemory_1 (
-	clock,
-	reset,
-	io_rdReq_ready,
-	io_rdReq_valid,
-	io_rdResp_ready,
-	io_rdResp_valid
-);
-	input clock;
-	input reset;
-	output wire io_rdReq_ready;
-	input io_rdReq_valid;
-	input io_rdResp_ready;
-	output wire io_rdResp_valid;
-	wire _rdQueue_io_deq_valid;
-	wire _rdCounter_io_full;
-	wire _GEN = ~_rdCounter_io_full & io_rdReq_valid;
-	reg r;
-	always @(posedge clock) r <= _GEN;
-	initial begin : sv2v_autoblock_1
-		reg [31:0] _RANDOM [0:0];
-	end
-	Counter rdCounter(
-		.clock(clock),
-		.reset(reset),
-		.io_incEn(_GEN),
-		.io_decEn(io_rdResp_ready & _rdQueue_io_deq_valid),
-		.io_full(_rdCounter_io_full)
-	);
-	Queue4_WriteResponseChannel rdQueue(
-		.clock(clock),
-		.reset(reset),
-		.io_enq_valid(r),
-		.io_deq_ready(io_rdResp_ready),
-		.io_deq_valid(_rdQueue_io_deq_valid)
-	);
-	assign io_rdReq_ready = ~_rdCounter_io_full;
-	assign io_rdResp_valid = _rdQueue_io_deq_valid;
-endmodule
-module mem_64x1 (
-	R0_addr,
-	R0_en,
-	R0_clk,
-	R0_data,
-	W0_addr,
-	W0_en,
-	W0_clk,
-	W0_data,
-	W1_addr,
-	W1_en,
-	W1_clk,
-	W1_data
-);
-	input [5:0] R0_addr;
-	input R0_en;
-	input R0_clk;
-	output wire R0_data;
-	input [5:0] W0_addr;
-	input W0_en;
-	input W0_clk;
-	input W0_data;
-	input [5:0] W1_addr;
-	input W1_en;
-	input W1_clk;
-	input W1_data;
-	reg Memory [0:63];
-	always @(posedge W0_clk) begin
-		if (W0_en & 1'h1)
-			Memory[W0_addr] <= W0_data;
-		if (W1_en & 1'h1)
-			Memory[W1_addr] <= W1_data;
-	end
-	reg [31:0] _RANDOM_MEM;
-	assign R0_data = (R0_en ? Memory[R0_addr] : 1'bx);
-endmodule
-module IdParallelizeNoReadBurst (
-	clock,
-	reset,
-	s_axi_ar_ready,
-	s_axi_ar_valid,
-	s_axi_ar_bits_addr,
-	s_axi_ar_bits_len,
-	s_axi_ar_bits_size,
-	s_axi_ar_bits_burst,
-	s_axi_r_ready,
-	s_axi_r_valid,
-	s_axi_r_bits_data,
-	s_axi_r_bits_resp,
-	s_axi_r_bits_last,
-	s_axi_aw_ready,
-	s_axi_aw_valid,
-	s_axi_aw_bits_addr,
-	s_axi_aw_bits_len,
-	s_axi_aw_bits_size,
-	s_axi_aw_bits_burst,
-	s_axi_w_ready,
-	s_axi_w_valid,
-	s_axi_w_bits_data,
-	s_axi_w_bits_strb,
-	s_axi_w_bits_last,
-	s_axi_b_ready,
-	s_axi_b_valid,
-	m_axi_ar_ready,
-	m_axi_ar_valid,
-	m_axi_ar_bits_id,
-	m_axi_ar_bits_addr,
-	m_axi_ar_bits_len,
-	m_axi_ar_bits_size,
-	m_axi_ar_bits_burst,
-	m_axi_r_valid,
-	m_axi_r_bits_id,
-	m_axi_r_bits_data,
-	m_axi_r_bits_resp,
-	m_axi_r_bits_last,
-	m_axi_aw_ready,
-	m_axi_aw_valid,
-	m_axi_aw_bits_id,
-	m_axi_aw_bits_addr,
-	m_axi_aw_bits_len,
-	m_axi_aw_bits_size,
-	m_axi_aw_bits_burst,
-	m_axi_w_ready,
-	m_axi_w_valid,
-	m_axi_w_bits_data,
-	m_axi_w_bits_strb,
-	m_axi_w_bits_last,
-	m_axi_b_valid,
-	m_axi_b_bits_id
-);
-	input clock;
-	input reset;
-	output wire s_axi_ar_ready;
-	input s_axi_ar_valid;
-	input [63:0] s_axi_ar_bits_addr;
-	input [3:0] s_axi_ar_bits_len;
-	input [2:0] s_axi_ar_bits_size;
-	input [1:0] s_axi_ar_bits_burst;
-	input s_axi_r_ready;
-	output wire s_axi_r_valid;
-	output wire [255:0] s_axi_r_bits_data;
-	output wire [1:0] s_axi_r_bits_resp;
-	output wire s_axi_r_bits_last;
-	output wire s_axi_aw_ready;
-	input s_axi_aw_valid;
-	input [63:0] s_axi_aw_bits_addr;
-	input [3:0] s_axi_aw_bits_len;
-	input [2:0] s_axi_aw_bits_size;
-	input [1:0] s_axi_aw_bits_burst;
-	output wire s_axi_w_ready;
-	input s_axi_w_valid;
-	input [255:0] s_axi_w_bits_data;
-	input [31:0] s_axi_w_bits_strb;
-	input s_axi_w_bits_last;
-	input s_axi_b_ready;
-	output wire s_axi_b_valid;
-	input m_axi_ar_ready;
-	output wire m_axi_ar_valid;
-	output wire [5:0] m_axi_ar_bits_id;
-	output wire [63:0] m_axi_ar_bits_addr;
-	output wire [3:0] m_axi_ar_bits_len;
-	output wire [2:0] m_axi_ar_bits_size;
-	output wire [1:0] m_axi_ar_bits_burst;
-	input m_axi_r_valid;
-	input [5:0] m_axi_r_bits_id;
-	input [255:0] m_axi_r_bits_data;
-	input [1:0] m_axi_r_bits_resp;
-	input m_axi_r_bits_last;
-	input m_axi_aw_ready;
-	output wire m_axi_aw_valid;
-	output wire [5:0] m_axi_aw_bits_id;
-	output wire [63:0] m_axi_aw_bits_addr;
-	output wire [3:0] m_axi_aw_bits_len;
-	output wire [2:0] m_axi_aw_bits_size;
-	output wire [1:0] m_axi_aw_bits_burst;
-	input m_axi_w_ready;
-	output wire m_axi_w_valid;
-	output wire [255:0] m_axi_w_bits_data;
-	output wire [31:0] m_axi_w_bits_strb;
-	output wire m_axi_w_bits_last;
-	input m_axi_b_valid;
-	input [5:0] m_axi_b_bits_id;
-	wire _write_bufferPayload_io_rdReq_ready;
-	wire _write_bufferValid_ext_R0_data;
-	wire [5:0] _write_idList_deq_bits;
-	wire _write_idFreelist_deq_valid;
-	wire [5:0] _write_idFreelist_deq_bits;
-	wire _read_bufferPayload_io_rdReq_ready;
-	wire _read_bufferValid_ext_R0_data;
-	wire [5:0] _read_idList_deq_bits;
-	wire _read_idFreelist_deq_valid;
-	wire [5:0] _read_idFreelist_deq_bits;
-	wire s_axi_ar_ready_0 = m_axi_ar_ready & _read_idFreelist_deq_valid;
-	wire m_axi_ar_valid_0 = _read_idFreelist_deq_valid & s_axi_ar_valid;
-	wire _read_T = s_axi_ar_ready_0 & s_axi_ar_valid;
-	wire _read_T_6 = _read_bufferPayload_io_rdReq_ready & _read_bufferValid_ext_R0_data;
-	wire s_axi_aw_ready_0 = m_axi_aw_ready & _write_idFreelist_deq_valid;
-	wire m_axi_aw_valid_0 = _write_idFreelist_deq_valid & s_axi_aw_valid;
-	wire _write_T = s_axi_aw_ready_0 & s_axi_aw_valid;
-	always @(posedge clock) begin
-		if ((_read_T & ~reset) & |s_axi_ar_bits_len) begin
-			$error("Assertion failed\n    at IdParallelizeNoReadBurst.scala:177 assert(s_axi.ar.bits.len === 0.U)\n");
-			$fatal;
-		end
-		if ((_write_T & ~reset) & |s_axi_aw_bits_len) begin
-			$error("Assertion failed\n    at IdParallelizeNoReadBurst.scala:241 assert(s_axi.aw.bits.len === 0.U)\n");
-			$fatal;
-		end
-	end
-	wire _write_T_6 = _write_bufferPayload_io_rdReq_ready & _write_bufferValid_ext_R0_data;
-	IdFreeList read_idFreelist(
-		.clock(clock),
-		.reset(reset),
-		.enq_valid(_read_T_6),
-		.enq_bits(_read_idList_deq_bits),
-		.deq_ready(_read_T),
-		.deq_valid(_read_idFreelist_deq_valid),
-		.deq_bits(_read_idFreelist_deq_bits)
-	);
-	IdList read_idList(
-		.clock(clock),
-		.reset(reset),
-		.enq_valid(m_axi_ar_ready & m_axi_ar_valid_0),
-		.enq_bits(_read_idFreelist_deq_bits),
-		.deq_ready(_read_T_6),
-		.deq_bits(_read_idList_deq_bits)
-	);
-	mem_64x1 read_bufferValid_ext(
-		.R0_addr(_read_idList_deq_bits),
-		.R0_en(1'h1),
-		.R0_clk(clock),
-		.R0_data(_read_bufferValid_ext_R0_data),
-		.W0_addr(_read_idList_deq_bits),
-		.W0_en(_read_T_6),
-		.W0_clk(clock),
-		.W0_data(1'h0),
-		.W1_addr(m_axi_r_bits_id),
-		.W1_en(m_axi_r_valid),
-		.W1_clk(clock),
-		.W1_data(1'h1)
-	);
-	SyncWriteElasticReadMemory read_bufferPayload(
-		.clock(clock),
-		.reset(reset),
-		.io_wrEn(m_axi_r_valid),
-		.io_wrAddr(m_axi_r_bits_id),
-		.io_wrData_data(m_axi_r_bits_data),
-		.io_wrData_resp(m_axi_r_bits_resp),
-		.io_wrData_last(m_axi_r_bits_last),
-		.io_rdReq_ready(_read_bufferPayload_io_rdReq_ready),
-		.io_rdReq_valid(_read_bufferValid_ext_R0_data),
-		.io_rdReq_bits(_read_idList_deq_bits),
-		.io_rdResp_ready(s_axi_r_ready),
-		.io_rdResp_valid(s_axi_r_valid),
-		.io_rdResp_bits_data(s_axi_r_bits_data),
-		.io_rdResp_bits_resp(s_axi_r_bits_resp),
-		.io_rdResp_bits_last(s_axi_r_bits_last)
-	);
-	IdFreeList write_idFreelist(
-		.clock(clock),
-		.reset(reset),
-		.enq_valid(_write_T_6),
-		.enq_bits(_write_idList_deq_bits),
-		.deq_ready(_write_T),
-		.deq_valid(_write_idFreelist_deq_valid),
-		.deq_bits(_write_idFreelist_deq_bits)
-	);
-	IdList write_idList(
-		.clock(clock),
-		.reset(reset),
-		.enq_valid(m_axi_aw_ready & m_axi_aw_valid_0),
-		.enq_bits(_write_idFreelist_deq_bits),
-		.deq_ready(_write_T_6),
-		.deq_bits(_write_idList_deq_bits)
-	);
-	mem_64x1 write_bufferValid_ext(
-		.R0_addr(_write_idList_deq_bits),
-		.R0_en(1'h1),
-		.R0_clk(clock),
-		.R0_data(_write_bufferValid_ext_R0_data),
-		.W0_addr(_write_idList_deq_bits),
-		.W0_en(_write_T_6),
-		.W0_clk(clock),
-		.W0_data(1'h0),
-		.W1_addr(m_axi_b_bits_id),
-		.W1_en(m_axi_b_valid),
-		.W1_clk(clock),
-		.W1_data(1'h1)
-	);
-	SyncWriteElasticReadMemory_1 write_bufferPayload(
-		.clock(clock),
-		.reset(reset),
-		.io_rdReq_ready(_write_bufferPayload_io_rdReq_ready),
-		.io_rdReq_valid(_write_bufferValid_ext_R0_data),
-		.io_rdResp_ready(s_axi_b_ready),
-		.io_rdResp_valid(s_axi_b_valid)
-	);
-	assign s_axi_ar_ready = s_axi_ar_ready_0;
-	assign s_axi_aw_ready = s_axi_aw_ready_0;
-	assign s_axi_w_ready = m_axi_w_ready;
-	assign m_axi_ar_valid = m_axi_ar_valid_0;
-	assign m_axi_ar_bits_id = _read_idFreelist_deq_bits;
-	assign m_axi_ar_bits_addr = s_axi_ar_bits_addr;
-	assign m_axi_ar_bits_len = s_axi_ar_bits_len;
-	assign m_axi_ar_bits_size = s_axi_ar_bits_size;
-	assign m_axi_ar_bits_burst = s_axi_ar_bits_burst;
-	assign m_axi_aw_valid = m_axi_aw_valid_0;
-	assign m_axi_aw_bits_id = _write_idFreelist_deq_bits;
-	assign m_axi_aw_bits_addr = s_axi_aw_bits_addr;
-	assign m_axi_aw_bits_len = s_axi_aw_bits_len;
-	assign m_axi_aw_bits_size = s_axi_aw_bits_size;
-	assign m_axi_aw_bits_burst = s_axi_aw_bits_burst;
-	assign m_axi_w_valid = s_axi_w_valid;
-	assign m_axi_w_bits_data = s_axi_w_bits_data;
-	assign m_axi_w_bits_strb = s_axi_w_bits_strb;
-	assign m_axi_w_bits_last = s_axi_w_bits_last;
-endmodule
 module ram_2x43 (
 	R0_addr,
 	R0_en,
@@ -13990,64 +13990,64 @@ module SpmvExp2 (
 	M_AXI_STRIPED_BREADY,
 	M_AXI_STRIPED_BVALID,
 	M_AXI_STRIPED_BRESP,
-	M_AXI_LS_ARREADY,
-	M_AXI_LS_ARVALID,
-	M_AXI_LS_ARID,
-	M_AXI_LS_ARADDR,
-	M_AXI_LS_ARLEN,
-	M_AXI_LS_ARSIZE,
-	M_AXI_LS_ARBURST,
-	M_AXI_LS_RREADY,
-	M_AXI_LS_RVALID,
-	M_AXI_LS_RID,
-	M_AXI_LS_RDATA,
-	M_AXI_LS_RRESP,
-	M_AXI_LS_RLAST,
-	M_AXI_LS_AWREADY,
-	M_AXI_LS_AWVALID,
-	M_AXI_LS_AWID,
-	M_AXI_LS_AWADDR,
-	M_AXI_LS_AWLEN,
-	M_AXI_LS_AWSIZE,
-	M_AXI_LS_AWBURST,
-	M_AXI_LS_WREADY,
-	M_AXI_LS_WVALID,
-	M_AXI_LS_WDATA,
-	M_AXI_LS_WSTRB,
-	M_AXI_LS_WLAST,
-	M_AXI_LS_BREADY,
-	M_AXI_LS_BVALID,
-	M_AXI_LS_BID,
-	M_AXI_LS_BRESP,
-	M_AXI_GP_ARREADY,
-	M_AXI_GP_ARVALID,
-	M_AXI_GP_ARID,
-	M_AXI_GP_ARADDR,
-	M_AXI_GP_ARLEN,
-	M_AXI_GP_ARSIZE,
-	M_AXI_GP_ARBURST,
-	M_AXI_GP_RREADY,
-	M_AXI_GP_RVALID,
-	M_AXI_GP_RID,
-	M_AXI_GP_RDATA,
-	M_AXI_GP_RRESP,
-	M_AXI_GP_RLAST,
-	M_AXI_GP_AWREADY,
-	M_AXI_GP_AWVALID,
-	M_AXI_GP_AWID,
-	M_AXI_GP_AWADDR,
-	M_AXI_GP_AWLEN,
-	M_AXI_GP_AWSIZE,
-	M_AXI_GP_AWBURST,
-	M_AXI_GP_WREADY,
-	M_AXI_GP_WVALID,
-	M_AXI_GP_WDATA,
-	M_AXI_GP_WSTRB,
-	M_AXI_GP_WLAST,
-	M_AXI_GP_BREADY,
-	M_AXI_GP_BVALID,
-	M_AXI_GP_BID,
-	M_AXI_GP_BRESP
+	M_AXI_RANDOM_ARREADY,
+	M_AXI_RANDOM_ARVALID,
+	M_AXI_RANDOM_ARID,
+	M_AXI_RANDOM_ARADDR,
+	M_AXI_RANDOM_ARLEN,
+	M_AXI_RANDOM_ARSIZE,
+	M_AXI_RANDOM_ARBURST,
+	M_AXI_RANDOM_RREADY,
+	M_AXI_RANDOM_RVALID,
+	M_AXI_RANDOM_RID,
+	M_AXI_RANDOM_RDATA,
+	M_AXI_RANDOM_RRESP,
+	M_AXI_RANDOM_RLAST,
+	M_AXI_RANDOM_AWREADY,
+	M_AXI_RANDOM_AWVALID,
+	M_AXI_RANDOM_AWID,
+	M_AXI_RANDOM_AWADDR,
+	M_AXI_RANDOM_AWLEN,
+	M_AXI_RANDOM_AWSIZE,
+	M_AXI_RANDOM_AWBURST,
+	M_AXI_RANDOM_WREADY,
+	M_AXI_RANDOM_WVALID,
+	M_AXI_RANDOM_WDATA,
+	M_AXI_RANDOM_WSTRB,
+	M_AXI_RANDOM_WLAST,
+	M_AXI_RANDOM_BREADY,
+	M_AXI_RANDOM_BVALID,
+	M_AXI_RANDOM_BID,
+	M_AXI_RANDOM_BRESP,
+	M_AXI_REGULAR_ARREADY,
+	M_AXI_REGULAR_ARVALID,
+	M_AXI_REGULAR_ARID,
+	M_AXI_REGULAR_ARADDR,
+	M_AXI_REGULAR_ARLEN,
+	M_AXI_REGULAR_ARSIZE,
+	M_AXI_REGULAR_ARBURST,
+	M_AXI_REGULAR_RREADY,
+	M_AXI_REGULAR_RVALID,
+	M_AXI_REGULAR_RID,
+	M_AXI_REGULAR_RDATA,
+	M_AXI_REGULAR_RRESP,
+	M_AXI_REGULAR_RLAST,
+	M_AXI_REGULAR_AWREADY,
+	M_AXI_REGULAR_AWVALID,
+	M_AXI_REGULAR_AWID,
+	M_AXI_REGULAR_AWADDR,
+	M_AXI_REGULAR_AWLEN,
+	M_AXI_REGULAR_AWSIZE,
+	M_AXI_REGULAR_AWBURST,
+	M_AXI_REGULAR_WREADY,
+	M_AXI_REGULAR_WVALID,
+	M_AXI_REGULAR_WDATA,
+	M_AXI_REGULAR_WSTRB,
+	M_AXI_REGULAR_WLAST,
+	M_AXI_REGULAR_BREADY,
+	M_AXI_REGULAR_BVALID,
+	M_AXI_REGULAR_BID,
+	M_AXI_REGULAR_BRESP
 );
 	input clock;
 	input reset;
@@ -14120,64 +14120,64 @@ module SpmvExp2 (
 	output wire M_AXI_STRIPED_BREADY;
 	input M_AXI_STRIPED_BVALID;
 	input [1:0] M_AXI_STRIPED_BRESP;
-	input M_AXI_LS_ARREADY;
-	output wire M_AXI_LS_ARVALID;
-	output wire [5:0] M_AXI_LS_ARID;
-	output wire [63:0] M_AXI_LS_ARADDR;
-	output wire [3:0] M_AXI_LS_ARLEN;
-	output wire [2:0] M_AXI_LS_ARSIZE;
-	output wire [1:0] M_AXI_LS_ARBURST;
-	output wire M_AXI_LS_RREADY;
-	input M_AXI_LS_RVALID;
-	input [5:0] M_AXI_LS_RID;
-	input [255:0] M_AXI_LS_RDATA;
-	input [1:0] M_AXI_LS_RRESP;
-	input M_AXI_LS_RLAST;
-	input M_AXI_LS_AWREADY;
-	output wire M_AXI_LS_AWVALID;
-	output wire [5:0] M_AXI_LS_AWID;
-	output wire [63:0] M_AXI_LS_AWADDR;
-	output wire [3:0] M_AXI_LS_AWLEN;
-	output wire [2:0] M_AXI_LS_AWSIZE;
-	output wire [1:0] M_AXI_LS_AWBURST;
-	input M_AXI_LS_WREADY;
-	output wire M_AXI_LS_WVALID;
-	output wire [255:0] M_AXI_LS_WDATA;
-	output wire [31:0] M_AXI_LS_WSTRB;
-	output wire M_AXI_LS_WLAST;
-	output wire M_AXI_LS_BREADY;
-	input M_AXI_LS_BVALID;
-	input [5:0] M_AXI_LS_BID;
-	input [1:0] M_AXI_LS_BRESP;
-	input M_AXI_GP_ARREADY;
-	output wire M_AXI_GP_ARVALID;
-	output wire [1:0] M_AXI_GP_ARID;
-	output wire [63:0] M_AXI_GP_ARADDR;
-	output wire [3:0] M_AXI_GP_ARLEN;
-	output wire [2:0] M_AXI_GP_ARSIZE;
-	output wire [1:0] M_AXI_GP_ARBURST;
-	output wire M_AXI_GP_RREADY;
-	input M_AXI_GP_RVALID;
-	input [1:0] M_AXI_GP_RID;
-	input [255:0] M_AXI_GP_RDATA;
-	input [1:0] M_AXI_GP_RRESP;
-	input M_AXI_GP_RLAST;
-	input M_AXI_GP_AWREADY;
-	output wire M_AXI_GP_AWVALID;
-	output wire [1:0] M_AXI_GP_AWID;
-	output wire [63:0] M_AXI_GP_AWADDR;
-	output wire [3:0] M_AXI_GP_AWLEN;
-	output wire [2:0] M_AXI_GP_AWSIZE;
-	output wire [1:0] M_AXI_GP_AWBURST;
-	input M_AXI_GP_WREADY;
-	output wire M_AXI_GP_WVALID;
-	output wire [255:0] M_AXI_GP_WDATA;
-	output wire [31:0] M_AXI_GP_WSTRB;
-	output wire M_AXI_GP_WLAST;
-	output wire M_AXI_GP_BREADY;
-	input M_AXI_GP_BVALID;
-	input [1:0] M_AXI_GP_BID;
-	input [1:0] M_AXI_GP_BRESP;
+	input M_AXI_RANDOM_ARREADY;
+	output wire M_AXI_RANDOM_ARVALID;
+	output wire [5:0] M_AXI_RANDOM_ARID;
+	output wire [63:0] M_AXI_RANDOM_ARADDR;
+	output wire [3:0] M_AXI_RANDOM_ARLEN;
+	output wire [2:0] M_AXI_RANDOM_ARSIZE;
+	output wire [1:0] M_AXI_RANDOM_ARBURST;
+	output wire M_AXI_RANDOM_RREADY;
+	input M_AXI_RANDOM_RVALID;
+	input [5:0] M_AXI_RANDOM_RID;
+	input [255:0] M_AXI_RANDOM_RDATA;
+	input [1:0] M_AXI_RANDOM_RRESP;
+	input M_AXI_RANDOM_RLAST;
+	input M_AXI_RANDOM_AWREADY;
+	output wire M_AXI_RANDOM_AWVALID;
+	output wire [5:0] M_AXI_RANDOM_AWID;
+	output wire [63:0] M_AXI_RANDOM_AWADDR;
+	output wire [3:0] M_AXI_RANDOM_AWLEN;
+	output wire [2:0] M_AXI_RANDOM_AWSIZE;
+	output wire [1:0] M_AXI_RANDOM_AWBURST;
+	input M_AXI_RANDOM_WREADY;
+	output wire M_AXI_RANDOM_WVALID;
+	output wire [255:0] M_AXI_RANDOM_WDATA;
+	output wire [31:0] M_AXI_RANDOM_WSTRB;
+	output wire M_AXI_RANDOM_WLAST;
+	output wire M_AXI_RANDOM_BREADY;
+	input M_AXI_RANDOM_BVALID;
+	input [5:0] M_AXI_RANDOM_BID;
+	input [1:0] M_AXI_RANDOM_BRESP;
+	input M_AXI_REGULAR_ARREADY;
+	output wire M_AXI_REGULAR_ARVALID;
+	output wire [1:0] M_AXI_REGULAR_ARID;
+	output wire [63:0] M_AXI_REGULAR_ARADDR;
+	output wire [3:0] M_AXI_REGULAR_ARLEN;
+	output wire [2:0] M_AXI_REGULAR_ARSIZE;
+	output wire [1:0] M_AXI_REGULAR_ARBURST;
+	output wire M_AXI_REGULAR_RREADY;
+	input M_AXI_REGULAR_RVALID;
+	input [1:0] M_AXI_REGULAR_RID;
+	input [255:0] M_AXI_REGULAR_RDATA;
+	input [1:0] M_AXI_REGULAR_RRESP;
+	input M_AXI_REGULAR_RLAST;
+	input M_AXI_REGULAR_AWREADY;
+	output wire M_AXI_REGULAR_AWVALID;
+	output wire [1:0] M_AXI_REGULAR_AWID;
+	output wire [63:0] M_AXI_REGULAR_AWADDR;
+	output wire [3:0] M_AXI_REGULAR_AWLEN;
+	output wire [2:0] M_AXI_REGULAR_AWSIZE;
+	output wire [1:0] M_AXI_REGULAR_AWBURST;
+	input M_AXI_REGULAR_WREADY;
+	output wire M_AXI_REGULAR_WVALID;
+	output wire [255:0] M_AXI_REGULAR_WDATA;
+	output wire [31:0] M_AXI_REGULAR_WSTRB;
+	output wire M_AXI_REGULAR_WLAST;
+	output wire M_AXI_REGULAR_BREADY;
+	input M_AXI_REGULAR_BVALID;
+	input [1:0] M_AXI_REGULAR_BID;
+	input [1:0] M_AXI_REGULAR_BRESP;
 	wire _sinkBuffer_8_io_deq_valid;
 	wire [1:0] _sinkBuffer_8_io_deq_bits_id;
 	wire [1:0] _sinkBuffer_8_io_deq_bits_resp;
@@ -14242,30 +14242,6 @@ module SpmvExp2 (
 	wire [3:0] _sourceBuffer_1_io_deq_bits_len;
 	wire [2:0] _sourceBuffer_1_io_deq_bits_size;
 	wire [1:0] _sourceBuffer_1_io_deq_bits_burst;
-	wire _idParallize_s_axi_ar_ready;
-	wire _idParallize_s_axi_r_valid;
-	wire [255:0] _idParallize_s_axi_r_bits_data;
-	wire [1:0] _idParallize_s_axi_r_bits_resp;
-	wire _idParallize_s_axi_r_bits_last;
-	wire _idParallize_s_axi_aw_ready;
-	wire _idParallize_s_axi_w_ready;
-	wire _idParallize_s_axi_b_valid;
-	wire _idParallize_m_axi_ar_valid;
-	wire [5:0] _idParallize_m_axi_ar_bits_id;
-	wire [63:0] _idParallize_m_axi_ar_bits_addr;
-	wire [3:0] _idParallize_m_axi_ar_bits_len;
-	wire [2:0] _idParallize_m_axi_ar_bits_size;
-	wire [1:0] _idParallize_m_axi_ar_bits_burst;
-	wire _idParallize_m_axi_aw_valid;
-	wire [5:0] _idParallize_m_axi_aw_bits_id;
-	wire [63:0] _idParallize_m_axi_aw_bits_addr;
-	wire [3:0] _idParallize_m_axi_aw_bits_len;
-	wire [2:0] _idParallize_m_axi_aw_bits_size;
-	wire [1:0] _idParallize_m_axi_aw_bits_burst;
-	wire _idParallize_m_axi_w_valid;
-	wire [255:0] _idParallize_m_axi_w_bits_data;
-	wire [31:0] _idParallize_m_axi_w_bits_strb;
-	wire _idParallize_m_axi_w_bits_last;
 	wire _sinkBuffer_io_enq_ready;
 	wire _sinkBuffer_io_deq_valid;
 	wire [63:0] _sinkBuffer_io_deq_bits;
@@ -14294,6 +14270,30 @@ module SpmvExp2 (
 	wire [31:0] _controlDemux_m_axil_1_w_bits_data;
 	wire [3:0] _controlDemux_m_axil_1_w_bits_strb;
 	wire _controlDemux_m_axil_1_b_ready;
+	wire _idParallize0_s_axi_ar_ready;
+	wire _idParallize0_s_axi_r_valid;
+	wire [255:0] _idParallize0_s_axi_r_bits_data;
+	wire [1:0] _idParallize0_s_axi_r_bits_resp;
+	wire _idParallize0_s_axi_r_bits_last;
+	wire _idParallize0_s_axi_aw_ready;
+	wire _idParallize0_s_axi_w_ready;
+	wire _idParallize0_s_axi_b_valid;
+	wire _idParallize0_m_axi_ar_valid;
+	wire [5:0] _idParallize0_m_axi_ar_bits_id;
+	wire [63:0] _idParallize0_m_axi_ar_bits_addr;
+	wire [3:0] _idParallize0_m_axi_ar_bits_len;
+	wire [2:0] _idParallize0_m_axi_ar_bits_size;
+	wire [1:0] _idParallize0_m_axi_ar_bits_burst;
+	wire _idParallize0_m_axi_aw_valid;
+	wire [5:0] _idParallize0_m_axi_aw_bits_id;
+	wire [63:0] _idParallize0_m_axi_aw_bits_addr;
+	wire [3:0] _idParallize0_m_axi_aw_bits_len;
+	wire [2:0] _idParallize0_m_axi_aw_bits_size;
+	wire [1:0] _idParallize0_m_axi_aw_bits_burst;
+	wire _idParallize0_m_axi_w_valid;
+	wire [255:0] _idParallize0_m_axi_w_bits_data;
+	wire [31:0] _idParallize0_m_axi_w_bits_strb;
+	wire _idParallize0_m_axi_w_bits_last;
 	wire _stripe0_S_AXI_CONTROL_ARREADY;
 	wire _stripe0_S_AXI_CONTROL_RVALID;
 	wire [31:0] _stripe0_S_AXI_CONTROL_RDATA;
@@ -14340,30 +14340,30 @@ module SpmvExp2 (
 	wire _spmv0_sourceTask_ready;
 	wire _spmv0_sinkDone_valid;
 	wire [63:0] _spmv0_sinkDone_bits;
-	wire _spmv0_m_axi_ls_ar_valid;
-	wire [63:0] _spmv0_m_axi_ls_ar_bits_addr;
-	wire [3:0] _spmv0_m_axi_ls_ar_bits_len;
-	wire [2:0] _spmv0_m_axi_ls_ar_bits_size;
-	wire [1:0] _spmv0_m_axi_ls_ar_bits_burst;
-	wire _spmv0_m_axi_ls_r_ready;
-	wire _spmv0_m_axi_gp_ar_valid;
-	wire [1:0] _spmv0_m_axi_gp_ar_bits_id;
-	wire [63:0] _spmv0_m_axi_gp_ar_bits_addr;
-	wire [3:0] _spmv0_m_axi_gp_ar_bits_len;
-	wire [2:0] _spmv0_m_axi_gp_ar_bits_size;
-	wire [1:0] _spmv0_m_axi_gp_ar_bits_burst;
-	wire _spmv0_m_axi_gp_r_ready;
-	wire _spmv0_m_axi_gp_aw_valid;
-	wire [1:0] _spmv0_m_axi_gp_aw_bits_id;
-	wire [63:0] _spmv0_m_axi_gp_aw_bits_addr;
-	wire [3:0] _spmv0_m_axi_gp_aw_bits_len;
-	wire [2:0] _spmv0_m_axi_gp_aw_bits_size;
-	wire [1:0] _spmv0_m_axi_gp_aw_bits_burst;
-	wire _spmv0_m_axi_gp_w_valid;
-	wire [255:0] _spmv0_m_axi_gp_w_bits_data;
-	wire [31:0] _spmv0_m_axi_gp_w_bits_strb;
-	wire _spmv0_m_axi_gp_w_bits_last;
-	wire _spmv0_m_axi_gp_b_ready;
+	wire _spmv0_m_axi_random_ar_valid;
+	wire [63:0] _spmv0_m_axi_random_ar_bits_addr;
+	wire [3:0] _spmv0_m_axi_random_ar_bits_len;
+	wire [2:0] _spmv0_m_axi_random_ar_bits_size;
+	wire [1:0] _spmv0_m_axi_random_ar_bits_burst;
+	wire _spmv0_m_axi_random_r_ready;
+	wire _spmv0_m_axi_regular_ar_valid;
+	wire [1:0] _spmv0_m_axi_regular_ar_bits_id;
+	wire [63:0] _spmv0_m_axi_regular_ar_bits_addr;
+	wire [3:0] _spmv0_m_axi_regular_ar_bits_len;
+	wire [2:0] _spmv0_m_axi_regular_ar_bits_size;
+	wire [1:0] _spmv0_m_axi_regular_ar_bits_burst;
+	wire _spmv0_m_axi_regular_r_ready;
+	wire _spmv0_m_axi_regular_aw_valid;
+	wire [1:0] _spmv0_m_axi_regular_aw_bits_id;
+	wire [63:0] _spmv0_m_axi_regular_aw_bits_addr;
+	wire [3:0] _spmv0_m_axi_regular_aw_bits_len;
+	wire [2:0] _spmv0_m_axi_regular_aw_bits_size;
+	wire [1:0] _spmv0_m_axi_regular_aw_bits_burst;
+	wire _spmv0_m_axi_regular_w_valid;
+	wire [255:0] _spmv0_m_axi_regular_w_bits_data;
+	wire [31:0] _spmv0_m_axi_regular_w_bits_strb;
+	wire _spmv0_m_axi_regular_w_bits_last;
+	wire _spmv0_m_axi_regular_b_ready;
 	Spmv spmv0(
 		.clock(clock),
 		.reset(reset),
@@ -14379,44 +14379,44 @@ module SpmvExp2 (
 		.sinkDone_ready(_sinkBuffer_io_enq_ready),
 		.sinkDone_valid(_spmv0_sinkDone_valid),
 		.sinkDone_bits(_spmv0_sinkDone_bits),
-		.m_axi_ls_ar_ready(_sourceBuffer_1_io_enq_ready),
-		.m_axi_ls_ar_valid(_spmv0_m_axi_ls_ar_valid),
-		.m_axi_ls_ar_bits_addr(_spmv0_m_axi_ls_ar_bits_addr),
-		.m_axi_ls_ar_bits_len(_spmv0_m_axi_ls_ar_bits_len),
-		.m_axi_ls_ar_bits_size(_spmv0_m_axi_ls_ar_bits_size),
-		.m_axi_ls_ar_bits_burst(_spmv0_m_axi_ls_ar_bits_burst),
-		.m_axi_ls_r_ready(_spmv0_m_axi_ls_r_ready),
-		.m_axi_ls_r_valid(_sinkBuffer_1_io_deq_valid),
-		.m_axi_ls_r_bits_data(_sinkBuffer_1_io_deq_bits_data),
-		.m_axi_gp_ar_ready(_sourceBuffer_10_io_enq_ready),
-		.m_axi_gp_ar_valid(_spmv0_m_axi_gp_ar_valid),
-		.m_axi_gp_ar_bits_id(_spmv0_m_axi_gp_ar_bits_id),
-		.m_axi_gp_ar_bits_addr(_spmv0_m_axi_gp_ar_bits_addr),
-		.m_axi_gp_ar_bits_len(_spmv0_m_axi_gp_ar_bits_len),
-		.m_axi_gp_ar_bits_size(_spmv0_m_axi_gp_ar_bits_size),
-		.m_axi_gp_ar_bits_burst(_spmv0_m_axi_gp_ar_bits_burst),
-		.m_axi_gp_r_ready(_spmv0_m_axi_gp_r_ready),
-		.m_axi_gp_r_valid(_sinkBuffer_7_io_deq_valid),
-		.m_axi_gp_r_bits_id(_sinkBuffer_7_io_deq_bits_id),
-		.m_axi_gp_r_bits_data(_sinkBuffer_7_io_deq_bits_data),
-		.m_axi_gp_r_bits_resp(_sinkBuffer_7_io_deq_bits_resp),
-		.m_axi_gp_r_bits_last(_sinkBuffer_7_io_deq_bits_last),
-		.m_axi_gp_aw_ready(_sourceBuffer_11_io_enq_ready),
-		.m_axi_gp_aw_valid(_spmv0_m_axi_gp_aw_valid),
-		.m_axi_gp_aw_bits_id(_spmv0_m_axi_gp_aw_bits_id),
-		.m_axi_gp_aw_bits_addr(_spmv0_m_axi_gp_aw_bits_addr),
-		.m_axi_gp_aw_bits_len(_spmv0_m_axi_gp_aw_bits_len),
-		.m_axi_gp_aw_bits_size(_spmv0_m_axi_gp_aw_bits_size),
-		.m_axi_gp_aw_bits_burst(_spmv0_m_axi_gp_aw_bits_burst),
-		.m_axi_gp_w_ready(_sourceBuffer_12_io_enq_ready),
-		.m_axi_gp_w_valid(_spmv0_m_axi_gp_w_valid),
-		.m_axi_gp_w_bits_data(_spmv0_m_axi_gp_w_bits_data),
-		.m_axi_gp_w_bits_strb(_spmv0_m_axi_gp_w_bits_strb),
-		.m_axi_gp_w_bits_last(_spmv0_m_axi_gp_w_bits_last),
-		.m_axi_gp_b_ready(_spmv0_m_axi_gp_b_ready),
-		.m_axi_gp_b_valid(_sinkBuffer_8_io_deq_valid),
-		.m_axi_gp_b_bits_id(_sinkBuffer_8_io_deq_bits_id),
-		.m_axi_gp_b_bits_resp(_sinkBuffer_8_io_deq_bits_resp)
+		.m_axi_random_ar_ready(_sourceBuffer_1_io_enq_ready),
+		.m_axi_random_ar_valid(_spmv0_m_axi_random_ar_valid),
+		.m_axi_random_ar_bits_addr(_spmv0_m_axi_random_ar_bits_addr),
+		.m_axi_random_ar_bits_len(_spmv0_m_axi_random_ar_bits_len),
+		.m_axi_random_ar_bits_size(_spmv0_m_axi_random_ar_bits_size),
+		.m_axi_random_ar_bits_burst(_spmv0_m_axi_random_ar_bits_burst),
+		.m_axi_random_r_ready(_spmv0_m_axi_random_r_ready),
+		.m_axi_random_r_valid(_sinkBuffer_1_io_deq_valid),
+		.m_axi_random_r_bits_data(_sinkBuffer_1_io_deq_bits_data),
+		.m_axi_regular_ar_ready(_sourceBuffer_10_io_enq_ready),
+		.m_axi_regular_ar_valid(_spmv0_m_axi_regular_ar_valid),
+		.m_axi_regular_ar_bits_id(_spmv0_m_axi_regular_ar_bits_id),
+		.m_axi_regular_ar_bits_addr(_spmv0_m_axi_regular_ar_bits_addr),
+		.m_axi_regular_ar_bits_len(_spmv0_m_axi_regular_ar_bits_len),
+		.m_axi_regular_ar_bits_size(_spmv0_m_axi_regular_ar_bits_size),
+		.m_axi_regular_ar_bits_burst(_spmv0_m_axi_regular_ar_bits_burst),
+		.m_axi_regular_r_ready(_spmv0_m_axi_regular_r_ready),
+		.m_axi_regular_r_valid(_sinkBuffer_7_io_deq_valid),
+		.m_axi_regular_r_bits_id(_sinkBuffer_7_io_deq_bits_id),
+		.m_axi_regular_r_bits_data(_sinkBuffer_7_io_deq_bits_data),
+		.m_axi_regular_r_bits_resp(_sinkBuffer_7_io_deq_bits_resp),
+		.m_axi_regular_r_bits_last(_sinkBuffer_7_io_deq_bits_last),
+		.m_axi_regular_aw_ready(_sourceBuffer_11_io_enq_ready),
+		.m_axi_regular_aw_valid(_spmv0_m_axi_regular_aw_valid),
+		.m_axi_regular_aw_bits_id(_spmv0_m_axi_regular_aw_bits_id),
+		.m_axi_regular_aw_bits_addr(_spmv0_m_axi_regular_aw_bits_addr),
+		.m_axi_regular_aw_bits_len(_spmv0_m_axi_regular_aw_bits_len),
+		.m_axi_regular_aw_bits_size(_spmv0_m_axi_regular_aw_bits_size),
+		.m_axi_regular_aw_bits_burst(_spmv0_m_axi_regular_aw_bits_burst),
+		.m_axi_regular_w_ready(_sourceBuffer_12_io_enq_ready),
+		.m_axi_regular_w_valid(_spmv0_m_axi_regular_w_valid),
+		.m_axi_regular_w_bits_data(_spmv0_m_axi_regular_w_bits_data),
+		.m_axi_regular_w_bits_strb(_spmv0_m_axi_regular_w_bits_strb),
+		.m_axi_regular_w_bits_last(_spmv0_m_axi_regular_w_bits_last),
+		.m_axi_regular_b_ready(_spmv0_m_axi_regular_b_ready),
+		.m_axi_regular_b_valid(_sinkBuffer_8_io_deq_valid),
+		.m_axi_regular_b_bits_id(_sinkBuffer_8_io_deq_bits_id),
+		.m_axi_regular_b_bits_resp(_sinkBuffer_8_io_deq_bits_resp)
 	);
 	MemAdapter memAdapter0(
 		.clock(clock),
@@ -14568,6 +14568,60 @@ module SpmvExp2 (
 		.M_AXI_1_BVALID(M_AXI_STRIPED_BVALID),
 		.M_AXI_1_BRESP(M_AXI_STRIPED_BRESP)
 	);
+	IdParallelizeNoReadBurst idParallize0(
+		.clock(clock),
+		.reset(reset),
+		.s_axi_ar_ready(_idParallize0_s_axi_ar_ready),
+		.s_axi_ar_valid(_sourceBuffer_4_io_deq_valid),
+		.s_axi_ar_bits_addr(_sourceBuffer_4_io_deq_bits_addr),
+		.s_axi_ar_bits_len(_sourceBuffer_4_io_deq_bits_len),
+		.s_axi_ar_bits_size(_sourceBuffer_4_io_deq_bits_size),
+		.s_axi_ar_bits_burst(_sourceBuffer_4_io_deq_bits_burst),
+		.s_axi_r_ready(_sinkBuffer_3_io_enq_ready),
+		.s_axi_r_valid(_idParallize0_s_axi_r_valid),
+		.s_axi_r_bits_data(_idParallize0_s_axi_r_bits_data),
+		.s_axi_r_bits_resp(_idParallize0_s_axi_r_bits_resp),
+		.s_axi_r_bits_last(_idParallize0_s_axi_r_bits_last),
+		.s_axi_aw_ready(_idParallize0_s_axi_aw_ready),
+		.s_axi_aw_valid(_sourceBuffer_5_io_deq_valid),
+		.s_axi_aw_bits_addr(_sourceBuffer_5_io_deq_bits_addr),
+		.s_axi_aw_bits_len(_sourceBuffer_5_io_deq_bits_len),
+		.s_axi_aw_bits_size(_sourceBuffer_5_io_deq_bits_size),
+		.s_axi_aw_bits_burst(_sourceBuffer_5_io_deq_bits_burst),
+		.s_axi_w_ready(_idParallize0_s_axi_w_ready),
+		.s_axi_w_valid(_sourceBuffer_6_io_deq_valid),
+		.s_axi_w_bits_data(_sourceBuffer_6_io_deq_bits_data),
+		.s_axi_w_bits_strb(_sourceBuffer_6_io_deq_bits_strb),
+		.s_axi_w_bits_last(_sourceBuffer_6_io_deq_bits_last),
+		.s_axi_b_ready(_sinkBuffer_4_io_enq_ready),
+		.s_axi_b_valid(_idParallize0_s_axi_b_valid),
+		.m_axi_ar_ready(_sourceBuffer_7_io_enq_ready),
+		.m_axi_ar_valid(_idParallize0_m_axi_ar_valid),
+		.m_axi_ar_bits_id(_idParallize0_m_axi_ar_bits_id),
+		.m_axi_ar_bits_addr(_idParallize0_m_axi_ar_bits_addr),
+		.m_axi_ar_bits_len(_idParallize0_m_axi_ar_bits_len),
+		.m_axi_ar_bits_size(_idParallize0_m_axi_ar_bits_size),
+		.m_axi_ar_bits_burst(_idParallize0_m_axi_ar_bits_burst),
+		.m_axi_r_valid(_sinkBuffer_5_io_deq_valid),
+		.m_axi_r_bits_id(_sinkBuffer_5_io_deq_bits_id),
+		.m_axi_r_bits_data(_sinkBuffer_5_io_deq_bits_data),
+		.m_axi_r_bits_resp(_sinkBuffer_5_io_deq_bits_resp),
+		.m_axi_r_bits_last(_sinkBuffer_5_io_deq_bits_last),
+		.m_axi_aw_ready(_sourceBuffer_8_io_enq_ready),
+		.m_axi_aw_valid(_idParallize0_m_axi_aw_valid),
+		.m_axi_aw_bits_id(_idParallize0_m_axi_aw_bits_id),
+		.m_axi_aw_bits_addr(_idParallize0_m_axi_aw_bits_addr),
+		.m_axi_aw_bits_len(_idParallize0_m_axi_aw_bits_len),
+		.m_axi_aw_bits_size(_idParallize0_m_axi_aw_bits_size),
+		.m_axi_aw_bits_burst(_idParallize0_m_axi_aw_bits_burst),
+		.m_axi_w_ready(_sourceBuffer_9_io_enq_ready),
+		.m_axi_w_valid(_idParallize0_m_axi_w_valid),
+		.m_axi_w_bits_data(_idParallize0_m_axi_w_bits_data),
+		.m_axi_w_bits_strb(_idParallize0_m_axi_w_bits_strb),
+		.m_axi_w_bits_last(_idParallize0_m_axi_w_bits_last),
+		.m_axi_b_valid(_sinkBuffer_6_io_deq_valid),
+		.m_axi_b_bits_id(_sinkBuffer_6_io_deq_bits_id)
+	);
 	axi4LiteDemux controlDemux(
 		.clock(clock),
 		.reset(reset),
@@ -14649,69 +14703,15 @@ module SpmvExp2 (
 		.io_deq_valid(_sinkBuffer_io_deq_valid),
 		.io_deq_bits(_sinkBuffer_io_deq_bits)
 	);
-	IdParallelizeNoReadBurst idParallize(
-		.clock(clock),
-		.reset(reset),
-		.s_axi_ar_ready(_idParallize_s_axi_ar_ready),
-		.s_axi_ar_valid(_sourceBuffer_4_io_deq_valid),
-		.s_axi_ar_bits_addr(_sourceBuffer_4_io_deq_bits_addr),
-		.s_axi_ar_bits_len(_sourceBuffer_4_io_deq_bits_len),
-		.s_axi_ar_bits_size(_sourceBuffer_4_io_deq_bits_size),
-		.s_axi_ar_bits_burst(_sourceBuffer_4_io_deq_bits_burst),
-		.s_axi_r_ready(_sinkBuffer_3_io_enq_ready),
-		.s_axi_r_valid(_idParallize_s_axi_r_valid),
-		.s_axi_r_bits_data(_idParallize_s_axi_r_bits_data),
-		.s_axi_r_bits_resp(_idParallize_s_axi_r_bits_resp),
-		.s_axi_r_bits_last(_idParallize_s_axi_r_bits_last),
-		.s_axi_aw_ready(_idParallize_s_axi_aw_ready),
-		.s_axi_aw_valid(_sourceBuffer_5_io_deq_valid),
-		.s_axi_aw_bits_addr(_sourceBuffer_5_io_deq_bits_addr),
-		.s_axi_aw_bits_len(_sourceBuffer_5_io_deq_bits_len),
-		.s_axi_aw_bits_size(_sourceBuffer_5_io_deq_bits_size),
-		.s_axi_aw_bits_burst(_sourceBuffer_5_io_deq_bits_burst),
-		.s_axi_w_ready(_idParallize_s_axi_w_ready),
-		.s_axi_w_valid(_sourceBuffer_6_io_deq_valid),
-		.s_axi_w_bits_data(_sourceBuffer_6_io_deq_bits_data),
-		.s_axi_w_bits_strb(_sourceBuffer_6_io_deq_bits_strb),
-		.s_axi_w_bits_last(_sourceBuffer_6_io_deq_bits_last),
-		.s_axi_b_ready(_sinkBuffer_4_io_enq_ready),
-		.s_axi_b_valid(_idParallize_s_axi_b_valid),
-		.m_axi_ar_ready(_sourceBuffer_7_io_enq_ready),
-		.m_axi_ar_valid(_idParallize_m_axi_ar_valid),
-		.m_axi_ar_bits_id(_idParallize_m_axi_ar_bits_id),
-		.m_axi_ar_bits_addr(_idParallize_m_axi_ar_bits_addr),
-		.m_axi_ar_bits_len(_idParallize_m_axi_ar_bits_len),
-		.m_axi_ar_bits_size(_idParallize_m_axi_ar_bits_size),
-		.m_axi_ar_bits_burst(_idParallize_m_axi_ar_bits_burst),
-		.m_axi_r_valid(_sinkBuffer_5_io_deq_valid),
-		.m_axi_r_bits_id(_sinkBuffer_5_io_deq_bits_id),
-		.m_axi_r_bits_data(_sinkBuffer_5_io_deq_bits_data),
-		.m_axi_r_bits_resp(_sinkBuffer_5_io_deq_bits_resp),
-		.m_axi_r_bits_last(_sinkBuffer_5_io_deq_bits_last),
-		.m_axi_aw_ready(_sourceBuffer_8_io_enq_ready),
-		.m_axi_aw_valid(_idParallize_m_axi_aw_valid),
-		.m_axi_aw_bits_id(_idParallize_m_axi_aw_bits_id),
-		.m_axi_aw_bits_addr(_idParallize_m_axi_aw_bits_addr),
-		.m_axi_aw_bits_len(_idParallize_m_axi_aw_bits_len),
-		.m_axi_aw_bits_size(_idParallize_m_axi_aw_bits_size),
-		.m_axi_aw_bits_burst(_idParallize_m_axi_aw_bits_burst),
-		.m_axi_w_ready(_sourceBuffer_9_io_enq_ready),
-		.m_axi_w_valid(_idParallize_m_axi_w_valid),
-		.m_axi_w_bits_data(_idParallize_m_axi_w_bits_data),
-		.m_axi_w_bits_strb(_idParallize_m_axi_w_bits_strb),
-		.m_axi_w_bits_last(_idParallize_m_axi_w_bits_last),
-		.m_axi_b_valid(_sinkBuffer_6_io_deq_valid),
-		.m_axi_b_bits_id(_sinkBuffer_6_io_deq_bits_id)
-	);
 	Queue2_ReadAddressChannel_8 sourceBuffer_1(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_1_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_ls_ar_valid),
-		.io_enq_bits_addr(_spmv0_m_axi_ls_ar_bits_addr[33:0]),
-		.io_enq_bits_len(_spmv0_m_axi_ls_ar_bits_len),
-		.io_enq_bits_size(_spmv0_m_axi_ls_ar_bits_size),
-		.io_enq_bits_burst(_spmv0_m_axi_ls_ar_bits_burst),
+		.io_enq_valid(_spmv0_m_axi_random_ar_valid),
+		.io_enq_bits_addr(_spmv0_m_axi_random_ar_bits_addr[33:0]),
+		.io_enq_bits_len(_spmv0_m_axi_random_ar_bits_len),
+		.io_enq_bits_size(_spmv0_m_axi_random_ar_bits_size),
+		.io_enq_bits_burst(_spmv0_m_axi_random_ar_bits_burst),
 		.io_deq_ready(_stripe0_S_AXI_0_ARREADY),
 		.io_deq_valid(_sourceBuffer_1_io_deq_valid),
 		.io_deq_bits_addr(_sourceBuffer_1_io_deq_bits_addr),
@@ -14727,7 +14727,7 @@ module SpmvExp2 (
 		.io_enq_bits_data(_stripe0_S_AXI_0_RDATA),
 		.io_enq_bits_resp(_stripe0_S_AXI_0_RRESP),
 		.io_enq_bits_last(_stripe0_S_AXI_0_RLAST),
-		.io_deq_ready(_spmv0_m_axi_ls_r_ready),
+		.io_deq_ready(_spmv0_m_axi_random_r_ready),
 		.io_deq_valid(_sinkBuffer_1_io_deq_valid),
 		.io_deq_bits_data(_sinkBuffer_1_io_deq_bits_data),
 		.io_deq_bits_resp(),
@@ -14774,7 +14774,7 @@ module SpmvExp2 (
 		.io_enq_bits_len(_stripe0_M_AXI_0_ARLEN),
 		.io_enq_bits_size(_stripe0_M_AXI_0_ARSIZE),
 		.io_enq_bits_burst(_stripe0_M_AXI_0_ARBURST),
-		.io_deq_ready(_idParallize_s_axi_ar_ready),
+		.io_deq_ready(_idParallize0_s_axi_ar_ready),
 		.io_deq_valid(_sourceBuffer_4_io_deq_valid),
 		.io_deq_bits_addr(_sourceBuffer_4_io_deq_bits_addr),
 		.io_deq_bits_len(_sourceBuffer_4_io_deq_bits_len),
@@ -14785,10 +14785,10 @@ module SpmvExp2 (
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sinkBuffer_3_io_enq_ready),
-		.io_enq_valid(_idParallize_s_axi_r_valid),
-		.io_enq_bits_data(_idParallize_s_axi_r_bits_data),
-		.io_enq_bits_resp(_idParallize_s_axi_r_bits_resp),
-		.io_enq_bits_last(_idParallize_s_axi_r_bits_last),
+		.io_enq_valid(_idParallize0_s_axi_r_valid),
+		.io_enq_bits_data(_idParallize0_s_axi_r_bits_data),
+		.io_enq_bits_resp(_idParallize0_s_axi_r_bits_resp),
+		.io_enq_bits_last(_idParallize0_s_axi_r_bits_last),
 		.io_deq_ready(_stripe0_M_AXI_0_RREADY),
 		.io_deq_valid(_sinkBuffer_3_io_deq_valid),
 		.io_deq_bits_data(_sinkBuffer_3_io_deq_bits_data),
@@ -14804,7 +14804,7 @@ module SpmvExp2 (
 		.io_enq_bits_len(_stripe0_M_AXI_0_AWLEN),
 		.io_enq_bits_size(_stripe0_M_AXI_0_AWSIZE),
 		.io_enq_bits_burst(_stripe0_M_AXI_0_AWBURST),
-		.io_deq_ready(_idParallize_s_axi_aw_ready),
+		.io_deq_ready(_idParallize0_s_axi_aw_ready),
 		.io_deq_valid(_sourceBuffer_5_io_deq_valid),
 		.io_deq_bits_addr(_sourceBuffer_5_io_deq_bits_addr),
 		.io_deq_bits_len(_sourceBuffer_5_io_deq_bits_len),
@@ -14819,7 +14819,7 @@ module SpmvExp2 (
 		.io_enq_bits_data(_stripe0_M_AXI_0_WDATA),
 		.io_enq_bits_strb(_stripe0_M_AXI_0_WSTRB),
 		.io_enq_bits_last(_stripe0_M_AXI_0_WLAST),
-		.io_deq_ready(_idParallize_s_axi_w_ready),
+		.io_deq_ready(_idParallize0_s_axi_w_ready),
 		.io_deq_valid(_sourceBuffer_6_io_deq_valid),
 		.io_deq_bits_data(_sourceBuffer_6_io_deq_bits_data),
 		.io_deq_bits_strb(_sourceBuffer_6_io_deq_bits_strb),
@@ -14829,7 +14829,7 @@ module SpmvExp2 (
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sinkBuffer_4_io_enq_ready),
-		.io_enq_valid(_idParallize_s_axi_b_valid),
+		.io_enq_valid(_idParallize0_s_axi_b_valid),
 		.io_deq_ready(_stripe0_M_AXI_0_BREADY),
 		.io_deq_valid(_sinkBuffer_4_io_deq_valid)
 	);
@@ -14837,29 +14837,29 @@ module SpmvExp2 (
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_7_io_enq_ready),
-		.io_enq_valid(_idParallize_m_axi_ar_valid),
-		.io_enq_bits_id(_idParallize_m_axi_ar_bits_id),
-		.io_enq_bits_addr(_idParallize_m_axi_ar_bits_addr),
-		.io_enq_bits_len(_idParallize_m_axi_ar_bits_len),
-		.io_enq_bits_size(_idParallize_m_axi_ar_bits_size),
-		.io_enq_bits_burst(_idParallize_m_axi_ar_bits_burst),
-		.io_deq_ready(M_AXI_LS_ARREADY),
-		.io_deq_valid(M_AXI_LS_ARVALID),
-		.io_deq_bits_id(M_AXI_LS_ARID),
-		.io_deq_bits_addr(M_AXI_LS_ARADDR),
-		.io_deq_bits_len(M_AXI_LS_ARLEN),
-		.io_deq_bits_size(M_AXI_LS_ARSIZE),
-		.io_deq_bits_burst(M_AXI_LS_ARBURST)
+		.io_enq_valid(_idParallize0_m_axi_ar_valid),
+		.io_enq_bits_id(_idParallize0_m_axi_ar_bits_id),
+		.io_enq_bits_addr(_idParallize0_m_axi_ar_bits_addr),
+		.io_enq_bits_len(_idParallize0_m_axi_ar_bits_len),
+		.io_enq_bits_size(_idParallize0_m_axi_ar_bits_size),
+		.io_enq_bits_burst(_idParallize0_m_axi_ar_bits_burst),
+		.io_deq_ready(M_AXI_RANDOM_ARREADY),
+		.io_deq_valid(M_AXI_RANDOM_ARVALID),
+		.io_deq_bits_id(M_AXI_RANDOM_ARID),
+		.io_deq_bits_addr(M_AXI_RANDOM_ARADDR),
+		.io_deq_bits_len(M_AXI_RANDOM_ARLEN),
+		.io_deq_bits_size(M_AXI_RANDOM_ARSIZE),
+		.io_deq_bits_burst(M_AXI_RANDOM_ARBURST)
 	);
 	Queue2_ReadDataChannel_8 sinkBuffer_5(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(M_AXI_LS_RREADY),
-		.io_enq_valid(M_AXI_LS_RVALID),
-		.io_enq_bits_id(M_AXI_LS_RID),
-		.io_enq_bits_data(M_AXI_LS_RDATA),
-		.io_enq_bits_resp(M_AXI_LS_RRESP),
-		.io_enq_bits_last(M_AXI_LS_RLAST),
+		.io_enq_ready(M_AXI_RANDOM_RREADY),
+		.io_enq_valid(M_AXI_RANDOM_RVALID),
+		.io_enq_bits_id(M_AXI_RANDOM_RID),
+		.io_enq_bits_data(M_AXI_RANDOM_RDATA),
+		.io_enq_bits_resp(M_AXI_RANDOM_RRESP),
+		.io_enq_bits_last(M_AXI_RANDOM_RLAST),
 		.io_deq_valid(_sinkBuffer_5_io_deq_valid),
 		.io_deq_bits_id(_sinkBuffer_5_io_deq_bits_id),
 		.io_deq_bits_data(_sinkBuffer_5_io_deq_bits_data),
@@ -14870,41 +14870,41 @@ module SpmvExp2 (
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_8_io_enq_ready),
-		.io_enq_valid(_idParallize_m_axi_aw_valid),
-		.io_enq_bits_id(_idParallize_m_axi_aw_bits_id),
-		.io_enq_bits_addr(_idParallize_m_axi_aw_bits_addr),
-		.io_enq_bits_len(_idParallize_m_axi_aw_bits_len),
-		.io_enq_bits_size(_idParallize_m_axi_aw_bits_size),
-		.io_enq_bits_burst(_idParallize_m_axi_aw_bits_burst),
-		.io_deq_ready(M_AXI_LS_AWREADY),
-		.io_deq_valid(M_AXI_LS_AWVALID),
-		.io_deq_bits_id(M_AXI_LS_AWID),
-		.io_deq_bits_addr(M_AXI_LS_AWADDR),
-		.io_deq_bits_len(M_AXI_LS_AWLEN),
-		.io_deq_bits_size(M_AXI_LS_AWSIZE),
-		.io_deq_bits_burst(M_AXI_LS_AWBURST)
+		.io_enq_valid(_idParallize0_m_axi_aw_valid),
+		.io_enq_bits_id(_idParallize0_m_axi_aw_bits_id),
+		.io_enq_bits_addr(_idParallize0_m_axi_aw_bits_addr),
+		.io_enq_bits_len(_idParallize0_m_axi_aw_bits_len),
+		.io_enq_bits_size(_idParallize0_m_axi_aw_bits_size),
+		.io_enq_bits_burst(_idParallize0_m_axi_aw_bits_burst),
+		.io_deq_ready(M_AXI_RANDOM_AWREADY),
+		.io_deq_valid(M_AXI_RANDOM_AWVALID),
+		.io_deq_bits_id(M_AXI_RANDOM_AWID),
+		.io_deq_bits_addr(M_AXI_RANDOM_AWADDR),
+		.io_deq_bits_len(M_AXI_RANDOM_AWLEN),
+		.io_deq_bits_size(M_AXI_RANDOM_AWSIZE),
+		.io_deq_bits_burst(M_AXI_RANDOM_AWBURST)
 	);
 	Queue2_WriteDataChannel sourceBuffer_9(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_9_io_enq_ready),
-		.io_enq_valid(_idParallize_m_axi_w_valid),
-		.io_enq_bits_data(_idParallize_m_axi_w_bits_data),
-		.io_enq_bits_strb(_idParallize_m_axi_w_bits_strb),
-		.io_enq_bits_last(_idParallize_m_axi_w_bits_last),
-		.io_deq_ready(M_AXI_LS_WREADY),
-		.io_deq_valid(M_AXI_LS_WVALID),
-		.io_deq_bits_data(M_AXI_LS_WDATA),
-		.io_deq_bits_strb(M_AXI_LS_WSTRB),
-		.io_deq_bits_last(M_AXI_LS_WLAST)
+		.io_enq_valid(_idParallize0_m_axi_w_valid),
+		.io_enq_bits_data(_idParallize0_m_axi_w_bits_data),
+		.io_enq_bits_strb(_idParallize0_m_axi_w_bits_strb),
+		.io_enq_bits_last(_idParallize0_m_axi_w_bits_last),
+		.io_deq_ready(M_AXI_RANDOM_WREADY),
+		.io_deq_valid(M_AXI_RANDOM_WVALID),
+		.io_deq_bits_data(M_AXI_RANDOM_WDATA),
+		.io_deq_bits_strb(M_AXI_RANDOM_WSTRB),
+		.io_deq_bits_last(M_AXI_RANDOM_WLAST)
 	);
 	Queue2_WriteResponseChannel_5 sinkBuffer_6(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(M_AXI_LS_BREADY),
-		.io_enq_valid(M_AXI_LS_BVALID),
-		.io_enq_bits_id(M_AXI_LS_BID),
-		.io_enq_bits_resp(M_AXI_LS_BRESP),
+		.io_enq_ready(M_AXI_RANDOM_BREADY),
+		.io_enq_valid(M_AXI_RANDOM_BVALID),
+		.io_enq_bits_id(M_AXI_RANDOM_BID),
+		.io_enq_bits_resp(M_AXI_RANDOM_BRESP),
 		.io_deq_valid(_sinkBuffer_6_io_deq_valid),
 		.io_deq_bits_id(_sinkBuffer_6_io_deq_bits_id)
 	);
@@ -14912,30 +14912,30 @@ module SpmvExp2 (
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_10_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_gp_ar_valid),
-		.io_enq_bits_id(_spmv0_m_axi_gp_ar_bits_id),
-		.io_enq_bits_addr(_spmv0_m_axi_gp_ar_bits_addr),
-		.io_enq_bits_len(_spmv0_m_axi_gp_ar_bits_len),
-		.io_enq_bits_size(_spmv0_m_axi_gp_ar_bits_size),
-		.io_enq_bits_burst(_spmv0_m_axi_gp_ar_bits_burst),
-		.io_deq_ready(M_AXI_GP_ARREADY),
-		.io_deq_valid(M_AXI_GP_ARVALID),
-		.io_deq_bits_id(M_AXI_GP_ARID),
-		.io_deq_bits_addr(M_AXI_GP_ARADDR),
-		.io_deq_bits_len(M_AXI_GP_ARLEN),
-		.io_deq_bits_size(M_AXI_GP_ARSIZE),
-		.io_deq_bits_burst(M_AXI_GP_ARBURST)
+		.io_enq_valid(_spmv0_m_axi_regular_ar_valid),
+		.io_enq_bits_id(_spmv0_m_axi_regular_ar_bits_id),
+		.io_enq_bits_addr(_spmv0_m_axi_regular_ar_bits_addr),
+		.io_enq_bits_len(_spmv0_m_axi_regular_ar_bits_len),
+		.io_enq_bits_size(_spmv0_m_axi_regular_ar_bits_size),
+		.io_enq_bits_burst(_spmv0_m_axi_regular_ar_bits_burst),
+		.io_deq_ready(M_AXI_REGULAR_ARREADY),
+		.io_deq_valid(M_AXI_REGULAR_ARVALID),
+		.io_deq_bits_id(M_AXI_REGULAR_ARID),
+		.io_deq_bits_addr(M_AXI_REGULAR_ARADDR),
+		.io_deq_bits_len(M_AXI_REGULAR_ARLEN),
+		.io_deq_bits_size(M_AXI_REGULAR_ARSIZE),
+		.io_deq_bits_burst(M_AXI_REGULAR_ARBURST)
 	);
 	Queue2_ReadDataChannel_9 sinkBuffer_7(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(M_AXI_GP_RREADY),
-		.io_enq_valid(M_AXI_GP_RVALID),
-		.io_enq_bits_id(M_AXI_GP_RID),
-		.io_enq_bits_data(M_AXI_GP_RDATA),
-		.io_enq_bits_resp(M_AXI_GP_RRESP),
-		.io_enq_bits_last(M_AXI_GP_RLAST),
-		.io_deq_ready(_spmv0_m_axi_gp_r_ready),
+		.io_enq_ready(M_AXI_REGULAR_RREADY),
+		.io_enq_valid(M_AXI_REGULAR_RVALID),
+		.io_enq_bits_id(M_AXI_REGULAR_RID),
+		.io_enq_bits_data(M_AXI_REGULAR_RDATA),
+		.io_enq_bits_resp(M_AXI_REGULAR_RRESP),
+		.io_enq_bits_last(M_AXI_REGULAR_RLAST),
+		.io_deq_ready(_spmv0_m_axi_regular_r_ready),
 		.io_deq_valid(_sinkBuffer_7_io_deq_valid),
 		.io_deq_bits_id(_sinkBuffer_7_io_deq_bits_id),
 		.io_deq_bits_data(_sinkBuffer_7_io_deq_bits_data),
@@ -14946,42 +14946,42 @@ module SpmvExp2 (
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_11_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_gp_aw_valid),
-		.io_enq_bits_id(_spmv0_m_axi_gp_aw_bits_id),
-		.io_enq_bits_addr(_spmv0_m_axi_gp_aw_bits_addr),
-		.io_enq_bits_len(_spmv0_m_axi_gp_aw_bits_len),
-		.io_enq_bits_size(_spmv0_m_axi_gp_aw_bits_size),
-		.io_enq_bits_burst(_spmv0_m_axi_gp_aw_bits_burst),
-		.io_deq_ready(M_AXI_GP_AWREADY),
-		.io_deq_valid(M_AXI_GP_AWVALID),
-		.io_deq_bits_id(M_AXI_GP_AWID),
-		.io_deq_bits_addr(M_AXI_GP_AWADDR),
-		.io_deq_bits_len(M_AXI_GP_AWLEN),
-		.io_deq_bits_size(M_AXI_GP_AWSIZE),
-		.io_deq_bits_burst(M_AXI_GP_AWBURST)
+		.io_enq_valid(_spmv0_m_axi_regular_aw_valid),
+		.io_enq_bits_id(_spmv0_m_axi_regular_aw_bits_id),
+		.io_enq_bits_addr(_spmv0_m_axi_regular_aw_bits_addr),
+		.io_enq_bits_len(_spmv0_m_axi_regular_aw_bits_len),
+		.io_enq_bits_size(_spmv0_m_axi_regular_aw_bits_size),
+		.io_enq_bits_burst(_spmv0_m_axi_regular_aw_bits_burst),
+		.io_deq_ready(M_AXI_REGULAR_AWREADY),
+		.io_deq_valid(M_AXI_REGULAR_AWVALID),
+		.io_deq_bits_id(M_AXI_REGULAR_AWID),
+		.io_deq_bits_addr(M_AXI_REGULAR_AWADDR),
+		.io_deq_bits_len(M_AXI_REGULAR_AWLEN),
+		.io_deq_bits_size(M_AXI_REGULAR_AWSIZE),
+		.io_deq_bits_burst(M_AXI_REGULAR_AWBURST)
 	);
 	Queue2_WriteDataChannel sourceBuffer_12(
 		.clock(clock),
 		.reset(reset),
 		.io_enq_ready(_sourceBuffer_12_io_enq_ready),
-		.io_enq_valid(_spmv0_m_axi_gp_w_valid),
-		.io_enq_bits_data(_spmv0_m_axi_gp_w_bits_data),
-		.io_enq_bits_strb(_spmv0_m_axi_gp_w_bits_strb),
-		.io_enq_bits_last(_spmv0_m_axi_gp_w_bits_last),
-		.io_deq_ready(M_AXI_GP_WREADY),
-		.io_deq_valid(M_AXI_GP_WVALID),
-		.io_deq_bits_data(M_AXI_GP_WDATA),
-		.io_deq_bits_strb(M_AXI_GP_WSTRB),
-		.io_deq_bits_last(M_AXI_GP_WLAST)
+		.io_enq_valid(_spmv0_m_axi_regular_w_valid),
+		.io_enq_bits_data(_spmv0_m_axi_regular_w_bits_data),
+		.io_enq_bits_strb(_spmv0_m_axi_regular_w_bits_strb),
+		.io_enq_bits_last(_spmv0_m_axi_regular_w_bits_last),
+		.io_deq_ready(M_AXI_REGULAR_WREADY),
+		.io_deq_valid(M_AXI_REGULAR_WVALID),
+		.io_deq_bits_data(M_AXI_REGULAR_WDATA),
+		.io_deq_bits_strb(M_AXI_REGULAR_WSTRB),
+		.io_deq_bits_last(M_AXI_REGULAR_WLAST)
 	);
 	Queue2_WriteResponseChannel_6 sinkBuffer_8(
 		.clock(clock),
 		.reset(reset),
-		.io_enq_ready(M_AXI_GP_BREADY),
-		.io_enq_valid(M_AXI_GP_BVALID),
-		.io_enq_bits_id(M_AXI_GP_BID),
-		.io_enq_bits_resp(M_AXI_GP_BRESP),
-		.io_deq_ready(_spmv0_m_axi_gp_b_ready),
+		.io_enq_ready(M_AXI_REGULAR_BREADY),
+		.io_enq_valid(M_AXI_REGULAR_BVALID),
+		.io_enq_bits_id(M_AXI_REGULAR_BID),
+		.io_enq_bits_resp(M_AXI_REGULAR_BRESP),
+		.io_deq_ready(_spmv0_m_axi_regular_b_ready),
 		.io_deq_valid(_sinkBuffer_8_io_deq_valid),
 		.io_deq_bits_id(_sinkBuffer_8_io_deq_bits_id),
 		.io_deq_bits_resp(_sinkBuffer_8_io_deq_bits_resp)

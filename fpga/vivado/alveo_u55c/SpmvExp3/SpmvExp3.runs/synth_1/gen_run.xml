@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xcu55c-fsvh2892-2L-e" LaunchTime="1736517504" LaunchIncrCheckpoint="$PPRDIR/../../../../../fleximem/fpga/xilinx/alveo_u55c_fleximem0/alveo_u55c_fleximem0.srcs/utils_1/imports/synth_1/bd_top_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xcu55c-fsvh2892-2L-e" LaunchTime="1741274710" LaunchIncrCheckpoint="$PPRDIR/../../../../../fleximem/fpga/xilinx/alveo_u55c_fleximem0/alveo_u55c_fleximem0.srcs/utils_1/imports/synth_1/bd_top_wrapper.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="bd_top_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="bd_top_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="bd_top_wrapper_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="bd_top_wrapper.tcl"/>
   <File Type="RDS-UTIL" Name="bd_top_wrapper_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="bd_top_wrapper_reports.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="bd_top_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="bd_top_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="bd_top_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="bd_top_wrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="bd_top_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/SpmvExp3.v">
@@ -71,11 +74,5 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_proc_sys_reset_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_hbm_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_util_ds_buf_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_util_ds_buf_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_top_SpmvExp3_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_top_clk_wiz_0_0"/>
 </GenRun>

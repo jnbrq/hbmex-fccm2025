@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="67" Path="/janberq/repos/jnbrq/hbmex/fpga/vivado/alveo_u55c/ReadEngineExp0_noReorderNoLookahead/ReadEngineExp0_noReorderNoLookahead.xpr">
+<Project Product="Vivado" Version="7" Minor="67" Path="/janberq/repos/jnbrq/hbmex-fccm2025/fpga/vivado/alveo_u55c/ReadEngineExp0_noReorderNoLookahead/ReadEngineExp0_noReorderNoLookahead.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="b3f77542b46b481a8c174135f9442d67"/>
@@ -123,6 +123,12 @@
         <CompFileExtendedInfo CompFileName="bd_top.bd" FileRelPathName="ip/bd_top_proc_sys_reset_0_0/bd_top_proc_sys_reset_0_0.xci">
           <Proxy FileSetName="bd_top_proc_sys_reset_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="bd_top.bd" FileRelPathName="ip/bd_top_proc_sys_reset_0_1/bd_top_proc_sys_reset_0_1.xci">
+          <Proxy FileSetName="bd_top_proc_sys_reset_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="bd_top.bd" FileRelPathName="ip/bd_top_proc_sys_reset_1_1/bd_top_proc_sys_reset_1_1.xci">
+          <Proxy FileSetName="bd_top_proc_sys_reset_1_1"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bd_top.bd" FileRelPathName="ip/bd_top_smartconnect_0_1/bd_top_smartconnect_0_1.xci">
           <Proxy FileSetName="bd_top_smartconnect_0_1"/>
         </CompFileExtendedInfo>
@@ -131,6 +137,9 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bd_top.bd" FileRelPathName="ip/bd_top_util_ds_buf_1_0/bd_top_util_ds_buf_1_0.xci">
           <Proxy FileSetName="bd_top_util_ds_buf_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="bd_top.bd" FileRelPathName="ip/bd_top_xdma_0_0/bd_top_xdma_0_0.xci">
+          <Proxy FileSetName="bd_top_xdma_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/bd_top_wrapper.v">
@@ -243,6 +252,24 @@
     <FileSet Name="bd_top_clk_wiz_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_top_clk_wiz_0_1" RelGenDir="$PGENDIR/bd_top_clk_wiz_0_1">
       <Config>
         <Option Name="TopModule" Val="bd_top_clk_wiz_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="bd_top_xdma_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_top_xdma_0_0" RelGenDir="$PGENDIR/bd_top_xdma_0_0">
+      <Config>
+        <Option Name="TopModule" Val="bd_top_xdma_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="bd_top_proc_sys_reset_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_top_proc_sys_reset_0_1" RelGenDir="$PGENDIR/bd_top_proc_sys_reset_0_1">
+      <Config>
+        <Option Name="TopModule" Val="bd_top_proc_sys_reset_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="bd_top_proc_sys_reset_1_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_top_proc_sys_reset_1_1" RelGenDir="$PGENDIR/bd_top_proc_sys_reset_1_1">
+      <Config>
+        <Option Name="TopModule" Val="bd_top_proc_sys_reset_1_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -360,6 +387,36 @@
       <RQSFiles/>
     </Run>
     <Run Id="bd_top_clk_wiz_0_1_synth_1" Type="Ft3:Synth" SrcSet="bd_top_clk_wiz_0_1" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_clk_wiz_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_top_clk_wiz_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_clk_wiz_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_clk_wiz_0_1_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_top_xdma_0_0_synth_1" Type="Ft3:Synth" SrcSet="bd_top_xdma_0_0" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_xdma_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_top_xdma_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_xdma_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_xdma_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_top_proc_sys_reset_0_1_synth_1" Type="Ft3:Synth" SrcSet="bd_top_proc_sys_reset_0_1" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_proc_sys_reset_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_top_proc_sys_reset_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_0_1_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_top_proc_sys_reset_1_1_synth_1" Type="Ft3:Synth" SrcSet="bd_top_proc_sys_reset_1_1" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_proc_sys_reset_1_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_top_proc_sys_reset_1_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_1_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_1_1_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
@@ -574,6 +631,57 @@
       <RQSFiles/>
     </Run>
     <Run Id="bd_top_clk_wiz_0_1_impl_1" Type="Ft2:EntireDesign" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_clk_wiz_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_top_clk_wiz_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_clk_wiz_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_clk_wiz_0_1_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_top_xdma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_xdma_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_top_xdma_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_xdma_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_xdma_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_top_proc_sys_reset_0_1_impl_1" Type="Ft2:EntireDesign" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_proc_sys_reset_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_top_proc_sys_reset_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_0_1_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_top_proc_sys_reset_1_1_impl_1" Type="Ft2:EntireDesign" Part="xcu55c-fsvh2892-2L-e" ConstrsSet="bd_top_proc_sys_reset_1_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_top_proc_sys_reset_1_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_1_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_top_proc_sys_reset_1_1_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
         <Step Id="init_design"/>

@@ -1,0 +1,8 @@
+List of CLB Tiles
+CLEL_R_X65Y20
+CLEL_R_X65Y21
+
+List of Congested Nets
+bd_top_i/SpmvExp1_0/inst/spmv0/rowReduce/batchAddCluster3_batchAdd/add0/module_0/addRecFN/i___49_i_30__2_n_0
+bd_top_i/SpmvExp1_0/inst/spmv0/rowReduce/batchAddCluster3_batchAdd/add0/module_0/addRecFN/i___49_i_25__2_n_0
+
