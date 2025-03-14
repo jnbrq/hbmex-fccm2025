@@ -23,8 +23,9 @@ class Context:
     def __init__(self, prefix: str, log_fname: str = "task_log"):
         self._tasks: List["Task"] = []
 
+        self._source: str = f"{os.getcwd()}"
         self._prefix: str = prefix
-        self._log_fname: str = f"{os.getcwd()}{os.sep}{log_fname}"
+        self._log_fname: str = os.path.join(os.getcwd(), log_fname)
 
         self._indent_n = 0
         self._indent = "> "
@@ -33,6 +34,10 @@ class Context:
 
         os.makedirs(self._prefix, exist_ok=True)
         os.environ["PATH"] = f"{self._prefix}{os.pathsep}{os.environ["PATH"]}"
+
+        if not os.path.exists(self.prefix(".installer.txt")):
+            with open(self.prefix(".installer.txt"), "w") as f:
+                pass
 
     def needs_command(self, command: str) -> None:
         if shutil.which(command) is None:
@@ -51,11 +56,17 @@ class Context:
         for task in self._tasks:
             task.run()
 
+    def source(self, path: Optional[str] = None) -> str:
+        if path is None:
+            return self._source
+        else:
+            return os.path.normpath(os.path.join(self._source, path))
+
     def prefix(self, path: Optional[str] = None) -> str:
         if path is None:
             return self._prefix
         else:
-            return f"{self._prefix}{os.sep}{path}"
+            return os.path.normpath(os.path.join(self._prefix, path))
 
     def log(self, s: str) -> None:
         print(f"{self._indent}{s}")
@@ -140,16 +151,32 @@ class Context:
         return self.run_command_sudo(["sh", "-c", cmd], cwd=cwd, fail_ok=fail_ok)
 
     def remove_logs(self) -> None:
-        os.remove(f"{self._log_fname}.out")
-        os.remove(f"{self._log_fname}.err")
+        def try_remove(path: str) -> None:
+            if os.path.exists(path):
+                os.remove(path)
+
+        try_remove(f"{self._log_fname}.out")
+        try_remove(f"{self._log_fname}.err")
+
+    def _task_is_complete(self, t: "Task") -> bool:
+        with open(self.prefix(".installer.txt"), "r") as f:
+            for line in f.readlines():
+                if line.strip() == t.name:
+                    return True
+        return False
+
+    def _task_mark_complete(self, t: "Task") -> None:
+        with open(self.prefix(".installer.txt"), "a") as f:
+            f.write(f"{t.name}\n")
 
 
 class Task(abc.ABC):
-    def __init__(self, context: Context, name: str = "task"):
+    def __init__(self, context: Context, name: str = "task", skippable: bool = True):
         context._append_task(self)
         self._context = context
         self._name = name
         self._attrs: Dict[str, str] = {}
+        self._skippable = skippable
 
     @property
     def name(self) -> str:
@@ -168,9 +195,23 @@ class Task(abc.ABC):
         return self._context
 
     def run(self) -> None:
-        self.ctx.log(f"running task: {self.name}")
-        self.ctx.indent_in()
+        if self._skippable and self.ctx._task_is_complete(self):
+            self.ctx.log(f"task already complete: {self.name}")
 
-        self.main()
+        else:
+            self.ctx.log(f"running task: {self.name}")
+            self.ctx.indent_in()
 
-        self.ctx.indent_out()
+            self.main()
+
+            self.ctx.indent_out()
+            self.ctx._task_mark_complete(self)
+
+
+__all__ = [
+    "Task",
+    "TaskException",
+    "Context",
+    "shexpand",
+    "StrOrBytesPath"
+]
