@@ -196,7 +196,9 @@ class Task(abc.ABC):
 
     def run(self) -> None:
         if self._skippable and self.ctx._task_is_complete(self):
-            self.ctx.log(f"task already complete: {self.name}")
+            self.ctx.log(
+                f"task already complete: {self.name} (remove {self.name} from '{self.ctx.prefix('.installer.txt')}' to force install)"
+            )
 
         else:
             self.ctx.log(f"running task: {self.name}")

@@ -7,7 +7,7 @@ def install() -> None:
 
     AptInstall(ctx, "utils", ["wget", "curl", "tar", "git"])
     AptInstall(ctx, "cpp-stuff", ["g++", "gcc", "gdb", "ninja-build", "make"])
-    AptInstall(ctx, "python3-stuff", ["python3", "python3-pip", "python3-venv"])
+    AptInstall(ctx, "python3-stuff", ["python3", "python3-pip", "python3-venv", "python3-setuptools"])
     AptInstall(ctx, "gtkwave", ["gtkwave"])
 
     InstallSbtDebian(ctx)
@@ -34,15 +34,20 @@ def install() -> None:
 
     InstallFmt(ctx, "https://github.com/fmtlib/fmt/archive/refs/tags/11.1.4.tar.gz")
 
-    CMakeTask(ctx, "hdlscw_cpp", "../hdlscw/cpp", cmake_args=[
-        "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_MODE=ABS_SYMLINK"
-    ])
-
-    CMakeTask(ctx, "chext-test_cpp", "../chext-test/cpp", cmake_args=[
-        "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_MODE=ABS_SYMLINK"
-    ])
-
     PythonCreateVenv(ctx)
+
+    PythonPipInstallLocal(ctx, "hdlinfo_python", "../hdlinfo/python")
+    PythonPipInstallLocal(ctx, "hdlscw_python", "../hdlscw/python")
+    PythonPipInstallLocal(ctx, "hdlscw_python", "../hdlscw/python")
+    PythonPipInstallLocal(ctx, "chext-test_python", "../chext-test/python")
+
+    CMakeLocal(ctx, "hdlscw_cpp", "../hdlscw/cpp", cmake_args=[
+        "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_MODE=ABS_SYMLINK"
+    ])
+
+    CMakeLocal(ctx, "chext-test_cpp", "../chext-test/cpp", cmake_args=[
+        "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_MODE=ABS_SYMLINK"
+    ])
 
     ctx.run()
     ctx.remove_logs()

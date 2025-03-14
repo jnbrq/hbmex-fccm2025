@@ -4,7 +4,7 @@ from .framework import *
 import os
 
 
-class CMakeTarTask(Task):
+class CMakeTarRemote(Task):
     def __init__(
         self,
         context: Context,
@@ -12,7 +12,7 @@ class CMakeTarTask(Task):
         tar_link: str,
         cmake_args: List[str]
     ):
-        super().__init__(context, f"cmake:tar:{basename}")
+        super().__init__(context, f"cmake:tar_remote:{basename}")
 
         self._tar_link = tar_link
         self._cmake_args = list(cmake_args)
@@ -60,7 +60,7 @@ class CMakeTarTask(Task):
             )
 
 
-class CMakeTask(Task):
+class CMakeLocal(Task):
     def __init__(
         self,
         context: Context,
@@ -68,7 +68,7 @@ class CMakeTask(Task):
         src_path: str,
         cmake_args: List[str]
     ):
-        super().__init__(context, f"cmake:{basename}")
+        super().__init__(context, f"cmake:local:{basename}")
 
         self._src_path = src_path
         self._cmake_args = list(cmake_args)
@@ -102,6 +102,6 @@ class CMakeTask(Task):
 
 
 __all__ = [
-    "CMakeTarTask",
-    "CMakeTask"
+    "CMakeTarRemote",
+    "CMakeLocal"
 ]
