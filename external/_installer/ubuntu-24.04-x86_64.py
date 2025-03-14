@@ -3,7 +3,7 @@ from src.recipes import *
 
 
 def install() -> None:
-    ctx = Context(prefix=shexpand("$HOME/.local/opt/hdlstuff"))
+    ctx = Context(prefix=shexpand("$HOME/.local/opt/hbmex"))
 
     AptInstall(ctx, "utils", ["wget", "curl", "tar", "git"])
     AptInstall(ctx, "cpp-stuff", ["g++", "gcc", "gdb", "ninja-build", "make"])
@@ -17,6 +17,8 @@ def install() -> None:
 
     # add other boost dependencies
     InstallBoost(ctx, "https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-cmake.tar.gz")
+
+    InstallFmt(ctx, "https://github.com/fmtlib/fmt/archive/refs/tags/11.1.4.tar.gz")
 
     AptInstall(ctx, "verilator-deps", [
         "git", "help2man", "perl", "python3", "make",
@@ -32,14 +34,14 @@ def install() -> None:
     ])
     InstallVerilator(ctx, "https://github.com/verilator/verilator/archive/refs/tags/v5.034.tar.gz")
 
-    InstallFmt(ctx, "https://github.com/fmtlib/fmt/archive/refs/tags/11.1.4.tar.gz")
-
     PythonCreateVenv(ctx)
 
     PythonPipInstallLocal(ctx, "hdlinfo_python", "../hdlinfo/python")
     PythonPipInstallLocal(ctx, "hdlscw_python", "../hdlscw/python")
     PythonPipInstallLocal(ctx, "hdlscw_python", "../hdlscw/python")
     PythonPipInstallLocal(ctx, "chext-test_python", "../chext-test/python")
+
+    PythonPipInstall(ctx, "plotting_stuff", ["numpy", "matplotlib"])
 
     CMakeLocal(ctx, "hdlscw_cpp", "../hdlscw/cpp", cmake_args=[
         "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_MODE=ABS_SYMLINK"
@@ -50,6 +52,7 @@ def install() -> None:
     ])
 
     ctx.run()
+    ctx.log(f"Please activate the environment using: '. {ctx.prefix("bin/activate-hbmex.sh")}'")
     ctx.remove_logs()
 
 

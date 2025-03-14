@@ -26,9 +26,27 @@ class PythonPipInstallLocal(Task):
 
     def main(self):
         self.context.run_sh(
-            f"source {self.ctx.prefix('bin/activate-python')} ; python3 -m pip install -e .",
+            f". {self.ctx.prefix('bin/activate-python')} ; python3 -m pip install -e .",
             cwd=self.ctx.source(self._src_path)
         )
 
 
-__all__ = ["PythonCreateVenv", "PythonPipInstallLocal"]
+class PythonPipInstall(Task):
+    def __init__(self, context: Context, name: str, packages: str):
+        super().__init__(context, f"python:pip_install:{name}", name)
+        self._packages = packages
+
+    def main(self):
+        for package in self._packages:
+            if not self.context.run_sh(
+                f". {self.ctx.prefix('bin/activate-python')} ; python3 -m pip install {package}",
+                fail_ok=True
+            ):
+                self.ctx.log(f"cannot install: {package}")
+
+
+__all__ = [
+    "PythonCreateVenv",
+    "PythonPipInstallLocal",
+    "PythonPipInstall"
+]

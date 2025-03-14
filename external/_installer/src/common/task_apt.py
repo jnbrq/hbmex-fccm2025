@@ -1,5 +1,5 @@
 from typing import *
-from ..common import *
+from .framework import *
 
 
 class AptInstall(Task):

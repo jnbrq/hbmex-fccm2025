@@ -1,3 +1,4 @@
 from .framework import *
-from .cmake_task import *
-from .python_task import *
+from .task_cmake import *
+from .task_python import *
+from .task_apt import *

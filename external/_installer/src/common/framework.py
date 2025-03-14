@@ -82,13 +82,13 @@ class Context:
         self._indent = ("  " * self._indent_n) + "> "
 
     def run_command(self, cmd: List[str], cwd: StrOrBytesPath = ".", fail_ok: bool = False) -> bool:
-        self.log(f"running command: '{' '.join(cmd)}' in '{cwd}'")
+        self.log(f"running command: {cmd} in '{cwd}'")
 
         with open(f"{self._log_fname}.out", "a") as out, open(f"{self._log_fname}.err", "a") as err:
-            out.write(f"=== '{' '.join(cmd)}' in '{cwd}' ===\n")
+            out.write(f"=== {cmd} in '{cwd}' ===\n")
             out.flush()
 
-            err.write(f"=== '{' '.join(cmd)}' in '{cwd}' ===\n")
+            err.write(f"=== {cmd} in '{cwd}' ===\n")
             err.flush()
 
             result = subprocess.run(
@@ -114,16 +114,16 @@ class Context:
 
         else:
             full_cmd = ["sudo", "-S", "-E"] + cmd
-            self.log(f"running command: '{' '.join(full_cmd)}' in '{cwd}'")
+            self.log(f"running command: {full_cmd} in '{cwd}'")
 
             if self._sudo_passwd is None:
                 self._sudo_passwd = getpass.getpass(self._indent + "Please type your sudo password: ")
 
             with open(f"{self._log_fname}.out", "a") as out, open(f"{self._log_fname}.err", "a") as err:
-                out.write(f"=== '{' '.join(full_cmd)}' in '{cwd}' ===\n")
+                out.write(f"=== {full_cmd} in '{cwd}' ===\n")
                 out.flush()
 
-                err.write(f"=== '{' '.join(full_cmd)}' in '{cwd}' ===\n")
+                err.write(f"=== {full_cmd} in '{cwd}' ===\n")
                 err.flush()
 
                 result = subprocess.run(
