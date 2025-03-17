@@ -4,11 +4,7 @@ The project uses Chisel3 as the HDL (Hardware Description Language).
 It depends on our in-house libraries, `chext` and `hdlinfo`, for generating the RTL.
 `chext` provides primitives for creating elastic circuits and AXI infrastructure.
 
-Additionally, we have our own SystemC-based verification framework to verify elastic circuits. This framework requires:
-
-- CMake
-- Verilator
-- Several C++ and Python libraries (`hdlscw`, `chext-test`)
+Additionally, we have our own SystemC-based verification framework to verify elastic circuits. This framework requires CMake, Verilator and Several C++ and Python libraries (including `hdlscw` and `chext-test`).
 
 The software that communicates with the FPGA to execute experiments depends on:
 
@@ -21,10 +17,7 @@ git submodule update --init --recursive
 
 Several other C++ libraries, such as `Boost` and `fmt`.
 
-For generating plots, you need to install the following Python packages:
-
-- `numpy`
-- `matplotlib`
+For generating plots, you need to install the following Python packages: `numpy` and `matplotlib`.
 
 ## Dependency Installation Script
 
