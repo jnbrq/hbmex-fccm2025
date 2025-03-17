@@ -55,6 +55,8 @@ def install() -> None:
     SbtPublishLocal(ctx, "hdlinfo_scala", "../hdlinfo/scala")
     SbtPublishLocal(ctx, "chext_scala", "../chext")
 
+    InstallScripts(ctx)
+
     ctx.run()
     ctx.log(f"Please activate the environment using: '. {ctx.prefix("bin/activate-hbmex.sh")}'")
     ctx.remove_logs()

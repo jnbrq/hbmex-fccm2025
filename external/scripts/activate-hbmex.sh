@@ -38,6 +38,7 @@ if [ -n "$HBMEX_PREFIX" ]; then
     return 0
 fi
 
+# TODO FIX THIS
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 
 export HBMEX_PREFIX="$SCRIPT_DIR"
