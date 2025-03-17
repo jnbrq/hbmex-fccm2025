@@ -11,11 +11,11 @@ class InstallScripts(Task):
 
     def main(self):
         self.ctx.needs_command("bash")
-        self.ctx.needs_command("cp")
+        self.ctx.needs_command("ln")
 
         for script in self._scripts:
             self.ctx.run_command(
-                ["cp", self.ctx.source(f"../scripts/{script}"), self.ctx.prefix("bin/")]
+                ["ln", self.ctx.source(f"../scripts/{script}"), self.ctx.prefix("bin/")]
             )
 
 
