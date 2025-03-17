@@ -1,5 +1,5 @@
-from src.common import *
-from src.recipes import *
+from xinstaller.common import *
+from xinstaller.recipes import *
 
 
 def install() -> None:
@@ -13,12 +13,13 @@ def install() -> None:
     InstallSbtDebian(ctx)
 
     InstallCMake(ctx, "https://github.com/Kitware/CMake/releases/download/v3.31.6/cmake-3.31.6-linux-x86_64.sh")
-    InstallSystemC(ctx, "https://github.com/accellera-official/systemc/archive/refs/tags/3.0.1.tar.gz")
 
     # add other boost dependencies
     InstallBoost(ctx, "https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-cmake.tar.gz")
 
     InstallFmt(ctx, "https://github.com/fmtlib/fmt/archive/refs/tags/11.1.4.tar.gz")
+
+    InstallSystemC(ctx, "https://github.com/accellera-official/systemc/archive/refs/tags/3.0.1.tar.gz")
 
     AptInstall(ctx, "verilator-deps", [
         "git", "help2man", "perl", "python3", "make",
@@ -50,6 +51,9 @@ def install() -> None:
     CMakeLocal(ctx, "chext-test_cpp", "../chext-test/cpp", cmake_args=[
         "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_MODE=ABS_SYMLINK"
     ])
+
+    SbtPublishLocal(ctx, "hdlinfo_scala", "../hdlinfo/scala")
+    SbtPublishLocal(ctx, "chext_scala", "../chext")
 
     ctx.run()
     ctx.log(f"Please activate the environment using: '. {ctx.prefix("bin/activate-hbmex.sh")}'")

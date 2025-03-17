@@ -13,12 +13,19 @@ class InstallVerilator(CMakeTarRemote):
 
 class InstallSystemC(CMakeTarRemote):
     def __init__(self, context, tar_link):
-        super().__init__(context, "systemc", tar_link, ["-DENABLE_EXAMPLES=OFF", "-DCMAKE_BUILD_TYPE=Release"])
+        super().__init__(context, "systemc", tar_link, [
+            "-DENABLE_EXAMPLES=OFF",
+            "-DCMAKE_BUILD_TYPE=Release",
+            "-DBUILD_SHARED_LIBS=TRUE"
+        ])
 
 
 class InstallBoost(CMakeTarRemote):
     def __init__(self, context, tar_link):
-        super().__init__(context, "boost", tar_link, ["-DCMAKE_BUILD_TYPE=Release"])
+        super().__init__(context, "boost", tar_link, [
+            "-DCMAKE_BUILD_TYPE=Release",
+            "-DBUILD_SHARED_LIBS=TRUE"
+        ])
 
 
 class InstallFmt(CMakeTarRemote):
@@ -26,7 +33,8 @@ class InstallFmt(CMakeTarRemote):
         super().__init__(context, "fmt", tar_link, [
             "-DCMAKE_BUILD_TYPE=Release",
             "-DFMT_DOC=OFF",
-            "-DFMT_TEST=OFF"
+            "-DFMT_TEST=OFF",
+            "-DBUILD_SHARED_LIBS=TRUE"
         ])
 
 

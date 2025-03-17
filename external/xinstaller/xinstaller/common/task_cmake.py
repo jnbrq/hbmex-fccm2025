@@ -55,7 +55,19 @@ class CMakeTarRemote(Task):
             )
 
             self.ctx.run_command(
-                ["ninja", "install"],
+                [
+                    "cmake",
+                    "--build", "."
+                ],
+                cwd=f"{temp_dir}/build"
+            )
+
+            self.ctx.run_command(
+                [
+                    "cmake",
+                    "--install", ".",
+                    "--strip"
+                ],
                 cwd=f"{temp_dir}/build"
             )
 
@@ -96,7 +108,7 @@ class CMakeLocal(Task):
             )
 
             self.ctx.run_command(
-                ["ninja", "install"],
+                ["ninja", "install/strip"],
                 cwd=f"{temp_dir}/build"
             )
 
