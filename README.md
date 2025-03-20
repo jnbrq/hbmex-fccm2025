@@ -1,6 +1,6 @@
 # HBMex: An Attachment for Nonbursting Accelerators to Enhance HBM Performance
 
-This repository contains the source code of the experiments presented in the HBMex paper submitted to FCCM 2025.
+This repository contains the source code of the experiments presented in the HBMex paper accepted to FCCM 2025.
 
 ## Repository Structure
 
