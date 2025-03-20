@@ -3,7 +3,7 @@ from xinstaller.recipes import *
 
 
 def install() -> None:
-    ctx = Context(prefix=shexpand("$HOME/.local/opt/hbmex"))
+    ctx = Context(prefix=shexpand("../../.prefix"))
 
     AptInstall(ctx, "utils", ["wget", "curl", "tar", "git"])
     AptInstall(ctx, "cpp-stuff", ["g++", "gcc", "gdb", "ninja-build", "make"])

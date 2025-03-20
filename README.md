@@ -15,7 +15,7 @@ HBMex source code consists of the following parts:
 3. Bitstream generation using Vivado for Alveo U55C, (in `fpga/vivado/alveo_u55c/`, there are 7 vivado projects)
 4. running the host-side software. (in `sw/`)
 
-The `external/` directory contains the external dependencies that must be installed first.
+The `environment/` directory contains the external dependencies that must be installed first.
 
 ## Test System
 
@@ -30,7 +30,7 @@ We primarily tested HBMex on the following setup:
 
 ## Step 0: Getting Started
 
-Install the dependencies using the installation script. We describe the process in [external/INSTALL.md](external/INSTALL.md).
+Install the dependencies using the installation script. We describe the process in [environment/INSTALL.md](environment/INSTALL.md).
 
 In all the readme documents, `${HBMEX_REPO}` refers to the root path of this repository, `${HBMEX_PREFIX}` refers to the directory in which the dependencies are installed. These two variables must be defined in the terminals you use to build and execute HBMex components:
 

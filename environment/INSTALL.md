@@ -30,7 +30,7 @@ To install the dependencies:
 Navigate to the installer directory:
 
 ```bash
-ch "${HBMEX_REPO}/external/xinstaller"
+ch "${HBMEX_REPO}/environment/xinstaller"
 python3 ubuntu-24.04-x86_64.py
 ```
 
@@ -44,12 +44,12 @@ sudo apt update
 sudo apt install -y build-essential linux-headers-$(uname -r) 
 
 # navigate to the directory
-cd "${HBMEX_REPO}/external/dma_ip_drivers/XDMA/linux-kernel/xdma"
+cd "${HBMEX_REPO}/environment/dma_ip_drivers/XDMA/linux-kernel/xdma"
 make clean
 make -j
 
 # insert the module
-sudo insmod "${HBMEX_REPO}/external/dma_ip_drivers/XDMA/linux-kernel/xdma/xdma.ko"
+sudo insmod "${HBMEX_REPO}/environment/dma_ip_drivers/XDMA/linux-kernel/xdma/xdma.ko"
 
 ```
 
