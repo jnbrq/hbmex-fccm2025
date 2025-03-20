@@ -26,6 +26,7 @@ hbmex_reset_var() {
 
 hbmex_activate() {
     hbmex_set_var "HBMEX_PREFIX" "$(realpath "$(dirname "${BASH_SOURCE[0]}")/..")"
+    hbmex_set_var "HBMEX_REPO" "$(cat "$HBMEX_PREFIX/.hbmex_repo")"
 
     hbmex_set_var "VIRTUAL_ENV" "$HBMEX_PREFIX"
     hbmex_set_var "PYTHONHOME" ""
@@ -48,6 +49,7 @@ hbmex_activate() {
 
 hbmex_deactivate() {
     hbmex_reset_var "HBMEX_PREFIX"
+    hbmex_reset_var "HBMEX_REPO"
 
     hbmex_reset_var "VIRTUAL_ENV"
     hbmex_reset_var "PYTHONHOME"

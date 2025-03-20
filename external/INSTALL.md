@@ -12,6 +12,7 @@ Xilinx XDMA IP driver, which is located under `dma_ip_drivers/XDMA/linux-kernel/
 Note: You should clone the Git submodules first by running:
 
 ```bash
+ch "${HBMEX_REPO}"
 git submodule update --init --recursive
 ```
 
@@ -29,7 +30,7 @@ To install the dependencies:
 Navigate to the installer directory:
 
 ```bash
-cd xinstaller
+ch "${HBMEX_REPO}/external/xinstaller"
 python3 ubuntu-24.04-x86_64.py
 ```
 
@@ -37,5 +38,19 @@ Once the installation is complete, you can activate the environment by executing
 
 ## Installing the Kernel Driver
 
+```bash
+# install packages
+sudo apt update
+sudo apt install -y build-essential linux-headers-$(uname -r) 
+
+# navigate to the directory
+cd "${HBMEX_REPO}/external/dma_ip_drivers/XDMA/linux-kernel/xdma"
+make clean
+make -j
+
+# insert the module
+sudo insmod "${HBMEX_REPO}/external/dma_ip_drivers/XDMA/linux-kernel/xdma/xdma.ko"
+
+```
 
 **[Go back](../README.md#step-0-getting-started) to the main document.**

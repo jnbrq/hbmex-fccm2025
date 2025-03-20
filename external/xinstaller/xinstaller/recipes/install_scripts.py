@@ -13,10 +13,15 @@ class InstallScripts(Task):
         self.ctx.needs_command("bash")
         self.ctx.needs_command("ln")
 
+        import os
+
         for script in self._scripts:
             self.ctx.run_command(
-                ["ln", self.ctx.source(f"../scripts/{script}"), self.ctx.prefix("bin/")]
+                ["ln", "-s", self.ctx.source(f"../scripts/{script}"), self.ctx.prefix("bin/")]
             )
+
+        with open(self.ctx.prefix(".hbmex_repo"), "w") as f:
+            f.write(self.ctx.source("../../"))
 
 
 __all__ = ["InstallScripts"]
