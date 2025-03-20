@@ -7,10 +7,48 @@ This folder contains the source code of the HBMex software used for conducting t
 Please open a Bash shell in `${HBMEX_REPO}`, and write the following commands:
 
 ```bash
-mkdir -p sw/build
-cd sw/build
+# activate the installation environment
+# replace ... with the HBMex installation prefix
+# please check the output of the installation script
+. .../bin/activate-hbmex.sh
+
+cd "${HBMEX_REPO}/sw"
+mkdir build && cd build
 cmake .. -G Ninja -D CMAKE_PREFIX_PATH="${HBMEX_PREFIX}" -D CMAKE_INSTALL_PREFIX="${HBMEX_PREFIX}"
 ninja
+```
+
+## Memory Access Microbenchmarks
+
+Memory access microbenchmarks are used to generate Figures 6 and 7.
+
+```bash
+# === STEP 0: make that the software is build as described earlier ===
+
+
+# === STEP 1: run the experiments ===
+cd "${HBMEX_REPO}/sw"
+
+# DO FIRST: flash the bitstream `ReadEngineExp0` to the FPGA and perform a PCI hotplug
+echo "hbm_explore/output_reorder" ; build/hbm_explore > ./results/hbm_explore/output_reorder.txt
+echo "hbm_explore2/output_450MHz_reorder" ; build/hbm_explore2 > ./results/hbm_explore2/output_450MHz_reorder.txt
+
+# DO FIRST: flash the bitstream `ReadEngineExp0_noReorder` to the FPGA and perform a PCI hotplug
+echo "hbm_explore/output_noReorder" ; build/hbm_explore > ./results/hbm_explore/output_noReorder.txt
+
+# DO FIRST: flash the bitstream `ReadEngineExp0_noReorderNoLookahead` to the FPGA and perform a PCI hotplug
+echo "hbm_explore/output_noReorderNoLookahead" ; build/hbm_explore > ./results/hbm_explore/output_noReorderNoLookahead.txt
+
+# DO FIRST: flash the bitstream `ReadEngineExp1` to the FPGA and perform a PCI hotplug
+echo "hbm_explore3/output_defaultRama_reorder" ; build/hbm_explore3 > ./results/hbm_explore3/output_defaultRama_reorder.txt
+
+# === STEP 3: plot the graphs ===
+
+cd "${HBMEX_REPO}/sw/results/hbm_explore"
+python3 ./plot.py # generates: HBMex-hbm_explore.pdf, Figure 6
+
+cd "${HBMEX_REPO}/sw/results/hbm_explore2"
+python3 ./plot.py # generates: HBMex-hbm_explore2.pdf, Figure 7
 
 ```
 
@@ -23,7 +61,6 @@ For this reason, we also provide already-prepared assets.
 Please check `${HBMEX_REPO}/ASSETS.md` and skip these steps if you use the already-prepared assets.
 
 ```bash
-
 # === STEP 0: make that the software is build as described earlier ===
 
 
@@ -34,7 +71,6 @@ cd "${HBMEX_REPO}/sw/workloads/spmv_explore"
 # generates up to 2 GiB of data.
 # source code: ${HBMEX_REPO}/sw/src/spmv_explore_generate.cpp
 ./generate.sh
-
 
 
 # === STEP 2: prepare SuiteSparse matrices ===
@@ -84,9 +120,18 @@ echo "spmv_explore" ; build/spmv_explore > ./results/spmv_explore/exp_sweep/exp3
 echo "suite_sparse" ; build/suite_sparse > ./results/suite_sparse/exp3.txt
 echo "done."
 
+
+# === STEP 4: plot the graphs ===
+
+cd "${HBMEX_REPO}/sw/results/spmv_explore/exp_sweep"
+python3 ./plot.py # generates: HBMex-spmv_exp_sweep.pdf, Figure 10
+
+cd "${HBMEX_REPO}/sw/results/suite_sparse"
+python3 ./plot.py # generates: HBMex-suite_sparse.pdf, Figure 11
+
 ```
 
-**[Go back](../README.md) to the main document.**
+**[Go back](../README.md#step-4-running-the-experiments) to the main document.**
 
 ## Notes
 

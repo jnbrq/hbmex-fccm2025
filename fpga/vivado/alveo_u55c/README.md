@@ -27,4 +27,4 @@ vivado "${HBMEX_REPO}/fpga/vivado/alveo_u55c/<proj_name>/*.xpr"
 
 > **NOTE:** For each project, we have 3 implementation runs with different parameters. You can start the default run only to save time.
 
-**[Go back](../../../README.md) to the main document.**
+**[Go back](../../../README.md#step-3-synthesizing-the-bitstreams) to the main document.**

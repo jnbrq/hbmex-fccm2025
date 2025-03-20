@@ -38,4 +38,4 @@ Once the installation is complete, you can activate the environment by executing
 ## Installing the Kernel Driver
 
 
-**[Go back](../README.md) to the main document.**
+**[Go back](../README.md#step-0-getting-started) to the main document.**
