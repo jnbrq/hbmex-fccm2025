@@ -86,6 +86,8 @@ echo "done."
 
 ```
 
+**[Go back](../README.md) to the main document.**
+
 ## Notes
 
 **Note 1:** In the log files, stripe index refers to the number of PCs targeted:
