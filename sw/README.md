@@ -4,7 +4,7 @@ This folder contains the source code of the HBMex software used for conducting t
 
 ## Building the software with CMake
 
-Please open a Bash shell in `${HBMEX_ROOT}`, and write the following commands:
+Please open a Bash shell in `${HBMEX_REPO}`, and write the following commands:
 
 ```bash
 mkdir -p sw/build
@@ -20,7 +20,7 @@ SpMV experiments are used to generate Figures 10 and 11.
 
 **Note:** Steps 1 and 2 prepare the input matrices and they might take a long time.
 For this reason, we also provide already-prepared assets.
-Please check `${HBMEX_ROOT}/ASSETS.md` and skip these steps if you use the already-prepared assets.
+Please check `${HBMEX_REPO}/ASSETS.md` and skip these steps if you use the already-prepared assets.
 
 ```bash
 
@@ -28,24 +28,24 @@ Please check `${HBMEX_ROOT}/ASSETS.md` and skip these steps if you use the alrea
 
 
 # === STEP 1: prepare spmv_explore matrices ===
-cd "${HBMEX_ROOT}/sw/workloads/spmv_explore"
+cd "${HBMEX_REPO}/sw/workloads/spmv_explore"
 
 # might take a long time, took around 10 minutes on our up-to-date server.
 # generates up to 2 GiB of data.
-# source code: ${HBMEX_ROOT}/sw/src/spmv_explore_generate.cpp
+# source code: ${HBMEX_REPO}/sw/src/spmv_explore_generate.cpp
 ./generate.sh
 
 
 
 # === STEP 2: prepare SuiteSparse matrices ===
-cd "${HBMEX_ROOT}/sw/workloads/suite_sparse"
+cd "${HBMEX_REPO}/sw/workloads/suite_sparse"
 
 # download the matrices in MatrixMarket format
 # make sure that you have `tar` and `wget` installed
 ./download.sh
 
 # convert the download matrices to the CSR format
-# source code: ${HBMEX_ROOT}/sw/src/mm2csr.cpp
+# source code: ${HBMEX_REPO}/sw/src/mm2csr.cpp
 ./convert.sh
 
 # remove the mtx files to save space
@@ -54,7 +54,7 @@ rm -rf *.mtx
 
 # === STEP 3: run the experiments ===
 
-cd "${HBMEX_ROOT}/sw"
+cd "${HBMEX_REPO}/sw"
 
 # please note that these experiments might take a long time
 
@@ -64,8 +64,8 @@ cd "${HBMEX_ROOT}/sw"
 # search "Total number of mismatches" to see how many SpMV operations are complete
 
 # you can find the source codes in the following files:
-#     spmv_explore --> ${HBMEX_ROOT}/sw/src/spmv_explore.cpp
-#     suite_sparse --> ${HBMEX_ROOT}/sw/src/suite_sparse.cpp
+#     spmv_explore --> ${HBMEX_REPO}/sw/src/spmv_explore.cpp
+#     suite_sparse --> ${HBMEX_REPO}/sw/src/suite_sparse.cpp
 
 # just copy and paste the following code blocks
 
