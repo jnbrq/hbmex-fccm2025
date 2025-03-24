@@ -3,22 +3,11 @@
 The project uses Chisel3 as the HDL (Hardware Description Language).
 It depends on our in-house libraries, `chext` and `hdlinfo`, for generating the RTL.
 `chext` provides primitives for creating elastic circuits and AXI infrastructure.
-
 Additionally, we have our own SystemC-based verification framework to verify elastic circuits. This framework requires CMake, Verilator and Several C++ and Python libraries (including `hdlscw` and `chext-test`).
-
-The software that communicates with the FPGA to execute experiments depends on:
-
-Xilinx XDMA IP driver, which is located under `dma_ip_drivers/XDMA/linux-kernel/xdma`.
-Note: You should clone the Git submodules first by running:
-
-```bash
-cd "${HBMEX_REPO}"
-git submodule update --init --recursive
-```
-
-Several other C++ libraries, such as `Boost` and `fmt`.
-
+The software that communicates with the FPGA to execute experiments depends on the Xilinx XDMA IP driver and several other C++ libraries, such as `Boost` and `fmt`.
 For generating plots, you need to install the following Python packages: `numpy` and `matplotlib`.
+
+Most dependencies can be installed using the automated installation script.
 
 ## Installation Script
 
@@ -41,7 +30,11 @@ Once the installation is complete, you can activate the environment by executing
 ```bash
 # install packages
 sudo apt update
-sudo apt install -y build-essential linux-headers-$(uname -r) 
+sudo apt install -y build-essential linux-headers-$(uname -r)
+
+# clone the submodule
+cd "${HBMEX_REPO}/environment"
+git submodule update --init --recursive
 
 # navigate to the directory
 cd "${HBMEX_REPO}/environment/dma_ip_drivers/XDMA/linux-kernel/xdma"

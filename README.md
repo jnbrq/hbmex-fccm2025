@@ -35,15 +35,12 @@ Install the dependencies using the installation script. We describe the process 
 In all the readme documents, `${HBMEX_REPO}` refers to the root path of this repository, `${HBMEX_PREFIX}` refers to the directory in which the dependencies are installed. These two variables must be defined in the terminals you use to build and execute HBMex components:
 
 ```bash
-
-# define the repository path
-# replace ... with the absolute path of the repo
-export HBMEX_REPO="..."
-
 # activate the installation environment
 # replace ... with the HBMex installation prefix
 # please check the output of the installation script
 . .../bin/activate-hbmex.sh
+
+# now, HBMEX_REPO and HBMEX_PREFIX are defined.
 ```
 
 ## Step 1: Generating the RTL
