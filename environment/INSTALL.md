@@ -1,4 +1,4 @@
-# External Dependencies
+# Installing the Environment
 
 The project uses Chisel3 as the HDL (Hardware Description Language).
 It depends on our in-house libraries, `chext` and `hdlinfo`, for generating the RTL.
@@ -12,7 +12,7 @@ Xilinx XDMA IP driver, which is located under `dma_ip_drivers/XDMA/linux-kernel/
 Note: You should clone the Git submodules first by running:
 
 ```bash
-ch "${HBMEX_REPO}"
+cd "${HBMEX_REPO}"
 git submodule update --init --recursive
 ```
 
@@ -20,9 +20,9 @@ Several other C++ libraries, such as `Boost` and `fmt`.
 
 For generating plots, you need to install the following Python packages: `numpy` and `matplotlib`.
 
-## Dependency Installation Script
+## Installation Script
 
-All dependencies (except the kernel driver) can be installed using the provided script.
+All dependencies (except the kernel driver) and helper utilities can be installed using the provided script.
 The script is designed for Ubuntu 24.04, though it can theoretically be modified to support other Ubuntu versions and Debian-based distributions.
 
 To install the dependencies:
@@ -30,7 +30,7 @@ To install the dependencies:
 Navigate to the installer directory:
 
 ```bash
-ch "${HBMEX_REPO}/environment/xinstaller"
+cd "${HBMEX_REPO}/environment/xinstaller"
 python3 ubuntu-24.04-x86_64.py
 ```
 
