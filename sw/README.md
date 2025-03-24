@@ -19,8 +19,11 @@ ninja
 ```
 
 ## Using PCI hotplug script `pci_hot_plug.sh`
+
+This script automates the hot removal and re-initialization of PCIe devices connected through root and upstream ports. It is intended to be used after reflashing bitstreams to FPGA devices, ensuring the system properly re-enumerates the PCIe hierarchy and re-establishes communication with the FPGA.
+
 ```bash
-pci_hot_plug.sh <N> <upstream_ports...> <root_ports...> <link_control_offsets...>
+sudo pci_hot_plug.sh <N> <upstream_ports...> <root_ports...> <link_control_offsets...>
 ```
 
 1. `N`: Number of devices (i.e., number of upstream ports to be reverted).
