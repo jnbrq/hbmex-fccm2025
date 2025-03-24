@@ -18,6 +18,27 @@ cmake .. -G Ninja -D CMAKE_PREFIX_PATH="${HBMEX_PREFIX}" -D CMAKE_INSTALL_PREFIX
 ninja
 ```
 
+## Using PCI hotplug script `pci_hot_plug.sh`
+```bash
+pci_hot_plug.sh <N> <upstream_ports...> <root_ports...> <link_control_offsets...>
+```
+
+1. `N`: Number of devices (i.e., number of upstream ports to be reverted).
+2. `upstream_ports`: N space-separated PCI BDFs (`Bus:Device.Function`s) of upstream ports (e.g., 01:00.0).
+3. `root_ports`: N space-separated PCI BDFs of the corresponding root ports (e.g., 00:01.1).
+4. `link_control_offsets`: N hex values (without 0x) corresponding to the Link Control register base addresses for each root port (e.g., 70).
+
+Example for our bitstreams (replace PCI BDFs as needed):
+
+```bash
+pci_hot_plug.sh 1 01:00.0 00:01.1 70
+```
+
+Extra resources:
+1. [Debugging PCIe Issues using lspci and setpci](https://adaptivesupport.amd.com/s/article/1148199)
+2. [PCIe Hot Reset on Linux](https://alexforencich.com/wiki/en/pcie/hot-reset-linux)
+3. [Original source code](https://github.com/fpgasystems/sgrt/blob/main/cli/program/pci_hot_plug.sh)
+
 ## Memory Access Microbenchmarks
 
 Memory access microbenchmarks are used to generate Figures 6 and 7.
