@@ -33,7 +33,8 @@ class Context:
         self._sudo_passwd = None
 
         os.makedirs(self._prefix, exist_ok=True)
-        os.environ["PATH"] = f"{self._prefix}{os.pathsep}{os.environ["PATH"]}"
+        os.environ["PATH"] = f"{self._prefix}{os.sep}bin{os.pathsep}{os.environ.get("PATH", "")}"
+        os.environ["LD_LIBRARY_PATH"] = f"{self._prefix}{os.sep}lib{os.pathsep}{os.environ.get("LD_LIBRARY_PATH", "")}"
 
         if not os.path.exists(self.prefix(".installer.txt")):
             with open(self.prefix(".installer.txt"), "w") as f:
