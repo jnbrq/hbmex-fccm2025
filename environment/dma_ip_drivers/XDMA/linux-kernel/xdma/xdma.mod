@@ -1,0 +1,9 @@
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/libxdma.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/xdma_cdev.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/cdev_ctrl.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/cdev_events.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/cdev_sgdma.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/cdev_xvc.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/cdev_bypass.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/xdma_mod.o
+/alpha/00light00/dma_ip_drivers/XDMA/linux-kernel/xdma/xdma_thread.o
