@@ -80,9 +80,9 @@ python3 ./plot.py # generates: HBMex-hbm_explore2.pdf, Figure 7
 
 SpMV experiments are used to generate Figures 10 and 11.
 
-**Note:** Steps 1 and 2 prepare the input matrices and they might take a long time.
+> **NOTE:** Steps 1 and 2 prepare the input matrices and they might take a long time.
 For this reason, we also provide already-prepared assets.
-Please check `${HBMEX_REPO}/ASSETS.md` and skip these steps if you use the already-prepared assets.
+Please check the [assets document](../assets/README.md) if you want to use the pre-built assets (run `extract_workloads.sh` script).
 
 ```bash
 # === STEP 0: make that the software is build as described earlier ===

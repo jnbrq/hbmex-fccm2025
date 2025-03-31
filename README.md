@@ -27,7 +27,6 @@ We primarily tested HBMex on the following setup:
 4. C++ compiler: gcc version 13.3.0
 5. Python version: Python 3.12.3
 
-
 ## Step 0: Getting Started
 
 Install the dependencies using the installation script. We describe the process in [environment/INSTALL.md](environment/INSTALL.md).
@@ -64,3 +63,7 @@ Please refer to [fpga/vivado/alveo_u55c/README.md](fpga/vivado/alveo_u55c/README
 ## Step 4: Running the Experiments
 
 Please check [sw/README.md](sw/README.md) for more on running the experiments.
+
+## Pre-built Assets
+
+Please check [assets/README.md](assets/README.md) to learn more about the pre-built assets.
