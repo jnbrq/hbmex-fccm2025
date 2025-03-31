@@ -1,8 +1,6 @@
 # Pre-built Assets
 
-You can find the pre-built assets in this directory. You should have Git Large File Storage (LFS) installed first, please check [https://git-lfs.com/](https://git-lfs.com/).
-
-Extracting the assets:
+Downloading and extracting the assets:
 
 ```bash
 cd "${HBMEX_REPO}/assets"
