@@ -25,6 +25,6 @@ Projects and the names of the RTL files are:
 vivado "${HBMEX_REPO}/fpga/vivado/alveo_u55c/<proj_name>/*.xpr"
 ```
 
-> **NOTE:** For each project, we have 3 implementation runs with different parameters. You can start the default run only to save time.
+> **NOTE:** For each project, we have 3 implementation runs with different parameters. You can start only the default run to save time.
 
 **[Go back](../../../README.md#step-3-synthesizing-the-bitstreams) to the main document.**

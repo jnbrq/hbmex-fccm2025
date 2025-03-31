@@ -47,7 +47,7 @@ Extra resources:
 Memory access microbenchmarks are used to generate Figures 6 and 7.
 
 ```bash
-# === STEP 0: make that the software is build as described earlier ===
+# === STEP 0: make that the software is built as described earlier ===
 
 
 # === STEP 1: run the experiments ===
