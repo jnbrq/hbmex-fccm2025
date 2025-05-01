@@ -97,16 +97,20 @@ def create_figure(
     height: float = 4.8,
     nrows: int = 1,
     ncols: int = 1,
+    left_extra: float = 0.0,
+    bottom_extra: float = 0.0,
+    right_extra: float = 0.0,
+    top_extra: float = 0.0,
     **kwargs
 ) -> Tuple[Figure, List[Axes]]:
     fig = plt.figure(figsize=(width, height))
     axs = fig.subplots(nrows, ncols, sharex=True, sharey=True, **kwargs)
 
     # these are the desired margins in terms of figure units
-    left = 0.640
-    bottom = 0.480
-    right = 0.128
-    top = 0.270
+    left = 0.640 + left_extra
+    bottom = 0.480 + bottom_extra
+    right = 0.128 + right_extra
+    top = 0.270 + top_extra
     wspace = 0.140
     hspace = 0.270
 
@@ -128,15 +132,23 @@ def plotOne(
     ax: plt.Axes,
     filterFn: Callable[[DataPoint], bool],
     title: str,
-    annoList: List[List[Tuple[float, str]]]
-) -> None:
+    annoList: List[List[Tuple[float, str]]],
+    presentationMode: bool = False
+) -> List[plt.Artist]:
     filtered_points = [dp for dp in dataPoints if filterFn(dp)]
+    result: List[plt.Artist] = []
 
-    for index, (idMode, label, color, marker) in enumerate([
+    v = [
+        ("ID_ZERO_RAMA", "Single ID + RAMA", "tab:orange", "v"),
+        ("ID_MASK_INDEX", "6-bit IDs", "tab:blue", "^"),
+        ("ID_SHIFT_MASK_ADDR", "Unique ID per PC", "tab:green", "o")
+    ] if presentationMode else [
         ("ID_ZERO_RAMA", "Single ID/RAMA", "tab:orange", "v"),
         ("ID_MASK_INDEX", "6-bit IDs", "tab:blue", "^"),
         ("ID_SHIFT_MASK_ADDR", "Unique ID per PC", "tab:green", "o")
-    ]):
+    ]
+
+    for index, (idMode, label, color, marker) in enumerate(v):
         subset = [
             dp for dp in filtered_points
             if dp.idMode == idMode
@@ -144,7 +156,7 @@ def plotOne(
 
         vx = [dp.numPcs for dp in subset]
         vy = [dp.cyclesPerBeat for dp in subset]
-        ax.plot(vx, vy, marker=marker, label=label, color=color, linestyle="-")
+        result.append(ax.plot(vx, vy, marker=marker, label=label, color=color, linestyle="-")[0])
 
         for index2, (x, y) in enumerate(zip(vx, vy)):
             ax.annotate(
@@ -163,6 +175,8 @@ def plotOne(
     ax.set_ylim([2 ** (-0.05), 2 ** (2.05)])
     ax.set_xticks([1, 2, 4, 8, 16])
     ax.set_title(title)
+
+    return result
 
 
 def plotFigure() -> None:
@@ -203,4 +217,34 @@ def plotFigure() -> None:
     fig.savefig("HBMex-hbm_explore2.pdf")
 
 
+def plotFigurePresentation() -> None:
+    """
+    Plots the figure to be included in the presentation.
+    """
+    from matplotlib import pyplot as plt
+    fig, axs = create_figure(width=9.2 * 0.7, height=4.8 * 0.7, top_extra=0.3, ncols=2)
+
+    # autopep8: off
+    annoList = [
+        [(3, "left"), (2.1, "left"), (0.8, "center"), (0.9, "center"), (1.2, "right")],
+        [(2, "left"), (1.05, "left"), (0.75, "center"), (1, "center"), (1, "right")],
+        [(1, "left"), (-1.1, "right"), (0.8, "left"), (1, "center"), (0.8, "right")]
+    ]
+    handles = plotOne(axs[0], lambda dp: dp.len == 0, "Single-beat", annoList, presentationMode=True)
+
+    annoList = [
+        [(3, "left"), (2.0, "left"), (2, "center"), (2, "center"), (2, "right")],
+        [(2, "left"), (1.0, "left"), (1, "center"), (1, "center"), (1, "right")],
+        [(1, "left"), (-1.2, "right"), (0.7, "left"), (0.7, "center"), (1, "right")]
+    ]
+    plotOne(axs[1], lambda dp: dp.len == 1, "2-beat", annoList, presentationMode=True)
+
+    fig.legend(handles=handles, loc="upper right", ncol=3)
+
+    fig.supxlabel("Number of Pseudo Channels", weight="bold")
+    fig.supylabel("Cycles/Beat", weight="bold")
+
+    fig.savefig("HBMex-hbm_explore2_presentation.pdf")
+
 plotFigure()
+plotFigurePresentation()

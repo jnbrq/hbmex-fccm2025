@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 from typing import *
 
+from matplotlib.artist import Artist
 import matplotlib.pyplot as plt
 import math
 import pprint
@@ -85,16 +86,20 @@ def create_figure(
     height: float = 4.8,
     nrows: int = 1,
     ncols: int = 1,
+    left_extra: float = 0.0,
+    bottom_extra: float = 0.0,
+    right_extra: float = 0.0,
+    top_extra: float = 0.0,
     **kwargs
 ) -> Tuple[Figure, List[Axes]]:
     fig = plt.figure(figsize=(width, height))
     axs = fig.subplots(nrows, ncols, sharex=True, sharey=True, **kwargs)
 
     # these are the desired margins in terms of figure units
-    left = 0.640
-    bottom = 0.480
-    right = 0.128
-    top = 0.270
+    left = 0.640 + left_extra
+    bottom = 0.480 + bottom_extra
+    right = 0.128 + right_extra
+    top = 0.270 + top_extra
     wspace = 0.140
     hspace = 0.270
 
@@ -116,11 +121,26 @@ def avg(l: List[float]) -> float:
     return sum(l) / len(l)
 
 
-def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> None:
+def plotOne(
+    ax: plt.Axes,
+    filterFn: Callable[[DataPoint], bool],
+    title: str,
+    presentationMode: bool = False
+) -> List[Artist]:
     vAvgNzPerRow = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
     vExp = [ExperimentType.RAMA_IP, ExperimentType.HBMEX_IP_0, ExperimentType.HBMEX_IP_1]
-    vExpLabel = ["RAMA IP", "HBMex 64 IDs", "HBMex ID/PC"]
+    vExpLabel = [
+        "RAMA IP",
+        "HBMex, 64 IDs (no Enhance)",
+        "HBMex, Unique ID/PC (with Enhance)"
+    ] if presentationMode else [
+        "RAMA IP",
+        "HBMex 64 IDs",
+        "HBMex ID/PC"
+    ]
     vExpColor = ["tab:orange", "tab:blue", "tab:green"]
+
+    result: List[Artist] = []
 
     ddvData = {
         exp: {
@@ -152,7 +172,7 @@ def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> 
             ax.plot([vAvgNzPerRow[0], vAvgNzPerRow[5-1] * 1.7], [avgy, avgy], color=expColor, linestyle="-")
             ax.text(vAvgNzPerRow[5-1] * 1.8, avgy, ", ".join(annoText), color=expColor, va="center")
 
-        ax.plot(vx, vy, marker="o", label=expLabel, color=expColor)
+        result.append(ax.plot(vx, vy, marker="o", label=expLabel, color=expColor)[0])
 
     # for the last value, we just add a basic annotation
     ax.text(
@@ -172,6 +192,8 @@ def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> 
     ax.set_xscale("log", base=2)
     ax.set_yscale("log", base=2)
     ax.set_xticks(vAvgNzPerRow)
+
+    return result
 
 
 def plotFigure() -> None:
@@ -199,4 +221,26 @@ def plotFigure() -> None:
     fig.savefig("HBMex-spmv_exp_sweep.pdf")
 
 
+def plotFigurePresentation() -> None:
+    """
+    Plots the figure to be included in the presentation.
+    """
+    from matplotlib import pyplot as plt
+    fig, axs = create_figure(width=14.0 * 0.7, height=4.8 * 0.7, top_extra=0.3, nrows=1, ncols=3)
+
+    # autopep8: off
+    plots = plotOne(axs[0], lambda dp: dp.numPcs == 1, "1 PC", presentationMode=True)
+    plotOne(axs[1], lambda dp: dp.numPcs == 2, "2 PCs", presentationMode=True)
+    plotOne(axs[2], lambda dp: dp.numPcs == 4, "4 PCs", presentationMode=True)
+    # autopep8: on
+
+    fig.supxlabel("Average Nonzeros/row", weight="bold")
+    fig.supylabel("Cycles/Nonzero", weight="bold")
+
+    fig.legend(handles=plots, loc="upper right", ncol=3)
+
+    fig.savefig("HBMex-spmv_exp_sweep_presentation.pdf")
+
+
 plotFigure()
+plotFigurePresentation()

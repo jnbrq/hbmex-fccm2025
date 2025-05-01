@@ -266,4 +266,28 @@ def plotFigure() -> None:
     fig.savefig("HBMex-suite_sparse.pdf")
 
 
+def plotFigurePresentation() -> None:
+    """
+    Plots the figure to be included in the presentation.
+    """
+    from matplotlib import pyplot as plt
+    fig, axs = create_figure(nrows=2, ncols=2, width=12, height=5, top_extra=0.3)
+
+    # autopep8: off
+    plots = plotOne(axs[0, 0], lambda dp: dp.numPcs == 1, "1 PC")
+    plotOne(axs[0, 1], lambda dp: dp.numPcs == 2, "2 PCs")
+    plotOne(axs[1, 0], lambda dp: dp.numPcs == 4, "4 PCs")
+    plotOne(axs[1, 1], lambda dp: dp.numPcs == 8, "8 PCs")
+    # autopep8: on
+
+    # axs[0].legend(loc="upper left", ncol=3)
+    fig.legend(handles=plots, loc="upper right", ncol=3)
+
+    fig.supxlabel("Workload", weight="bold")
+    fig.supylabel("Cycles/NZ", weight="bold")
+
+    fig.savefig("HBMex-suite_sparse_presentation.pdf")
+
+
 plotFigure()
+plotFigurePresentation()

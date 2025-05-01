@@ -97,16 +97,20 @@ def create_figure(
     height: float = 4.8,
     nrows: int = 1,
     ncols: int = 1,
+    left_extra: float = 0.0,
+    bottom_extra: float = 0.0,
+    right_extra: float = 0.0,
+    top_extra: float = 0.0,
     **kwargs
 ) -> Tuple[Figure, List[Axes]]:
     fig = plt.figure(figsize=(width, height))
     axs = fig.subplots(nrows, ncols, sharex=True, sharey=True, **kwargs)
 
     # these are the desired margins in terms of figure units
-    left = 0.640
-    bottom = 0.480
-    right = 0.128
-    top = 0.270
+    left = 0.640 + left_extra
+    bottom = 0.480 + bottom_extra
+    right = 0.128 + right_extra
+    top = 0.270 + top_extra
     wspace = 0.140
     hspace = 0.270
 
@@ -202,4 +206,24 @@ def plotFigure() -> None:
     fig.savefig("HBMex-hbm_explore.pdf")
 
 
+def plotFigurePresentation() -> None:
+    """
+    Plots the figure to be included in the presentation.
+    """
+    from matplotlib import pyplot as plt
+    fig, axs = create_figure(width=6.4 * 0.7, height=4.8 * 0.7, top_extra=0.3, nrows=1, ncols=1)
+
+    # autopep8: off
+    plotOne(axs, lambda dp: dp.frequencyMHz == 450 and dp.axiReorder and dp.lookaheadReorder, "")
+    # autopep8: on
+
+    fig.legend(loc="upper right", ncol=3)
+
+    fig.supxlabel("Number of Pseudo Channels", weight="bold")
+    fig.supylabel("Cycles/Beat", weight="bold")
+
+    fig.savefig("HBMex-hbm_explore_presentation.pdf")
+
+
 plotFigure()
+plotFigurePresentation()
