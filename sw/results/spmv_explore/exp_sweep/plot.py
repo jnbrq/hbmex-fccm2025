@@ -131,7 +131,7 @@ def plotOne(
     vExp = [ExperimentType.RAMA_IP, ExperimentType.HBMEX_IP_0, ExperimentType.HBMEX_IP_1]
     vExpLabel = [
         "RAMA IP",
-        "HBMex, 64 IDs (no Enhance)",
+        "HBMex, 64 IDs (without Enhance)",
         "HBMex, Unique ID/PC (with Enhance)"
     ] if presentationMode else [
         "RAMA IP",
@@ -226,7 +226,7 @@ def plotFigurePresentation() -> None:
     Plots the figure to be included in the presentation.
     """
     from matplotlib import pyplot as plt
-    fig, axs = create_figure(width=14.0 * 0.7, height=4.8 * 0.7, top_extra=0.3, nrows=1, ncols=3)
+    fig, axs = create_figure(width=14.0 * 0.7, height=5.2 * 0.7, top_extra=0.3, nrows=1, ncols=3)
 
     # autopep8: off
     plots = plotOne(axs[0], lambda dp: dp.numPcs == 1, "1 PC", presentationMode=True)

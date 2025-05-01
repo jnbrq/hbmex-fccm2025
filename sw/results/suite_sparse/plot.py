@@ -123,7 +123,13 @@ def avg(l: List[float]) -> float:
     return sum(l) / len(l)
 
 
-def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> List[plt.Artist]:
+def plotOne(
+    ax: plt.Axes,
+    filterFn: Callable[[DataPoint], bool],
+    title: str,
+    excludeList: List[str] = (),
+    presentationMode: bool = False
+) -> List[plt.Artist]:
     vWorkloadName = [
         'amazon-2008',
         'cit-Patents',
@@ -139,8 +145,39 @@ def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> 
         'wikipedia-20061104'
     ]
 
+    vWorkloadIds = [f"W{i}" for i in range(len(vWorkloadName))]
+
+    vAnnoWorkload = [
+        True,
+        True,
+        True,
+        True,
+        True,
+        True,
+        False,
+        True,
+        True,
+        True,
+        True,
+        True,
+    ]
+
+    # exclude list
+    vWorkloadIds = [y for x, y in zip(vWorkloadName, vWorkloadIds) if x not in excludeList]
+    vAnnoWorkload = [y for x, y in zip(vWorkloadName, vAnnoWorkload) if x not in excludeList]
+    vWorkloadName = [x for x in vWorkloadName if x not in excludeList]  # used above, modify last
+
     vExp = [ExperimentType.RAMA_IP, ExperimentType.HBMEX_IP_0, ExperimentType.HBMEX_IP_1]
-    vExpLabel = ["RAMA IP", "HBMex 64 IDs", "HBMex ID/PC"]
+    vExpLabel = [
+        "RAMA IP",
+        "HBMex, 64 IDs (without Enhance)",
+        "HBMex, Unique ID/PC (with Enhance)"
+    ] if presentationMode else [
+        "RAMA IP",
+        "HBMex 64 IDs",
+        "HBMex ID/PC"
+    ]
+
     vExpColor = ["tab:orange", "tab:blue", "tab:green"]
 
     ddvData = {
@@ -191,7 +228,7 @@ def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> 
 
         vTicks = calc_vx(numBarsPerSegment / 2)
         ax.set_xticks(vTicks)
-        ax.set_xticklabels([f"W{i}" for i in range(len(vWorkloadName))])
+        ax.set_xticklabels(vWorkloadIds)
 
         ax.set_xlim([vTicks[0] - barWidth * 1.8, vTicks[-1] + barWidth * 1.8])
 
@@ -199,21 +236,6 @@ def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> 
 
     def doAnnotate() -> None:
         # annotations
-        vAnnoWorkload = [
-            True,
-            True,
-            True,
-            True,
-            True,
-            True,
-            False,
-            True,
-            True,
-            True,
-            True,
-            True,
-        ]
-
         x0 = calc_vx(0)
         x1 = calc_vx(1)
         x2 = calc_vx(2)
@@ -230,9 +252,12 @@ def plotOne(ax: plt.Axes, filterFn: Callable[[DataPoint], bool], title: str) -> 
             t1 = f"{(y0 - y1)/y0 * 100:.1f}%"
             t2 = f"{(y0 - y2)/y0 * 100:.1f}%"
 
-            ax.text(x0[workloadIndex] + barWidth / 2 + 0.08, y0 + 0.2, t0,  rotation="vertical", color="black", ha="center")
-            ax.text(x1[workloadIndex] + barWidth / 2 + 0.08, y1 + 0.2, t1, rotation="vertical", color="black", ha="center")
-            ax.text(x2[workloadIndex] + barWidth / 2 + 0.08, y2 + 0.2, t2, rotation="vertical", color="black", ha="center")
+            ax.text(x0[workloadIndex] + barWidth / 2 + 0.08, y0 + 0.2,
+                    t0,  rotation="vertical", color="black", ha="center")
+            ax.text(x1[workloadIndex] + barWidth / 2 + 0.08, y1 + 0.2,
+                    t1, rotation="vertical", color="black", ha="center")
+            ax.text(x2[workloadIndex] + barWidth / 2 + 0.08, y2 + 0.2,
+                    t2, rotation="vertical", color="black", ha="center")
 
     # ax.set_yscale("log", base=10)
     # ax.set_ylim([1, 8])
@@ -271,20 +296,34 @@ def plotFigurePresentation() -> None:
     Plots the figure to be included in the presentation.
     """
     from matplotlib import pyplot as plt
-    fig, axs = create_figure(nrows=2, ncols=2, width=12, height=5, top_extra=0.3)
+    fig, axs = create_figure(width=14.0 * 0.7, height=5.2 * 0.7, top_extra=0.3, nrows=1, ncols=3)
+
+    excludeList = (
+        # 'amazon-2008',
+        # 'cit-Patents',
+        # 'com-Youtube',
+        # 'cont11_l',
+        'dblp-2010',
+        'eu-2005',
+        # 'flickr',
+        # 'in-2004',
+        'ljournal-2008',
+        'road_usa',
+        'webbase-1M',
+        'wikipedia-20061104'
+    )
 
     # autopep8: off
-    plots = plotOne(axs[0, 0], lambda dp: dp.numPcs == 1, "1 PC")
-    plotOne(axs[0, 1], lambda dp: dp.numPcs == 2, "2 PCs")
-    plotOne(axs[1, 0], lambda dp: dp.numPcs == 4, "4 PCs")
-    plotOne(axs[1, 1], lambda dp: dp.numPcs == 8, "8 PCs")
+    plots = plotOne(axs[0], lambda dp: dp.numPcs == 1, "1 PC", excludeList=excludeList, presentationMode=True)
+    plotOne(axs[1], lambda dp: dp.numPcs == 2, "2 PCs", excludeList=excludeList, presentationMode=True)
+    plotOne(axs[2], lambda dp: dp.numPcs == 4, "4 PCs", excludeList=excludeList, presentationMode=True)
     # autopep8: on
 
     # axs[0].legend(loc="upper left", ncol=3)
     fig.legend(handles=plots, loc="upper right", ncol=3)
 
     fig.supxlabel("Workload", weight="bold")
-    fig.supylabel("Cycles/NZ", weight="bold")
+    fig.supylabel("Cycles/Nonzero", weight="bold")
 
     fig.savefig("HBMex-suite_sparse_presentation.pdf")
 

@@ -211,7 +211,7 @@ def plotFigurePresentation() -> None:
     Plots the figure to be included in the presentation.
     """
     from matplotlib import pyplot as plt
-    fig, axs = create_figure(width=6.4 * 0.7, height=4.8 * 0.7, top_extra=0.3, nrows=1, ncols=1)
+    fig, axs = create_figure(width=6.4 * 0.7, height=5.2 * 0.7, top_extra=0.3, nrows=1, ncols=1)
 
     # autopep8: off
     plotOne(axs, lambda dp: dp.frequencyMHz == 450 and dp.axiReorder and dp.lookaheadReorder, "")

@@ -222,7 +222,7 @@ def plotFigurePresentation() -> None:
     Plots the figure to be included in the presentation.
     """
     from matplotlib import pyplot as plt
-    fig, axs = create_figure(width=9.2 * 0.7, height=4.8 * 0.7, top_extra=0.3, ncols=2)
+    fig, axs = create_figure(width=9.2 * 0.7, height=5.2 * 0.7, top_extra=0.3, ncols=2)
 
     # autopep8: off
     annoList = [
