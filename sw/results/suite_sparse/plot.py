@@ -296,7 +296,7 @@ def plotFigurePresentation() -> None:
     Plots the figure to be included in the presentation.
     """
     from matplotlib import pyplot as plt
-    fig, axs = create_figure(width=14.0 * 0.7, height=5.2 * 0.7, top_extra=0.3, nrows=1, ncols=3)
+    fig, axs = create_figure(width=12.0 * 0.7, height=5.2 * 0.7, top_extra=0.3, nrows=1, ncols=2)
 
     excludeList = (
         # 'amazon-2008',
@@ -314,9 +314,8 @@ def plotFigurePresentation() -> None:
     )
 
     # autopep8: off
-    plots = plotOne(axs[0], lambda dp: dp.numPcs == 1, "1 PC", excludeList=excludeList, presentationMode=True)
-    plotOne(axs[1], lambda dp: dp.numPcs == 2, "2 PCs", excludeList=excludeList, presentationMode=True)
-    plotOne(axs[2], lambda dp: dp.numPcs == 4, "4 PCs", excludeList=excludeList, presentationMode=True)
+    plots = plotOne(axs[0], lambda dp: dp.numPcs == 2, "2 PCs", excludeList=excludeList, presentationMode=True)
+    plotOne(axs[1], lambda dp: dp.numPcs == 4, "4 PCs", excludeList=excludeList, presentationMode=True)
     # autopep8: on
 
     # axs[0].legend(loc="upper left", ncol=3)
@@ -325,7 +324,7 @@ def plotFigurePresentation() -> None:
     fig.supxlabel("Workload", weight="bold")
     fig.supylabel("Cycles/Nonzero", weight="bold")
 
-    fig.savefig("HBMex-suite_sparse_presentation.pdf")
+    fig.savefig("HBMex-suite_sparse_presentation.pdf", transparent=True)
 
 
 plotFigure()

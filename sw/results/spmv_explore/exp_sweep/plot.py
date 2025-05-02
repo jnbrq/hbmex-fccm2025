@@ -226,12 +226,11 @@ def plotFigurePresentation() -> None:
     Plots the figure to be included in the presentation.
     """
     from matplotlib import pyplot as plt
-    fig, axs = create_figure(width=14.0 * 0.7, height=5.2 * 0.7, top_extra=0.3, nrows=1, ncols=3)
+    fig, axs = create_figure(width=12.0 * 0.7, height=5.2 * 0.7, top_extra=0.3, nrows=1, ncols=2)
 
     # autopep8: off
-    plots = plotOne(axs[0], lambda dp: dp.numPcs == 1, "1 PC", presentationMode=True)
-    plotOne(axs[1], lambda dp: dp.numPcs == 2, "2 PCs", presentationMode=True)
-    plotOne(axs[2], lambda dp: dp.numPcs == 4, "4 PCs", presentationMode=True)
+    plots = plotOne(axs[0], lambda dp: dp.numPcs == 2, "2 PCs", presentationMode=True)
+    plotOne(axs[1], lambda dp: dp.numPcs == 4, "4 PCs", presentationMode=True)
     # autopep8: on
 
     fig.supxlabel("Average Nonzeros/row", weight="bold")
